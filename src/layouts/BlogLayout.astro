@@ -1,0 +1,149 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { SITE } from "../data/site";
+import type { CollectionEntry } from "astro:content";
+
+interface Props { post: CollectionEntry<"blog">; }
+const { post } = Astro.props;
+const { title, description, publishDate, updatedDate, author, pillar, heroImage, heroImageAlt, readingMinutes, seo, tags } = post.data;
+
+const PILLAR_LABEL: Record<string, string> = {
+  "muemleki":        "Stílus / Műemléki",
+  "premium-csaladi": "Prémium családi ház",
+  "tudnivalok":      "Tudnivalók",
+  "arak":            "Árak",
+  "beepites":        "Beépítés",
+  "helyi":           "Helyi",
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  author: { "@type": "Organization", name: author },
+  publisher: { "@type": "Organization", name: SITE.brand, "@id": `${SITE.url}/#org` },
+  datePublished: publishDate.toISOString(),
+  ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+  image: heroImage ? new URL(heroImage, SITE.url).toString() : undefined,
+  mainEntityOfPage: { "@type": "WebPage", "@id": new URL(`/blog/${post.id}`, SITE.url).toString() },
+  keywords: tags?.join(", "),
+};
+---
+<BaseLayout
+  title={seo?.title ?? title}
+  description={seo?.description ?? description}
+  ogImage={heroImage}
+  schema={articleSchema}
+>
+  <article class="article">
+    <header class="article-header">
+      <div class="container-text">
+        <p class="article-eyebrow">
+          <a href="/blog" class="article-eyebrow-back">Blog</a>
+          <span aria-hidden="true">·</span>
+          <span class="article-pillar">{PILLAR_LABEL[pillar]}</span>
+        </p>
+        <h1 class="article-title">{title}</h1>
+        <p class="article-lead">{description}</p>
+        <p class="article-meta">
+          <time datetime={publishDate.toISOString()}>
+            {publishDate.toLocaleDateString("hu-HU", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+          {readingMinutes && <><span aria-hidden="true">·</span><span>{readingMinutes} perc olvasás</span></>}
+          <span aria-hidden="true">·</span>
+          <span>{author}</span>
+        </p>
+      </div>
+    </header>
+
+    {heroImage && (
+      <figure class="article-hero">
+        <div class="container">
+          <img src={heroImage} alt={heroImageAlt ?? title} loading="eager" fetchpriority="high" />
+        </div>
+      </figure>
+    )}
+
+    <div class="container-text article-body">
+      <slot />
+    </div>
+
+    <footer class="article-footer">
+      <div class="container-text">
+        <div class="article-cta">
+          <h3>Kérjen helyszíni felmérést — kötelezettség nélkül</h3>
+          <p>Munkanapon belül visszahívjuk. Kistarcsáról 30 perc alatt érünk Önhöz.</p>
+          <div class="article-cta-actions">
+            <a href="/felmeres" class="btn btn-primary">Felmérés foglalása →</a>
+            <a href="/ajtotervezo" class="btn btn-ghost">Ajtótervező</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-header { padding-block: clamp(3rem, 6vw, 5rem) 2rem; }
+  .article-eyebrow {
+    display: flex; gap: 0.5rem; align-items: center;
+    font-size: 0.78rem; letter-spacing: 0.04em; color: var(--color-stone);
+    text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .article-eyebrow-back { color: var(--color-charcoal); }
+  .article-pillar { color: var(--color-brass-deep); }
+
+  .article-title {
+    font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.05;
+    letter-spacing: -0.02em; max-width: 22ch;
+  }
+  .article-lead {
+    font-family: var(--font-serif); font-size: clamp(1.15rem, 1.4vw, 1.4rem);
+    line-height: 1.45; color: var(--color-charcoal); margin-top: 1.25rem; max-width: 50ch;
+  }
+  .article-meta {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+    font-size: 0.82rem; color: var(--color-stone); margin-top: 1.5rem;
+  }
+
+  .article-hero { margin: 2rem 0; }
+  .article-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+
+  .article-body { padding-block: 2rem 4rem; }
+  .article-body :global(h2) {
+    font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.15;
+    margin: 3rem 0 1.25rem;
+  }
+  .article-body :global(h3) {
+    font-family: var(--font-serif); font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.2;
+    margin: 2.25rem 0 1rem;
+  }
+  .article-body :global(p) {
+    font-size: 1.0625rem; line-height: 1.7; margin: 0 0 1.1rem;
+    color: var(--color-charcoal);
+  }
+  .article-body :global(strong) { color: var(--color-ink); }
+  .article-body :global(em) { color: var(--color-brass-deep); }
+  .article-body :global(a) { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body :global(blockquote) {
+    margin: 2rem 0; padding: 0.5rem 0 0.5rem 1.5rem; border-left: 3px solid var(--color-brass);
+    font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.5; color: var(--color-ink);
+  }
+  .article-body :global(ul), .article-body :global(ol) {
+    margin: 0 0 1.25rem; padding-left: 1.5rem; font-size: 1.0625rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .article-body :global(li) { margin-bottom: 0.35rem; }
+  .article-body :global(table) { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+  .article-body :global(th), .article-body :global(td) { border-bottom: 1px solid rgba(14,15,17,0.1); padding: 0.75rem 0.5rem; text-align: left; vertical-align: top; }
+  .article-body :global(th) { background: var(--color-cream); font-weight: 500; }
+  .article-body :global(hr) { border: 0; height: 1px; background: rgba(14,15,17,0.1); margin: 3rem 0; }
+  .article-body :global(code) { background: var(--color-cream); padding: 0.1rem 0.35rem; font-size: 0.92em; }
+  .article-body :global(img) { max-width: 100%; height: auto; display: block; margin: 2rem 0; }
+
+  .article-footer { padding-block: 3rem 4rem; }
+  .article-cta { background: var(--color-cream); padding: 2rem; }
+  .article-cta h3 { font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.2; max-width: 22ch; }
+  .article-cta p { margin-top: 0.6rem; color: var(--color-charcoal); }
+  .article-cta-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+</style>

@@ -1,0 +1,117 @@
+---
+interface Props { variant?: "callback" | "full"; }
+const { variant = "full" } = Astro.props;
+---
+<form class="lead-form" method="POST" action="/api/lead" data-lead-form data-variant={variant}>
+  <input type="hidden" name="source" value={variant} />
+  <input type="hidden" name="_honey" value="" autocomplete="off" tabindex="-1" aria-hidden="true" />
+
+  <div class="lead-field">
+    <label for="lead-name">Név <span aria-hidden="true">*</span></label>
+    <input id="lead-name" name="name" type="text" required autocomplete="name" />
+  </div>
+
+  <div class="lead-field">
+    <label for="lead-phone">Telefonszám <span aria-hidden="true">*</span></label>
+    <input id="lead-phone" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" pattern="[0-9 +()-]{7,}" />
+  </div>
+
+  {variant === "full" && (
+    <>
+      <div class="lead-field">
+        <label for="lead-email">E-mail <span class="lead-opt">opcionális</span></label>
+        <input id="lead-email" name="email" type="email" autocomplete="email" />
+      </div>
+
+      <div class="lead-field">
+        <label for="lead-postcode">Irányítószám</label>
+        <input id="lead-postcode" name="postcode" type="text" pattern="[0-9]{4}" inputmode="numeric" placeholder="pl. 1142" />
+      </div>
+
+      <div class="lead-field lead-field-wide">
+        <label for="lead-msg">Üzenet <span class="lead-opt">opcionális</span></label>
+        <textarea id="lead-msg" name="message" rows="4" placeholder="Ajtótípus, méret, különleges igények…"></textarea>
+      </div>
+    </>
+  )}
+
+  <div class="lead-consent lead-field-wide">
+    <label class="lead-consent-row">
+      <input type="checkbox" name="consent" required />
+      <span>Elolvastam és elfogadom az <a href="/adatvedelem">Adatkezelési tájékoztatót</a>. Hozzájárulok, hogy a megadott adatokat kapcsolatfelvétel és árajánlat-készítés céljából 5 évig kezeljék.</span>
+    </label>
+    <label class="lead-consent-row lead-consent-secondary">
+      <input type="checkbox" name="marketing" />
+      <span>Szeretnék értesülni új mintákról, akciókról (opcionális, bármikor visszavonható).</span>
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-large lead-submit">
+    {variant === "callback" ? "Visszahívást kérek" : "Árajánlatkérés elküldése"} →
+  </button>
+
+  <p class="lead-status" data-lead-status aria-live="polite"></p>
+</form>
+
+<style>
+  .lead-form {
+    display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+    background: var(--color-paper); padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 1px solid rgba(14,15,17,0.1);
+  }
+  @media (min-width: 640px) {
+    .lead-form[data-variant="full"] { grid-template-columns: 1fr 1fr; }
+    .lead-field-wide { grid-column: 1 / -1; }
+  }
+
+  .lead-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .lead-field label {
+    font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--color-charcoal); display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem;
+  }
+  .lead-field label span[aria-hidden] { color: var(--color-brass); }
+  .lead-opt { color: var(--color-stone); text-transform: none; letter-spacing: 0; font-size: 0.72rem; }
+  .lead-field input, .lead-field textarea {
+    font: inherit; background: var(--color-canvas); border: 1px solid rgba(14,15,17,0.15);
+    padding: 0.75rem 0.9rem; color: var(--color-ink); font-size: 0.95rem;
+    transition: border-color var(--dur-fast) var(--ease-out-soft);
+  }
+  .lead-field input:focus-visible, .lead-field textarea:focus-visible {
+    outline: 0; border-color: var(--color-ink);
+  }
+
+  .lead-consent { display: flex; flex-direction: column; gap: 0.6rem; }
+  .lead-consent-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; line-height: 1.45; color: var(--color-charcoal); cursor: pointer; }
+  .lead-consent-row input[type="checkbox"] { margin-top: 0.25rem; }
+  .lead-consent-row a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+  .lead-consent-secondary { color: var(--color-stone); font-size: 0.8rem; }
+
+  .lead-submit { justify-self: start; }
+  .lead-status { font-size: 0.85rem; color: var(--color-charcoal); margin: 0; }
+  .lead-status[data-state="ok"] { color: var(--color-flag-green); }
+  .lead-status[data-state="err"] { color: var(--color-flag-red); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>("[data-lead-form]").forEach(form => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = form.querySelector<HTMLParagraphElement>("[data-lead-status]");
+      const submit = form.querySelector<HTMLButtonElement>(".lead-submit");
+      if (submit) submit.disabled = true;
+      if (status) { status.textContent = "Küldés folyamatban…"; status.dataset.state = ""; }
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch("/api/lead", { method: "POST", body: data });
+        if (!res.ok) throw new Error("hiba");
+        form.reset();
+        if (status) { status.textContent = "Köszönjük! Munkanapon belül visszahívjuk."; status.dataset.state = "ok"; }
+      } catch {
+        if (status) { status.textContent = "Hiba történt. Kérjük, hívjon minket telefonon."; status.dataset.state = "err"; }
+      } finally {
+        if (submit) submit.disabled = false;
+      }
+    });
+  });
+</script>

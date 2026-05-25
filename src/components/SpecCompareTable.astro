@@ -1,0 +1,90 @@
+---
+/**
+ * Playbook §5.9a — defensible spec-comparison vs. olcsó katalógus / sorozatgyártott importajtó.
+ * Concrete specs, no country/brand attacks.
+ */
+const rows = [
+  { spec: "Tok és nyílórész szerkezet",        cheap: "Vékony lemezből hajlított keret",                cheapMeh: true,  huba: "Hőhídmentes acél zártszelvény, méretre szabva" },
+  { spec: "Acéllemez a zárszerkezetek körül",  cheap: "1–1,2 mm vagy hiányzó megerősítés",              cheapMeh: true,  huba: "Megerősített acéllap a zárszerkezeteknél" },
+  { spec: "Hang- és hőszigetelő bélelés",      cheap: "Hab vagy hiányzó bélelés",                       cheapMeh: true,  huba: "Therwolin / üveggyapot bélelés" },
+  { spec: "Záródási pontok",                   cheap: "3–5 záróponttal, egy irányban",                  cheapMeh: true,  huba: "Több ponton — felül, alul, és hátul is záródik" },
+  { spec: "MABISZ besorolás",                  cheap: "Tipikusan MABISZ 2. osztály — vagy nincs",       cheapMeh: true,  huba: "MABISZ 2.–5. osztály választható (3–15 perc ellenállás)" },
+  { spec: "Cilinder és zártest",               cheap: "Márkanév nélküli, cserélendő alkatrész",         cheapMeh: true,  huba: "Mottura · Abus · Mul-T-Lock · Iseo · Cisa" },
+  { spec: "Tömítés",                           cheap: "Ragasztott vagy hiányzó",                        cheapMeh: true,  huba: "Körbefutó, befűzött (nem ragasztott) gumitömítés" },
+  { spec: "Borítás és szín",                   cheap: "6–12 fix katalógus minta",                       cheapMeh: false, huba: "35+ fa minta, 15 mart minta, vagy egyedi műemléki borítás" },
+  { spec: "Méretek",                           cheap: "Sorozatgyártott méretek",                        cheapMeh: false, huba: "Méretre szabva — bármilyen nyíláshoz" },
+  { spec: "Gyártás helye",                     cheap: "Sorozatgyártás, importon keresztül",             cheapMeh: false, huba: "Saját üzem · 2143 Kistarcsa" },
+  { spec: "Pótalkatrész 10 év múlva",          cheap: "Gyakran nem elérhető",                           cheapMeh: true,  huba: "Saját gyártás — alkatrészek mindig rendelhetők" },
+  { spec: "Garancia",                          cheap: "Általában 1–2 év",                               cheapMeh: true,  huba: "15 év szerkezeti · 18 hónap zárszerkezet" },
+];
+---
+<div class="compare reveal">
+  <header class="compare-header">
+    <div class="compare-col compare-col-spec"></div>
+    <div class="compare-col compare-col-cheap">
+      <p class="compare-col-eyebrow">Tipikus</p>
+      <p class="compare-col-name">Olcsó katalógus / importajtó</p>
+    </div>
+    <div class="compare-col compare-col-huba">
+      <p class="compare-col-eyebrow">A mi ajtónk</p>
+      <p class="compare-col-name">Huba ajtó</p>
+    </div>
+  </header>
+
+  <div class="compare-body">
+    {rows.map(r => (
+      <div class="compare-row">
+        <div class="compare-cell compare-cell-spec">{r.spec}</div>
+        <div class:list={["compare-cell compare-cell-cheap", { "is-meh": r.cheapMeh }]}>{r.cheap}</div>
+        <div class="compare-cell compare-cell-huba">{r.huba}</div>
+      </div>
+    ))}
+  </div>
+
+  <footer class="compare-footer">
+    <p>
+      Egy biztonsági ajtó nem önmagában „biztonságos" — a tényleges védelmi szintet az acélszerkezet,
+      a zárszerkezet és a beépítés minősége adja. Az olcsóbb katalógusajtók többsége MABISZ 2. osztály
+      alatt teljesít, és a zárcilinderek márka nélkül érkeznek — ezek a részletek nem mindig láthatók
+      a katalógusban, de 10 év múlva ezek számítanak.
+    </p>
+  </footer>
+</div>
+
+<style>
+  .compare { background: var(--color-paper); }
+  .compare-header {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  .compare-col { background: var(--color-cream); padding: 1.5rem 1.25rem; }
+  .compare-col-eyebrow { font-size: 0.7rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  .compare-col-name { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.2; margin-top: 0.25rem; }
+  .compare-col-huba { background: var(--color-ink); }
+  .compare-col-huba .compare-col-eyebrow { color: var(--color-brass); }
+  .compare-col-huba .compare-col-name { color: var(--color-paper); }
+  .compare-col-spec { background: transparent; }
+
+  .compare-body {
+    display: grid; gap: 1px; background: rgba(14,15,17,0.06);
+  }
+  .compare-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1px; }
+  .compare-cell {
+    background: var(--color-paper); padding: 1rem 1.25rem; font-size: 0.9rem; line-height: 1.5;
+  }
+  .compare-cell-spec { background: var(--color-cream); font-weight: 500; }
+  .compare-cell-cheap { color: var(--color-charcoal); }
+  .compare-cell-cheap.is-meh { color: var(--color-stone); text-decoration: line-through; text-decoration-color: rgba(14,15,17,0.2); text-decoration-thickness: 1px; }
+  .compare-cell-huba { background: var(--color-ink); color: var(--color-paper); }
+
+  .compare-footer { padding: 1.5rem 1.5rem 2rem; background: var(--color-cream); }
+  .compare-footer p { font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal); max-width: 70ch; font-style: italic; }
+
+  @media (max-width: 700px) {
+    .compare-header, .compare-row { grid-template-columns: 1fr; }
+    .compare-cell-spec { font-weight: 600; padding-bottom: 0.4rem; padding-top: 1.2rem; }
+    .compare-cell-cheap::before { content: "Katalógusajtó: "; color: var(--color-stone); font-weight: 500; }
+    .compare-cell-huba::before { content: "Huba ajtó: "; color: var(--color-brass); font-weight: 500; }
+  }
+</style>

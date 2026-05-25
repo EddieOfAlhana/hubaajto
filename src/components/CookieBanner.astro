@@ -1,0 +1,53 @@
+---
+---
+<div class="cookie" data-cookie role="dialog" aria-modal="false" aria-label="Süti beállítások">
+  <div class="cookie-card">
+    <h2 class="cookie-title">Süti beállítások</h2>
+    <p class="cookie-body">
+      Honlapunk a szükséges sütiken túl statisztikai sütiket csak az Ön hozzájárulásával használ.
+      Az „Elutasítom" gombbal csak a működéshez kötelező sütik maradnak aktívak. Részletek az
+      <a href="/suti">Süti tájékoztatóban</a> és az <a href="/adatvedelem">Adatkezelési tájékoztatóban</a>.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" data-cookie-action="reject">Elutasítom</button>
+      <button class="btn btn-primary" data-cookie-action="accept">Elfogadom</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie {
+    position: fixed; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 60;
+    display: none;
+  }
+  .cookie.is-shown { display: block; animation: rise 0.6s var(--ease-out-soft); }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @media (min-width: 640px) { .cookie { left: auto; right: 1.5rem; max-width: 28rem; } }
+  .cookie-card {
+    background: var(--color-paper); border: 1px solid rgba(14,15,17,0.1);
+    padding: 1.25rem 1.25rem 1rem; box-shadow: var(--shadow-card);
+  }
+  .cookie-title { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .cookie-body { font-size: 0.85rem; line-height: 1.55; color: var(--color-charcoal); }
+  .cookie-body a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+  .cookie-actions { display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: flex-end; }
+</style>
+
+<script>
+  const KEY = "huba-cookie-consent";
+  const el = document.querySelector<HTMLElement>("[data-cookie]");
+  if (el && !localStorage.getItem(KEY)) el.classList.add("is-shown");
+
+  el?.querySelectorAll<HTMLButtonElement>("[data-cookie-action]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const choice = btn.dataset.cookieAction;
+      localStorage.setItem(KEY, JSON.stringify({ choice, at: new Date().toISOString() }));
+      el.classList.remove("is-shown");
+      if (choice === "accept") document.dispatchEvent(new CustomEvent("huba:consent-granted"));
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-cookie-reopen]").forEach(btn => {
+    btn.addEventListener("click", () => el?.classList.add("is-shown"));
+  });
+</script>

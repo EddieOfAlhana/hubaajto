@@ -1,0 +1,30 @@
+---
+interface Props {
+  variant?: "wordmark" | "monogram";
+  class?: string;
+  size?: "sm" | "md" | "lg";
+}
+
+const { variant = "wordmark", class: className = "", size = "md" } = Astro.props;
+
+const src = variant === "monogram"
+  ? "/assets/brand/monogram.png"
+  : "/assets/brand/wordmark-primary.png";
+
+const widths = {
+  sm: variant === "monogram" ? 40 : 140,
+  md: variant === "monogram" ? 56 : 200,
+  lg: variant === "monogram" ? 80 : 280,
+};
+---
+<a href="/" class={`inline-flex items-center ${className}`} aria-label="Huba ajtó — kezdőlap">
+  <img
+    src={src}
+    alt="Huba ajtó"
+    width={widths[size]}
+    height={widths[size] * (variant === "monogram" ? 1 : 0.4)}
+    style={`width: ${widths[size]}px; height: auto;`}
+    decoding="async"
+    fetchpriority={variant === "monogram" ? "low" : "high"}
+  />
+</a>

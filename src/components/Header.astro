@@ -1,0 +1,125 @@
+---
+import LogoMark from "./LogoMark.astro";
+import { NAV, CONTACT } from "../data/site";
+const pathname = Astro.url.pathname;
+---
+<header class="site-header" data-header>
+  <div class="container site-header-inner">
+    <LogoMark variant="wordmark" size="sm" class="site-header-logo" />
+
+    <nav class="site-nav" aria-label="Fő navigáció">
+      {NAV.map(item => {
+        const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+        return (
+          <a href={item.href} class:list={["site-nav-link", { "is-active": active }]}>
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <div class="site-header-actions">
+      <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="site-phone" aria-label={`Hívás: ${CONTACT.phonePrimary}`}>
+        <span class="site-phone-icon" aria-hidden="true">☏</span>
+        <span class="site-phone-num">{CONTACT.phonePrimary}</span>
+      </a>
+      <a href="/felmeres" class="btn btn-primary site-header-cta">Ingyenes felmérés</a>
+      <button class="site-menu-btn" data-menu-btn aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="site-mobile-nav" data-mobile-nav aria-label="Mobil navigáció">
+    {NAV.map(item => (
+      <a href={item.href} class="site-mobile-link">{item.label}</a>
+    ))}
+    <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="site-mobile-link site-mobile-phone">
+      ☏ {CONTACT.phonePrimary}
+    </a>
+    <a href="/felmeres" class="btn btn-primary site-mobile-cta">Ingyenes felmérés</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--dur) var(--ease-out-soft), background var(--dur) var(--ease-out-soft);
+  }
+  .site-header[data-scrolled="true"] {
+    border-bottom-color: rgba(14, 15, 17, 0.08);
+    background: color-mix(in srgb, var(--color-paper) 96%, transparent);
+  }
+  .site-header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; padding-block: 1.1rem;
+  }
+  .site-nav { display: none; align-items: center; gap: 1.75rem; }
+  @media (min-width: 1080px) { .site-nav { display: flex; } }
+  .site-nav-link {
+    font-size: 0.92rem; font-weight: 450; letter-spacing: 0.01em;
+    color: var(--color-charcoal); position: relative; padding-block: 0.4rem;
+    transition: color var(--dur-fast) var(--ease-out-soft);
+  }
+  .site-nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1px; background: var(--color-ink); transform: scaleX(0);
+    transform-origin: left; transition: transform var(--dur) var(--ease-out-soft);
+  }
+  .site-nav-link:hover { color: var(--color-ink); }
+  .site-nav-link:hover::after, .site-nav-link.is-active::after { transform: scaleX(1); }
+  .site-nav-link.is-active { color: var(--color-ink); }
+
+  .site-header-actions { display: flex; align-items: center; gap: 1rem; }
+  .site-phone {
+    display: none; align-items: center; gap: 0.5rem;
+    font-size: 0.9rem; font-weight: 500; color: var(--color-ink);
+    padding: 0.5rem 0.75rem;
+  }
+  @media (min-width: 720px) { .site-phone { display: inline-flex; } }
+  .site-phone-icon { color: var(--color-brass); font-size: 1rem; }
+  .site-header-cta { display: none; }
+  @media (min-width: 720px) { .site-header-cta { display: inline-flex; } }
+
+  .site-menu-btn {
+    display: inline-flex; flex-direction: column; gap: 5px;
+    background: none; border: 0; cursor: pointer; padding: 0.5rem; margin-right: -0.5rem;
+  }
+  @media (min-width: 1080px) { .site-menu-btn { display: none; } }
+  .site-menu-btn span { display: block; width: 24px; height: 1.5px; background: var(--color-ink); transition: transform var(--dur) var(--ease-out-soft), opacity var(--dur) var(--ease-out-soft); }
+  .site-menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .site-menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .site-menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .site-mobile-nav {
+    display: none; flex-direction: column; padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem) 2rem;
+    background: var(--color-paper); border-top: 1px solid rgba(14,15,17,0.08);
+    gap: 0.25rem;
+  }
+  .site-mobile-nav.is-open { display: flex; animation: slideDown var(--dur) var(--ease-out-soft); }
+  @media (min-width: 1080px) { .site-mobile-nav.is-open { display: none; } }
+  .site-mobile-link { padding: 0.9rem 0; font-size: 1.05rem; border-bottom: 1px solid rgba(14,15,17,0.06); }
+  .site-mobile-phone { color: var(--color-brass-deep); font-weight: 500; }
+  .site-mobile-cta { margin-top: 1rem; justify-content: center; }
+
+  @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+</style>
+
+<script>
+  // Sticky header scrolled state
+  const header = document.querySelector("[data-header]") as HTMLElement | null;
+  const onScroll = () => header?.setAttribute("data-scrolled", String(window.scrollY > 16));
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Mobile menu
+  const btn = document.querySelector("[data-menu-btn]") as HTMLButtonElement | null;
+  const menu = document.querySelector("[data-mobile-nav]") as HTMLElement | null;
+  btn?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", String(open));
+  });
+</script>

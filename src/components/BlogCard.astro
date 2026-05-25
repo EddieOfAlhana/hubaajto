@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props { post: CollectionEntry<"blog">; featured?: boolean; }
+const { post, featured = false } = Astro.props;
+const { title, description, publishDate, pillar, heroImage, readingMinutes } = post.data;
+
+const PILLAR_LABEL: Record<string, string> = {
+  "muemleki":        "Stílus / Műemléki",
+  "premium-csaladi": "Prémium családi ház",
+  "tudnivalok":      "Tudnivalók",
+  "arak":            "Árak",
+  "beepites":        "Beépítés",
+  "helyi":           "Helyi",
+};
+
+const formattedDate = publishDate.toLocaleDateString("hu-HU", { year: "numeric", month: "long", day: "numeric" });
+---
+<article class:list={["blog-card reveal", { "is-featured": featured }]}>
+  <a href={`/blog/${post.id}`} class="blog-card-link">
+    {heroImage && (
+      <figure class="blog-card-figure">
+        <img src={heroImage} alt={post.data.heroImageAlt ?? title} loading="lazy" />
+      </figure>
+    )}
+    <div class="blog-card-body">
+      <p class="blog-card-meta">
+        <span class="blog-card-pillar">{PILLAR_LABEL[pillar]}</span>
+        <span class="blog-card-sep" aria-hidden="true">·</span>
+        <span>{formattedDate}</span>
+        {readingMinutes && (
+          <>
+            <span class="blog-card-sep" aria-hidden="true">·</span>
+            <span>{readingMinutes} perc olvasás</span>
+          </>
+        )}
+      </p>
+      <h3 class="blog-card-title">{title}</h3>
+      <p class="blog-card-desc">{description}</p>
+      <span class="blog-card-cta">Olvassa el →</span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card { background: var(--color-paper); border: 1px solid rgba(14,15,17,0.08); height: 100%; }
+  .blog-card.is-featured { background: var(--color-cream); }
+  .blog-card-link { display: flex; flex-direction: column; color: inherit; height: 100%; transition: transform var(--dur) var(--ease-out-soft); }
+  .blog-card-link:hover { transform: translateY(-3px); }
+  .blog-card-link:hover .blog-card-figure img { transform: scale(1.03); }
+
+  .blog-card-figure { aspect-ratio: 16/10; overflow: hidden; background: var(--color-cream); margin: 0; }
+  .blog-card-figure img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out-soft); }
+
+  .blog-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
+  .blog-card-meta { font-size: 0.78rem; letter-spacing: 0.02em; color: var(--color-stone); display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+  .blog-card-pillar { color: var(--color-brass-deep); }
+  .blog-card-sep { color: rgba(14,15,17,0.2); }
+
+  .blog-card-title { font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.2; max-width: 24ch; }
+  .blog-card-desc { font-size: 0.92rem; line-height: 1.55; color: var(--color-charcoal); }
+  .blog-card-cta { font-size: 0.85rem; color: var(--color-ink); margin-top: auto; }
+</style>

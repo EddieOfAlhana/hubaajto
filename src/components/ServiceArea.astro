@@ -1,0 +1,74 @@
+---
+import { SERVICE_AREA } from "../data/site";
+---
+<div class="service-area">
+  <div class="service-area-grid stagger">
+    <article class="service-area-block service-area-heritage">
+      <p class="service-area-eyebrow">Stílus / Műemléki</p>
+      <h3 class="service-area-title">Belváros + Buda heritage</h3>
+      <p class="service-area-desc">{SERVICE_AREA.heritage.description}</p>
+      <ul class="service-area-list">
+        {SERVICE_AREA.heritage.districts.map(d => (
+          <li>
+            <span class="service-area-code">{d.code}.</span>
+            <span class="service-area-name">{d.name}</span>
+            {d.note && <span class="service-area-note">{d.note}</span>}
+          </li>
+        ))}
+      </ul>
+    </article>
+
+    <article class="service-area-block">
+      <p class="service-area-eyebrow">Pest-agglomeráció · keleti ív</p>
+      <h3 class="service-area-title">Kistarcsa körzete</h3>
+      <p class="service-area-desc">{SERVICE_AREA.modern.description}</p>
+      <ul class="service-area-list service-area-list-towns">
+        {SERVICE_AREA.modern.towns.map(t => <li><span class="service-area-name">{t}</span></li>)}
+      </ul>
+    </article>
+
+    <article class="service-area-block">
+      <p class="service-area-eyebrow">NW Buda agglomeráció</p>
+      <h3 class="service-area-title">Telki–Budakeszi ív</h3>
+      <p class="service-area-desc">Prémium családi házak átfogó felújítás vagy új építés esetén.</p>
+      <ul class="service-area-list service-area-list-towns">
+        {SERVICE_AREA.modernBuda.towns.map(t => <li><span class="service-area-name">{t}</span></li>)}
+      </ul>
+    </article>
+  </div>
+
+  <div class="service-area-modern-pest reveal">
+    <p>
+      <strong>Modern Budapest — Kistarcsához legközelebbi pesti kerületek:</strong>
+      {SERVICE_AREA.modernPest.districts.join(". · ")}. kerület. Akár másnapi felméréssel.
+    </p>
+  </div>
+</div>
+
+<style>
+  .service-area { display: flex; flex-direction: column; gap: 2rem; }
+  .service-area-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 900px) { .service-area-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .service-area-block { background: var(--color-paper); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .service-area-heritage { background: var(--color-cream); }
+  .service-area-eyebrow { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  .service-area-title { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.15; }
+  .service-area-desc { font-size: 0.9rem; line-height: 1.55; color: var(--color-charcoal); }
+
+  .service-area-list { list-style: none; padding: 0; margin: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.92rem; }
+  .service-area-list li { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .service-area-code { font-family: var(--font-serif); color: var(--color-brass); font-size: 1.1rem; min-width: 1.8rem; }
+  .service-area-name { color: var(--color-ink); }
+  .service-area-note { font-size: 0.78rem; color: var(--color-stone); font-style: italic; }
+
+  .service-area-list-towns { flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+  .service-area-list-towns li { color: var(--color-charcoal); }
+
+  .service-area-modern-pest p { font-size: 0.95rem; line-height: 1.6; color: var(--color-charcoal); max-width: 70ch; }
+  .service-area-modern-pest strong { color: var(--color-ink); }
+</style>

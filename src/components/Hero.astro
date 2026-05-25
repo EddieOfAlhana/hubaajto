@@ -1,0 +1,131 @@
+---
+import { SITE, CONTACT } from "../data/site";
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  lead: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  image?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  pillars?: string[];
+  variant?: "split" | "fullbleed" | "centered";
+}
+
+const {
+  eyebrow,
+  heading,
+  lead,
+  primaryCta = { label: "Ingyenes felmérés", href: "/felmeres" },
+  secondaryCta = { label: "Ajtótervező indítása", href: "/ajtotervezo" },
+  image,
+  imageAlt = "",
+  imageCaption,
+  pillars,
+  variant = "split",
+} = Astro.props;
+---
+<section class:list={["hero", `hero-${variant}`]}>
+  <div class="container hero-inner">
+    <div class="hero-content reveal">
+      {eyebrow && <p class="eyebrow"><span class="tricolor-strip" aria-hidden="true"><span/><span/><span/></span> {eyebrow}</p>}
+      <h1 class="hero-heading" set:html={heading} />
+      <p class="hero-lead">{lead}</p>
+
+      {pillars && (
+        <ul class="hero-pillars stagger">
+          {pillars.map(p => <li><span class="hero-pillar-dot" aria-hidden="true">·</span> {p}</li>)}
+        </ul>
+      )}
+
+      <div class="hero-ctas">
+        <a href={primaryCta.href} class="btn btn-primary btn-large">{primaryCta.label} →</a>
+        <a href={secondaryCta.href} class="btn btn-ghost btn-large">{secondaryCta.label}</a>
+      </div>
+    </div>
+
+    {image && (
+      <figure class="hero-figure reveal">
+        <img src={image} alt={imageAlt} loading="eager" fetchpriority="high" />
+        {imageCaption && <figcaption>{imageCaption}</figcaption>}
+      </figure>
+    )}
+  </div>
+
+  <a href="#below" class="hero-scroll" aria-label="Tovább">
+    <span class="hero-scroll-line" aria-hidden="true"></span>
+    <span class="hero-scroll-text">Görgessen tovább</span>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative; padding-block: clamp(3rem, 6vw, 5rem) clamp(4rem, 7vw, 6rem);
+    overflow: hidden;
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+  @media (min-width: 1024px) {
+    .hero-split .hero-inner { grid-template-columns: 1fr 1.1fr; }
+  }
+
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+
+  .hero-heading {
+    font-family: var(--font-serif); font-weight: 400;
+    font-size: clamp(2.6rem, 5.4vw, 5rem); line-height: 1.02;
+    letter-spacing: -0.02em; color: var(--color-ink); max-width: 18ch;
+  }
+  .hero-heading :global(em) { font-style: italic; color: var(--color-brass-deep); }
+
+  .hero-lead {
+    font-family: var(--font-serif); font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+    line-height: 1.45; color: var(--color-charcoal); max-width: 38ch; margin-top: 1.5rem;
+  }
+
+  .hero-pillars {
+    list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap;
+    gap: 0.4rem 1.4rem; font-size: 0.88rem; letter-spacing: 0.02em; color: var(--color-charcoal);
+  }
+  .hero-pillars li { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .hero-pillar-dot { color: var(--color-brass); }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+
+  .hero-figure {
+    margin: 0; position: relative; aspect-ratio: 4 / 5;
+    background: var(--color-cream);
+  }
+  @media (min-width: 1024px) {
+    .hero-figure { aspect-ratio: 4 / 5; }
+  }
+  .hero-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-figure figcaption {
+    position: absolute; bottom: 1rem; left: 1rem;
+    background: var(--color-paper); padding: 0.5rem 0.85rem;
+    font-size: 0.78rem; letter-spacing: 0.04em; color: var(--color-stone);
+  }
+
+  .hero-fullbleed { padding-block: 0; }
+  .hero-fullbleed .hero-inner { min-height: 70vh; }
+
+  .hero-centered .hero-inner { grid-template-columns: 1fr; max-width: 60rem; margin-inline: auto; text-align: center; }
+  .hero-centered .eyebrow { justify-content: center; display: inline-flex; }
+  .hero-centered .hero-heading,
+  .hero-centered .hero-lead { margin-inline: auto; }
+  .hero-centered .hero-ctas { justify-content: center; }
+
+  .hero-scroll {
+    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-size: 0.7rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .hero-scroll-line {
+    display: block; width: 1px; height: 32px;
+    background: linear-gradient(to bottom, transparent, var(--color-ink) 50%, transparent);
+    animation: drip 2.2s var(--ease-out-soft) infinite;
+  }
+  @keyframes drip { 0%{ transform: scaleY(0.2); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100%{ transform: scaleY(0.2); transform-origin: bottom; }}
+</style>

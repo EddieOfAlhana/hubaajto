@@ -1,0 +1,61 @@
+---
+import { SLA } from "../data/site";
+
+const phases = [
+  { n: "01", t: "Védettségi ellenőrzés", body: "OÉNY (helyrajzi szám alapján) + kerületi főépítészi konzultáció. Egyértelműen tisztázzuk, hogy az Ön ingatlana műemlék, helyi védett vagy műemléki környezetben áll." },
+  { n: "02", t: "Helyszíni felmérés",   body: "Méretek, profilozás, eredeti kovácsoltvas elemek, üvegezés és eredeti szín dokumentálása fotódokumentációval." },
+  { n: "03", t: "Műszaki dokumentáció",  body: "Gyártói rajzok M=1:10 részletességgel, profilrajzok, anyagmintatáblák. Az engedélyezéshez ez a vizuális alap." },
+  { n: "04", t: "Építész + szakértő",    body: "439/2013. Korm. rendelet szerinti névjegyzéki szakértőt és építész tervezőt biztosítunk — Ön egy számlát kap." },
+  { n: "05", t: "Építéstörténeti dokumentáció", body: "Értékleltár vagy kivonatos építéstörténeti dokumentáció. Ez bizonyítja a hatóságnak, hogy ismerjük az eredeti ajtó értékét." },
+  { n: "06", t: "ÉTDR-kérelem",          body: "Meghatalmazással az Ön nevében benyújtjuk a teljes anyagot az ÉTDR rendszerbe — 25 napos hatósági ügyintézési határidővel." },
+  { n: "07", t: "Tervtanácsi prezentáció", body: "Ha a kerület kötelezően előírja, a tervtanácsi szakmai véleményt is mi szerezzük be." },
+  { n: "08", t: "Hatósági kommunikáció",  body: "Hiánypótlások és kérdések kezelése. Ön folyamatos visszajelzést kap, de nem Ön intézi." },
+  { n: "09", t: "Településképi bejelentés", body: "A kerületi TKBE párhuzamos lefolytatása (Józsefváros, Budavári és más kerületek külön rendelete szerint)." },
+  { n: "10", t: "Gyártás és beépítés",   body: "Az engedélyben rögzített kikötések szerint készítjük el és építjük be az ajtót — eredeti osztás, anyaghasználat, szín, vasalat." },
+  { n: "11", t: "Befejezési bejelentés", body: "A munka befejezését 8 napon belül bejelentjük a hatóságnak — ez kötelező záró lépés." },
+];
+---
+<div class="ec stagger">
+  {phases.map(p => (
+    <article class="ec-phase">
+      <span class="ec-phase-n">{p.n}</span>
+      <h3 class="ec-phase-title">{p.t}</h3>
+      <p class="ec-phase-body">{p.body}</p>
+    </article>
+  ))}
+</div>
+
+<div class="ec-meta reveal">
+  <p class="ec-meta-label">Teljes folyamat</p>
+  <p class="ec-meta-value">{SLA.permitTotal}</p>
+  <p class="ec-meta-sub">A védettségi ellenőrzéstől a befejezési bejelentésig — fix lépésekkel.</p>
+</div>
+
+<style>
+  .ec {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 640px)  { .ec { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .ec { grid-template-columns: repeat(3, 1fr); } }
+
+  .ec-phase {
+    background: var(--color-paper); padding: 1.75rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .ec-phase-n {
+    font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-brass);
+    letter-spacing: 0.04em;
+  }
+  .ec-phase-title { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.25; margin-top: 0.2rem; }
+  .ec-phase-body { font-size: 0.9rem; line-height: 1.55; color: var(--color-charcoal); }
+
+  .ec-meta {
+    margin-top: 2.5rem; padding: 1.75rem; background: var(--color-cream);
+    text-align: center;
+  }
+  .ec-meta-label { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  .ec-meta-value { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; margin-top: 0.5rem; }
+  .ec-meta-sub { font-size: 0.92rem; color: var(--color-charcoal); margin-top: 0.5rem; max-width: 50ch; margin-inline: auto; }
+</style>

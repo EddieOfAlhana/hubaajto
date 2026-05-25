@@ -1,0 +1,51 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  lead?: string;
+  tone?: "paper" | "cream" | "ink" | "canvas";
+  align?: "left" | "center";
+  class?: string;
+  containerClass?: string;
+}
+const { eyebrow, heading, lead, tone = "paper", align = "left", class: cls = "", containerClass = "container" } = Astro.props;
+---
+<section class:list={["section", `tone-${tone}`, `align-${align}`, cls]}>
+  <div class={containerClass}>
+    {(eyebrow || heading || lead) && (
+      <header class="section-header reveal">
+        {eyebrow && <p class="eyebrow"><span class="tricolor-strip" aria-hidden="true"><span/><span/><span/></span> {eyebrow}</p>}
+        {heading && <h2 class="section-heading">{heading}</h2>}
+        {lead && <p class="section-lead">{lead}</p>}
+      </header>
+    )}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+  .tone-paper { background: var(--color-paper); color: var(--color-ink); }
+  .tone-cream { background: var(--color-cream); color: var(--color-ink); }
+  .tone-ink { background: var(--color-ink); color: var(--color-paper); }
+  .tone-ink :global(h2), .tone-ink :global(h3), .tone-ink :global(p) { color: var(--color-paper); }
+  .tone-canvas { background: var(--color-canvas); color: var(--color-ink); }
+
+  .section-header { margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 56rem; }
+  .align-center .section-header { margin-inline: auto; text-align: center; }
+  .align-center .eyebrow { justify-content: center; display: flex; align-items: center; gap: 0.6rem; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+
+  .section-heading {
+    font-family: var(--font-serif); font-size: var(--text-h2); line-height: 1.05;
+    letter-spacing: -0.015em; max-width: 24ch;
+  }
+  .align-center .section-heading { margin-inline: auto; }
+
+  .section-lead {
+    font-family: var(--font-serif); font-size: var(--text-lead); line-height: 1.5;
+    color: var(--color-charcoal); max-width: 48ch; margin-top: 1.25rem;
+  }
+  .tone-ink .section-lead { color: var(--color-mist); }
+  .align-center .section-lead { margin-inline: auto; }
+</style>

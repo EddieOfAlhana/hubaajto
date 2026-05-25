@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* === Huba ajtó brand tokens === */
+@theme {
+  /* Type families — heritage Optima-style serif paired with precise sans for UI */
+  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Palette — restrained, premium, with a single accent */
+  --color-ink:       #0E0F11;   /* near-black, never pure black */
+  --color-charcoal:  #2A2D31;
+  --color-stone:     #6B6F76;
+  --color-mist:      #B7BBC1;
+  --color-paper:     #F6F4EE;   /* warm off-white — heritage paper */
+  --color-cream:     #EEEAE0;
+  --color-canvas:    #FFFFFF;
+
+  /* Hungarian flag — muted variants used as accent only */
+  --color-flag-red:   #B72437;
+  --color-flag-white: #F8F6F0;
+  --color-flag-green: #2F6A41;
+
+  /* Accent — workshop brass for highlights */
+  --color-brass:     #B08A4A;
+  --color-brass-deep:#7A5C2C;
+
+  /* Spacing rhythm */
+  --container-max:   1320px;
+  --container-text:  720px;
+  --container-tight: 560px;
+
+  /* Type scale */
+  --text-display:    clamp(3.4rem, 7vw, 7rem);
+  --text-h1:         clamp(2.4rem, 5vw, 4.5rem);
+  --text-h2:         clamp(1.9rem, 3.4vw, 3rem);
+  --text-h3:         clamp(1.4rem, 2.4vw, 2rem);
+  --text-h4:         1.25rem;
+  --text-lead:       clamp(1.1rem, 1.3vw, 1.25rem);
+  --text-body:       1.0625rem;
+  --text-sm:         0.875rem;
+  --text-xs:         0.75rem;
+
+  /* Letter-spacing */
+  --tracking-wide:   0.16em;
+  --tracking-mid:    0.06em;
+  --tracking-tight: -0.01em;
+
+  /* Animation */
+  --ease-out-soft:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo:   cubic-bezier(0.19, 1, 0.22, 1);
+  --dur-fast:        220ms;
+  --dur:             420ms;
+  --dur-slow:        720ms;
+
+  /* Elevation — minimal, used sparingly */
+  --shadow-soft:    0 1px 2px rgba(14, 15, 17, 0.06), 0 8px 24px rgba(14, 15, 17, 0.05);
+  --shadow-card:    0 1px 1px rgba(14, 15, 17, 0.08), 0 12px 32px rgba(14, 15, 17, 0.08);
+}
+
+/* === Base === */
+@layer base {
+  html { color: var(--color-ink); background: var(--color-paper); font-family: var(--font-sans); font-feature-settings: "ss01", "ss02", "kern"; }
+  body { font-size: var(--text-body); line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: var(--color-ink); color: var(--color-paper); }
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 1.1; letter-spacing: var(--tracking-tight); color: var(--color-ink); }
+  .hu { font-family: var(--font-serif); }
+  .display { font-family: var(--font-serif); font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.02em; }
+  .eyebrow { font-family: var(--font-sans); font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  a { color: inherit; text-decoration: none; }
+  hr { border: 0; height: 1px; background: rgba(14, 15, 17, 0.1); margin: 3rem 0; }
+}
+
+/* === Components === */
+@layer components {
+  .container       { max-width: var(--container-max);  margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+  .container-text  { max-width: var(--container-text); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+  .container-tight { max-width: var(--container-tight); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+
+  .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.95rem 1.5rem;
+         font-family: var(--font-sans); font-size: 0.95rem; letter-spacing: 0.02em; font-weight: 500;
+         border: 1px solid var(--color-ink); transition: all var(--dur) var(--ease-out-soft); cursor: pointer; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--color-ink); color: var(--color-paper); }
+  .btn-primary:hover { background: var(--color-charcoal); }
+  .btn-ghost { background: transparent; color: var(--color-ink); }
+  .btn-ghost:hover { background: var(--color-ink); color: var(--color-paper); }
+  .btn-large { padding: 1.1rem 2rem; font-size: 1rem; }
+
+  .tricolor-strip { display: inline-grid; grid-template-columns: 1fr 1fr 1fr; width: 3rem; height: 2px; }
+  .tricolor-strip > span:nth-child(1) { background: var(--color-flag-red); }
+  .tricolor-strip > span:nth-child(2) { background: var(--color-flag-white); }
+  .tricolor-strip > span:nth-child(3) { background: var(--color-flag-green); }
+
+  .tricolor-bar-vertical { display: inline-grid; grid-template-rows: 1fr 1fr 1fr; width: 3px; height: 2.5rem; }
+  .tricolor-bar-vertical > span:nth-child(1) { background: var(--color-flag-red); }
+  .tricolor-bar-vertical > span:nth-child(2) { background: var(--color-flag-white); }
+  .tricolor-bar-vertical > span:nth-child(3) { background: var(--color-flag-green); }
+
+  .rule { height: 1px; background: rgba(14, 15, 17, 0.12); }
+
+  /* Reveal animation — applied by GSAP on viewport entry */
+  .reveal { opacity: 0; transform: translateY(24px); }
+  .reveal-ready { opacity: 1; transform: none; transition: opacity var(--dur-slow) var(--ease-out-soft), transform var(--dur-slow) var(--ease-out-soft); }
+
+  /* Stagger child reveals */
+  .stagger > * { opacity: 0; transform: translateY(16px); }
+  .stagger-ready > * { opacity: 1; transform: none; }
+}
+
+/* === View Transitions === */
+@layer utilities {
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation-duration: var(--dur-slow);
+    animation-timing-function: var(--ease-out-expo);
+  }
+
+  /* Focus visible — premium subtle */
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}

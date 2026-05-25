@@ -1,0 +1,27 @@
+---
+import { CONTACT } from "../data/site";
+---
+<div class="mobile-cta" aria-hidden="false">
+  <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="mobile-cta-btn mobile-cta-call">
+    <span aria-hidden="true">☏</span> Hívás
+  </a>
+  <a href="/felmeres" class="mobile-cta-btn mobile-cta-quote">
+    Ingyenes felmérés →
+  </a>
+</div>
+
+<style>
+  .mobile-cta {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    background: var(--color-paper); border-top: 1px solid rgba(14,15,17,0.1);
+    box-shadow: 0 -4px 24px rgba(14,15,17,0.06);
+  }
+  @media (min-width: 720px) { .mobile-cta { display: none; } }
+  .mobile-cta-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+    padding: 1rem 0.75rem; font-size: 0.9rem; font-weight: 500;
+  }
+  .mobile-cta-call { color: var(--color-ink); border-right: 1px solid rgba(14,15,17,0.1); }
+  .mobile-cta-quote { background: var(--color-ink); color: var(--color-paper); }
+</style>

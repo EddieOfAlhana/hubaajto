@@ -1,0 +1,54 @@
+---
+import { CONTACT, SLA } from "../data/site";
+interface Props {
+  heading?: string;
+  lead?: string;
+  variant?: "ink" | "paper";
+}
+const {
+  heading = "Foglaljon ingyenes helyszíni felmérést",
+  lead = `Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz. Mintamintával, kötelezettség nélkül.`,
+  variant = "ink",
+} = Astro.props;
+---
+<section class:list={["cta", `cta-${variant}`]}>
+  <div class="container cta-inner">
+    <div class="cta-content reveal">
+      <h2 class="cta-heading">{heading}</h2>
+      <p class="cta-lead">{lead}</p>
+    </div>
+
+    <div class="cta-actions reveal">
+      <a href="/felmeres" class="btn btn-primary btn-large cta-primary">Felmérés foglalása →</a>
+      <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="cta-phone">
+        <span class="cta-phone-label">vagy hívjon</span>
+        <span class="cta-phone-num">{CONTACT.phonePrimary}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta { padding-block: clamp(4rem, 7vw, 6rem); }
+  .cta-ink { background: var(--color-ink); color: var(--color-paper); }
+  .cta-ink .cta-heading { color: var(--color-paper); }
+  .cta-ink .cta-lead, .cta-ink .cta-phone-label { color: var(--color-mist); }
+  .cta-ink .btn-primary { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
+  .cta-ink .btn-primary:hover { background: transparent; color: var(--color-paper); }
+  .cta-ink .cta-phone-num { color: var(--color-paper); }
+  .cta-paper { background: var(--color-cream); color: var(--color-ink); }
+
+  .cta-inner { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+  @media (min-width: 1024px) { .cta-inner { grid-template-columns: 1.4fr 1fr; gap: 4rem; } }
+
+  .cta-heading {
+    font-family: var(--font-serif); font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.05;
+    max-width: 22ch;
+  }
+  .cta-lead { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.4; margin-top: 1rem; max-width: 42ch; }
+
+  .cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+  .cta-phone { display: inline-flex; flex-direction: column; gap: 0.1rem; }
+  .cta-phone-label { font-size: 0.78rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  .cta-phone-num { font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-ink); }
+</style>

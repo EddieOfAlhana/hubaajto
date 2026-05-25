@@ -1,0 +1,74 @@
+---
+interface Props {
+  family?: "modern" | "stilus" | "muemleki";
+  name: string;
+  priceFrom?: string;
+  classBadge?: string;
+  bullets: string[];
+  image: string;
+  imageAlt?: string;
+  href: string;
+  cta?: string;
+}
+const { family = "modern", name, priceFrom, classBadge, bullets, image, imageAlt = "", href, cta = "Részletek" } = Astro.props;
+---
+<article class="product-card reveal" data-family={family}>
+  <a href={href} class="product-card-link">
+    <figure class="product-card-figure">
+      <img src={image} alt={imageAlt} loading="lazy" />
+      {classBadge && <span class="product-card-class">{classBadge}</span>}
+    </figure>
+
+    <div class="product-card-body">
+      <header class="product-card-head">
+        <h3 class="product-card-name">{name}</h3>
+        {priceFrom && <p class="product-card-price">{priceFrom}</p>}
+      </header>
+
+      <ul class="product-card-bullets">
+        {bullets.map(b => <li>{b}</li>)}
+      </ul>
+
+      <span class="product-card-cta">{cta} →</span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .product-card { background: var(--color-paper); border: 1px solid rgba(14,15,17,0.08); }
+  .product-card[data-family="stilus"] { background: var(--color-cream); }
+  .product-card[data-family="muemleki"] { background: var(--color-cream); }
+  .product-card-link {
+    display: flex; flex-direction: column; height: 100%; color: inherit;
+    transition: transform var(--dur) var(--ease-out-soft);
+  }
+  .product-card-link:hover { transform: translateY(-4px); }
+  .product-card-link:hover .product-card-figure img { transform: scale(1.04); }
+
+  .product-card-figure {
+    position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--color-cream);
+  }
+  .product-card-figure img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform var(--dur-slow) var(--ease-out-soft);
+  }
+  .product-card-class {
+    position: absolute; top: 1rem; left: 1rem; background: var(--color-paper);
+    padding: 0.35rem 0.6rem; font-size: 0.72rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-ink);
+  }
+
+  .product-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+  .product-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .product-card-name { font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.15; }
+  .product-card-price { font-size: 0.85rem; color: var(--color-stone); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .product-card-bullets {
+    list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--color-charcoal);
+    display: flex; flex-direction: column; gap: 0.35rem;
+  }
+  .product-card-bullets li { padding-left: 1rem; position: relative; }
+  .product-card-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--color-brass); }
+  .product-card-cta {
+    font-size: 0.85rem; letter-spacing: 0.04em; color: var(--color-ink); margin-top: auto; font-weight: 500;
+  }
+</style>

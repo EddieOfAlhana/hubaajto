@@ -1,0 +1,49 @@
+---
+interface Item { q: string; a: string; }
+interface Props { items: Item[]; schema?: boolean; }
+const { items, schema = true } = Astro.props;
+
+const faqSchema = schema ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map(it => ({
+    "@type": "Question",
+    name: it.q,
+    acceptedAnswer: { "@type": "Answer", text: it.a },
+  })),
+} : null;
+---
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+<div class="faq stagger">
+  {items.map((it, i) => (
+    <details class="faq-item" data-faq-item open={i === 0}>
+      <summary class="faq-q">
+        <span>{it.q}</span>
+        <span class="faq-chev" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a" set:html={it.a} />
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq { display: flex; flex-direction: column; border-top: 1px solid rgba(14,15,17,0.1); }
+  .faq-item { border-bottom: 1px solid rgba(14,15,17,0.1); }
+  .faq-q {
+    list-style: none; cursor: pointer; padding: 1.5rem 0;
+    display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+    font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: var(--color-ink);
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-chev {
+    font-size: 1.4rem; color: var(--color-brass); transition: transform var(--dur) var(--ease-out-soft);
+    line-height: 1;
+  }
+  .faq-item[open] .faq-chev { transform: rotate(45deg); }
+  .faq-a {
+    padding-bottom: 1.5rem; padding-right: 2.5rem;
+    font-size: 1rem; line-height: 1.65; color: var(--color-charcoal); max-width: 60ch;
+  }
+  .faq-a :global(a) { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+</style>

@@ -1,0 +1,47 @@
+---
+const steps = [
+  { n: "01", time: "0 perc",   label: "Konfigurálás vagy hívás",        body: "Indítsa el az ajtótervezőt, vagy hívjon minket a +36 30 740 4458 számon. 60 másodperces elképzelés, kötelezettség nélkül." },
+  { n: "02", time: "2–3 nap",  label: "Ingyenes helyszíni felmérés",    body: "Kistarcsáról 30 perc alatt érünk Önhöz. Mintamintát hozunk. Nincs nyomás, nincs vásárlási kötelezettség." },
+  { n: "03", time: "10–12 nap",label: "Gyártás Kistarcsán",             body: "Saját üzemünkben készítjük el az Ön ajtaját — minden részletet Ön választott. Üvegezés, zár, mintázat, szín." },
+  { n: "04", time: "1 nap",    label: "Beépítés + 15 év garancia",      body: "Régi ajtó bontása, törmelékelszállítás, új ajtó beépítése egy nap alatt. Aznap este már az új ajtó zárja az otthonát." },
+];
+---
+<ol class="process stagger">
+  {steps.map((s) => (
+    <li class="process-step">
+      <div class="process-step-meta">
+        <span class="process-step-n">{s.n}</span>
+        <span class="process-step-time">{s.time}</span>
+      </div>
+      <h3 class="process-step-label">{s.label}</h3>
+      <p class="process-step-body">{s.body}</p>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .process {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 1px; background: rgba(14,15,17,0.1);
+    border-block: 1px solid rgba(14,15,17,0.1);
+  }
+  @media (min-width: 720px) { .process { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .process { grid-template-columns: repeat(4, 1fr); } }
+
+  .process-step {
+    background: var(--color-paper); padding: 2rem 1.5rem; position: relative;
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  .process-step-meta { display: flex; align-items: baseline; justify-content: space-between; }
+  .process-step-n {
+    font-family: var(--font-serif); font-size: 2.5rem; line-height: 1; color: var(--color-brass);
+  }
+  .process-step-time {
+    font-size: 0.75rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .process-step-label {
+    font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.2; margin-top: 0.5rem;
+  }
+  .process-step-body { font-size: 0.95rem; line-height: 1.55; color: var(--color-charcoal); }
+</style>

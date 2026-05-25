@@ -1,0 +1,72 @@
+---
+interface Props {
+  before: string;
+  after: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+  caption?: string;
+  initial?: number;
+}
+const { before, after, beforeAlt = "Régi ajtó", afterAlt = "Új Huba ajtó", caption, initial = 50 } = Astro.props;
+const id = `ba-${Math.random().toString(36).slice(2, 8)}`;
+---
+<figure class="ba-wrap reveal">
+  <div class="ba-frame" data-ba-frame id={id} style={`--ba-pos: ${initial}%`}>
+    <img class="ba-after" src={after} alt={afterAlt} loading="lazy" />
+    <div class="ba-before-clip" aria-hidden="true">
+      <img class="ba-before" src={before} alt={beforeAlt} loading="lazy" />
+    </div>
+    <input class="ba-range" type="range" min="0" max="100" value={initial} aria-label="Előtte / utána csúszka" />
+    <span class="ba-divider" aria-hidden="true">
+      <span class="ba-divider-grip" aria-hidden="true"></span>
+    </span>
+    <span class="ba-label ba-label-before">Előtte</span>
+    <span class="ba-label ba-label-after">Utána</span>
+  </div>
+  {caption && <figcaption class="ba-caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  .ba-wrap { margin: 0; }
+  .ba-frame {
+    position: relative; aspect-ratio: 16/10; overflow: hidden;
+    background: var(--color-cream);
+  }
+  .ba-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ba-before-clip { position: absolute; inset: 0; width: var(--ba-pos); overflow: hidden; }
+  .ba-before-clip img { width: calc(100% * (100 / var(--ba-pos-num, 50))); max-width: none; }
+  .ba-range {
+    position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 3;
+  }
+  .ba-divider {
+    position: absolute; top: 0; bottom: 0; left: var(--ba-pos); width: 2px;
+    background: var(--color-paper); transform: translateX(-1px); pointer-events: none;
+  }
+  .ba-divider-grip {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 40px; height: 40px; background: var(--color-paper); color: var(--color-ink);
+    border-radius: 999px; display: grid; place-items: center;
+    box-shadow: 0 6px 20px rgba(14,15,17,0.25);
+  }
+  .ba-divider-grip::before { content: "⇆"; font-size: 1rem; }
+
+  .ba-label {
+    position: absolute; top: 1rem; padding: 0.4rem 0.7rem; background: rgba(14,15,17,0.7);
+    color: var(--color-paper); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+    pointer-events: none;
+  }
+  .ba-label-before { left: 1rem; }
+  .ba-label-after { right: 1rem; }
+
+  .ba-caption { margin-top: 0.75rem; font-size: 0.85rem; color: var(--color-stone); letter-spacing: 0.02em; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-ba-frame]").forEach((frame) => {
+    const range = frame.querySelector<HTMLInputElement>(".ba-range");
+    if (!range) return;
+    const update = () => frame.style.setProperty("--ba-pos", `${range.value}%`);
+    range.addEventListener("input", update);
+    update();
+  });
+</script>

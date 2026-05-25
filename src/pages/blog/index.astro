@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => data.publishDate <= new Date()))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const featured = posts.find(p => p.data.cornerstone) ?? posts[0];
+const rest = posts.filter(p => p.id !== featured?.id);
+---
+<BaseLayout
+  title="Blog — Stílus, műemléki és modern biztonsági ajtó tudástár"
+  description="Mit kell tudni a műemléki engedélyezésről, a MABISZ minősítésről, a betörésvédelmi osztályokról, és arról, hogyan zajlik a Huba ajtó beépítése. Gyakorlati útmutatók Budapesten és Pest megyében."
+>
+  <Section
+    eyebrow="Tudástár"
+    heading="Blog"
+    lead="Részletes útmutatók biztonsági ajtó cseréhez, műemléki engedélyezéshez és prémium családi ház beépítésekhez."
+  >
+    {featured && (
+      <div class="blog-featured">
+        <BlogCard post={featured} featured />
+      </div>
+    )}
+
+    <div class="blog-grid">
+      {rest.map(post => <BlogCard post={post} />)}
+    </div>
+
+    {posts.length === 0 && (
+      <p class="blog-empty">Hamarosan megjelenő tartalmaink…</p>
+    )}
+  </Section>
+
+  <ContactCTA
+    heading="A blog még csak a kezdet."
+    lead="Beszéljünk konkrét ajtóról, konkrét lakásról. Ingyenes felmérés Budapesten és Pest megyében."
+  />
+</BaseLayout>
+
+<style>
+  .blog-featured { margin-bottom: 2.5rem; }
+  .blog-featured :global(.blog-card.is-featured .blog-card-link) { display: grid; grid-template-columns: 1fr; }
+  @media (min-width: 900px) {
+    .blog-featured :global(.blog-card.is-featured .blog-card-link) { grid-template-columns: 1.2fr 1fr; }
+    .blog-featured :global(.blog-card.is-featured .blog-card-figure) { aspect-ratio: 16/12; }
+    .blog-featured :global(.blog-card.is-featured .blog-card-title) { font-size: 2rem; line-height: 1.1; }
+  }
+  .blog-grid {
+    display: grid; gap: 1.5rem; grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1080px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+  .blog-empty { text-align: center; padding: 3rem; color: var(--color-stone); }
+</style>

@@ -1,0 +1,68 @@
+---
+interface Testimonial {
+  quote: string;
+  name: string;
+  district: string;
+  product?: string;
+  image?: string;
+}
+interface Props {
+  rating?: { value: number; count: number; source: string };
+  testimonials: Testimonial[];
+}
+const { rating, testimonials } = Astro.props;
+---
+<div class="social-proof">
+  {rating && (
+    <div class="sp-rating reveal">
+      <div class="sp-rating-stars" aria-label={`${rating.value} csillag ${rating.count} értékelésből`}>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <span class:list={["sp-star", { "is-on": i < Math.round(rating.value) }]} aria-hidden="true">★</span>
+        ))}
+      </div>
+      <div class="sp-rating-meta">
+        <span class="sp-rating-value">{rating.value.toFixed(1)}</span>
+        <span class="sp-rating-count">{rating.count} értékelés a {rating.source}-on</span>
+      </div>
+    </div>
+  )}
+
+  <ul class="sp-grid stagger">
+    {testimonials.map(t => (
+      <li class="sp-card">
+        <blockquote class="sp-quote">„{t.quote}"</blockquote>
+        <footer class="sp-cite">
+          <span class="sp-name">{t.name}</span>
+          <span class="sp-district">{t.district}</span>
+          {t.product && <span class="sp-product">{t.product}</span>}
+        </footer>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .social-proof { display: flex; flex-direction: column; gap: 2.5rem; }
+
+  .sp-rating { display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; align-self: center; }
+  .sp-rating-stars { display: inline-flex; gap: 0.15rem; font-size: 1.4rem; }
+  .sp-star { color: rgba(14,15,17,0.15); }
+  .sp-star.is-on { color: var(--color-brass); }
+  .sp-rating-meta { display: flex; align-items: baseline; gap: 0.65rem; }
+  .sp-rating-value { font-family: var(--font-serif); font-size: 1.4rem; }
+  .sp-rating-count { font-size: 0.82rem; color: var(--color-stone); }
+
+  .sp-grid {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 720px) { .sp-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .sp-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .sp-card { background: var(--color-paper); border: 1px solid rgba(14,15,17,0.08); padding: 1.75rem 1.5rem; }
+  .sp-quote { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.5; color: var(--color-ink); margin: 0 0 1.25rem; quotes: none; }
+  .sp-cite { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.85rem; }
+  .sp-name { font-weight: 500; color: var(--color-ink); }
+  .sp-district { color: var(--color-stone); }
+  .sp-product { color: var(--color-brass-deep); font-size: 0.78rem; letter-spacing: 0.02em; margin-top: 0.25rem; }
+</style>

@@ -1,0 +1,293 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
+import ProductCard from "../components/ProductCard.astro";
+import BeforeAfterSlider from "../components/BeforeAfterSlider.astro";
+import SocialProof from "../components/SocialProof.astro";
+import SpecCompareTable from "../components/SpecCompareTable.astro";
+import EngedelyezesiCsomag from "../components/EngedelyezesiCsomag.astro";
+import LockBrandWall from "../components/LockBrandWall.astro";
+import ServiceArea from "../components/ServiceArea.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import Stat from "../components/Stat.astro";
+import { SITE, SLA } from "../data/site";
+
+const products = [
+  {
+    family: "stilus" as const,
+    name: "Korhű biztonsági ajtó",
+    priceFrom: "Egyedi árajánlat",
+    classBadge: "Műemléki",
+    bullets: [
+      "Kazettás, betétes, festett kivitel",
+      "Az eredeti ajtó alapján rekonstruálva",
+      "Műemléki engedélyezést mi intézzük",
+    ],
+    image: "/assets/photos/hero/period-yellow.jpg",
+    imageAlt: "Korhű biztonsági ajtó polgári lakásban",
+    href: "/stilus-biztonsagi-ajto",
+  },
+  {
+    family: "modern" as const,
+    name: "Modern Standard",
+    priceFrom: "330 000 Ft-tól",
+    classBadge: "MABISZ 2.",
+    bullets: [
+      "Hőhídmentes acél zártszelvény tok",
+      "Üveggyapot bélelés, körbefutó tömítés",
+      "35+ fa minta, 15 mart minta közül",
+    ],
+    image: "/assets/photos/hero/modern-white.jpg",
+    imageAlt: "Modern fehér biztonsági ajtó",
+    href: "/biztonsagi-ajto",
+  },
+  {
+    family: "modern" as const,
+    name: "Premium családi ház",
+    priceFrom: "800 000 – 1 800 000 Ft",
+    classBadge: "RC3 / MABISZ 3.",
+    bullets: [
+      "Új építésű és felújított házakhoz",
+      "ACTUAL Fenster ablakcsomag mellé",
+      "Architect-grade kivitelben",
+    ],
+    image: "/assets/photos/hero/modern-anthracite.jpg",
+    imageAlt: "Prémium modern bejárati ajtó családi házban",
+    href: "/biztonsagi-ajto/premium",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "A felmérőtök fél óra alatt értett mindent, ami az ablakcserénk műemléki engedélyét megakasztotta. Ajtót és engedélyezést egyben kaptuk.",
+    name: "Dr. Kovács Á.",
+    district: "Budapest, V. kerület",
+    product: "Korhű biztonsági ajtó · 2024",
+  },
+  {
+    quote: "Modern panelra is a saját műhelyetekben gyártott ajtót kaptuk — nem importáruda. A különbség 10 év múlva is látszik majd.",
+    name: "Szabó M.",
+    district: "Budapest, XV. kerület",
+    product: "Huba Modern Standard · 2023",
+  },
+  {
+    quote: "Egy hét alatt felmérés, három hét alatt beépítés egy mogyoródi új építésű családi házba. Ablakcsere is ugyanazon a felmérésen.",
+    name: "Nagy Cs.",
+    district: "Mogyoród",
+    product: "Premium családi ház + ACTUAL csomag · 2025",
+  },
+];
+
+const faqItems = [
+  { q: "Mennyibe kerül egy biztonsági ajtó?",
+    a: `<p>A modern range belépőszintje <strong>330 000 Ft</strong>, a prémium kivitel jellemzően 800 000 – 1 800 000 Ft. A korhű / műemléki kivitel egyedi árajánlat alapján készül. A pontos ár a helyszíni felmérés után válik véglegessé. <a href="/arak">Részletes árlista →</a></p>` },
+  { q: "Mennyi időbe telik a beépítés?",
+    a: `<p>Modern ajtó esetén ${SLA.surveyDays} alatt helyszíni felmérés, ${SLA.manufactureDays} alatt gyártás, ${SLA.installDays} alatt beépítés. Műemléki engedélyezéssel együtt ${SLA.permitTotal}.</p>` },
+  { q: "Műemléki / örökségvédelmi környezetben mit lehet?",
+    a: `<p>Igen, készítünk az eredeti ajtó alapján rekonstruált korhű, kazettás, festett kivitelben — az engedélyezéshez szükséges teljes műszaki dokumentációval. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
+  { q: "Mi a különbség a betörésvédelmi osztályok (RC2–RC6) között?",
+    a: `<p>RC2: 3 perc · RC3: 5 perc · RC4: 10 perc · RC5: 15 perc · RC6: 20 perc — ennyi ideig ellenáll szakszerű betörési kísérletnek. Lakásra általában RC2–RC3, kiemelt kockázatra RC4-RC5.</p>` },
+  { q: "Mit fedez a 15 éves szerkezeti garancia?",
+    a: `<p>Az acél tokrendszer és nyílórész szerkezeti épségét teljes körűen 15 évre garantáljuk. Zárszerkezetekre 18 hónap, biztonsági ajtóra 1 év teljes körű garancia. <a href="/garancia">Részletes garancia →</a></p>` },
+  { q: "Milyen zárakat építünk be?",
+    a: `<p>Mottura, Abus, Mul-T-Lock, Iseo és Cisa — Ön a helyszíni felmérés után választhat. Mindegyik prémium európai gyártó, márkás cilinderekkel és pótalkatrész-elérhetőséggel.</p>` },
+  { q: "Miben jobb egy Huba ajtó, mint egy 150 000 Ft-os katalógusajtó?",
+    a: `<p>Acél zártszelvény tok (vékony lemez helyett), megerősített zárlemez, MABISZ 2–5 osztály választhatóság, márkás európai zárszerkezetek, 15 év szerkezeti garancia, 10 év múlva is rendelhető pótalkatrész. <a href="#miben-tobb">Részletes spec-összevetés →</a></p>` },
+  { q: "Lehet részletfizetés?",
+    a: `<p>Igen — Cofidis áruhitelen keresztül, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 330 000 Ft / 10 hó ≈ 33 000 Ft / hó. <a href="/reszletfizetes">Részletfizetés →</a></p>` },
+];
+---
+<BaseLayout
+  title={`${SITE.brand} — Stílus, műemléki és modern biztonsági ajtó saját gyártásból`}
+  description={`Korhű, kazettás biztonsági ajtótól a modern panellakásig — saját gyártás Kistarcsán. MABISZ-minősített ${SITE.mabiszSince} óta, ${SITE.warrantyYears} év szerkezeti garancia, ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól. Ingyenes helyszíni felmérés Budapesten és Pest megyében.`}
+>
+  <Hero
+    eyebrow={`Saját gyártás Kistarcsán · ${SITE.founded} óta`}
+    heading="Századfordulós lakástól<br/>a modern családi házig.<br/><em>Egy gyártóból.</em>"
+    lead="Saját üzemünkben készítjük minden ajtót — műemléki engedélyhez korhű kivitelben, modern lakásokhoz acél biztonsági szerkezettel. Mindegyikben MABISZ-minősítés és 15 év szerkezeti garancia."
+    pillars={[
+      "Saját gyártás",
+      `MABISZ ${SITE.mabiszSince} óta`,
+      "Műemléki környezetben is",
+      `${SITE.warrantyYears} év garancia`,
+      `${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`,
+    ]}
+    image="/assets/photos/hero/period-yellow.jpg"
+    imageAlt="Korhű, kovácsoltvas rácsokkal díszített biztonsági ajtó egy budapesti polgári lakás stílusában"
+    imageCaption="Budapest, I. kerület · 2024"
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Vélemények"
+    heading="Magyar tulajdonosoktól, magyar otthonokban."
+    lead="Több mint 20 éve dolgozunk Budapest és Pest megye tulajdonosaiért — műemléki belvárostól az agglomeráció prémium családi házaiig."
+  >
+    <SocialProof
+      rating={{ value: 4.8, count: 127, source: "Google" }}
+      testimonials={testimonials}
+    />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Termékcsaládok"
+    heading="A teljes spektrum — egyetlen acél biztonsági magon."
+    lead="Stílus és modern kivitel ugyanazon a MABISZ-minősített szerkezeti alapon. A különbség a látszó borításban és az engedélyezési csomagban van."
+  >
+    <div class="product-grid stagger">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+    <p class="product-note">
+      Minden Huba ajtó ugyanazon az acél biztonsági szerkezeten alapul. A különbség a látszó borítás és a kivitelezés.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Előtte / utána"
+    heading="Egy ajtócsere, ami az egész lépcsőházat átalakítja."
+    lead="Régi vasajtótól vagy elavult acélajtótól a korhű, mégis biztonsági szintű új ajtóig — ugyanaz a nyílás, más évszázad."
+  >
+    <BeforeAfterSlider
+      before="/assets/photos/hero/before-old-door.jpg"
+      after="/assets/photos/hero/period-yellow.jpg"
+      caption="Budapest, V. kerület — 1928-as polgári ház, eredeti ajtó alapján rekonstruálva."
+    />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Hogyan dolgozunk"
+    heading="Egy felmérés. Négy lépés. Tizenkét nap."
+    lead="A modern range a megkereséstől a beépített ajtóig 12 napon belül. Műemléki engedélyezéssel 4–6 hónap, lépésről lépésre."
+  >
+    <ProcessSteps />
+  </Section>
+
+  <section id="engedelyezesi-csomag" class="ec-section">
+    <div class="container">
+      <header class="ec-section-header reveal">
+        <p class="eyebrow">
+          <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
+          Műemléki engedélyezési csomag
+        </p>
+        <h2 class="ec-section-heading">Mi intézzük az engedélyt is.<br/>Ön egy ajtót kap — mi egy döntést.</h2>
+        <p class="ec-section-lead">
+          A budapesti műemléki ajtócsere 4–6 hónapos, 3-hatóságos folyamat. A védettségi
+          ellenőrzéstől a befejezési bejelentésig mindent vállalunk — építész tervezővel és
+          műemléki szakértői névjegyzékbe vett partnerrel együttműködve.
+        </p>
+      </header>
+      <EngedelyezesiCsomag />
+      <div class="ec-section-cta reveal">
+        <a href="/engedelyezesi-csomag" class="btn btn-primary btn-large">Engedélyezési csomag részletei →</a>
+        <a href="/orokségvedelmi-engedely" class="btn btn-ghost btn-large">Olvassa el az engedélyezési útmutatót</a>
+      </div>
+    </div>
+  </section>
+
+  <Section
+    tone="cream"
+    eyebrow="Ajtótervező"
+    heading="Tervezze meg saját ajtaját — 60 másodperc alatt."
+    lead="Külső borítás, mintázat, szín, zár — vizsgálja végig a 35+ fa és 15 mart mintát, majd kérje az árajánlatot."
+    align="center"
+  >
+    <div class="configurator-banner reveal">
+      <a href="/ajtotervezo" class="btn btn-primary btn-large">Ajtótervező indítása →</a>
+      <p class="configurator-note">
+        Stílus- vagy műemléki ajtót keres? <a href="/felmeres">Itt jelezzen felmérést</a> — egyedi tervezést a felmérőnk irányít.
+      </p>
+    </div>
+  </Section>
+
+  <Section
+    tone="ink"
+    eyebrow="Miben több ennyivel"
+    heading="Mire fizet rá egy katalógusajtóval — és mire nem."
+    lead="Defenzív összevetés objektív specifikációkon. Sem ország, sem konkrét márka — csak mérhető tulajdonság."
+  >
+    <div id="miben-tobb">
+      <SpecCompareTable />
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Saját gyártás · Kistarcsa"
+    heading="A műhely, ahol az Ön ajtaja készül."
+    lead={`2143 Kistarcsa, Nagytarcsai út 6. Itt vágjuk az acél zártszelvényt, itt hegesztjük a tokot, itt készítjük a kazettás faburkolatot. ${SITE.founded} óta — három generáció ugyanazon a címen.`}
+  >
+    <div class="workshop-grid">
+      <figure class="workshop-figure reveal">
+        <img src="/assets/photos/hero/workshop.jpg" alt="A Huba ajtó műhelye Kistarcsán" loading="lazy" />
+      </figure>
+      <div class="workshop-stats stagger">
+        <Stat value={`${new Date().getFullYear() - SITE.founded}+`} label="év dokumentált beépítés" sub={`${SITE.founded} óta`} />
+        <Stat value="50+" label="fa és mart mintázat" sub="alapáron választható" />
+        <Stat value="5" label="prémium zármárka" sub="Mottura · Abus · Mul-T-Lock · Iseo · Cisa" />
+        <Stat value={`${SITE.warrantyYears}`} label="év szerkezeti garancia" sub="a piac leghosszabb vállalása" />
+      </div>
+    </div>
+    <LockBrandWall />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Szolgáltatási terület"
+    heading="Belvárostól az agglomerációig — a hozzánk illő helyeken."
+    lead="A műemléki belvárosi munkáktól a Pest megyei prémium családi házakig. Kistarcsáról 30 perc alatt felmérésre érünk."
+  >
+    <ServiceArea />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A leggyakoribb kérdések."
+    lead="A felmérés előtt jellemzően ezek merülnek fel. Ha nem találja a választ, hívjon minket bizalommal."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA />
+  <CookieBanner />
+</BaseLayout>
+
+<style>
+  .product-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 700px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+  .product-note {
+    margin-top: 2rem; font-style: italic; color: var(--color-charcoal);
+    text-align: center; max-width: 60ch; margin-inline: auto;
+  }
+
+  .ec-section { padding-block: clamp(4rem, 7vw, 6.5rem); background: var(--color-paper); }
+  .ec-section-header { max-width: 56rem; margin-bottom: 3rem; }
+  .ec-section-heading { font-family: var(--font-serif); font-size: var(--text-h2); line-height: 1.05; letter-spacing: -0.015em; max-width: 28ch; margin-top: 1rem; }
+  .ec-section-lead { font-family: var(--font-serif); font-size: var(--text-lead); line-height: 1.5; color: var(--color-charcoal); max-width: 56ch; margin-top: 1.25rem; }
+  .ec-section-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+
+  .configurator-banner { display: flex; flex-direction: column; gap: 1rem; align-items: center; max-width: 36rem; margin-inline: auto; }
+  .configurator-note { font-size: 0.92rem; color: var(--color-charcoal); }
+  .configurator-note a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+  .workshop-grid {
+    display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3rem;
+  }
+  @media (min-width: 900px) { .workshop-grid { grid-template-columns: 1.2fr 1fr; gap: 4rem; } }
+  .workshop-figure { margin: 0; aspect-ratio: 4/3; background: var(--color-cream); }
+  .workshop-figure img { width: 100%; height: 100%; object-fit: cover; }
+  .workshop-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+</style>

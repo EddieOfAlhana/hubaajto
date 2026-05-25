@@ -1,0 +1,39 @@
+---
+import { SITE, SLA } from "../data/site";
+
+const badges = [
+  { label: "MABISZ-minősített", sub: `${SITE.mabiszSince} óta` },
+  { label: "Műemléki környezetben is", sub: "engedélyezve" },
+  { label: `${SITE.warrantyYears} év`, sub: "szerkezeti garancia" },
+  { label: "Saját gyártás", sub: "Kistarcsán" },
+  { label: `${SLA.surveyDays} alatt`, sub: "helyszíni felmérés" },
+];
+---
+<div class="trust-strip stagger">
+  {badges.map(b => (
+    <div class="trust-badge">
+      <p class="trust-badge-label">{b.label}</p>
+      <p class="trust-badge-sub">{b.sub}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .trust-strip {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 720px) { .trust-strip { grid-template-columns: repeat(5, 1fr); } }
+  .trust-badge {
+    background: var(--color-paper); padding: 1.5rem 1.25rem; text-align: center;
+  }
+  .trust-badge-label {
+    font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .trust-badge-sub {
+    font-size: 0.78rem; letter-spacing: 0.04em; color: var(--color-stone);
+    margin-top: 0.25rem;
+  }
+</style>
