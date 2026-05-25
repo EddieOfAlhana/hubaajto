@@ -1,0 +1,265 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE } from "../data/site";
+
+const priceFamilies = [
+  {
+    family: "Modern Standard",
+    badge: "MABISZ 2. · RC2",
+    summary: "Belépőszint, panel-lakás és társasházi bejárat. Standard panelnyílásméretben.",
+    rows: [
+      { item: "Modern Standard belépő ár", price: "330 000 Ft-tól" },
+      { item: "Mart vagy fa minta felár (alapcsomagban)", price: "0 Ft" },
+      { item: "RAL színskála (alapcsomagban)", price: "0 Ft" },
+      { item: "Üvegezett nyílórész", price: "+35 000 – 65 000 Ft" },
+      { item: "Második acéllemez (MABISZ 3.-ra emelés)", price: "+40 000 – 70 000 Ft" },
+      { item: "Mottura / Mul-T-Lock cilinder (Abus helyett)", price: "+25 000 – 60 000 Ft" },
+      { item: "Kódkártyás zárrendszer", price: "+15 000 – 30 000 Ft" },
+    ],
+    note: "Tipikus végösszeg konfigurált Standard ajtóra: 350 000 – 480 000 Ft bruttó.",
+    cta: { label: "Standard részletei", href: "/biztonsagi-ajto/standard" },
+  },
+  {
+    family: "Modern Premium / RC3",
+    badge: "MABISZ 3. · RC3",
+    summary: "Új építésű és felújított családi házakra, agglomerációba (Mogyoród, Csömör, Telki, Budakeszi).",
+    rows: [
+      { item: "Modern Premium belépő ár", price: "480 000 Ft-tól" },
+      { item: "Premium teljes konfiguráció (jellemző sáv)", price: "720 000 – 1 200 000 Ft" },
+      { item: "Premium maximális kivitel (RC4-szintű)", price: "1 200 000 – 1 800 000 Ft" },
+      { item: "ACTUAL Fenster ablakcsomag mellé · 8–12% kombinált kedvezmény", price: "Csomagtól függő" },
+    ],
+    note: "A Premium szint méretre szabva készül — nincs „panel-szabvány”. Az ár a méret, a borítás és a zárrendszer függvénye.",
+    cta: { label: "Premium részletei", href: "/biztonsagi-ajto/premium" },
+  },
+  {
+    family: "Modern Mart Design",
+    badge: "MABISZ 3.",
+    summary: "Egyedi marási mintázatok — 50+ alapminta közül.",
+    rows: [
+      { item: "Mart Design belépő ár", price: "420 000 Ft-tól" },
+      { item: "Mart Design teljes konfiguráció", price: "480 000 – 680 000 Ft" },
+      { item: "50+ alapminta, alapáron", price: "0 Ft" },
+      { item: "Egyedi marási minta (saját rajz alapján)", price: "+80 000 – 250 000 Ft" },
+    ],
+    note: "A Mart Design a klasszikus marásokat modern szerkezettel ötvözi — gyakran választott megoldás polgári lakás külső, modern belső kombinációjához.",
+    cta: { label: "Ajtótervező indítása", href: "/ajtotervezo" },
+  },
+  {
+    family: "Modern Fa-design",
+    badge: "MABISZ 3.",
+    summary: "Természetes fa borítás — 35 alapminta (bükk, cseresznye, fenyő, mahagóni, tölgy).",
+    rows: [
+      { item: "Fa-design belépő ár", price: "480 000 Ft-tól" },
+      { item: "Fa-design teljes konfiguráció", price: "550 000 – 780 000 Ft" },
+      { item: "35 alapminta × 7 lakk", price: "0 Ft" },
+      { item: "Eltérő külső / belső fa borítás", price: "0 Ft (felár nélkül)" },
+      { item: "Egyedi rendelés (nem alapminta)", price: "+90 000 – 280 000 Ft" },
+    ],
+    note: "A két ajtófelület eltérő fa-borítása alapáron biztosítva — pl. külső dió, belső bükk.",
+    cta: { label: "Ajtótervező indítása", href: "/ajtotervezo" },
+  },
+  {
+    family: "Stílus / Klasszikus",
+    badge: "Korhű · RC2–RC3",
+    summary: "Polgári lakás stílusban — kazettás, betétes, festett kivitel. Műemléki engedélyezés nélkül.",
+    rows: [
+      { item: "Stílus / Klasszikus belépő ár", price: "Egyedi árajánlat" },
+      { item: "Tipikus sáv polgári lakásra", price: "800 000 – 1 500 000 Ft" },
+      { item: "Egyedi profilozás, mintázat", price: "Felmérés-függő" },
+    ],
+    note: "A klasszikus kivitelt műemléki környezetben nem álló budapesti polgári lakásokba ajánljuk — ahol az esztétikai eredetiség nem hatósági kötelezettség, hanem a tulajdonos választása.",
+    cta: { label: "Stílus ajtók részletei", href: "/stilus-biztonsagi-ajto" },
+  },
+  {
+    family: "Műemléki",
+    badge: "Korhű · műemléki engedéllyel",
+    summary: "Műemléki környezetben, helyi védettség alatt — örökségvédelmi engedélyezéssel.",
+    rows: [
+      { item: "Műemléki ajtó (terméke)", price: "Egyedi árajánlat" },
+      { item: "Tipikus sáv műemléki polgári lakásra", price: "1 100 000 – 2 500 000 Ft" },
+      { item: "Engedélyezési csomag (külön költség)", price: "Lásd /engedelyezesi-csomag" },
+      { item: "Építész tervezési díj (engedélyezéshez)", price: "150 000 – 550 000 Ft" },
+      { item: "Építéstörténeti dokumentáció", price: "150 000 – 600 000 Ft" },
+      { item: "Hatósági illetékek", price: "0 Ft (illetékmentes)" },
+    ],
+    note: "A műemléki munka teljes projekt-költsége (engedélyezés + ajtó + beépítés) jellemzően 1,1–3,8 millió Ft. A teljes folyamatot a Huba koordinálja — Ön egy számlát, egy projektvezetőt kap.",
+    cta: { label: "Engedélyezési csomag részletei", href: "/engedelyezesi-csomag" },
+  },
+];
+
+const additionalCosts = [
+  { item: "Beépítés (panel-lakás, standard)", price: "80 000 – 120 000 Ft" },
+  { item: "Beépítés (családi ház, méretre szabott tok)", price: "120 000 – 250 000 Ft" },
+  { item: "Beépítés (új építésű, falazatba épített tokkal)", price: "80 000 – 150 000 Ft" },
+  { item: "Régi ajtó bontása", price: "Benne van" },
+  { item: "Törmelékelszállítás", price: "Benne van" },
+  { item: "Helyszíni felmérés", price: "Ingyenes" },
+  { item: "Árajánlat-érvényesség", price: "30 nap" },
+];
+
+const faqItems = [
+  { q: "Miért nem közlitek a 'mind beleértve' fix árat?",
+    a: `<p>Mert ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-nál sok minden lehet a meglévő nyílás méretétől a választott zárrendszerig. A <strong>fix árajánlatot a helyszíni felmérés után 48 órán belül</strong> küldjük meg — 30 napra rögzítve. A felmérés ingyenes és nem kötelezi vásárlásra.</p>` },
+  { q: "Mit jelent a 'tipikus végösszeg'?",
+    a: `<p>A felmérőnk az utóbbi 6 hónap megrendeléseit elemezve adja meg a kategóriákra jellemző valós végösszeg-sávot. Ez nem 'minimum' és nem 'maximum' — hanem az, ahol a megrendelők 80%-a landol. A pontos szám a helyszíni felmérés után válik véglegessé.</p>` },
+  { q: "Az ÁFA-t tartalmazzák az árak?",
+    a: `<p>Igen — <strong>minden ár bruttó, 27% ÁFA-t tartalmaz</strong>. Cégnek nettó + 27% ÁFA bontásban számlázunk; magánszemélynek a bruttó összeg a fizetendő.</p>` },
+  { q: "Mi van benne, és mi a felár?",
+    a: `<p>A belépő árban benne van: az ajtó (tok + nyílórész), a választott borítás (alapminta), a választott RAL szín (alapfelár nélkül), az alap zárrendszer, a kilincsgarnitúra, az 5 alapkulcs, a beépítés, a régi ajtó bontása, és a törmelékelszállítás. Felár: különleges méret, üvegezés, dupla acéllemez, prémium cilinder, kódkártyás rendszer, egyedi minta.</p>` },
+  { q: "Cofidis áruhitel hogyan érinti az árat?",
+    a: `<p>Sehogy — a 0% THM Cofidis áruhitel mellett <strong>ugyanannyit fizet</strong>, mint készpénzben. A kamatkockázatot a Cofidis viseli, a Huba a kampánykeretért nem számít fel külön díjat. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
+  { q: "Kombinált csomag — több ajtó vagy ajtó + ablak — kedvezmény?",
+    a: `<p>Igen — <strong>5–12% kombinált kedvezményt</strong> tudunk adni, ha egy projektben több ajtó van (pl. családi ház 3 ajtaja), vagy ha az ACTUAL Fenster ablakcsomaggal kombinálva rendeli. A kedvezmény a megrendelés komplexitásától függ; a felmérőnk konkrét számokat ad.</p>` },
+];
+---
+<BaseLayout
+  title="Árak — Transzparens árlista minden családra"
+  description={`A teljes Huba ajtó árlista: Modern Standard 330 000 Ft-tól, Premium 800 000 – 1 800 000 Ft, Mart Design 420 000 – 680 000 Ft, Fa-design 480 000 – 780 000 Ft, Stílus és műemléki egyedi árajánlat. Az árak a 27% ÁFA-t tartalmazzák.`}
+>
+  <Hero
+    eyebrow="Transzparens árlista · 27% ÁFA-t tartalmaz"
+    heading={`<em>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</em> 2 500 000 Ft-ig —<br/>minden kategória, fix kategorizálással.`}
+    lead="A Huba ajtó-piacon az árak jelentős részét a versenytársak elrejtik. Mi azt választottuk, hogy a kategóriák szerinti sávokat nyíltan közöljük — a fix árajánlat a felmérés után, 48 órán belül érkezik."
+    pillars={[
+      `Modern Standard: ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`,
+      "Premium: 800k – 1,8M Ft",
+      "Mart / Fa-design: 420k – 780k Ft",
+      "Műemléki: egyedi árajánlat",
+      "Ingyenes felmérés",
+    ]}
+    image="/assets/photos/hero/modern-anthracite.jpg"
+    imageAlt="Antracit modern Huba biztonsági ajtó — a transzparens árlista egyik kategóriája"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Részletfizetés részletei", href: "/reszletfizetes" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  {priceFamilies.map((fam, i) => (
+    <Section
+      tone={i % 2 === 0 ? "paper" : "cream"}
+      eyebrow={fam.badge}
+      heading={fam.family}
+      lead={fam.summary}
+    >
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Tétel</th>
+            <th scope="col">Ár (bruttó)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {fam.rows.map(r => (
+            <tr>
+              <th scope="row">{r.item}</th>
+              <td class="price">{r.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="price-note">{fam.note}</p>
+      <div class="price-cta">
+        <a href={fam.cta.href} class="btn btn-primary">{fam.cta.label} →</a>
+      </div>
+    </Section>
+  ))}
+
+  <Section
+    tone="paper"
+    eyebrow="Beépítés és kiegészítő költségek"
+    heading="Mi van benne, mi az extra?"
+    lead="A beépítés a magyar piacon gyakran 'plusz tétel' — a Huba a teljes folyamatot egy árajánlatban közli. A bontás és a törmelékelszállítás minden esetben benne van."
+  >
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th scope="col">Tétel</th>
+          <th scope="col">Ár (bruttó)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {additionalCosts.map(c => (
+          <tr>
+            <th scope="row">{c.item}</th>
+            <td class="price">{c.price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="price-note">
+      A beépítés a meglévő nyílás állapotától függ — sérült vakolat, korhadt fa tok, vagy átalakítandó méret esetén magasabb az ár. A felmérőnk a helyszínen ezt is felméri, és a fix árajánlatban szerepel.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Jogi tájékoztató"
+    heading="Az árakról — kötelező közlés"
+  >
+    <div class="legal-content">
+      <ul class="legal-list">
+        <li><strong>Az árak a 27% ÁFA-t tartalmazzák</strong> (a 2007. évi CXXVII. tv. szerinti általános forgalmi adó). Magánszemélynek ez a fizetendő bruttó összeg; cégnek nettó + 27% ÁFA bontásban számlázunk.</li>
+        <li>A közölt árak <strong>tájékoztató jellegűek</strong> — a fix árajánlat a helyszíni felmérés után 48 órán belül érkezik, írásban, 30 napra rögzítve.</li>
+        <li>A Cofidis áruhitel finanszírozása esetén a teljes vásárlási érték változatlan; a részletfizetésért külön díjat nem számítunk fel. <strong>Reprezentatív példa</strong>: 330 000 Ft / 10 hó = 33 000 Ft / hó, THM 0%, teljes visszafizetendő 330 000 Ft.</li>
+        <li>A reprezentatív példa a 2009. évi CLXII. tv. (fogyasztói hitelről) szerinti kötelező közlés. <strong>Hitelnyújtó</strong>: Cofidis Magyarországi Fióktelepe (MNB-engedéllyel).</li>
+        <li>A 14 napos elállási jog a Ptk. 6:22. § szerint érvényesíthető — bővebben az <a href="/aszf">ÁSZF / Vállalási feltételek</a> oldalon.</li>
+      </ul>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="Az árakról jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Fix árajánlat a felmérés után 48 órán belül"
+    lead="A helyszíni felmérés ingyenes és nem kötelezi vásárlásra. A felmérőnk a helyszínen méri be az ingatlant, mintamintát hoz, és a felmérés után 48 órán belül írásban, 30 napra rögzített fix árajánlatot ad."
+  />
+</BaseLayout>
+
+<style>
+  .price-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.95rem; max-width: 720px;
+  }
+  .price-table th, .price-table td {
+    text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top; line-height: 1.55;
+  }
+  .price-table thead th {
+    font-family: var(--font-serif); font-size: 0.82rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .price-table tbody th { font-weight: 500; color: var(--color-ink); width: 60%; }
+  .price-table tbody td { color: var(--color-charcoal); }
+  .price-table .price {
+    font-family: var(--font-serif); color: var(--color-brass-deep); font-size: 1.05rem;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .price-note { margin-top: 1rem; font-size: 0.9rem; color: var(--color-charcoal); font-style: italic; line-height: 1.65; max-width: 70ch; }
+  .price-cta { margin-top: 1.5rem; }
+
+  .legal-content { max-width: 70ch; }
+  .legal-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    font-size: 0.95rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-list li { padding-left: 1.5rem; position: relative; }
+  .legal-list li::before { content: "§"; position: absolute; left: 0; color: var(--color-brass); font-family: var(--font-serif); }
+  .legal-list strong { color: var(--color-ink); font-weight: 500; }
+  .legal-list a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+</style>

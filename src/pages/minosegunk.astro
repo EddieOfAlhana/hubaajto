@@ -1,0 +1,277 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import LockBrandWall from "../components/LockBrandWall.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, LOCKS } from "../data/site";
+
+const mabiszClasses = [
+  { cls: "MABISZ 2.", rc: "RC2", time: "3 perc", description: "Lakásbiztosítási alapfeltétel, panel-lakásra, társasházra." },
+  { cls: "MABISZ 3.", rc: "RC3", time: "5 perc", description: "Családi házra, új építésre. Ajánlott szint." },
+  { cls: "MABISZ 4.", rc: "RC4", time: "10 perc", description: "Kiemelt kockázatú ingatlan, gyűjtemény, családi villa." },
+  { cls: "MABISZ 5.", rc: "RC5", time: "15 perc", description: "Magas kockázatú ingatlan — bank, jelentős értékkel rendelkező magántulajdon." },
+  { cls: "MABISZ 6.", rc: "RC6", time: "20 perc", description: "Speciális, üzleti igények — Huba nem szériagyártja, csak megrendelésre." },
+];
+
+const lockBrands = [
+  {
+    name: "Mottura",
+    country: "Olaszország",
+    body: "Az olasz prémium zárgyártás zászlóshajója — 50+ éves gyártói tapasztalat. A Mottura cilinderek nemcsak fúrásvédettek, hanem anti-bumping és anti-snap technológiával ellátva érkeznek. A Huba Premium szint alapcilindere.",
+  },
+  {
+    name: "Abus",
+    country: "Németország",
+    body: "A német Abus zárgyártó 1924 óta működik — a Huba Modern Standard alapcilindere. A 'Plus' és 'Bravus' termékvonal anti-bumping védettséggel és kódkártyás kulcsmásolási kontrollal érkezik.",
+  },
+  {
+    name: "Mul-T-Lock",
+    country: "Izrael",
+    body: "A Mul-T-Lock telecirkulált rendszerű kulccsal és patentált cilinder-architektúrával dolgozik. A magas kockázatú telepítésekhez (RC4+) ajánljuk — az anti-bumping és anti-pick technológia a piac egyik legfejlettebbje.",
+  },
+  {
+    name: "Iseo",
+    country: "Olaszország",
+    body: "Az Iseo a 'modern smart-lock' és a tradicionális cilinder között foglal helyet — a hagyományos zárakon felül elektronikus kód- és okostelefonos azonosítási opciókat is biztosít. A Premium szint elektronikus integrációs alapja.",
+  },
+  {
+    name: "Cisa",
+    country: "Olaszország",
+    body: "A Cisa az építészeti zárrendszerek gyártója — keskeny tokokba, vékony nyílórészekbe, üvegezett ajtókba dolgozik. A Huba stílus / műemléki kivitelekhez gyakran a Cisa-t választjuk, mert az illesztési méretrugalmasság ott a legnagyobb.",
+  },
+];
+
+const faqItems = [
+  { q: "Mit jelent a MABISZ-minősítés?",
+    a: `<p>A MABISZ (Magyar Biztosítók Szövetsége) szabványos tesztelési protokoll alapján sorolja be a biztonsági ajtókat 2–6. osztályba. Az osztály a szakszerű betörési kísérletnek való ellenállás idejét mutatja. A magyar lakásbiztosítók többsége a MABISZ-besorolást elfogadja a lakásbiztosítás alapfeltételének teljesítéseként. A Huba ajtó 2009 óta MABISZ-minősített.</p>` },
+  { q: "Mi a különbség a MABISZ és az RC besorolás között?",
+    a: `<p>A MABISZ a magyar, az RC (Resistance Class) az európai EN 1627 szabvány szerinti besorolás. A két rendszer szinte azonos — a Huba kivitelek mindkét sornak megfelelnek: <strong>MABISZ 2. = RC2 · MABISZ 3. = RC3 · MABISZ 4. = RC4</strong>. Az európai bizonyítvány új építésű ingatlanok kötelező építész-dokumentációjához szükséges.</p>` },
+  { q: "Hol látható a CE-jelölés és a Teljesítménynyilatkozat?",
+    a: `<p>Minden Huba ajtó nyílórészének belső oldalán, a felső pánt mellett található a <strong>CE-jelölés</strong> a teljesítményadatokkal. A Teljesítménynyilatkozatot (DoP — Declaration of Performance) a beépítési jegyzőkönyvvel együtt PDF formátumban átadjuk. A DoP a 305/2011/EU rendelet (CPR) szerint minden EU-piacon forgalomba hozott építőipari termék kötelező irata.</p>` },
+  { q: "Az ÉMI is bevizsgálja-e?",
+    a: `<p>Az <strong>ÉMI</strong> (Építésügyi Minőségellenőrző Innovációs Nonprofit Kft.) a magyar állam által akkreditált műszaki vizsgáló intézet — a CE-jelöléshez szükséges 'initial type-testing' (ITT) tipikusan ÉMI- vagy ezzel egyenértékű akkreditált laboratórium által történik. A Huba ajtó típusvizsgálatát a vonatkozó kategóriákban elvégeztük; az ITT-jegyzőkönyvet a Teljesítménynyilatkozat háttéranyagaként tartjuk nyilván.</p>` },
+  { q: "Cserélhető-e a zárcilinder a kulcs elvesztése esetén?",
+    a: `<p>Igen — minden Huba ajtóba olyan rendszer kerül, amely a teljes ajtó megbontása nélkül engedi a cilinder cseréjét. A Mottura, Mul-T-Lock és Iseo cilindereknél <strong>kódkártyás rendszer</strong> működik: pótkulcsot csak az eredeti megrendelő igazolásával lehet készíteni. Elvesztés esetén a teljes cilinderet javasolt cserélni — ez 25 000 – 60 000 Ft.</p>` },
+  { q: "Melyik MABISZ-osztály ajánlott a panel-lakásomra?",
+    a: `<p>Általános panel-lakásra a <strong>MABISZ 2.</strong> elegendő — a magyar biztosítók ezt fogadják el alapfeltételként. Ha az ingatlan biztosítása magasabb értékű lakástartalmat fed, vagy ha a lépcsőházban már történt betörési kísérlet, érdemes <strong>MABISZ 3.</strong>-ra váltani. A felmérőnk a helyszínen megnézi a környezetet és tanácsot ad.</p>` },
+  { q: "Hogyan változott a MABISZ-minősítés 2009 óta?",
+    a: `<p>A MABISZ-tesztek 2014-ben harmonizáltak az európai EN 1627 szabvánnyal, és 2020-ban szigorodtak az anti-bumping és anti-snap követelmények. A Huba ajtó minden átdolgozási ciklus után újra megvizsgáltatja a típust, így a 2009-es alapminősítés azóta is folyamatosan érvényes — a legutóbbi felülvizsgálat 2024-ben volt.</p>` },
+];
+---
+<BaseLayout
+  title="Minőségünk — MABISZ, CE, RC2–RC6 és prémium zárak"
+  description={`MABISZ-minősítés ${SITE.mabiszSince} óta, CE-jelölés CPR 305/2011 szerint, RC2–RC6 betörésvédelmi osztály, Teljesítménynyilatkozat (DoP), és öt prémium európai zármárka: Mottura, Abus, Mul-T-Lock, Iseo, Cisa. ÉMI-akkreditált típusvizsgálattal.`}
+>
+  <Hero
+    eyebrow={`MABISZ-minősített ${SITE.mabiszSince} óta · CE-jelölt`}
+    heading={`Minősítés. Mérés.<br/><em>Mérhető védelem.</em>`}
+    lead={`A „minőségi biztonsági ajtó” jelző önmagában nem jelent semmit. A védelmi szintet a típusvizsgálat, az akkreditált bizonyítvány, és a zárrendszer prémium fokozata adja. A Huba ajtó MABISZ 2009 óta, CE-jelölt a CPR 305/2011 szerint, és RC2–RC6 osztályokban gyártható.`}
+    pillars={[
+      `MABISZ ${SITE.mabiszSince}-től`,
+      "CE-jelölés (CPR 305/2011)",
+      "Teljesítménynyilatkozat (DoP)",
+      "RC2–RC6 osztály",
+      "5 prémium zármárka",
+    ]}
+    image="/assets/photos/hero/period-restoration.jpg"
+    imageAlt="Helyszíni minőségellenőrzés egy restauráció alatt lévő, kazettás biztonsági ajtón"
+    imageCaption="Stílus / korhű ajtó minőségellenőrzés"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Garancia részletei", href: "/garancia" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="MABISZ-minősítés"
+    heading="A 2009 óta érvényes magyar tanúsítás."
+    lead="A MABISZ (Magyar Biztosítók Szövetsége) a magyar biztonsági ajtók szabványos minősítési rendszere. A 2–6. osztály a szakszerű betörési kísérletnek való ellenállás idejét jelöli. A Huba ajtó terméknév 2009-ben kapta meg az első MABISZ-minősítést — azóta folyamatosan, legutóbb 2024-ben felülvizsgálva."
+  >
+    <table class="class-table">
+      <thead>
+        <tr>
+          <th scope="col">MABISZ osztály</th>
+          <th scope="col">Európai szabvány (RC)</th>
+          <th scope="col">Ellenállási idő</th>
+          <th scope="col">Tipikus felhasználás</th>
+        </tr>
+      </thead>
+      <tbody>
+        {mabiszClasses.map(c => (
+          <tr>
+            <th scope="row">{c.cls}</th>
+            <td>{c.rc}</td>
+            <td class="time">{c.time}</td>
+            <td class="desc">{c.description}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="class-note">
+      Az „ellenállási idő” szakszerű, szabványosított eszközökkel (feszítővas, fúró, csiszoló, kalapács, vésőszerszám) végzett behatolási kísérletre vonatkozik — alacsonyabb osztály = rövidebb idő = alacsonyabb védelem.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="CE-jelölés és DoP"
+    heading="EU-szintű építőipari műszaki bizonyítvány."
+    lead="Az EU 305/2011 építőipari termékrendelete (CPR) minden EU-piacon forgalomba hozott biztonsági ajtóra előírja a CE-jelölést és a Teljesítménynyilatkozatot (DoP). Ezek nélkül építész jogszerűen nem írhatja elő, és új építkezésnél a műszaki átadásnál akadnak fel."
+  >
+    <div class="ce-grid">
+      <div class="ce-block reveal">
+        <p class="ce-eyebrow">CE-jelölés</p>
+        <h3 class="ce-title">Hol és mit?</h3>
+        <p class="ce-body">A jelölés a nyílórész belső oldalán, a felső pánt mellett található. Tartalmazza a gyártó azonosítóját, a tanúsítvány számát, és a teljesítményosztályokat (betörésvédelem, hangszigetelés, hőátbocsátás, tűzállóság, vízzárás).</p>
+      </div>
+      <div class="ce-block reveal">
+        <p class="ce-eyebrow">Teljesítménynyilatkozat (DoP)</p>
+        <h3 class="ce-title">Mit kap?</h3>
+        <p class="ce-body">A DoP egy PDF-dokumentum, ami a beépítési jegyzőkönyvvel együtt érkezik. Tartalmazza a CE-osztályokat, az ITT (initial type-testing) jegyzőkönyv hivatkozását, a gyártói azonosítót és a forgalombahozatali nyilatkozatot. Ezt építész, hatóság, biztosító kérheti.</p>
+      </div>
+      <div class="ce-block reveal">
+        <p class="ce-eyebrow">ÉMI / akkreditált típusvizsgálat</p>
+        <h3 class="ce-title">Ki vizsgálta?</h3>
+        <p class="ce-body">A típusvizsgálatot (ITT) akkreditált laboratórium végzi — Magyarországon ez tipikusan az <strong>ÉMI Nonprofit Kft.</strong>, vagy egyenértékű EU-szintű intézet. A vizsgálat eredménye az ITT-jegyzőkönyv, amire a DoP hivatkozik. A jegyzőkönyvet a Huba kérésre megküldi szakmai partnereinek.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Öt prémium zármárka"
+    heading="A zárrendszer választás a felmérés után az Öné."
+    lead={`Nem mi diktáljuk, melyik gyártó kerül az ajtóba. Az öt prémium európai márka — ${LOCKS.join(", ")} — közül a felmérés után Ön választhat. Mindegyikhez teljes szervizháttér, kódkártyás pótkulcsrendszer és nyilvántartott alkatrésztartás párosul.`}
+  >
+    <ul class="lock-list stagger">
+      {lockBrands.map(b => (
+        <li class="lock-item">
+          <header class="lock-head">
+            <h3 class="lock-name">{b.name}</h3>
+            <span class="lock-country">{b.country}</span>
+          </header>
+          <p class="lock-body">{b.body}</p>
+        </li>
+      ))}
+    </ul>
+    <LockBrandWall />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Anyagok"
+    heading="Mi van a borítás alatt — réteg-szinten."
+    lead="A Huba ajtó nem csak 'acéllemez'. A nyílórész 5–7 funkcionális rétegből épül fel, mindegyiknek mérhető szerepe van."
+  >
+    <ol class="layers stagger">
+      <li class="layer">
+        <p class="layer-n">1</p>
+        <h3 class="layer-title">Külső acéllemez</h3>
+        <p class="layer-body">1,5–2 mm hidegen hengerelt acéllemez, korrozióvédelmi alapozóval. A betörési kísérlet első, és gyakran utolsó akadálya.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">2</p>
+        <h3 class="layer-title">Megerősítő acéllap</h3>
+        <p class="layer-body">A zárszerkezetek és pántok körül 3 mm acéllemez — pontosan ott, ahol a betörési kísérletek a feszítővasat ráteszik.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">3</p>
+        <h3 class="layer-title">Üveggyapot / Therwolin mag</h3>
+        <p class="layer-body">A nyílórész belsejében hang- és hőszigetelő bélelés. A panel-lakás zajos lépcsőházából 28–35 dB-es zajcsökkentést ad.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">4</p>
+        <h3 class="layer-title">Belső acéllemez vagy faváz</h3>
+        <p class="layer-body">A nyílórész belső oldala: Standard kivitelben acéllemez, Premium kivitelben dupla acéllemez vagy faváz a mintázat alá.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">5</p>
+        <h3 class="layer-title">Mintázott külső borítás</h3>
+        <p class="layer-body">35+ fa minta, 15 mart minta, vagy korhű kazettás faburkolat. A borítás cserélhető — a szerkezet alatta marad.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">6</p>
+        <h3 class="layer-title">Felület-bevonás</h3>
+        <p class="layer-body">RAL színskála festett vagy lakkozott felülettel, UV-stabil bevonattal. 3 év felületi garancia, 15 év szerkezeti.</p>
+      </li>
+      <li class="layer">
+        <p class="layer-n">7</p>
+        <h3 class="layer-title">Tömítés és élvédelem</h3>
+        <p class="layer-body">Befűzött, körbefutó gumitömítés, élvédő profilokkal. Évek múlva cserélhető, nem ragasztott.</p>
+      </li>
+    </ol>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A minősítésekről jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Kérje a Teljesítménynyilatkozatot — a felmérés után megküldjük"
+    lead="A felmérés ingyenes; a kiválasztott típus DoP-jét, ITT-jegyzőkönyv hivatkozással, a vásárlás után a beépítési jegyzőkönyvvel együtt megküldjük. Építész, biztosító és hatóság előtt is elfogadott."
+  />
+</BaseLayout>
+
+<style>
+  .class-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.95rem;
+  }
+  .class-table th, .class-table td {
+    text-align: left; padding: 0.95rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top; line-height: 1.55;
+  }
+  .class-table thead th {
+    font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .class-table tbody th { font-weight: 500; color: var(--color-ink); font-family: var(--font-serif); font-size: 1.05rem; }
+  .class-table tbody td { color: var(--color-charcoal); }
+  .class-table .time { font-family: var(--font-serif); color: var(--color-brass-deep); font-size: 1.05rem; white-space: nowrap; }
+  .class-table .desc { font-size: 0.92rem; }
+  .class-note { margin-top: 1rem; font-size: 0.88rem; color: var(--color-stone); font-style: italic; line-height: 1.55; max-width: 70ch; }
+
+  .ce-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 900px) { .ce-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+  .ce-block { background: var(--color-paper); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .ce-eyebrow { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-brass); }
+  .ce-title { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.2; }
+  .ce-body { font-size: 0.94rem; line-height: 1.65; color: var(--color-charcoal); }
+  .ce-body strong { color: var(--color-ink); }
+
+  .lock-list {
+    list-style: none; padding: 0; margin: 0 0 2.5rem;
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 900px) { .lock-list { grid-template-columns: 1fr 1fr; } }
+  .lock-item { background: var(--color-paper); padding: 1.75rem 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .lock-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .lock-name { font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.1; color: var(--color-ink); }
+  .lock-country { font-size: 0.78rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); }
+  .lock-body { font-size: 0.95rem; line-height: 1.65; color: var(--color-charcoal); }
+
+  .layers {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 800px) { .layers { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .layers { grid-template-columns: repeat(4, 1fr); } }
+  .layer { background: var(--color-paper); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .layer-n { font-family: var(--font-serif); font-size: 2.2rem; line-height: 1; color: var(--color-brass); }
+  .layer-title { font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.2; margin-top: 0.25rem; }
+  .layer-body { font-size: 0.9rem; line-height: 1.6; color: var(--color-charcoal); }
+</style>

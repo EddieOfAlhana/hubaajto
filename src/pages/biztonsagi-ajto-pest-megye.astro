@@ -1,0 +1,286 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, SLA } from "../data/site";
+
+// Tier 1 — east arc, Kistarcsa's backyard
+const tier1Towns = [
+  {
+    name: "Kistarcsa",
+    distance: "0 km",
+    note: "Műhelyünk székhelye",
+    paragraph:
+      "Itt vagyunk hazai pályán — szó szerint. A Nagytarcsai út 6. szám alatti üzemünkben készül minden Huba ajtó, és a kistarcsai munkák felmérésére, beépítésére napon belül érünk a helyszínre. Új építésű családi házakhoz a Premium modern kivitel, felújításokhoz a Standard fokozat a leggyakoribb választás.",
+  },
+  {
+    name: "Nagytarcsa",
+    distance: "2 km",
+    paragraph:
+      "Közvetlen szomszédunk: a 30 perces felmérési ígéretünk itt 10 percre csökken. Az új építkezések arányát figyelembe véve elsősorban prémium kivitelű családi házakra dolgozunk — gyakran ACTUAL Fenster ablakcsomag mellé, egy felmérésen átvéve a teljes nyílászárói rendszert.",
+  },
+  {
+    name: "Kerepes",
+    distance: "3 km",
+    paragraph:
+      "A Mogyoródi út két oldalán kifejlődő új építkezési arc — Kerepes a Pest agglomeráció keleti ívének egyik leggyorsabban fejlődő pontja. A Huba ajtó modern Premium kivitelét építjük be sok új családi házba, a 800 000 – 1 800 000 Ft sávban.",
+  },
+  {
+    name: "Csömör",
+    distance: "6 km",
+    paragraph:
+      "Csömör polgári villa- és új építésű családi ház állománya növekszik évről évre. A budapesti agglomeráció keleti íve egyik fő piacunk — ide a Huba ajtó modern Premium, illetve egyedi mart vagy 35+ fa-mintázatú kivitelét szállítjuk a leggyakrabban.",
+  },
+  {
+    name: "Mogyoród",
+    distance: "10 km",
+    paragraph:
+      "A Forma 1 melletti polgári és új építésű családi ház övezet a Pest agglomeráció prémium szegmensének egyik gerince. Itt az átlagos megrendelés egy fa-felületű modern bejárati ajtó, RC2-RC3 osztály, sokszor üvegezett oldalrésszel. Sok kollégánk dolgozott itt az elmúlt évek alatt.",
+  },
+  {
+    name: "Gödöllő",
+    distance: "16 km",
+    paragraph:
+      "A királyi kastély és környékének polgári villaállománya, valamint a város szélén kifejlődő új építkezések adják a gödöllői megrendelések kettősségét. Védett villán korhű kivitel, új építésű családi házon prémium modern — ugyanazon az acél biztonsági magon.",
+  },
+  {
+    name: "Veresegyház",
+    distance: "20 km",
+    paragraph:
+      "A Veresegyház-Erdőkertes vonal a 2010-es évek kertvárosi prémium családi-ház piacának egyik motorja. Itt elsősorban modern Premium és Extra (RC4) kivitelek készülnek, gyakran üvegezett oldalrésszel — a kerti közlekedés és a házbiztonsági kérdések miatt.",
+  },
+  {
+    name: "Fót",
+    distance: "12 km",
+    paragraph:
+      "A Fót területén lévő polgári és új építésű családi házak — sok az 1990-es évek óta épült család-otthon — leggyakrabban modern fa- vagy mart felületű kivitellel készülnek. A Huba ajtó itt jellemzően a 700 000 – 1 200 000 Ft árintervallumban dolgozik.",
+  },
+  {
+    name: "Pécel",
+    distance: "8 km",
+    paragraph:
+      "Pécel családi-ház állománya — eredeti 70-80-as évek házaktól a friss új építkezésig — szintén közvetlen műhelykörzetünk. A Huba ajtó modern Standard és Premium fokozatait szállítjuk leggyakrabban; bontás nélküli ajtócserével ott, ahol a tok megtartható.",
+  },
+  {
+    name: "Isaszeg",
+    distance: "10 km",
+    paragraph:
+      "A keleti agglomeráció Isaszegig nyúló családi-ház állományán szintén dolgozunk — gyakran prémium új építkezésen. A Huba ajtó modern range belépőszintjétől (330 000 Ft) a prémium kivitelig (1,8 M Ft) terjedő spektrumon mozognak az isaszegi munkáink.",
+  },
+  {
+    name: "Dunakeszi",
+    distance: "18 km",
+    paragraph:
+      "Dunakeszi a Duna mentén — sok az új építésű családi ház, és sok a felújított régi villa. A Huba ajtó modern Premium és egyedi mart minta kivitelben dolgozunk leggyakrabban dunakeszi címeken.",
+  },
+];
+
+// Tier 2 — NW Buda agglomeration
+const tier2Towns = [
+  {
+    name: "Telki",
+    distance: "32 km",
+    paragraph:
+      "A NW Buda agglomeráció prémium szegmensének egyik csúcspontja. A telki új építkezésekre jellemzően Huba modern Premium kivitelt szállítunk, gyakran nagy belmagasságra méretezett kétszárnyú kivitelben.",
+  },
+  {
+    name: "Páty",
+    distance: "28 km",
+    paragraph:
+      "Páty új építkezési íve hasonló profilú a Telki környékéhez. Az új építésű családi házak modern, fa- vagy mart felületű biztonsági bejárati ajtót kapnak, RC2-RC3 osztály, gyakran üvegezett oldalrésszel.",
+  },
+  {
+    name: "Budakeszi",
+    distance: "32 km",
+    paragraph:
+      "Budakeszi a NW Buda agglomeráció legnagyobb kiterjedésű új építkezési központja. A Huba ajtó prémium modern range itt dolgozik a leggyakrabban — sok villára, új építésű családi házra. ACTUAL Fenster ablakcsomag mellé gyakran egy kézből szállítjuk a teljes nyílászárói rendszert.",
+  },
+  {
+    name: "Solymár",
+    distance: "30 km",
+    paragraph:
+      "Solymár felé Pilisborosjenőig egy folyamatos prémium családi-ház sáv húzódik. A megrendelések túlnyomó többsége modern Premium, RC3 osztály, prémium zárral (Mottura, Abus, Mul-T-Lock).",
+  },
+  {
+    name: "Pilisborosjenő",
+    distance: "28 km",
+    paragraph:
+      "A NW Buda agglomeráció felső, csendesebb sávja — sok új építkezés, sok családi ház. A Huba ajtó itt jellemzően prémium modern kivitelben dolgozik, az 1 000 000 – 1 800 000 Ft árintervallumban.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Pest megyében hova mennek ki felmérésre?",
+    a: "<p>Pest megye teljes területén dolgozunk. A keleti ív (Kistarcsa, Nagytarcsa, Kerepes, Csömör, Mogyoród, Gödöllő, Veresegyház, Fót, Pécel, Isaszeg, Dunakeszi) a hazai pályánk — itt 30 percen belül érünk. A NW Buda agglomerációba (Telki, Páty, Budakeszi, Solymár, Pilisborosjenő) szintén kiszállunk, általában 1–1,5 órán belül.</p>",
+  },
+  {
+    q: "Új építésű családi házhoz melyik ajtó ajánlott?",
+    a: "<p>Új építkezésen a Huba Modern Premium családi ház kivitel a legjellemzőbb választás — RC3 / MABISZ 3. osztály, prémium fa- vagy mart felülettel, gyakran üvegezett oldalrésszel. Az árintervallum 800 000 – 1 800 000 Ft. Ha az ablakcsomagot is egy kézből szeretné, az ACTUAL Fenster csomagunkkal egy felmérésen át mindkettő rendezhető.</p>",
+  },
+  {
+    q: "Mennyibe kerül egy biztonsági ajtó Pest megyei családi házhoz?",
+    a: '<p>A modern range belépőszintje 330 000 Ft (Standard), prémium családi házhoz jellemzően 800 000 – 1 800 000 Ft (Premium, RC3). A pontos ár a helyszíni felmérés után válik véglegessé. <a href="/arak">Részletes árlista →</a></p>',
+  },
+  {
+    q: "Mennyi idő alatt érkezik felmérésre Mogyoródra, Csömörre, Veresegyházra?",
+    a: `<p>A keleti agglomerációs településekre — Kistarcsa hazai pályánkra — ${SLA.surveyDays} alatt megyünk felmérésre. A Mogyoród-Csömör-Veresegyház-Gödöllő tengely sokszor egy nap alatt is rendezhető.</p>`,
+  },
+  {
+    q: "Lehet részletfizetés Pest megyei címre?",
+    a: '<p>Igen, a Cofidis áruhitelen keresztül akár 0% THM-es kampánykeretben. A részletek a felmérés után, a fix árajánlat birtokában véglegesíthetők. <a href="/reszletfizetes">Részletfizetés →</a></p>',
+  },
+];
+---
+
+<BaseLayout
+  title="Biztonsági ajtó Pest megye — Kistarcsa agglomerációs hátország"
+  description="Saját gyártású biztonsági ajtó Pest megye teljes területén. A keleti ív (Mogyoród, Csömör, Gödöllő, Veresegyház, Fót) Kistarcsa hazai pályája — a NW Buda agglomeráció (Telki, Páty, Budakeszi) ugyanúgy elérhető. MABISZ-minősített, 15 év szerkezeti garancia, 330 000 Ft-tól."
+>
+  <Hero
+    eyebrow="Szolgáltatási terület · Pest megye"
+    heading="Biztonsági ajtó <em>Pest megye</em> — Kistarcsa az agglomeráció középpontja."
+    lead="A Pest agglomeráció keleti íve — Mogyoród, Csömör, Gödöllő, Veresegyház, Fót — szó szerint Kistarcsa hátországa, ahol a Huba ajtó hazai pályán dolgozik. A NW Buda íven (Telki, Páty, Budakeszi) is rendszeresen jelen vagyunk."
+    pillars={[
+      "Kistarcsa = mi",
+      "30 perc felmérés",
+      "Új építéshez prémium",
+      `${SITE.warrantyYears} év garancia`,
+      "Másnap is jövünk",
+    ]}
+    image="/assets/photos/hero/modern-anthracite.jpg"
+    imageAlt="Antracit színű modern Huba bejárati ajtó egy Pest megyei agglomerációs családi házon"
+    imageCaption="Mogyoród · 2025"
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="A Pest agglomeráció keleti ívének gyártója"
+    heading="Kistarcsa a középpontban — a többi település körülöttünk."
+    lead="A 2143 Kistarcsa, Nagytarcsai út 6. szám alatti műhelyünk térképileg a keleti agglomeráció pontosan a közepén áll. Ez nem véletlen — itt nőttünk fel, ide tartozunk, és innen 30 perc alatt a legtöbb környékbeli családi házhoz felmérésre érünk."
+  >
+    <p class="intro-text reveal">
+      A Mogyoród-Csömör-Veresegyház-Gödöllő-Fót-Pécel-Isaszeg ötszögben dolgozunk a legtöbbet. Ezekben a városokban
+      az utóbbi 20 évben felépült új építésű családi-ház állomány adja a megrendelések zömét, sok az igényesen
+      felújított eredeti 70-80-as évek családi ház is. A Huba ajtó itt jellemzően a Premium családi ház kivitelt
+      szállítja (800 000 – 1 800 000 Ft sávban), gyakran egyedi mart vagy 35+ fa-mintázattal, RC2-RC3 osztály
+      besorolással.
+    </p>
+    <p class="intro-text reveal">
+      A NW Buda agglomerációs ív — Telki, Páty, Budakeszi, Solymár, Pilisborosjenő — szintén stabil terepünk.
+      Itt a prémium családi ház piacának belépőszintje magasabb, és gyakran az ablakcsomaggal együtt
+      (ACTUAL Fenster partnerünkön keresztül) szállítjuk egy kézből a teljes nyílászárói rendszert.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Keleti agglomeráció · Tier 1"
+    heading="Kistarcsa körzete — itt vagyunk hazai pályán."
+    lead="A Pest agglomeráció keleti íve a Huba ajtó gyártóhátországa. A felmérés gyors, az árajánlat fix, és a beépítést egy napon belül végezzük."
+  >
+    <div class="town-list stagger">
+      {tier1Towns.map(t => (
+        <article class="town-card" id={`${t.name.toLowerCase()}`}>
+          <header class="town-card-header">
+            <h3 class="town-name">{t.name}</h3>
+            <span class="town-distance">{t.distance}</span>
+          </header>
+          {t.note && <p class="town-note">{t.note}</p>}
+          <p class="town-paragraph">{t.paragraph}</p>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="NW Buda agglomeráció · Tier 2"
+    heading="Telki–Budakeszi ív — prémium családi házak."
+    lead="A budai oldal magasabb hegyvidéki agglomerációs sávja — itt a prémium kivitelű, méretes új építkezések adják a megrendelések jó részét."
+  >
+    <div class="town-list stagger">
+      {tier2Towns.map(t => (
+        <article class="town-card" id={`${t.name.toLowerCase()}`}>
+          <header class="town-card-header">
+            <h3 class="town-name">{t.name}</h3>
+            <span class="town-distance">{t.distance}</span>
+          </header>
+          <p class="town-paragraph">{t.paragraph}</p>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Szolgáltatási terület"
+    heading="Pest megyén túl: Budapest."
+    lead="A Pest megyei keleti és NW Buda agglomerációs munkáink mellett Budapest mind a 23 kerületében jelen vagyunk — a Várnegyedi műemléki polgári lakásoktól a XV-XVII. kerületi panel- és családiházas munkákig."
+    align="center"
+  >
+    <p class="link-row reveal">
+      <a href="/biztonsagi-ajto-budapest" class="btn btn-ghost btn-large">Biztonsági ajtó Budapest →</a>
+      <a href="/szolgaltatasi-terulet" class="btn btn-ghost btn-large">Szolgáltatási terület — térkép</a>
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="Gyakori kérdések Pest megyei munkáinkról."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon felmérést Pest megyei címére"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk a felmérésre — agglomerációs településeken belül akár napon belül is.`}
+  />
+</BaseLayout>
+
+<style>
+  .intro-text {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); max-width: 64ch; margin-top: 1.5rem;
+  }
+  .intro-text + .intro-text { margin-top: 1rem; }
+
+  .town-list {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 720px) { .town-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .town-list { grid-template-columns: repeat(3, 1fr); } }
+
+  .town-card {
+    background: var(--color-paper); padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(14,15,17,0.08);
+    display: flex; flex-direction: column; gap: 0.6rem;
+    scroll-margin-top: 6rem;
+  }
+  .town-card-header {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 0.85rem;
+  }
+  .town-name {
+    font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .town-distance {
+    font-size: 0.78rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .town-note {
+    font-size: 0.85rem; color: var(--color-brass-deep); font-style: italic;
+  }
+  .town-paragraph {
+    font-size: 0.95rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+
+  .link-row { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+</style>

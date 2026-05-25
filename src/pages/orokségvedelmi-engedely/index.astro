@@ -1,0 +1,517 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import TrustStrip from "../../components/TrustStrip.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { SLA } from "../../data/site";
+
+const protectionLevels = [
+  {
+    name: "Kiemelten védett műemlék",
+    description:
+      "Miniszteri rendelettel védetté nyilvánított, nemzeti jelentőségű ingatlan (pl. Operaház, Parlament). A legszigorúbb védettség — minden építési és felújítási tevékenység örökségvédelmi engedélyhez kötött.",
+    authority: "Kormányhivatal Építésügyi és Örökségvédelmi Főosztály",
+  },
+  {
+    name: "Védett műemlék (nevesített érték)",
+    description:
+      "A védettségi rendeletben konkrétan nevesített elemekkel — például utcafronti homlokzat, főkapu, lépcsőházi nyílászárók. A nevesített elemen végzett munka engedélyköteles, a nem-nevesített elemen jellemzően bejelentésköteles.",
+    authority: "Kormányhivatal — 25 napos engedélyezési eljárás",
+  },
+  {
+    name: "Nyilvántartott műemléki érték",
+    description:
+      "Közhiteles nyilvántartásba vett, közmegegyezés szerint értékes, de még nem védetté nyilvánított ingatlan (a Kötv. 6/B. § alapján). A homlokzati nyílászárókat érintő munka bejelentésköteles.",
+    authority: "Kormányhivatal — 10 napos bejelentési eljárás",
+  },
+  {
+    name: "Műemléki környezet",
+    description:
+      "A védett műemléket közvetlenül körülvevő ingatlanok összessége — kijelölt vagy ex lege (a szomszédos telkek). A közterületről látható homlokzati változtatások bejelentéskötelesek.",
+    authority: "Kormányhivatal + kerületi településképi bejelentés",
+  },
+  {
+    name: "Helyi védettség (területi vagy egyedi)",
+    description:
+      "Önkormányzati képviselő-testület rendeletben védetté nyilvánított érték. Kerületenként saját szabályozás — Józsefváros 1/2022., Budavári 30/2022., Erzsébetváros 25/2017., Belváros-Lipótváros 5/2020., Terézváros 33/2017., Ferencváros 8/2024.",
+    authority: "Kerületi polgármester / főépítész — 15 napos TKBE",
+  },
+];
+
+const decisionRows = [
+  ["Műemlék épület utcafronti kapu cseréje", "Védett, nevesített", "Örökségvédelmi engedély", "Kormányhivatal", "25 nap"],
+  ["Műemlék lépcsőházi lakásajtó (nevesített)", "Védett, nevesített belső elem", "Örökségvédelmi engedély", "Kormányhivatal", "25 nap"],
+  ["Műemlék lépcsőházi lakásajtó (nem nevesített)", "Védett, nem nevesített", "Kerületi TKBE", "Kerületi polgármester", "15 nap"],
+  ["Műemléki környezet utcafronti ajtó", "Műemléki környezet", "Bejelentés + TKBE", "Kormányhivatal + kerület", "10+15 nap"],
+  ["Nyilvántartott műemléki érték ajtaja", "Nyilvántartott érték", "Bejelentés", "Kormányhivatal", "10 nap"],
+  ["Helyi védett ház utcafronti ajtaja", "Helyi egyedi védettség", "TKBE", "Kerületi polgármester", "15 nap"],
+  ["Helyi védett lépcsőházi nyílászáró (pl. Józsefváros §53)", "Helyi védettség", "TKBE", "Kerületi polgármester", "15 nap"],
+  ["Nem védett ház lépcsőházi lakásajtó", "Nincs külső védettség", "Általában nem hatósági", "Közös képviselő", "—"],
+];
+
+const requirements = [
+  { feature: "Beépítési sík", note: "Nem előrébb, nem hátrébb az eredetinél" },
+  { feature: "Osztás (üveg- és kazettaarány)", note: "Vízszintes és függőleges osztásrend megőrzése" },
+  { feature: "Szín", note: "Az értékleltár szerinti eredeti szín — tipikusan RAL 6009 sötétzöld, RAL 8014 gesztenyebarna, RAL 5008 sötétkék" },
+  { feature: "Biztonsági vagy díszrács", note: "Eredeti megtartva, új csak egységes kivitelben" },
+  { feature: "Kilincs, zár, kopogtató", note: "Korhű kovácsoltvas, sárgaréz — nem modern króm" },
+  { feature: "Üvegezés", note: "Gyakran kötelező az ólmozott, metszett vagy homokfúvott üveg" },
+  { feature: "Profilszélesség, fa-keresztmetszet", note: "Az eredeti arányok megőrzése" },
+  { feature: "Anyaghasználat", note: "Fa alapértelmezetten, acél belső szerkezet rejtetten, alumínium / műanyag jellemzően nem" },
+];
+
+const costRows = [
+  ["Állapotfelmérés, építész felmérési terv", "50 000 – 150 000 Ft"],
+  ["Építéstörténeti tudományos dokumentáció / értékleltár", "150 000 – 600 000 Ft"],
+  ["Tervdokumentáció (építész)", "100 000 – 400 000 Ft"],
+  ["Tervtanácsi eljárás", "általában ingyenes"],
+  ["Örökségvédelmi engedély illetéke", "0 Ft (illetékmentes)"],
+  ["Településképi bejelentés illetéke", "0 Ft (legtöbb kerület)"],
+  ["Korhű Huba ajtó", "700 000 – 2 500 000 Ft"],
+  ["Beépítés", "80 000 – 250 000 Ft"],
+  ["Összesen", "1 100 000 – 3 800 000 Ft"],
+];
+
+const rejectionReasons = [
+  {
+    n: "1.",
+    title: "Formailag hibás ÉTDR meghatalmazás",
+    body: "A leggyakoribb hiánypótlási ok. A tulajdonosi meghatalmazás kötelező eleme az építész és a kérelmező közötti kapcsolat formálisan helyes leírása.",
+  },
+  {
+    n: "2.",
+    title: "Nem szakértői névjegyzéki szakértő készíti az építéstörténeti dokumentációt",
+    body: "A 439/2013. (XI. 20.) Korm. rendelet szerinti névjegyzékben szereplő szakértő készíthet építéstörténeti tudományos dokumentációt vagy értékleltárt. Nem-névjegyzéki szakember által készített dokumentum elutasításhoz vezet.",
+  },
+  {
+    n: "3.",
+    title: "Hiányzó közös képviselői hozzájárulás",
+    body: "Társasházi ingatlan bejárati ajtajára vonatkozó kérelem ezt jellemzően nem kerülheti meg. A felmérőnk dokumentumsablonnal segít a beszerzésben.",
+  },
+  {
+    n: "4.",
+    title: "Alumínium vagy műanyag anyag a homlokzaton",
+    body: "Közterületről látható homlokzati nyílászárón ezek az anyagok jellemzően automatikus elutasításhoz vezetnek. Fa-felületű, acél belső szerkezetű kivitel a járható út.",
+  },
+  {
+    n: "5.",
+    title: "Modern fényes króm vasalat történeti környezetben",
+    body: "A vasalat (kilincs, zár, kopogtató) szín- és anyagválasztása is mérlegelési szempont — kovácsoltvas vagy sárgaréz az elfogadott.",
+  },
+  {
+    n: "6.",
+    title: "Eredetitől eltérő osztásrend",
+    body: "A felső 2/3 üvegezett — alsó 1/3 kazettás típusú arányokat nem szabad megváltoztatni, akkor sem, ha az új ajtó belül modern szerkezetű.",
+  },
+  {
+    n: "7.",
+    title: "Hőszigetelő üveg, ami a profilt vastagítja",
+    body: "Ha az új üvegszerkezet vastagsága megváltoztatja a profil arányait, az engedélyezésnél elbukik. A megoldás keskenyebb, kétrétegű energetikai üveg vagy az eredeti egyrétegű üveg restaurálása.",
+  },
+];
+
+const districtLinks = [
+  { code: "I", name: "Budavári Várnegyed", note: "UNESCO világörökség · 30/2022.", href: "/orokségvedelmi-engedely/kerulet/i" },
+  { code: "V", name: "Belváros-Lipótváros", note: "5/2020. — tervtanácsi vélemény", href: "/orokségvedelmi-engedely/kerulet/v" },
+  { code: "VI", name: "Terézváros", note: "33/2017.", href: "/orokségvedelmi-engedely/kerulet/vi" },
+  { code: "VII", name: "Erzsébetváros", note: "25/2017. + EÉSZ 25/2018.", href: "/orokségvedelmi-engedely/kerulet/vii" },
+  { code: "VIII", name: "Józsefváros", note: "1/2022. §53 — a legrészletesebb", href: "/orokségvedelmi-engedely/kerulet/viii" },
+  { code: "IX", name: "Ferencváros", note: "8/2024. (IV. 24.)", href: "/orokségvedelmi-engedely/kerulet/ix" },
+];
+
+const faqItems = [
+  {
+    q: "Honnan tudom, hogy az ingatlanom védett-e?",
+    a: "<p>A védettségi ellenőrzés az OÉNY \"Védettségek nyilvántartása\" felületén történik — helyrajzi szám alapján. A rendszer visszaadja, hogy az ingatlan védett-e, milyen szinten, és hivatkozza a védettségi rendeletet. Ezt a felmérőnk a helyszínen elvégzi Önnek, kerületi főépítészi konzultációval együtt.</p>",
+  },
+  {
+    q: "Mennyi idő alatt lehet műemléki ajtót cserélni az engedélyezéssel együtt?",
+    a: `<p>A teljes folyamat — védettségi ellenőrzéstől a beépített ajtó befejezési bejelentéséig — ${SLA.permitTotal}. Gyors esetben 3 hónap, fellebbezéssel 9-12 hónap. A részletes ütemezést a kerületi útmutatóknál találja.</p>`,
+  },
+  {
+    q: "Mekkora a bírság, ha engedély nélkül cserélek ajtót?",
+    a: "<p>Az örökségvédelmi bírság a beruházási érték <strong>10–50%-a</strong> a 191/2001. (X. 18.) Korm. rendelet alapján. Engedélytől eltérő kivitelnél 10–40%. Településkép-védelmi bírság (kerületi TKBE elmulasztása esetén): 200 000 – 2 000 000 Ft. A hatóság elrendelheti az eredeti állapot helyreállítását is.</p>",
+  },
+  {
+    q: "Műanyag vagy alumínium ajtót be lehet építeni műemléken?",
+    a: '<p>Közterületről látható homlokzaton általában nem. Az engedélyezési mérlegelés egyik kötelező szempontja a "hagyományos anyaghasználat" (68/2018. Korm. rendelet 14. §). A Huba ajtó pontosan ezt a hézagot tölti be: fa-felületű korhű megjelenés, belül acélbetétes biztonsági szerkezettel — a hatóság elfogadja.</p>',
+  },
+  {
+    q: "Mi a különbség a műemléki engedélyezés és a településképi bejelentés között?",
+    a: "<p>Két különálló eljárás. Az örökségvédelmi engedélyt a Kormányhivatal adja ki (25 nap), a településképi bejelentést a kerületi polgármester rendezi (15 nap). Egyazon ajtócsere mindkettő alá tartozhat — ilyenkor mindkét eljárást párhuzamosan vagy egymás után le kell folytatni. Az Engedélyezési Csomagunkban mindkettőt mi intézzük.</p>",
+  },
+];
+---
+
+<BaseLayout
+  title="Örökségvédelmi engedély ajtócseréhez — útmutató"
+  description="Mikor kell engedély az ajtócseréhez? A négy védettségi szint, a jogszabályi piramis (Kötv. 2001/LXIV., 68/2018. Korm. rendelet, ÉTDR), kerületi szabályok, anyagok, határidők, költségek és a 7 tipikus elutasítási ok. Huba ajtó — kulcsrakész engedélyezési csomag."
+>
+  <Hero
+    eyebrow="Engedélyezési útmutató"
+    heading="Mikor kell engedély az ajtócseréhez? <em>Budapest, 2026.</em>"
+    lead="A budapesti polgári lakások és belvárosi bérházak ajtócseréje sokszor háromhatóságos, 4–6 hónapos folyamat. A négy védettségi szint, a jogszabályi piramis, a kerületi rendeletek, az anyaghasználati követelmények és a tipikus elutasítási okok — egy oldalon, jogszabályi idézetekkel."
+    pillars={[
+      "4 védettségi szint",
+      "25 napos engedély",
+      "10 napos bejelentés",
+      "15 napos TKBE",
+      "Csomagban intézzük",
+    ]}
+    image="/assets/photos/hero/period-green.jpg"
+    imageAlt="Sötétzöld polgári biztonsági ajtó eredeti budai bérház lépcsőházában — engedélyezett kivitel"
+    imageCaption="Engedélyezett korhű kivitel · 2023"
+    primaryCta={{ label: "Engedélyezési csomag részletei", href: "/engedelyezesi-csomag" }}
+    secondaryCta={{ label: "Műemléki biztonsági ajtó", href: "/muemleki-biztonsagi-ajto" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="A négy védettségi szint"
+    heading="Először tisztázzuk: milyen szinten védett az Ön ingatlana?"
+    lead='A „védett" épület Magyarországon nem egyenértékű fogalom — négy jól elkülönülő szint létezik, eltérő hatósággal, eltérő szigorral, eltérő eljárással. Ez dönti el, kihez kell fordulnia.'
+  >
+    <div class="level-list stagger">
+      {protectionLevels.map(l => (
+        <article class="level-card">
+          <h3 class="level-name">{l.name}</h3>
+          <p class="level-description">{l.description}</p>
+          <p class="level-authority"><strong>Hatóság:</strong> {l.authority}</p>
+        </article>
+      ))}
+    </div>
+    <p class="footnote reveal">
+      Fontos: ugyanaz az ingatlan lehet egyszerre országos műemlék (mert a homlokzata védett) ÉS helyi védett
+      (mert a kapualja vagy lépcsőháza önállóan védett), és ezenfelül műemléki környezetben is állhat egy
+      szomszédos műemlék miatt. A három párhuzamos eljárás külön-külön indítható.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A jogszabályi piramis"
+    heading="Hogyan épül fel a magyar örökségvédelmi szabályozás?"
+    lead="A piramis alja a törvény, a csúcsa a kerületi településképi rendelet. Egy-egy budapesti ajtócsere mindegyik szinten érintett lehet."
+  >
+    <ol class="law-list">
+      <li>
+        <strong>2001. évi LXIV. törvény (Kötv.)</strong> — a kulturális örökség védelméről. A magyar
+        műemlékvédelem alaptörvénye, definiálja a védettségi szinteket és a hatósági szerkezetet.
+      </li>
+      <li>
+        <strong>68/2018. (IV. 9.) Korm. rendelet (Övr.)</strong> — a gyakorlati eljárást kódexszerűen
+        szabályozza. Itt találja a beadandó dokumentumok listáját, az engedélyezési mérlegelés szempontjait,
+        és a 12. mellékletben az engedélykérelem kötelező adattartalmát.
+      </li>
+      <li>
+        <strong>281/2024. (IX. 30.) Korm. rendelet (Épelj.)</strong> — 2024. október 1-jétől hatályos új
+        építésügyi eljárási kódex.
+      </li>
+      <li>
+        <strong>191/2001. (X. 18.) Korm. rendelet</strong> — az örökségvédelmi bírságról. A beruházási érték
+        10-50%-a a sankció engedély nélküli munkavégzésnél.
+      </li>
+      <li>
+        <strong>439/2013. (XI. 20.) Korm. rendelet</strong> — a szakértői tevékenységről. Az építéstörténeti
+        tudományos dokumentációt csak az e szerinti névjegyzéki szakértő készítheti.
+      </li>
+      <li>
+        <strong>Helyi szint:</strong> a kerületi településképvédelmi rendelet (TKR) és a Kerületi Építési
+        Szabályzat (KÉSZ).
+      </li>
+    </ol>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Engedély vagy bejelentés?"
+    heading="A döntési táblázat — egy ajtócsere nyolc esete."
+    lead="A 68/2018. (IV. 9.) Korm. rendelet 53. és 54. §-ai alapján — az alábbi tipizált esetek lefedik az ajtócserék többségét."
+  >
+    <div class="decision-table-wrap reveal">
+      <table class="decision-table">
+        <thead>
+          <tr>
+            <th>Helyzet</th>
+            <th>Védettség</th>
+            <th>Eljárás</th>
+            <th>Hatóság</th>
+            <th>Határidő</th>
+          </tr>
+        </thead>
+        <tbody>
+          {decisionRows.map(row => (
+            <tr>
+              {row.map((cell, i) => <td data-label={["Helyzet","Védettség","Eljárás","Hatóság","Határidő"][i]}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="quote reveal">
+      „A hatóságtól örökségvédelmi engedélyt kell kérni, ha a tervezett tevékenység a kiemelten védett
+      műemléket, vagy a védett műemlék nevesített műemléki értékét érinti és (…) megjelenésének (ideértve
+      homlokzatot, homlokzati nyílászárót és tetőzetet is), jellegének megváltoztatását eredményezi (…) alaprajzi
+      elrendezésének átalakításával, belső felületeinek, nyílászáróinak vagy egyéb alkotórészének,
+      tartozékának, beépített berendezési tárgyának felújításával, átalakításával jár."
+      <cite>— 68/2018. (IV. 9.) Korm. rendelet 53. §</cite>
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Mit követel a hatóság az új ajtótól?"
+    heading="A megőrzendő eredeti paraméterek."
+    lead="A 68/2018. Korm. rendelet és a kerületi rendeletek (különösen a Józsefváros 1/2022. 30. §) szerint az alábbi paraméterek nem változtathatók meg az új ajtón sem."
+  >
+    <ul class="req-list stagger">
+      {requirements.map(r => (
+        <li class="req-item">
+          <p class="req-feature">{r.feature}</p>
+          <p class="req-note">{r.note}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="footnote reveal">
+      A Huba ajtó az engedélyezett konstrukciót pontosan ebben a hézagban értelmezi: a látható réteg
+      tölgyfa, lenolaj-alapú felülettel és kovácsoltvas / sárgaréz veretekkel, a belső szerkezet
+      acélbetétes — biztonsági mag, ami a hatóság engedélyezési gyakorlatában elfogadott.
+      <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó — termékoldal →</a>
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Időkeret és költségek"
+    heading="4-6 hónap, ~1,1-3,8 millió forint."
+    lead="A teljes folyamat — a védettségi ellenőrzéstől a beépített ajtó befejezési bejelentéséig — átlagos esetben 4-6 hónap. A költségbontás transzparens, részletesen alább."
+  >
+    <h3 class="sub-heading">Tételes költségbontás 2026-os árszinten</h3>
+    <div class="cost-table-wrap reveal">
+      <table class="cost-table">
+        <thead><tr><th>Tétel</th><th>Tartomány</th></tr></thead>
+        <tbody>
+          {costRows.map(row => (
+            <tr class={row[0] === "Összesen" ? "cost-total" : ""}>
+              {row.map((cell, i) => <td data-label={["Tétel","Tartomány"][i]}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote reveal">
+      Az örökségvédelmi engedélyezés a 2020-as illeték-egyszerűsítések óta illetékmentes, a kerületi
+      településképi bejelentés is jellemzően ingyenes. A költségek nagyobb része a szakmai oldalon
+      jelentkezik — építész tervező, építéstörténeti szakértő, az ajtó gyártása, beépítés.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="7 tipikus elutasítási ok"
+    heading="Mi miatt bukik el egy kérelem?"
+    lead="A budapesti kormányhivatali gyakorlat alapján a tipikus elutasítási okok a kérelem formai oldalán, vagy a tervezett anyaghasználatban gyökereznek. Ezek elkerülése a felmérés első napjától tervezhető."
+  >
+    <ol class="reject-list stagger">
+      {rejectionReasons.map(r => (
+        <li class="reject-item">
+          <span class="reject-n">{r.n}</span>
+          <div>
+            <h3 class="reject-title">{r.title}</h3>
+            <p class="reject-body">{r.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Budapesti kerületi útmutatók"
+    heading="Hat budapesti kerület — kerületenként."
+    lead="Az alábbi kerületek mindegyike önálló településképvédelmi rendelettel szabályozza a homlokzati nyílászárókat. Mindegyikhez külön útmutatót készítettünk."
+  >
+    <div class="district-grid stagger">
+      {districtLinks.map(d => (
+        <a class="district-tile" href={d.href}>
+          <p class="district-code">{d.code}.</p>
+          <h3 class="district-name">{d.name}</h3>
+          <p class="district-note">{d.note}</p>
+          <span class="district-arrow" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="Gyakori kérdések az örökségvédelmi engedélyezésről."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <Section tone="paper">
+    <p class="last-updated reveal">
+      <em>Utolsó frissítés: 2026. május.</em> A jogszabályi környezet változó. Az aktuális helyzetért kérje
+      személyes konzultációnkat — a felmérőnk a helyszínen az OÉNY rendszeren elvégzi a védettségi
+      ellenőrzést és a kerületi főépítészi konzultációt is.
+    </p>
+  </Section>
+
+  <ContactCTA
+    heading="Engedélyezést is intézzük"
+    lead="A védettségi ellenőrzéstől a befejezési bejelentésig egy kézből — építész tervezővel és műemléki szakértő partnerrel együtt."
+  />
+</BaseLayout>
+
+<style>
+  .level-list {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 720px) { .level-list { grid-template-columns: repeat(2, 1fr); } }
+
+  .level-card {
+    background: var(--color-paper); padding: 1.5rem 1.25rem;
+    border: 1px solid rgba(14,15,17,0.08);
+  }
+  .level-name {
+    font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.2;
+    color: var(--color-ink); margin-bottom: 0.6rem;
+  }
+  .level-description {
+    font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal); margin-bottom: 0.75rem;
+  }
+  .level-authority {
+    font-size: 0.85rem; color: var(--color-stone);
+    padding-top: 0.75rem; border-top: 1px solid rgba(14,15,17,0.08);
+  }
+  .level-authority strong { color: var(--color-ink); }
+
+  .law-list {
+    list-style: decimal inside; padding: 0;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    max-width: 64ch; font-size: 1rem; line-height: 1.65; color: var(--color-charcoal);
+  }
+  .law-list strong { color: var(--color-ink); font-family: var(--font-serif); font-size: 1.1rem; }
+
+  .decision-table-wrap, .cost-table-wrap {
+    overflow-x: auto; background: var(--color-paper);
+    border: 1px solid rgba(14,15,17,0.08);
+  }
+  .decision-table, .cost-table {
+    width: 100%; border-collapse: collapse; font-size: 0.92rem;
+  }
+  .decision-table th, .decision-table td,
+  .cost-table th, .cost-table td {
+    padding: 0.85rem 1rem; text-align: left;
+    border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top;
+  }
+  .decision-table th, .cost-table th {
+    background: var(--color-cream);
+    font-family: var(--font-serif); font-weight: 500;
+    font-size: 0.85rem; letter-spacing: 0.02em;
+  }
+  .cost-total td {
+    background: var(--color-cream); font-family: var(--font-serif); font-size: 1.05rem;
+    color: var(--color-ink);
+  }
+
+  .quote {
+    margin-top: 2rem; padding: 1.5rem 1.5rem 1.5rem 2rem;
+    border-left: 3px solid var(--color-brass);
+    font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.55;
+    color: var(--color-charcoal); font-style: italic;
+  }
+  .quote cite {
+    display: block; margin-top: 0.85rem;
+    font-style: normal; font-size: 0.85rem; color: var(--color-stone);
+    font-family: var(--font-sans); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  }
+
+  .req-list {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1rem;
+  }
+  @media (min-width: 720px) { .req-list { grid-template-columns: repeat(2, 1fr); } }
+  .req-item {
+    background: var(--color-paper); padding: 1.25rem 1.25rem;
+    border-left: 3px solid var(--color-brass);
+  }
+  .req-feature {
+    font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-ink);
+  }
+  .req-note {
+    font-size: 0.9rem; line-height: 1.55; color: var(--color-charcoal);
+    margin-top: 0.4rem;
+  }
+
+  .sub-heading {
+    font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-ink);
+  }
+
+  .reject-list {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .reject-item {
+    background: var(--color-paper); padding: 1.5rem;
+    border: 1px solid rgba(14,15,17,0.08);
+    display: flex; gap: 1.25rem; align-items: flex-start;
+  }
+  .reject-n {
+    font-family: var(--font-serif); font-size: 2rem; color: var(--color-brass);
+    line-height: 1; min-width: 2.5rem;
+  }
+  .reject-title {
+    font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-ink); margin-bottom: 0.5rem;
+  }
+  .reject-body {
+    font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+
+  .district-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1rem;
+  }
+  @media (min-width: 720px) { .district-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .district-tile {
+    background: var(--color-paper); padding: 1.5rem 1.25rem;
+    border: 1px solid rgba(14,15,17,0.08);
+    position: relative; display: block;
+    transition: background var(--dur) var(--ease-out-soft);
+  }
+  .district-tile:hover { background: var(--color-cream); }
+  .district-code {
+    font-family: var(--font-serif); font-size: 2rem; color: var(--color-brass); line-height: 1;
+  }
+  .district-name {
+    font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.2;
+    color: var(--color-ink); margin-top: 0.4rem;
+  }
+  .district-note {
+    font-size: 0.8rem; letter-spacing: 0.02em; color: var(--color-stone);
+    margin-top: 0.35rem;
+  }
+  .district-arrow {
+    position: absolute; right: 1.25rem; top: 1.25rem;
+    font-size: 1.2rem; color: var(--color-brass);
+    transition: transform var(--dur) var(--ease-out-soft);
+  }
+  .district-tile:hover .district-arrow { transform: translateX(4px); }
+
+  .footnote, .last-updated {
+    margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.65;
+    color: var(--color-charcoal); max-width: 64ch;
+  }
+  .footnote a, .last-updated a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .last-updated em { color: var(--color-stone); }
+</style>

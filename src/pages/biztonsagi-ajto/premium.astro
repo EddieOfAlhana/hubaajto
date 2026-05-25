@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import TrustStrip from "../../components/TrustStrip.astro";
+import ProcessSteps from "../../components/ProcessSteps.astro";
+import LockBrandWall from "../../components/LockBrandWall.astro";
+import SpecCompareTable from "../../components/SpecCompareTable.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { SITE, SLA } from "../../data/site";
+
+const faqItems = [
+  { q: "Mi különbözteti meg a Premiumot a Standardtól?",
+    a: `<p>Két lényeges spec-béli különbség: <strong>MABISZ 3. osztály</strong> (5 perc ellenállás, RC3), és megerősített 9+ záródási pont. A felület is más kategória — vastagabb, masszívabb nyílórész, prémium kilincsgarnitúra, és alapból Mottura, Mul-T-Lock vagy Iseo cilinder. A Premium kifejezetten új építésű, családi házas környezetbe készült.</p>` },
+  { q: "Miért érdemes Premium szintet venni egy családi házba?",
+    a: `<p>A családi ház bejárati ajtaja az egyetlen olyan elem, ami egyszerre építészeti elem és vagyonvédelmi tárgy. Az új építésű családi házak biztosítása sok esetben elvárja a MABISZ 3. szintet a kedvezőbb díjszámításhoz. Ezen felül a Premium szintű tömítés és hőszigetelés a fűtési számlában is megjelenik.</p>` },
+  { q: "ACTUAL Fenster ablakcsomaggal együtt kedvezőbb?",
+    a: `<p>Igen — a Szer-X3 Kft. 2005 óta forgalmazza az osztrák <strong>ACTUAL Fenster</strong> ablakokat. A közös megrendelés egy felmérés, egy szerződés, egy projektvezető. A két termékre együtt jellemzően <strong>8–12% kombinált kedvezményt</strong> tudunk adni, és a beépítés is összehangoltan zajlik — nem két külön brigád, nem két takarítási ciklus.</p>` },
+  { q: "Mogyoródra, Csömörre, Telkibe is mennek?",
+    a: `<p>Igen — Kistarcsa az agglomeráció keleti ívén dolgozik, és a NW Buda agglomerációba (Telki, Budakeszi, Páty) is rendszeresen járunk. Mogyoród, Csömör, Veresegyház, Gödöllő, Fót a műhelytől 15–25 percre van. Telki, Páty 35–45 perc. A felmérés ingyenes, a kiszállás külön költséget nem jelent.</p>` },
+  { q: "Lehet RC4 szintet rendelni?",
+    a: `<p>Igen, a Premium szintet RC4-re lehet emelni dupla acéllemezzel, vastagabb zárszerkezettel és kiegészítő pánttal. Ez az 1 200 000 – 1 800 000 Ft sáv felső széle. Kiemelt kockázatú ingatlanok, családi villák, gyűjtemény-tárolók esetében ajánljuk — egyébként az RC3 a magyar otthonok 95%-ára elegendő.</p>` },
+  { q: "Mennyibe kerül a beépítés egy új építésű családi házba?",
+    a: `<p>Új építésű ingatlannál a tokot már a falazat építésekor a helyére tesszük, így a beépítés <strong>80 000 – 150 000 Ft</strong> sávban van. Felújításnál, ahol meglévő tokot bontunk, 120 000 – 250 000 Ft, attól függően, hogy milyen falazatba kell az új tokot illeszteni. A bontás és törmelékelszállítás minden esetben benne van.</p>` },
+  { q: "Mennyi a tényleges ár-érték arány?",
+    a: `<p>A magyar piacon a hasonló RC3 / MABISZ 3. szintű importajtók (Pirnar, ANDALF top range) <strong>1,2–2,5 millió Ft</strong> között mozognak — ráadásul fix méretben, importon keresztül. A Huba Premium ugyanezt a szintet hozza, méretre szabva, saját gyártásból, magyar szervizháttérrel, jellemzően <strong>800 000 – 1 800 000 Ft</strong> sávban.</p>` },
+];
+---
+<BaseLayout
+  title="Modern Premium biztonsági ajtó — családi házra, agglomerációba"
+  description="Huba Modern Premium: MABISZ 3., RC3, 5 perc ellenállás. Új építésű és felújított családi házakra, prémium agglomerációs ingatlanokba. 800 000 – 1 800 000 Ft, ACTUAL Fenster ablakcsomaggal kombinálva."
+>
+  <Hero
+    eyebrow="Modern Premium · MABISZ 3. · RC3"
+    heading={`Modern Premium.<br/>A bejárati ajtó, ami<br/><em>a házhoz méltó.</em>`}
+    lead="Új építésű családi házaknak és felújított agglomerációs ingatlanoknak — Mogyoród, Csömör, Telki, Budakeszi és Pest megye prémium családi háztulajdonosainak. MABISZ 3. osztály, megerősített 9+ záródási pont, prémium cilinder, 15 év szerkezeti garancia."
+    pillars={[
+      "800 000 – 1 800 000 Ft",
+      "MABISZ 3. · RC3 · 5 perc",
+      "9+ záródási pont",
+      "Méretre szabva",
+      "ACTUAL Fenster ablakcsomaggal",
+    ]}
+    image="/assets/photos/hero/modern-anthracite.jpg"
+    imageAlt="Antracit Modern Premium biztonsági ajtó egy mogyoródi új építésű családi ház bejáratán"
+    imageCaption="Mogyoród · 2025"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Árak megtekintése", href: "/arak" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Pozicionálás"
+    heading="A Premium otthon van az agglomeráció keleti és NW Buda ívén."
+    lead="A Huba műhelye Kistarcsán dolgozik — a Pest megyei keleti agglomeráció szívében. Mogyoród 12 perc, Csömör 8 perc, Veresegyház 20 perc. Ide új építésű családi házak bejárati ajtaja a Premium kivitel."
+  >
+    <div class="region-grid stagger">
+      <div class="region-block">
+        <p class="region-eyebrow">Tier 1 · keleti ív</p>
+        <h3 class="region-title">Mogyoród · Csömör · Veresegyház · Gödöllő · Fót · Pécel · Isaszeg</h3>
+        <p class="region-body">Kistarcsai műhelyünktől 15–25 perc. Az új építésű családi házaknak gyakran egyetlen prémium ajtó-választása vagyunk. Itt vagyunk hazai pályán — más manufakturális gyártó nem dolgozik az ívben.</p>
+      </div>
+      <div class="region-block">
+        <p class="region-eyebrow">Tier 2 · NW Buda ív</p>
+        <h3 class="region-title">Telki · Páty · Budakeszi · Nagykovácsi · Solymár · Pilisborosjenő</h3>
+        <p class="region-body">Kistarcsáról 35–45 perc. A NW Buda ív prémium családi házaihoz heti szinten járunk felmérni — és visszamenni 12 napra rá beépíteni.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Ami a Premium szintet adja"
+    heading="Spec-szinten — mit kap 800 000+ Ft-ért."
+    lead="Egy Premium-szintű családi házas bejárati ajtó nem csak 'jobb anyag'. Konkrét, mérhető paraméterekben különbözik a Standardtól."
+  >
+    <table class="spec-table">
+      <thead>
+        <tr><th scope="col">Paraméter</th><th scope="col">Standard</th><th scope="col">Premium</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">MABISZ osztály</th><td>2.</td><td><strong>3.</strong></td></tr>
+        <tr><th scope="row">Európai szabvány</th><td>RC2</td><td><strong>RC3</strong></td></tr>
+        <tr><th scope="row">Ellenállási idő</th><td>3 perc</td><td><strong>5 perc</strong></td></tr>
+        <tr><th scope="row">Záródási pontok</th><td>5–7</td><td><strong>9+</strong></td></tr>
+        <tr><th scope="row">Nyílórész vastagság</th><td>~70 mm</td><td><strong>~85 mm</strong></td></tr>
+        <tr><th scope="row">Acéllemez számláz</th><td>Egy lap</td><td><strong>Dupla acéllemez</strong></td></tr>
+        <tr><th scope="row">Alapcilinder</th><td>Abus standard</td><td><strong>Mottura / Mul-T-Lock / Iseo prémium</strong></td></tr>
+        <tr><th scope="row">Pánt</th><td>Standard biztonsági pánt</td><td><strong>Megerősített 3D-állítható pánt</strong></td></tr>
+        <tr><th scope="row">Tömítés</th><td>Egy körbefutó síkon</td><td><strong>Két párhuzamos körbefutó síkon</strong></td></tr>
+        <tr><th scope="row">Hőszigetelési érték (Ud)</th><td>~1,8 W/m²K</td><td><strong>~1,2 W/m²K</strong></td></tr>
+        <tr><th scope="row">Méret</th><td>Standard panelnyílás</td><td><strong>Méretre szabva, bármilyen méretben</strong></td></tr>
+        <tr><th scope="row">Ár</th><td>330 000 Ft-tól</td><td><strong>800 000 – 1 800 000 Ft</strong></td></tr>
+      </tbody>
+    </table>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="ACTUAL Fenster csomag"
+    heading="A bejárati ajtó és az ablak egyetlen műhelyből."
+    lead="A Szer-X3 Kft. 2005 óta forgalmazza az osztrák ACTUAL Fenster nyílászárókat. Egy építkezésen az ajtó és az ablakok közös beszerzése nem csak árelőny — hanem egy projektvezető, egy garanciaszerződés, egy felelős a hibakezelésért."
+  >
+    <div class="actual-grid">
+      <div class="actual-card reveal">
+        <h3 class="actual-title">Mit ad az ACTUAL?</h3>
+        <ul class="actual-bullets">
+          <li>108 mm-es profilrendszer — keskeny tok, maximális üvegfelület</li>
+          <li>Ólommentes PVC — első a világon, osztrák energiainnovációs díjas (1998, 2004)</li>
+          <li>Roto NT vasalat, három gombafejű záróponttal a sarokterelőn</li>
+          <li>SECUSTIC anti-fúrás, anti-rotáció kilincs</li>
+          <li>Háromrétegű üveg, két körbefutó tömítés (opcionálisan harmadik)</li>
+          <li>Hőhídmentes, ~60% PVC arány a teljes nyílászáró-volumenben</li>
+        </ul>
+      </div>
+      <div class="actual-card reveal">
+        <h3 class="actual-title">Mit ad a kombináció?</h3>
+        <ul class="actual-bullets">
+          <li>Egy helyszíni felmérés, egy mérnök, egy ajánlat</li>
+          <li>Egy szerződés, egy számla, egy garanciafelelős</li>
+          <li>Összehangolt beépítési hét — nem két brigád egymás után</li>
+          <li>Tipikusan 8–12% kombinált kedvezmény az együttes árhoz képest</li>
+          <li>Egy fellebbezési pont, ha bármi probléma van — nem 'a másik cég hibája'</li>
+          <li>Egységes építészeti megjelenés — ajtó és ablakok azonos esztétikán</li>
+        </ul>
+      </div>
+    </div>
+    <p class="actual-note">
+      A bővebb ACTUAL információkért: a szülő vállalat <a href="https://szerx.hu" rel="noopener">szerx.hu</a> oldalán, vagy kérje a felmérőnkön keresztül a teljes ACTUAL termékkatalógust.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Zárrendszer"
+    heading="A Premium szinten a zár is prémium."
+  >
+    <LockBrandWall />
+    <p class="lock-note">
+      A Premium kivitel alapból Mottura, Mul-T-Lock vagy Iseo cilinderrel készül — nem Abus standard. A felmérés után Ön választja ki, melyik gyártóval szeretné a kulcsrendszert; mindegyikhez kódkártyás pótkulcs-szolgáltatást is biztosítunk.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Folyamat"
+    heading="Új építkezésnél: tok előrehozva, ajtó később."
+    lead="Az új építésű családi házaknál a tokot a falazatba illesztjük be a falépítéskor, az ajtó nyílórészét csak a vakolás-festés után — így nem sérülhet az építkezés alatt. Felújításnál a standard 12-napos ciklus érvényes."
+  >
+    <ProcessSteps />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Spec-szintű érték"
+    heading="Mit nyer a Premium-mal a katalógusajtóhoz képest?"
+  >
+    <SpecCompareTable />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A Premium szint előtt jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon felmérést — Mogyoród, Csömör, Telki, Budakeszi területen is"
+    lead={`A felmérőnk ${SLA.surveyDays} alatt érkezik Önhöz, az ACTUAL Fenster ablakcsomagot is végigvesszük egy alkalommal. Új építkezéshez is jövünk — már a kivitelezés alatti egyeztetésre is.`}
+  />
+</BaseLayout>
+
+<style>
+  .region-grid { display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 800px) { .region-grid { grid-template-columns: 1fr 1fr; } }
+  .region-block { background: var(--color-paper); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .region-eyebrow {
+    font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .region-title { font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.2; }
+  .region-body { font-size: 0.95rem; line-height: 1.6; color: var(--color-charcoal); max-width: 42ch; }
+
+  .spec-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.92rem;
+  }
+  .spec-table th, .spec-table td {
+    text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top;
+  }
+  .spec-table thead th {
+    font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .spec-table thead th:nth-child(3) { color: var(--color-brass-deep); }
+  .spec-table tbody th { font-weight: 500; color: var(--color-ink); }
+  .spec-table tbody td { color: var(--color-charcoal); }
+  .spec-table tbody td:nth-child(3) { color: var(--color-ink); }
+
+  .actual-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 800px) { .actual-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  .actual-card { background: var(--color-paper); padding: 2rem 1.75rem; border: 1px solid rgba(14,15,17,0.08); }
+  .actual-title { font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.2; margin-bottom: 1rem; }
+  .actual-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; line-height: 1.55; color: var(--color-charcoal); }
+  .actual-bullets li { padding-left: 1.25rem; position: relative; }
+  .actual-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--color-brass); }
+  .actual-note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--color-stone); line-height: 1.6; max-width: 70ch; }
+  .actual-note a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+  .lock-note {
+    margin-top: 1.5rem; text-align: center; max-width: 60ch; margin-inline: auto;
+    font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+</style>

@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+
+// Curated gallery using hero photos with PHOTO_AUDIT-derived captions.
+const references = [
+  {
+    image: "/assets/photos/hero/period-yellow.jpg",
+    alt: "Korhű, kovácsoltvas filigrán rácsozású sárga biztonsági ajtó budai polgári lakásban",
+    district: "Budapest, I. kerület",
+    year: "2024",
+    family: "Műemléki",
+    title: "Korhű biztonsági ajtó UNESCO világörökségi területen",
+    description:
+      "Sárga, klasszikus polgári ajtó kovácsoltvas filigrán rácsbetétekkel, oldalsó fix üvegezett szakasszal. A Budavári 30/2022. (XII. 20.) rendelet szigorú előírásainak megfelelően az eredetihez igazodó osztásrendben és színben készült — belül acélbetétes biztonsági szerkezettel.",
+  },
+  {
+    image: "/assets/photos/hero/period-double-leaf.jpg",
+    alt: "Sárga kétszárnyú polgári biztonsági ajtó kovácsoltvas filigrán panelokkal és felülvilágítóval",
+    district: "Budapest belváros",
+    year: "Archív portfólió",
+    family: "Műemléki",
+    title: "Kétszárnyú polgári kapu felülvilágítóval",
+    description:
+      "A budapesti polgári bérházak klasszikus formavilágának reprezentatív darabja: kétszárnyú (kétleveles) sárga ajtó, felül transzom üvegezéssel, kovácsoltvas filigrán dupla-leveles panelokkal. Az eredeti ajtó alapján rekonstruálva, korhű kivitelben.",
+  },
+  {
+    image: "/assets/photos/hero/period-green.jpg",
+    alt: "Sötétzöld polgári biztonsági ajtó gyémánt-rácsos üvegezéssel egy budai bérház lépcsőházában",
+    district: "Budapest, II. kerület",
+    year: "2023",
+    family: "Stílus",
+    title: "Sötétzöld polgári ajtó gyémánt-rácsos üveggel",
+    description:
+      "Erdőzöld (közel RAL 6009) festett polgári ajtó, gyémánt-mintás rácsozású üvegezéssel, eredeti kőlapos lépcsőházban, öntöttvas korlátlépcső mellett. A felmérőnk az eredeti ajtó alapján vette fel a profilt és az üvegminta arányait.",
+  },
+  {
+    image: "/assets/photos/hero/period-brown.jpg",
+    alt: "Sötétbarna polgári biztonsági ajtó kovácsoltvas középrácsával egy pesti bérházban",
+    district: "Budapest belváros",
+    year: "2013",
+    family: "Stílus",
+    title: "Klasszikus pesti bérházajtó",
+    description:
+      "Barna, sárgaréz fogantyús polgári ajtó középen kovácsolt-filigrán rácsbetéttel. Az 1900-as évek pesti bérházállományának visszatérő mintázata. Az ajtó látható rétege fa, belső szerkezete acélbetétes — a Huba ajtó alapkonstrukciója.",
+  },
+  {
+    image: "/assets/photos/hero/period-restoration.jpg",
+    alt: "Eredeti polgári fa kétszárnyú ajtó restaurálás közben — új kovácsoltvas rácsozással, halszálkás parkettán",
+    district: "Buda közép",
+    year: "Folyamatban",
+    family: "Műemléki",
+    title: "Restaurálás közben — bizonyíthatóság",
+    description:
+      "Eredeti kétszárnyú polgári fa ajtó, lekapart felülettel, új kovácsoltvas rácsbetétekkel, halszálkás parketta előtt. A korhű restauráció igazi munkafázisa — olyan szakmai bizonyítás, amelyet a piacon más manufaktúra nem tud felmutatni. Műemléki engedélyezéssel.",
+  },
+  {
+    image: "/assets/photos/hero/modern-white.jpg",
+    alt: "Fehér modern biztonsági ajtó három vízszintes savazott üvegcsíkkal egy korabeli boltíves keretben",
+    district: "Buda közép",
+    year: "2017",
+    family: "Modern",
+    title: "Hibrid: modern ajtó eredeti boltíves keretben",
+    description:
+      "Fehér modern bejárati ajtó három vízszintes savazott üvegcsíkkal, eredeti polgári boltíves keretben elhelyezve. Bizonyíték arra, hogy a modern formavilág is illeszthető egy korhű környezetbe — az eredeti tok és a környezetet adó polgári detalizálás megőrzésével.",
+  },
+  {
+    image: "/assets/photos/hero/modern-anthracite.jpg",
+    alt: "Antracit színű modern bejárati ajtó egy Pest megyei agglomerációs új építésű családi házon",
+    district: "Mogyoród",
+    year: "2025",
+    family: "Modern",
+    title: "Antracit prémium családi ház ajtó",
+    description:
+      "Antracit (közel RAL 7016) színű, mart felületű modern bejárati ajtó egy mogyoródi új építésű családi házon, oldalsó üvegezett fix résszel. RC3 / MABISZ 3. osztály besorolás, prémium Mottura zárral. A keleti agglomerációs ív tipikus prémium megrendelése.",
+  },
+  {
+    image: "/assets/photos/hero/workshop.jpg",
+    alt: "A Huba ajtó műhelye Kistarcsán, hegesztőmester készülő ajtótok mellett",
+    district: "Kistarcsa · műhely",
+    year: "2024",
+    family: "Műhely",
+    title: "Saját gyártás — 2143 Kistarcsa",
+    description:
+      "A Nagytarcsai út 6. szám alatti műhelyben minden Huba ajtó három fő fázison megy keresztül: acél zártszelvény tokra hegesztés, fa-felületű kazettás vagy mart borítás felhelyezése, és a választott prémium zár (Mottura, Abus, Mul-T-Lock, Iseo, Cisa) beépítése. Itt minden ajtó kézbe vehető a beépítés előtt.",
+  },
+];
+
+const families = Array.from(new Set(references.map(r => r.family)));
+---
+
+<BaseLayout
+  title="Referenciák — beépített Huba ajtók Budapesten és Pest megyében"
+  description="Beépített Huba biztonsági ajtók galériája — műemléki polgári lakásoktól a modern Pest megyei családi házakig. Korhű, kazettás, festett, és modern fa- vagy mart felületű ajtók valós beépítési helyszíneken."
+>
+  <Hero
+    eyebrow="Referenciagaléria"
+    heading="Beépített Huba ajtók — <em>valós</em> címeken."
+    lead="A galéria kurátora a műhely és az ügyfél. Csak olyan ajtót mutatunk meg, amelyhez a tulajdonos írásos hozzájárulása megvan. A budai heritage területektől a Pest agglomerációs új építkezésekig — minden kép valós beépítés."
+    pillars={[
+      "Műemléki + modern",
+      "Valós címek",
+      "Korhű rekonstrukció",
+      "Saját gyártás",
+      "Ügyfél hozzájárulásával",
+    ]}
+    image="/assets/photos/hero/period-double-leaf.jpg"
+    imageAlt="Kétszárnyú sárga polgári biztonsági ajtó, kovácsoltvas filigrán panelokkal és felülvilágítóval"
+    imageCaption="Star piece · archív portfólió"
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Galéria"
+    heading="Műemléki, stílus, modern — és műhely."
+    lead="A galéria négy családra oszlik: műemléki engedélyezéssel beépített korhű ajtók, stílus polgári bérházi munkák, modern családi-ház kivitelek, és a kistarcsai műhely. Mindegyik kép valós beépítés vagy a saját gyártóhely dokumentálása."
+  >
+    <div class="filter-row reveal">
+      <span class="filter-label">Családok:</span>
+      {families.map(f => (
+        <span class="filter-chip">{f}</span>
+      ))}
+    </div>
+
+    <div class="gallery stagger">
+      {references.map(r => (
+        <article class="gallery-item">
+          <figure class="gallery-figure">
+            <img src={r.image} alt={r.alt} loading="lazy" />
+            <span class={`gallery-family family-${r.family.toLowerCase()}`}>{r.family}</span>
+          </figure>
+          <div class="gallery-body">
+            <header class="gallery-header">
+              <h3 class="gallery-title">{r.title}</h3>
+              <p class="gallery-meta">
+                <span>{r.district}</span>
+                <span class="gallery-sep" aria-hidden="true">·</span>
+                <span>{r.year}</span>
+              </p>
+            </header>
+            <p class="gallery-description">{r.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A galéria mögött"
+    heading="Minden képhez ügyfél-engedély tartozik."
+  >
+    <p class="consent-text reveal">
+      A galériában szereplő ajtók fényképei a beépítés napján, az ügyfél írásos hozzájárulásával készültek
+      (GDPR Art. 6 (1) a — hozzájárulás). A személyazonosító részeket — kapucsengő-feliratok, kaputelefonok,
+      házszámok — a publikálás előtt retusáltuk. Ha látja a saját ajtaját és szeretné, hogy kerüljön le,
+      bármikor írjon nekünk — egy munkanapon belül intézzük.
+    </p>
+  </Section>
+
+  <ContactCTA
+    heading="Az Ön ajtaja a következő referenciánk"
+    lead="Foglaljon ingyenes felmérést — a megfelelő családból tervezünk Önnek ajtót, az eredeti környezethez igazítva."
+  />
+</BaseLayout>
+
+<style>
+  .filter-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  .filter-label {
+    font-size: 0.78rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .filter-chip {
+    font-size: 0.85rem; padding: 0.35rem 0.85rem;
+    border: 1px solid rgba(14,15,17,0.15);
+    background: var(--color-paper);
+    color: var(--color-charcoal);
+  }
+
+  .gallery {
+    display: grid; grid-template-columns: 1fr; gap: 2rem;
+  }
+  @media (min-width: 700px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+
+  .gallery-item {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .gallery-figure {
+    position: relative; margin: 0; aspect-ratio: 4/5;
+    background: var(--color-cream); overflow: hidden;
+  }
+  .gallery-figure img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform var(--dur-slow) var(--ease-out-soft);
+  }
+  .gallery-item:hover .gallery-figure img { transform: scale(1.02); }
+
+  .gallery-family {
+    position: absolute; top: 0.85rem; left: 0.85rem;
+    background: var(--color-paper); padding: 0.3rem 0.75rem;
+    font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-ink);
+  }
+  .family-műemléki { background: var(--color-ink); color: var(--color-paper); }
+  .family-stílus { background: var(--color-brass); color: var(--color-paper); }
+  .family-modern { background: var(--color-paper); color: var(--color-ink); }
+  .family-műhely { background: var(--color-cream); color: var(--color-brass-deep); }
+
+  .gallery-header { display: flex; flex-direction: column; gap: 0.3rem; }
+  .gallery-title {
+    font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.25;
+    color: var(--color-ink);
+  }
+  .gallery-meta {
+    font-size: 0.78rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-stone); display: flex; gap: 0.4rem;
+  }
+  .gallery-sep { color: var(--color-mist); }
+  .gallery-description {
+    font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+
+  .consent-text {
+    font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.65;
+    color: var(--color-charcoal); max-width: 64ch;
+  }
+</style>

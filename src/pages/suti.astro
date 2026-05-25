@@ -1,0 +1,211 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE, CONTACT } from "../data/site";
+
+const requiredCookies = [
+  { name: "huba-session", vendor: `${SITE.brand} (saját)`, purpose: "A bejelentkezési és űrlap-kitöltési munkamenet azonosítása.", retention: "A böngésző munkamenet végéig (session)" },
+  { name: "huba-csrf", vendor: `${SITE.brand} (saját)`, purpose: "CSRF-támadások elleni védelem az űrlap-beküldésnél.", retention: "A munkamenet végéig" },
+  { name: "huba-cookie-consent", vendor: `${SITE.brand} (saját)`, purpose: "A süti-hozzájárulás állapotának tárolása.", retention: "12 hónap" },
+];
+
+const statisticalCookies = [
+  { name: "(Plausible — sütimentes)", vendor: "Plausible Analytics (EU)", purpose: "Anonim látogatottsági statisztika — Plausible nem helyez sütit, kizárólag aggregált adatokat dolgoz fel. A hatályos jogszabályok szerint hozzájárulás nem szükséges, de a teljes átláthatóság érdekében itt is feltüntetjük.", retention: "—" },
+];
+
+const marketingCookies = [
+  // Currently none — placeholder structure
+];
+---
+
+<BaseLayout
+  title="Süti (cookie) tájékoztató"
+  description="A Huba ajtó honlapján használt sütik részletes listája — szolgáltató, cél, élettartam. NAIH-konform, granulált hozzájárulással."
+>
+  <Section tone="paper" eyebrow="Jogi" heading="Süti (cookie) tájékoztató">
+    <div class="legal-prose">
+      <p class="legal-lead">
+        Jelen tájékoztató a {SITE.shortLegal} által üzemeltetett {SITE.url} honlapon használt sütikről
+        (cookie) ad részletes tájékoztatást az ePrivacy irányelv (2002/58/EK), az általános adatvédelmi
+        rendelet (GDPR) és a Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH) gyakorlatának
+        megfelelően.
+      </p>
+
+      <h3>1. Mi a süti?</h3>
+      <p>
+        A süti egy kis szöveges fájl, amelyet az Ön webböngészője az Ön eszközén tárol az általunk
+        üzemeltetett honlap látogatása során. A sütik egy része a honlap működéséhez technikailag
+        szükséges (szükséges sütik), míg mások statisztikai vagy marketing célt szolgálnak (nem
+        szükséges sütik).
+      </p>
+
+      <h3>2. A süti-hozzájárulás kezelése</h3>
+      <p>A NAIH gyakorlatával összhangban a honlap az alábbi alapelvek szerint kezeli a sütiket:</p>
+      <ul>
+        <li><strong>Nem szükséges sütit nem helyezünk el a hozzájárulás megadása előtt.</strong></li>
+        <li>A süti-banneren az „Elfogadom" és az „Elutasítom" gombok vizuálisan egyenrangúak.</li>
+        <li>A süti-kategóriák (Szükséges, Statisztikai, Marketing) külön-külön kapcsolhatók be
+          vagy ki.</li>
+        <li>A hozzájárulás visszavonása ugyanolyan egyszerű, mint a megadása — a lap alján
+          található „Süti beállítások" linkre kattintva a banner újra megnyitható.</li>
+        <li>Az „Elfogadom mindet" és az „Csak a szükségeseket" választása esetén is a teljes
+          tartalom elérhető marad.</li>
+      </ul>
+
+      <h3>3. A használt sütik részletes listája</h3>
+
+      <h4 class="cat-heading">3.1 Szükséges sütik <span class="cat-tag">automatikus, hozzájárulás nélkül</span></h4>
+      <p>A honlap alapvető működéséhez nélkülözhetetlenek. Az ePrivacy irányelv 5. cikk (3) bekezdése
+        kifejezetten kiveszi a hozzájárulási kötelezettség alól.</p>
+      <div class="cookie-table-wrap">
+        <table class="cookie-table">
+          <thead><tr><th>Süti neve</th><th>Szolgáltató</th><th>Cél</th><th>Élettartam</th></tr></thead>
+          <tbody>
+            {requiredCookies.map(c => (
+              <tr>
+                <td data-label="Süti neve"><code>{c.name}</code></td>
+                <td data-label="Szolgáltató">{c.vendor}</td>
+                <td data-label="Cél">{c.purpose}</td>
+                <td data-label="Élettartam">{c.retention}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="cat-heading">3.2 Statisztikai sütik <span class="cat-tag">hozzájárulás-köteles</span></h4>
+      <p>A honlap látogatottságának anonim mérésére szolgálnak. A jelenlegi konfigurációban
+        sütimentes Plausible Analytics szolgáltatást használunk, így a kategória aktívan nem helyez
+        sütit. Ha a jövőben Google Analytics 4 vagy más süti-alapú statisztikai szolgáltatás kerül
+        bevezetésre, jelen tájékoztató frissül.</p>
+      <div class="cookie-table-wrap">
+        <table class="cookie-table">
+          <thead><tr><th>Süti neve</th><th>Szolgáltató</th><th>Cél</th><th>Élettartam</th></tr></thead>
+          <tbody>
+            {statisticalCookies.map(c => (
+              <tr>
+                <td data-label="Süti neve"><code>{c.name}</code></td>
+                <td data-label="Szolgáltató">{c.vendor}</td>
+                <td data-label="Cél">{c.purpose}</td>
+                <td data-label="Élettartam">{c.retention}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="cat-heading">3.3 Marketing sütik <span class="cat-tag">hozzájárulás-köteles · jelenleg nincs használatban</span></h4>
+      <p>A honlap jelenleg nem használ marketing (hirdetési, remarketing, közösségi média
+        pixel) sütit. Ha a jövőben ilyen szolgáltatás kerül bevezetésre (pl. Meta Pixel, Google
+        Ads), előzetes, kifejezett hozzájárulás nélkül nem kerül elhelyezésre, és jelen tájékoztató
+        frissül.</p>
+
+      <h3>4. Süti-beállítások módosítása</h3>
+      <p>
+        A süti-beállításait bármikor módosíthatja a lap alján található
+        <button type="button" class="inline-link cookie-reopen" data-cookie-reopen>Süti beállítások</button>
+        linkre kattintva, vagy a böngészője beállításai között a tárolt sütik törlésével.
+      </p>
+
+      <h3>5. Az adatkezelő</h3>
+      <p>
+        Az adatkezelő a {SITE.legalName} ({CONTACT.address.postal} {CONTACT.address.city},
+        {' '}{CONTACT.address.street}; e-mail:
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>). A süti-kezeléssel kapcsolatos
+        kérdéseivel az <a href="/adatvedelem">Adatvédelmi tájékoztatóban</a> meghatározott
+        elérhetőségeken fordulhat hozzánk.
+      </p>
+
+      <h3>6. Jogorvoslat</h3>
+      <p>
+        A süti-kezeléssel kapcsolatos panaszával a Nemzeti Adatvédelmi és Információszabadság
+        Hatóságához (NAIH) fordulhat — 1055 Budapest, Falk Miksa utca 9-11.;
+        e-mail: <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>;
+        honlap: <a href="https://www.naih.hu" rel="external">www.naih.hu</a>.
+      </p>
+
+      <p class="legal-footnote">
+        Hatályos: 2026. május. A süti-konfiguráció változása esetén jelen tájékoztató frissül,
+        amelyről a honlapon és — szükség esetén — a süti-banner újranyitásával értesítjük.
+        <a href="/kapcsolat">Kapcsolatfelvétel →</a>
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .legal-prose {
+    max-width: var(--container-text); margin-inline: auto;
+    font-size: 1rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-lead {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); margin-bottom: 2.5rem;
+  }
+  .legal-prose h3 {
+    font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .legal-prose h4.cat-heading {
+    font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-ink);
+    margin: 1.75rem 0 0.6rem;
+    display: flex; align-items: baseline; gap: 0.85rem; flex-wrap: wrap;
+  }
+  .cat-tag {
+    font-family: var(--font-sans); font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-brass); font-weight: 400;
+  }
+  .legal-prose p { margin-bottom: 1rem; }
+  .legal-prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .legal-prose ul li { margin-bottom: 0.4rem; }
+  .legal-prose a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .legal-prose strong { color: var(--color-ink); }
+  .inline-link {
+    background: transparent; border: 0; padding: 0; cursor: pointer;
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+    font: inherit;
+  }
+  code {
+    font-family: var(--font-mono); font-size: 0.85rem;
+    background: var(--color-cream); padding: 0.15rem 0.4rem;
+    color: var(--color-ink);
+  }
+
+  .cookie-table-wrap {
+    overflow-x: auto; background: var(--color-paper);
+    border: 1px solid rgba(14,15,17,0.08); margin: 1rem 0 2rem;
+  }
+  .cookie-table {
+    width: 100%; border-collapse: collapse; font-size: 0.92rem;
+  }
+  .cookie-table th, .cookie-table td {
+    padding: 0.75rem 0.85rem; text-align: left; vertical-align: top;
+    border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .cookie-table th {
+    background: var(--color-cream);
+    font-family: var(--font-serif); font-weight: 500; font-size: 0.85rem;
+  }
+
+  .legal-footnote {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem; color: var(--color-stone);
+  }
+</style>
+
+<script>
+  // Reopen the cookie banner if its global API is exposed by CookieBanner component.
+  document.addEventListener("click", (e) => {
+    const t = e.target as HTMLElement | null;
+    if (t && t.matches("[data-cookie-reopen]")) {
+      e.preventDefault();
+      const banner = document.querySelector<HTMLElement>("[data-cookie-banner]");
+      if (banner) banner.removeAttribute("hidden");
+    }
+  });
+</script>

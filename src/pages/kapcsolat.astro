@@ -1,0 +1,403 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import LeadForm from "../components/LeadForm.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, CONTACT, SLA } from "../data/site";
+
+const phoneTel = (s: string) => s.replace(/\s/g, "");
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: `Kapcsolat — ${SITE.brand}`,
+  url: `${SITE.url}/kapcsolat`,
+};
+---
+
+<BaseLayout
+  title="Kapcsolat — felmérés, ajánlatkérés, helyszín"
+  description={`Vegye fel velünk a kapcsolatot. Műhelyünk: 2143 Kistarcsa, Nagytarcsai út 6. Telefon: ${CONTACT.phonePrimary}. E-mail: ${CONTACT.email}. Munkanapon belül visszahívjuk.`}
+  schema={contactSchema}
+>
+  <section class="contact-hero">
+    <div class="container contact-hero-inner">
+      <div class="contact-hero-content reveal">
+        <p class="eyebrow">
+          <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
+          Kapcsolat
+        </p>
+        <h1 class="contact-hero-heading">
+          Beszéljünk az ajtóról.<br />
+          <em>Hívjon, írjon, vagy jöjjön be Kistarcsára.</em>
+        </h1>
+        <p class="contact-hero-lead">
+          Három mobil, egy vezetékes, egy e-mail cím, egy műhely. A felmérőnk
+          ${SLA.surveyDays} alatt érkezik Önhöz Budapesten és Pest megyében — kötelezettség
+          nélkül, mintamintával.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Section
+    tone="paper"
+    eyebrow="Elérhetőségek"
+    heading="Munkanapon belül visszahívjuk."
+    lead="A legtöbb felmérési időpontot a telefon foglalja le leggyorsabban — 8 és 17 óra között azonnal felveszi valaki a felmérők közül. E-mailre 24 órán belül érdemi választ küldünk."
+  >
+    <div class="contact-grid stagger">
+      <article class="contact-card">
+        <p class="contact-card-eyebrow">Mobil — felmérők</p>
+        <ul class="contact-phones">
+          <li>
+            <a href={`tel:${phoneTel(CONTACT.phonePrimaryTel)}`}>{CONTACT.phonePrimary}</a>
+          </li>
+          <li>
+            <a href={`tel:${phoneTel(CONTACT.phoneSecondary)}`}>{CONTACT.phoneSecondary}</a>
+          </li>
+          <li>
+            <a href={`tel:${phoneTel(CONTACT.phoneTertiary)}`}>{CONTACT.phoneTertiary}</a>
+          </li>
+        </ul>
+        <p class="contact-card-sub">
+          Bármelyiket hívhatja — egymással kommunikáló kollégák. {CONTACT.hours.weekday}.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <p class="contact-card-eyebrow">Vezetékes — iroda</p>
+        <p class="contact-card-line">
+          <a href={`tel:${phoneTel(CONTACT.landline)}`}>{CONTACT.landline}</a>
+        </p>
+        <p class="contact-card-sub">
+          Számlázás, szerződés, irodai ügyek. {CONTACT.hours.weekday}.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <p class="contact-card-eyebrow">E-mail</p>
+        <p class="contact-card-line">
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+        </p>
+        <p class="contact-card-sub">
+          Felmérés-kérés, ajánlatkérés, dokumentum. Munkanapon belül érdemi válasz.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <p class="contact-card-eyebrow">Műhely + iroda</p>
+        <p class="contact-card-line">
+          {CONTACT.address.postal} {CONTACT.address.city},<br />
+          {CONTACT.address.street}
+        </p>
+        <p class="contact-card-sub">
+          A személyes bejárás előzetes egyeztetéssel. {CONTACT.hours.weekday},
+          {CONTACT.hours.saturday}.
+        </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Lehetőségek"
+    heading="Melyik szakaszban tart?"
+    lead="A megkeresés célja szerint három különböző útvonalat ajánlunk."
+  >
+    <div class="info-blocks stagger">
+      <article class="info-block">
+        <p class="info-block-tag">01</p>
+        <h3>Helyszíni felmérésre van szüksége</h3>
+        <p>
+          Ingyenes, kötelezettség nélkül. A felmérőnk mintamintával érkezik, megméri a
+          nyílást, lefotózza az eredeti ajtót, és helyben megbeszéljük a kivitelt. A
+          felmérés átlagosan 30–45 perc.
+        </p>
+        <a href="/felmeres" class="info-block-link">Felmérés foglalása →</a>
+      </article>
+
+      <article class="info-block">
+        <p class="info-block-tag">02</p>
+        <h3>Vásárlásra kész? Hívjon.</h3>
+        <p>
+          Ha már tudja, mit szeretne — modern Standard, Stílus Premium vagy Műemléki — és
+          gyorsan haladnánk, a leggyorsabb a telefon. A felmérési időpontot a felmérő
+          azonnal lefoglalja az Ön naptárába.
+        </p>
+        <a href={`tel:${phoneTel(CONTACT.phonePrimaryTel)}`} class="info-block-link">
+          {CONTACT.phonePrimary} →
+        </a>
+      </article>
+
+      <article class="info-block">
+        <p class="info-block-tag">03</p>
+        <h3>Partner kérdés? Építész, közös képviselő?</h3>
+        <p>
+          Társasházi közgyűlésre szakmai bemutatkozó anyagot, építész partnernek M=1:10
+          rajzokat, kerületi főépítészi konzultációra szakvéleményt — küldünk e-mailben.
+          Az e-mail tárgyához írja: „Partner kérdés”.
+        </p>
+        <a href={`mailto:${CONTACT.email}`} class="info-block-link">
+          {CONTACT.email} →
+        </a>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Műhely + iroda térképen"
+    heading="Kistarcsa, Nagytarcsai út 6."
+    lead="Az M0 kelet-pesti ívéről 10 perc, a XV. kerület határáról 7 perc. Ingyenes parkolás az udvarban."
+  >
+    <div class="map-wrap reveal">
+      <iframe
+        title="Huba ajtó műhely térképe — 2143 Kistarcsa, Nagytarcsai út 6."
+        src="https://www.google.com/maps?q=2143+Kistarcsa,+Nagytarcsai+%C3%BAt+6.&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="address-block reveal">
+      <div>
+        <p class="address-eyebrow">Cím</p>
+        <p class="address-line">
+          {CONTACT.address.postal} {CONTACT.address.city},<br />
+          {CONTACT.address.street}
+        </p>
+      </div>
+      <div>
+        <p class="address-eyebrow">Nyitvatartás</p>
+        <p class="address-line">
+          {CONTACT.hours.weekday}<br />
+          {CONTACT.hours.saturday}
+        </p>
+      </div>
+      <div>
+        <p class="address-eyebrow">Cégadatok</p>
+        <p class="address-line">
+          {SITE.legalName}<br />
+          A teljes adatokat az <a href="/impresszum">Impresszum</a> oldalon találja.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Írjon nekünk"
+    heading="Vagy küldje el az ajánlatkérést."
+    lead="Egy formanyomtatványon az alapadatok — nevet, telefont, irányítószámot és pár sornyi üzenetet kérünk. Munkanapon belül visszahívjuk."
+  >
+    <div class="form-wrap reveal">
+      <LeadForm variant="full" />
+    </div>
+  </Section>
+
+  <ContactCTA
+    variant="paper"
+    heading="Vagy egyetlen kattintással — felmérést foglal."
+    lead={`Ha még nem szeretne formanyomtatványt kitölteni: a felmérés foglalása oldalon egy oldalas elérhetőségi űrlap. ${SLA.surveyDays} alatt jövünk Önhöz.`}
+  />
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding-block: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+    background: var(--color-paper);
+  }
+  .contact-hero-inner {
+    max-width: 60rem;
+  }
+  .contact-hero-heading {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 4.4vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-top: 1rem;
+    max-width: 20ch;
+  }
+  .contact-hero-heading em {
+    font-style: italic;
+    color: var(--color-brass-deep);
+  }
+  .contact-hero-lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--color-charcoal);
+    margin-top: 1.25rem;
+    max-width: 50ch;
+  }
+  .contact-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 720px) {
+    .contact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .contact-card {
+    background: var(--color-paper);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .contact-card-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .contact-card-line {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: var(--color-ink);
+  }
+  .contact-card-line a,
+  .contact-phones a {
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out-soft);
+  }
+  .contact-card-line a:hover,
+  .contact-phones a:hover {
+    color: var(--color-brass-deep);
+  }
+  .contact-phones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .contact-phones li {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .contact-card-sub {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-charcoal);
+    margin-top: 0.4rem;
+  }
+
+  .info-blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .info-blocks {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .info-block {
+    background: var(--color-paper);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .info-block-tag {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--color-brass);
+  }
+  .info-block h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.25;
+    color: var(--color-ink);
+  }
+  .info-block p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+  .info-block-link {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-brass-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .map-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-cream);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .address-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--color-cream);
+  }
+  @media (min-width: 720px) {
+    .address-block {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+  .address-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin-bottom: 0.4rem;
+  }
+  .address-line {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .address-line a {
+    color: var(--color-brass-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .form-wrap {
+    max-width: 56rem;
+  }
+</style>

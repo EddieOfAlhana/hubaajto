@@ -1,0 +1,218 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, SLA, CONTACT } from "../data/site";
+
+// All served towns with distance + travel time from Kistarcsa workshop (2143).
+const towns = [
+  // Tier 1 — Pest agglo east arc
+  { name: "Kistarcsa", distance: "0 km", time: "0 perc", group: "east" },
+  { name: "Nagytarcsa", distance: "2 km", time: "5 perc", group: "east" },
+  { name: "Kerepes", distance: "3 km", time: "8 perc", group: "east" },
+  { name: "Csömör", distance: "6 km", time: "15 perc", group: "east" },
+  { name: "Pécel", distance: "8 km", time: "18 perc", group: "east" },
+  { name: "Mogyoród", distance: "10 km", time: "20 perc", group: "east" },
+  { name: "Isaszeg", distance: "10 km", time: "22 perc", group: "east" },
+  { name: "Fót", distance: "12 km", time: "22 perc", group: "east" },
+  { name: "Gödöllő", distance: "16 km", time: "25 perc", group: "east" },
+  { name: "Dunakeszi", distance: "18 km", time: "28 perc", group: "east" },
+  { name: "Veresegyház", distance: "20 km", time: "30 perc", group: "east" },
+  // NW Buda agglo
+  { name: "Pilisborosjenő", distance: "28 km", time: "55 perc", group: "buda" },
+  { name: "Páty", distance: "28 km", time: "55 perc", group: "buda" },
+  { name: "Solymár", distance: "30 km", time: "55 perc", group: "buda" },
+  { name: "Budakeszi", distance: "32 km", time: "60 perc", group: "buda" },
+  { name: "Telki", distance: "32 km", time: "65 perc", group: "buda" },
+  { name: "Nagykovácsi", distance: "33 km", time: "65 perc", group: "buda" },
+  { name: "Üröm", distance: "26 km", time: "50 perc", group: "buda" },
+  { name: "Pomáz", distance: "30 km", time: "55 perc", group: "buda" },
+  { name: "Budakalász", distance: "27 km", time: "50 perc", group: "buda" },
+  // Budapest districts (heritage + modern)
+  { name: "Budapest I. (Várnegyed)", distance: "23 km", time: "45 perc", group: "bp" },
+  { name: "Budapest II. (Rózsadomb)", distance: "21 km", time: "40 perc", group: "bp" },
+  { name: "Budapest V. (Belváros)", distance: "18 km", time: "35 perc", group: "bp" },
+  { name: "Budapest VI. (Terézváros)", distance: "16 km", time: "30 perc", group: "bp" },
+  { name: "Budapest VII. (Erzsébetváros)", distance: "16 km", time: "30 perc", group: "bp" },
+  { name: "Budapest VIII. (Józsefváros)", distance: "16 km", time: "30 perc", group: "bp" },
+  { name: "Budapest IX. (Ferencváros)", distance: "18 km", time: "32 perc", group: "bp" },
+  { name: "Budapest XII. (Hegyvidék)", distance: "23 km", time: "45 perc", group: "bp" },
+  { name: "Budapest XIII.", distance: "16 km", time: "30 perc", group: "bp" },
+  { name: "Budapest XIV. (Zugló)", distance: "13 km", time: "25 perc", group: "bp" },
+  { name: "Budapest XV.", distance: "12 km", time: "22 perc", group: "bp" },
+  { name: "Budapest XVI.", distance: "8 km", time: "15 perc", group: "bp" },
+  { name: "Budapest XVII.", distance: "10 km", time: "18 perc", group: "bp" },
+  { name: "Budapest X. (Kőbánya)", distance: "13 km", time: "25 perc", group: "bp" },
+  { name: "Budapest IV. (Újpest)", distance: "14 km", time: "26 perc", group: "bp" },
+];
+
+const groups = {
+  east: { label: "Pest-agglomeráció · keleti ív", note: "Tier 1 — Kistarcsa hazai pálya" },
+  buda: { label: "NW Buda agglomeráció", note: "Tier 2 — prémium családi ház" },
+  bp: { label: "Budapest", note: "Heritage + modern kerületek" },
+};
+
+// Google Maps embed URL — centered on Kistarcsa workshop, zoom ~10 covers the whole agglo.
+const mapEmbedSrc = `https://www.google.com/maps?q=${CONTACT.address.latitude},${CONTACT.address.longitude}&z=10&output=embed`;
+---
+
+<BaseLayout
+  title="Szolgáltatási terület — Budapest és Pest megye"
+  description="Hol dolgozunk: Budapest 23 kerülete, a teljes Pest-agglomeráció keleti íve (Mogyoród, Csömör, Gödöllő, Veresegyház) és NW Buda íve (Telki, Páty, Budakeszi). Kistarcsai műhelyünkből 30 perc alatt felmérésre érünk."
+>
+  <Hero
+    eyebrow="Szolgáltatási terület"
+    heading="Hol dolgozunk — <em>Budapest</em> és <em>Pest megye</em>."
+    lead="A Kistarcsai műhelyünk térképileg a Pest agglomeráció keleti ívének középpontjában áll. Innen 30 perc alatt érünk Budapest belvárosába, és napon belül a teljes keleti agglomerációs sávra. NW Budára (Telki, Páty, Budakeszi) is rendszeresen kiszállunk."
+    pillars={[
+      "Kistarcsa, 2143",
+      "30 perc Budapestre",
+      "35+ település",
+      "Heritage + modern",
+      "Ingyenes felmérés",
+    ]}
+    image="/assets/photos/hero/workshop.jpg"
+    imageAlt="A Huba ajtó műhelye Kistarcsán, kész ajtóval"
+    imageCaption="2143 Kistarcsa, Nagytarcsai út 6."
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Műhelyünk térképen"
+    heading="Kistarcsa — az agglomeráció középpontja."
+    lead="A 2143 Kistarcsa, Nagytarcsai út 6. szám alatti üzemünk Pest megye keleti ívének földrajzi közepén áll — innen érjük el a legrövidebb idő alatt a környékbeli családi házakat és Budapest belvárosát is."
+  >
+    <figure class="map-frame reveal">
+      <iframe
+        src={mapEmbedSrc}
+        width="100%"
+        height="520"
+        style="border:0;"
+        loading="lazy"
+        title="Huba ajtó műhely — Kistarcsa, Nagytarcsai út 6."
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <figcaption class="map-caption">
+        <strong>{SITE.brand}</strong> · {CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}
+      </figcaption>
+    </figure>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Települések · távolságok"
+    heading="35+ település, ahol rendszeresen dolgozunk."
+    lead="A távolság és a beépítési ütemezés kiszámítható. Az alábbi táblázatban a Kistarcsai műhelytől mért légvonalbeli távolság és átlagos utazási idő szerepel."
+  >
+    <div class="town-groups stagger">
+      {Object.entries(groups).map(([key, g]) => (
+        <article class="town-group">
+          <header class="town-group-header">
+            <h3 class="town-group-label">{g.label}</h3>
+            <p class="town-group-note">{g.note}</p>
+          </header>
+          <ul class="town-table">
+            {towns.filter(t => t.group === key).map(t => (
+              <li class="town-row">
+                <span class="town-name">{t.name}</span>
+                <span class="town-meta">
+                  <span class="town-distance">{t.distance}</span>
+                  <span class="town-sep" aria-hidden="true">·</span>
+                  <span class="town-time">{t.time}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Pillérek"
+    heading="Két fő pillér: Budapest és Pest megye."
+    lead="A két fő szolgáltatási pillér oldalon kerületenként és településenként részletes bemutatás található — milyen ajtót szállítunk, milyen engedélyeztetést kérünk, milyen árintervallumban."
+    align="center"
+  >
+    <div class="pillar-links reveal">
+      <a href="/biztonsagi-ajto-budapest" class="btn btn-primary btn-large">Biztonsági ajtó Budapest →</a>
+      <a href="/biztonsagi-ajto-pest-megye" class="btn btn-ghost btn-large">Biztonsági ajtó Pest megye →</a>
+    </div>
+  </Section>
+
+  <Section tone="cream" eyebrow="A hozzánk nem tartozó távolságok" heading="Ami a térképen kívül van.">
+    <p class="exclusion-text reveal">
+      Nem dolgozunk országos szinten. A Huba ajtó — pont a saját gyártású, helyi mesterműhely karakter
+      megőrzése érdekében — Budapest és Pest megye területére koncentrál. A Pest-Buda agglomeráció határán
+      túli megrendeléseket egyedi elbírálással vesszük fel, ahol a szállítás és a beépítés gazdaságilag is
+      indokolt. Ha bizonytalan a város kerületében, hívjon — a felmérőnk öt percen belül visszahívja.
+    </p>
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon felmérést — bármely fent felsorolt településre"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz, kötelezettség nélkül.`}
+  />
+</BaseLayout>
+
+<style>
+  .map-frame { margin: 0; background: var(--color-cream); }
+  .map-frame iframe { display: block; width: 100%; }
+  .map-caption {
+    background: var(--color-paper); padding: 0.85rem 1.25rem;
+    font-size: 0.85rem; color: var(--color-charcoal);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  .map-caption strong { color: var(--color-ink); }
+
+  .town-groups {
+    display: grid; grid-template-columns: 1fr; gap: 2rem;
+  }
+  @media (min-width: 900px) { .town-groups { grid-template-columns: repeat(3, 1fr); } }
+
+  .town-group {
+    background: var(--color-paper); padding: 1.5rem 1.25rem;
+    border: 1px solid rgba(14,15,17,0.08);
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .town-group-label {
+    font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .town-group-note {
+    font-size: 0.75rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-brass); margin-top: 0.25rem;
+  }
+
+  .town-table {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column;
+  }
+  .town-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1rem; padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem;
+  }
+  .town-row:last-child { border-bottom: 0; }
+  .town-name { color: var(--color-ink); }
+  .town-meta { color: var(--color-stone); font-size: 0.82rem; display: inline-flex; gap: 0.4rem; }
+  .town-sep { color: var(--color-mist); }
+  .town-distance { color: var(--color-charcoal); }
+  .town-time { color: var(--color-stone); font-style: italic; }
+
+  .pillar-links {
+    display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;
+  }
+
+  .exclusion-text {
+    font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.6;
+    color: var(--color-charcoal); max-width: 64ch;
+  }
+</style>

@@ -1,0 +1,230 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE } from "../data/site";
+
+const repExamples = [
+  {
+    product: "Modern Standard belépő",
+    total: "330 000 Ft",
+    months: "10",
+    monthly: "33 000 Ft",
+    thm: "0%",
+    repaid: "330 000 Ft",
+  },
+  {
+    product: "Modern Standard prémium kivitellel",
+    total: "480 000 Ft",
+    months: "12",
+    monthly: "40 000 Ft",
+    thm: "0%",
+    repaid: "480 000 Ft",
+  },
+  {
+    product: "Modern Premium családi ház",
+    total: "900 000 Ft",
+    months: "18",
+    monthly: "50 000 Ft",
+    thm: "0%",
+    repaid: "900 000 Ft",
+  },
+  {
+    product: "Modern Premium + ACTUAL csomag",
+    total: "1 600 000 Ft",
+    months: "24",
+    monthly: "66 700 Ft",
+    thm: "0%",
+    repaid: "1 600 000 Ft",
+  },
+];
+
+const faqItems = [
+  { q: "Hogyan kell igényelni az áruhitelt?",
+    a: `<p>A helyszíni felmérés és a fix árajánlat kézhezvétele után a felmérőnk a Cofidis online űrlapját közvetlenül a helyszínen kitölti Önnel. Szükséges iratok: <strong>személyi igazolvány, lakcímkártya, jövedelemigazolás</strong> (utolsó 3 hónap, vagy banki értesítések). A hitelbírálat <strong>10 percen belül</strong> történik, online — és a beépítés napjáig minden szerződéses lépés lezárul.</p>` },
+  { q: "Mit jelent a 0% THM?",
+    a: `<p>A THM (Teljes Hiteldíj Mutató) a hitel teljes éves költsége — beleértve a kamatot, kezelési díjat, és minden egyéb költséget. A 0% THM azt jelenti, hogy <strong>nincs sem kamat, sem kezelési díj</strong> — pontosan annyit fizet vissza, amennyit hitelbe vesz. A 0% THM a Cofidis-Huba kampánykeret függvénye; ennek hiányában is jellemzően 5–10% THM elérhető.</p>` },
+  { q: "Ki a hitelnyújtó? Ki a Huba felelőssége?",
+    a: `<p>A hitelnyújtó a <strong>Cofidis Magyarországi Fióktelepe</strong> (Cofidis SA Magyarországi Fióktelepe — MNB tevékenységi engedéllyel rendelkezik). A Huba ajtó <strong>nem hitelnyújtó</strong>, hanem közvetítő — bemutatjuk és menedzseljük a hiteligénylést, de a hitel a Cofidis-szel jön létre. A Huba az ajtó értékéért, a beépítésért és a garanciáért felel — a hitel törlesztése külön szerződéses kapcsolat.</p>` },
+  { q: "Lehet előtörleszteni?",
+    a: `<p>Igen — a Cofidis áruhitel előtörlesztése díjmentes. Bármikor letöltheti a hátralévő tartozást, és a kamatszámítás (ha 0% feletti THM-mel kötötte) ezzel arányosan csökken.</p>` },
+  { q: "Milyen futamidőre lehet igényelni?",
+    a: `<p>Tipikusan <strong>6–48 hónap</strong> közötti futamidőre — a Cofidis aktuális ajánlatától és a hitelösszegtől függően. A Modern Standard (330 000 Ft) jellemzően 10–18 hónapra, a Premium (800 000+ Ft) 18–36 hónapra ajánlott. Hosszabb futamidőnél tipikusan nem 0% THM, hanem a Cofidis aktuális kamata érvényesül.</p>` },
+  { q: "Mi van, ha a hitelbírálat elutasít?",
+    a: `<p>A Cofidis hitelbírálati kritériumai szerint elutasítás esetén nem kötelez a vásárlás. <strong>Nem keletkezik szerződéses kötelezettsége</strong> sem a Huba, sem a Cofidis felé. A felmérés és a hitelbírálat is ingyenes. Alternatívaként ajánljuk: részfizetést (50% beépítéskor, 50% 60 napon belül), vagy bank- vagy lakáshitelt — de ezeket Önnek kell intézni.</p>` },
+  { q: "Mit kell tudni a fogyasztói hitelről jogi szempontból?",
+    a: `<p>A magyar <strong>2009. évi CLXII. törvény</strong> (a fogyasztónak nyújtott hitelről) szabályozza az áruhiteleket — előírja a teljes körű THM-megjelenítést, a reprezentatív példa közlését, és 14 napos elállási jogot a szerződéstől. A Cofidis-szerződésnél ezek mind érvényesek; az elállási jogot a szerződéskötés napjától 14 napon belül indoklás nélkül érvényesítheti.</p>` },
+  { q: "Nem kérek hitelt — kapok kedvezményt?",
+    a: `<p>A 0% THM-mel finanszírozott vásárlás a Huba számára ugyanannyiba kerül, mint a készpénzes — a Cofidis-Huba partnerségben a Cofidis vállalja a kamatkockázatot. <strong>Készpénzes vásárlásra ezért külön kedvezményt nem tudunk adni</strong>. Viszont a kombinált csomagokra (ajtó + ablak, vagy több ajtó egyszerre) jellemzően 5–12% kedvezményt biztosítunk — fizetési módtól függetlenül.</p>` },
+];
+---
+<BaseLayout
+  title="Részletfizetés — Cofidis áruhitel, 0% THM"
+  description={`Vásárolja meg Huba biztonsági ajtaját Cofidis áruhitellel, akár 0% THM-mel. Reprezentatív példa: ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft / 10 hó = 33 000 Ft / hó, THM 0%. Online hitelbírálat 10 perc alatt, a felmérőnél a helyszínen.`}
+>
+  <Hero
+    eyebrow="Cofidis áruhitel · 0% THM kampánnyal"
+    heading={`Részletre is.<br/><em>33 000 Ft / hó</em>tól.`}
+    lead={`A Modern Standard belépő ára (${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft) 10 hónapos áruhitelre lebontva 33 000 Ft / hó. 0% THM, sem kamat, sem kezelési díj. A hitelbírálat online, 10 percen belül, a felmérés végén. Cofidis Bank, MNB-engedéllyel.`}
+    pillars={[
+      "0% THM kampány",
+      "10 perc online bírálat",
+      "6–48 hónap futamidő",
+      "Díjmentes előtörlesztés",
+      "Cofidis Bank · MNB-engedéllyel",
+    ]}
+    image="/assets/photos/hero/modern-white.jpg"
+    imageAlt="Modern Huba biztonsági ajtó, részletre vásárolva — családi otthon bejáratán"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Árak megtekintése", href: "/arak" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Reprezentatív példa"
+    heading="A 0% THM konkrét számokban."
+    lead="A magyar 2009. évi CLXII. törvény (fogyasztói hitelről) előírja a reprezentatív példa kötelező közlését. Az alábbi négy példa a leggyakoribb Huba termékkonfigurációkra vonatkozik."
+  >
+    <table class="examples-table">
+      <thead>
+        <tr>
+          <th scope="col">Termékkonfiguráció</th>
+          <th scope="col">Teljes ár (bruttó)</th>
+          <th scope="col">Futamidő</th>
+          <th scope="col">Havi törlesztő</th>
+          <th scope="col">THM</th>
+          <th scope="col">Teljes visszafizetendő</th>
+        </tr>
+      </thead>
+      <tbody>
+        {repExamples.map(e => (
+          <tr>
+            <th scope="row">{e.product}</th>
+            <td>{e.total}</td>
+            <td>{e.months} hó</td>
+            <td class="monthly">{e.monthly}</td>
+            <td class="thm">{e.thm}</td>
+            <td>{e.repaid}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="example-note">
+      Reprezentatív példa — a 2009. évi CLXII. tv. szerinti kötelező közlés. <strong>Hitelnyújtó:</strong> Cofidis Magyarországi Fióktelepe (MNB engedély). A THM és a havi törlesztő a Cofidis aktuális kampányajánlata és a hitelbírálat eredménye alapján alakul ki; az itt közölt értékek a 0% THM kampánykeretre vonatkoznak, ami időszakosan elérhető. Hitelbírálat ingyenes, eredménye nem kötelezi Önt vásárlásra.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Hogyan működik"
+    heading="Az áruhitel négy lépése."
+  >
+    <ol class="process-list stagger">
+      <li class="process-item">
+        <p class="process-n">01</p>
+        <h3 class="process-step-title">Ingyenes helyszíni felmérés</h3>
+        <p class="process-step-body">A felmérőnk 2–3 napon belül felméri az ingatlant és fix árajánlatot ad — a felmérés és az árajánlat semmilyen vásárlási kötelezettséggel nem jár.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">02</p>
+        <h3 class="process-step-title">Cofidis igénylés a helyszínen</h3>
+        <p class="process-step-body">Ha az árajánlatot elfogadja, a felmérőnk a helyszínen kitölti Önnel a Cofidis online igénylőlapját. Iratok: személyi, lakcímkártya, jövedelemigazolás.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">03</p>
+        <h3 class="process-step-title">10 perces online bírálat</h3>
+        <p class="process-step-body">A Cofidis hitelbírálata 10 percen belül megérkezik. Pozitív válasz esetén a szerződést elektronikusan vagy papíralapon írja alá — a választott módon.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">04</p>
+        <h3 class="process-step-title">Gyártás indul, törlesztés a beépítés után</h3>
+        <p class="process-step-body">A szerződés aláírása után a gyártás 10–12 napon belül elkezdődik. Az első törlesztőrészlet jellemzően a beépítés utáni hónapban esedékes.</p>
+      </li>
+    </ol>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Cofidis Bank"
+    heading="Ki a hitelnyújtó partnerünk?"
+    lead="A Cofidis Magyarországi Fióktelepe Magyarország egyik legnagyobb fogyasztói hitelnyújtója, MNB-tevékenységi engedéllyel. A Huba ajtó hivatalos áruhitel-partnere — a magyar biztonsági ajtó-piacon a Cofidis a leggyakrabban használt finanszírozási partner."
+  >
+    <div class="cofidis-grid">
+      <div class="cofidis-block reveal">
+        <p class="cofidis-eyebrow">A bankról</p>
+        <h3 class="cofidis-title">Cofidis Magyarországi Fióktelepe</h3>
+        <p class="cofidis-body">
+          A Cofidis a francia BPCE-csoport leányvállalata, európai szinten 8 országban működik. Magyarországon 2002 óta van jelen, 18+ éve működő áruhitelszolgáltatás. MNB engedélyszám: I-2105/2007. Tevékenysége a magyar pénzügyi felügyelet (MNB) folyamatos felügyelete alatt áll.
+        </p>
+      </div>
+      <div class="cofidis-block reveal">
+        <p class="cofidis-eyebrow">A partnerségről</p>
+        <h3 class="cofidis-title">Huba × Cofidis áruhitelpartner</h3>
+        <p class="cofidis-body">
+          A Huba ajtó hivatalos Cofidis áruhitel-partner. A hitelt nem mi nyújtjuk — közvetítjük. A 0% THM kampány a Cofidis-Huba közös vállalása: a kamatkockázatot a Cofidis viseli, a Huba pedig a kampánykeretért nem számít fel külön díjat. A finanszírozott vásárlás Önnek <strong>ugyanannyiba kerül, mint a készpénzes</strong>.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="A részletfizetés előtt jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon felmérést — a hitelbírálat is a helyszínen történhet"
+    lead="A felmérés ingyenes, a hitelbírálat 10 perces, és nem kötelezi Önt vásárlásra. A kampányajánlatokról a felmérés napján adunk pontos tájékoztatást."
+  />
+</BaseLayout>
+
+<style>
+  .examples-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.92rem;
+  }
+  .examples-table th, .examples-table td {
+    text-align: left; padding: 0.95rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top; line-height: 1.55;
+  }
+  .examples-table thead th {
+    font-family: var(--font-serif); font-size: 0.82rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .examples-table tbody th { font-weight: 500; color: var(--color-ink); }
+  .examples-table tbody td { color: var(--color-charcoal); font-variant-numeric: tabular-nums; }
+  .examples-table .monthly { font-family: var(--font-serif); color: var(--color-brass-deep); font-size: 1.05rem; }
+  .examples-table .thm { font-family: var(--font-serif); color: var(--color-brass-deep); font-size: 1.05rem; }
+  .example-note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--color-stone); line-height: 1.65; max-width: 80ch; }
+  .example-note strong { color: var(--color-ink); }
+
+  .process-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 800px) { .process-list { grid-template-columns: repeat(4, 1fr); } }
+  .process-item { background: var(--color-paper); padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .process-n { font-family: var(--font-serif); font-size: 2.5rem; line-height: 1; color: var(--color-brass); }
+  .process-step-title { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.2; }
+  .process-step-body { font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal); }
+
+  .cofidis-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 800px) { .cofidis-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  .cofidis-block { background: var(--color-paper); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .cofidis-eyebrow { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-brass); }
+  .cofidis-title { font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.2; }
+  .cofidis-body { font-size: 0.95rem; line-height: 1.7; color: var(--color-charcoal); }
+  .cofidis-body strong { color: var(--color-ink); }
+</style>

@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Hero from "../../../components/Hero.astro";
+import Section from "../../../components/Section.astro";
+import ContactCTA from "../../../components/ContactCTA.astro";
+import { SLA } from "../../../data/site";
+---
+
+<BaseLayout
+  title="Terézváros (VI.) — örökségvédelmi engedély ajtócseréhez"
+  description="A VI. kerület (Terézváros) ajtócseréinek szabályozása a 33/2017. önkormányzati rendelet alapján — Andrássy út és környéke, eklektikus polgári bérházak. A Huba ajtó engedélyezési csomaggal."
+>
+  <Hero
+    eyebrow="Budapest · VI. kerület"
+    heading="Terézváros — <em>Andrássy-vonal.</em>"
+    lead="A VI. kerület Terézváros az UNESCO világörökségi Andrássy úti tengely és a Nagykörút közötti polgári bérházállomány központja. A 33/2017. (XII. 19.) önkormányzati rendelet részletesen szabályozza a homlokzati nyílászárókat — minden lépcsőházi lakásajtó cseréje is tipikusan bejelentésköteles."
+    image="/assets/photos/hero/period-brown.jpg"
+    imageAlt="Terézvárosi polgári biztonsági ajtó kovácsoltvas filigrán rácsbetéttel"
+    imageCaption="Terézváros · klasszikus pesti bérház"
+    primaryCta={{ label: "Felmérés foglalása", href: "/felmeres" }}
+    secondaryCta={{ label: "Vissza az útmutatóhoz", href: "/orokségvedelmi-engedely" }}
+  />
+
+  <div id="below"></div>
+
+  <Section
+    tone="paper"
+    eyebrow="A kerületi szabályozás"
+    heading="33/2017. (XII. 19.) — a teljes Terézvárosra."
+  >
+    <p class="lead-text reveal">
+      A Terézváros 33/2017. (XII. 19.) önkormányzati rendelete a magyar főváros egyik legkonzekvensebben
+      érvényesített településképvédelmi szabályozása. Az Andrássy úti UNESCO-tengely védettsége és az
+      eklektikus polgári bérházállomány adja a kontextust — itt a városkép koherenciája tartós érdek.
+    </p>
+    <p class="body-text reveal">
+      A rendelet külön nevesíti az utcai és udvari homlokzati nyílászárókat, valamint a lépcsőházi
+      ajtókat — mindezek településképi bejelentésköteles tevékenységek.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Tipikus terézvárosi ajtó"
+    heading="Kétszárnyú kapu + felülvilágító — gyakran 6-osztású ólmozott üveggel."
+  >
+    <p class="body-text reveal">
+      A Terézvárosban dolgozó kollégáink több visszatérő tipizált esettel találkoznak. A bérházak
+      utcafronti kétszárnyú (kétleveles) kapui jellemzően az alsó 1/3-ban betétesek, a középső 1/3-ban
+      kovácsolt-filigrán rácsozott üveggel, a felső 1/3-ban felülvilágítóval (transzom). A lakásajtók
+      pedig sokszor 6-osztású ólmozott üveg felsőrésszel, alul kazettás kivitellel készültek
+      eredetileg.
+    </p>
+    <p class="body-text reveal">
+      A korhű rekonstrukció ilyenkor az alábbiakat jelenti:
+    </p>
+    <ul class="bullet-list">
+      <li><strong>Osztásrend:</strong> az eredeti üveg-, kazetta- és betétarány megőrzése.</li>
+      <li><strong>Üvegminta:</strong> ólmozott vagy homokfúvott, gyakran geometrikus mintával.</li>
+      <li><strong>Szín:</strong> jellemzően RAL 8014 gesztenyebarna vagy RAL 6009 sötétzöld.</li>
+      <li><strong>Vasalat:</strong> sárgaréz fogantyúk, kovácsoltvas pántok.</li>
+      <li><strong>Felület:</strong> festett vagy lazúrozott — nem műanyag, nem alumínium.</li>
+    </ul>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="A folyamat"
+    heading="Településképi bejelentés a VI. kerületben."
+  >
+    <ol class="process-list">
+      <li><strong>Védettségi ellenőrzés</strong> — OÉNY + Terézvárosi főépítészi konzultáció.</li>
+      <li><strong>Helyszíni felmérés</strong> — eredeti ajtó méretes-rajza, profilozás, üvegminta.</li>
+      <li><strong>Tervdokumentáció</strong> — építész tervezővel, M=1:10 rajzokkal.</li>
+      <li><strong>Településképi bejelentés</strong> — 15 napos eljárás.</li>
+      <li><strong>Örökségvédelmi engedély</strong> ha kötelező (nevesített elem) — +25 nap.</li>
+      <li><strong>Gyártás és beépítés</strong> — engedélyezett kivitelben.</li>
+      <li><strong>Befejezési bejelentés.</strong></li>
+    </ol>
+    <p class="footnote reveal">
+      Átlagos folyamat: 4-5 hónap. Ha csak településképi bejelentés kell, gyorsabban — 3-4 hónap.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A Huba ajtó VI. kerületben"
+    heading="Festett, betétes, kazettás — a hatóság elfogadja."
+  >
+    <p class="body-text reveal">
+      A terézvárosi munkáink a fa-felületű, festett, kazettás vagy betétes kivitelt fedik le — belül
+      acélbetétes biztonsági szerkezettel. Az engedélyezési gyakorlatban a hatóság ezt a konstrukciót
+      elfogadja: a megjelenés korhű, a védelem 21. századi.
+    </p>
+    <p class="body-text reveal">
+      <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó — termékoldal →</a>
+    </p>
+  </Section>
+
+  <ContactCTA
+    heading="VI. kerületi címre felmérés"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz — Terézvárosba is.`}
+  />
+</BaseLayout>
+
+<style>
+  .lead-text { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.6; color: var(--color-charcoal); max-width: 60ch; }
+  .body-text { font-size: 1rem; line-height: 1.7; color: var(--color-charcoal); max-width: 64ch; margin-top: 1rem; }
+  .body-text a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+  .bullet-list, .process-list {
+    padding: 0; max-width: 64ch; display: flex; flex-direction: column; gap: 0.85rem;
+    font-size: 1rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+  .bullet-list { list-style: none; }
+  .bullet-list li { padding-left: 1.25rem; position: relative; }
+  .bullet-list li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 0.55rem; height: 1px; background: var(--color-brass); }
+  .bullet-list strong { color: var(--color-ink); }
+  .process-list { list-style: decimal; padding-left: 1.5rem; }
+  .process-list strong { color: var(--color-ink); }
+
+  .footnote { margin-top: 1.5rem; font-size: 0.95rem; color: var(--color-stone); max-width: 64ch; }
+  .footnote strong { color: var(--color-ink); }
+</style>

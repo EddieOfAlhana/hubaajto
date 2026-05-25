@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import TrustStrip from "../../components/TrustStrip.astro";
+import ProcessSteps from "../../components/ProcessSteps.astro";
+import SpecCompareTable from "../../components/SpecCompareTable.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { SITE, SLA } from "../../data/site";
+
+const faqItems = [
+  { q: "Mi a Modern Standard pontos belépő ára?",
+    a: `<p>A Modern Standard kivitel <strong>330 000 Ft-tól</strong> indul bruttó, ami panel-nyílásméretre, fehér RAL színben, standard mart vagy fa borítással, Abus zárszerkezettel értendő. A végleges ár a felmérés után, a kiválasztott mintázat, üvegezés, zárrendszer és kiegészítők alapján alakul ki. Tipikus végösszeg 350 000 – 480 000 Ft sávban szokott landolni.</p>` },
+  { q: "Melyik MABISZ-osztály ez pontosan?",
+    a: `<p><strong>MABISZ 2. osztály</strong> — szakszerű betörési kísérletnek 3 percig áll ellen, ami a magyar lakásbiztosítási alapfeltételhez elegendő. Az ehhez tartozó betörésvédelmi osztály az európai szabvány szerint <strong>RC2</strong>.</p>` },
+  { q: "Beépíthető-e a meglévő paneltokba bontás nélkül?",
+    a: `<p>A panel-lakás standard tokmérete (kb. 90×210 cm) többnyire átvehető — ilyenkor csak a régi nyílórészt és a sérült tokot bontjuk ki, az új tok a meglévő nyílásba illeszkedik. Egy nap alatt befejezzük, törmelékelszállítással együtt. Társasházi lépcsőházban nem keletkezik porfelhő.</p>` },
+  { q: "Mit fed le a 15 év garancia?",
+    a: `<p>A 15 év szerkezeti garancia az acél tokrendszerre és a nyílórész szerkezeti épségére vonatkozik. A teljes ajtóra (felület, kilincs, tömítés) 1 év, a zárszerkezetre 18 hónap teljes körű garanciát adunk. <a href="/garancia">Részletes garancia →</a></p>` },
+  { q: "Lehet-e részletre venni?",
+    a: `<p>Igen — Cofidis áruhitelen keresztül, akár 0% THM-mel. Reprezentatív példa a Modern Standard belépő árára: <strong>330 000 Ft / 10 hó = 33 000 Ft / hó</strong>, THM 0%, teljes visszafizetendő 330 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
+  { q: "Miért nem az 145 000 Ft-os ajtó éri meg?",
+    a: `<p>A Standard 330 000 Ft hőhídmentes acél tokot, megerősített zárlemezt, MABISZ 2. minősítést, márkás zárcilindert és 15 év garanciát tartalmaz. A 145 000 Ft-os import katalógusajtó tipikusan hajlított vékony lemez tok, márka nélküli zár, MABISZ-besorolás nélkül vagy alatta, és 1–2 év garancia. <a href="#osszehasonlitas">Részletes spec-összevetés →</a></p>` },
+];
+---
+<BaseLayout
+  title="Modern Standard biztonsági ajtó — 330 000 Ft-tól, MABISZ 2."
+  description="A Huba Modern Standard belépőszint: panel-lakásra, társasházra, családi ház másodlagos bejáratára. 330 000 Ft-tól, MABISZ 2. osztály (3 perc), 15 év szerkezeti garancia. Méretre gyártva Kistarcsán."
+>
+  <Hero
+    eyebrow="Modern Standard · MABISZ 2. osztály"
+    heading={`Modern Standard.<br/><em>330 000 Ft-tól</em>, méretre szabva.`}
+    lead="A modern range belépőszintje — panel-lakásra, társasházi bejáratra, családi ház hátsó ajtajára. Hőhídmentes acél tok, üveggyapot mag, MABISZ 2. minősítés, 15 év szerkezeti garancia. Saját műhelyünkben gyártjuk Kistarcsán."
+    pillars={[
+      "330 000 Ft-tól bruttó",
+      "MABISZ 2. · RC2 · 3 perc",
+      "Méretre szabva",
+      `${SLA.manufactureDays} alatt`,
+      `${SITE.warrantyYears} év garancia`,
+    ]}
+    image="/assets/photos/hero/modern-white.jpg"
+    imageAlt="Fehér Modern Standard biztonsági ajtó panelházi lakás bejáratán"
+    imageCaption="Budapest, XV. kerület · 2024"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Ajtótervező indítása", href: "/ajtotervezo" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Kinek ajánljuk"
+    heading="A Standard kivitel arra való, hogy ne kelljen kompromisszumot kötni a belépő áron."
+    lead="A Modern Standard nem 'olcsó kivitel' — hanem a teljes Huba szerkezeti rendszer egyszerűbb borítással, alapszintű MABISZ-minősítéssel. Tipikus vásárlóink:"
+  >
+    <ul class="audience-list stagger">
+      <li>
+        <h3>Panel-lakás tulajdonosa</h3>
+        <p>Aki egy elavult, rozsdásodó acél- vagy faajtót cserélne — bontás nélkül, egy nap alatt, a meglévő nyílásba.</p>
+      </li>
+      <li>
+        <h3>Társasházi lakó</h3>
+        <p>Lépcsőházi bejárat cseréje, ahol a közös képviselős egyeztetés után gyors, megbízható kivitelezésre van szükség.</p>
+      </li>
+      <li>
+        <h3>Családi ház másodlagos bejárat</h3>
+        <p>Garázs, melléképület, hátsó bejárat — ahol a Premium kivitel árszintje nem indokolt, de a MABISZ-minősítés és a 15 év garancia igen.</p>
+      </li>
+      <li>
+        <h3>Albérletbe adott ingatlan</h3>
+        <p>Befektetési célú lakás, ahol egyszerre kell jó ár-érték arány, biztosítható (MABISZ) minőség és hosszú élettartam.</p>
+      </li>
+    </ul>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Műszaki adatok"
+    heading="Mit pontosan kap 330 000 Ft-ért?"
+    lead="A belépő ár konkrét tartalma — semmi 'opcionális', semmi 'felár'. Ezt a szintet kapja minden Modern Standard kivitelre."
+  >
+    <table class="spec-table">
+      <thead>
+        <tr><th scope="col">Paraméter</th><th scope="col">Modern Standard</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Tok</th><td>Hőhídmentes acél zártszelvény, méretre szabva</td></tr>
+        <tr><th scope="row">Nyílórész</th><td>Acéllemez kétoldalt, megerősítve a zárszerkezeteknél</td></tr>
+        <tr><th scope="row">Bélelés</th><td>Üveggyapot mag, hang- és hőszigetelő</td></tr>
+        <tr><th scope="row">MABISZ osztály</th><td>2. osztály · 3 perc ellenállás</td></tr>
+        <tr><th scope="row">Európai szabvány</th><td>RC2 (EN 1627)</td></tr>
+        <tr><th scope="row">Záródási pontok</th><td>5–7 pont, felül-alul-hátul</td></tr>
+        <tr><th scope="row">Alapcilinder</th><td>Abus márkás, fúrásvédett, 5 kulccsal</td></tr>
+        <tr><th scope="row">Tömítés</th><td>Körbefutó, befűzött (nem ragasztott) gumitömítés</td></tr>
+        <tr><th scope="row">Borítás (alap)</th><td>Mart vagy fa minta — 35 fa + 15 mart közül</td></tr>
+        <tr><th scope="row">Szín (alap)</th><td>RAL színskála (alapfelár nélkül)</td></tr>
+        <tr><th scope="row">Kilincs</th><td>Acél standard kilincsgarnitúra</td></tr>
+        <tr><th scope="row">Beépítés</th><td>1 nap · régi ajtó bontása, törmelékelszállítás benne</td></tr>
+        <tr><th scope="row">Garancia</th><td>15 év szerkezeti · 18 hónap zárszerkezet · 1 év teljes körű</td></tr>
+      </tbody>
+    </table>
+    <p class="spec-note">A táblázat tartalma a belépő 330 000 Ft alapárra értendő, panel-szabványméretben, bruttó. ÁFA-t (27%) tartalmaz.</p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Miben jobb a katalógusajtónál"
+    heading="A Standard és a 150 000 Ft-os import — spec-szintű különbségek."
+    lead="A különbség nem az árban van, hanem ezekben a számokban."
+  >
+    <div id="osszehasonlitas">
+      <SpecCompareTable />
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Választható extrák"
+    heading="Mit lehet hozzátenni — és mennyiért."
+  >
+    <ul class="extras-list stagger">
+      <li><strong>Üvegezés a nyílórészen</strong> — biztonsági fólia + ragasztott üvegpaket. Felár jellemzően 35 000 – 65 000 Ft, méret-függő.</li>
+      <li><strong>Felülvilágító transom</strong> — fix vagy nyitható, méretre. Felár 45 000 Ft-tól.</li>
+      <li><strong>Második acéllemez</strong> a nyílórészbe — MABISZ 3. szintre emelheti. Felár 40 000 – 70 000 Ft.</li>
+      <li><strong>Mottura vagy Mul-T-Lock cilinder</strong> az alap Abus helyett. Felár 25 000 – 60 000 Ft.</li>
+      <li><strong>Kódkártyás zárrendszer</strong> — pótkulcs csak igazolással másolható. Felár 15 000 – 30 000 Ft.</li>
+      <li><strong>Belső / külső eltérő mintázat</strong> — a két ajtófelület eltérő színnel / borítással. Általában felár nélkül.</li>
+      <li><strong>Hosszabbított kilincsgarnitúra, brass / fekete / inox</strong>. Felár 8 000 – 25 000 Ft.</li>
+    </ul>
+    <p class="extras-note">A pontos felárakat a felmérés után írásban kapja, fix ajánlatként 30 napra rögzítve.</p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Folyamat"
+    heading="A felméréstől a beépített ajtóig — 12 nap."
+  >
+    <ProcessSteps />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="A Modern Standard előtt jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon helyszíni felmérést — a Standard kivitelre is ingyenes"
+    lead={`A felmérőnk ${SLA.surveyDays} alatt érkezik Önhöz, méretet vesz, mintamintát hoz, és a felmérés után 48 órán belül fix árajánlatot ad.`}
+  />
+</BaseLayout>
+
+<style>
+  .audience-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 720px) { .audience-list { grid-template-columns: repeat(2, 1fr); } }
+  .audience-list li { background: var(--color-paper); padding: 1.75rem 1.5rem; }
+  .audience-list h3 { font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.2; margin-bottom: 0.5rem; }
+  .audience-list p { font-size: 0.95rem; line-height: 1.55; color: var(--color-charcoal); max-width: 40ch; }
+
+  .spec-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.95rem; max-width: 720px;
+  }
+  .spec-table th, .spec-table td {
+    text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top;
+  }
+  .spec-table thead th {
+    font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .spec-table tbody th {
+    font-weight: 500; color: var(--color-ink); width: 38%;
+  }
+  .spec-table tbody td { color: var(--color-charcoal); }
+  .spec-note { margin-top: 1rem; font-size: 0.85rem; color: var(--color-stone); font-style: italic; }
+
+  .extras-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem; max-width: 70ch; }
+  .extras-list li { padding-left: 1.25rem; position: relative; line-height: 1.55; color: var(--color-charcoal); }
+  .extras-list li::before { content: "+"; position: absolute; left: 0; color: var(--color-brass); font-weight: 600; }
+  .extras-list strong { color: var(--color-ink); font-weight: 500; }
+  .extras-note { margin-top: 1.5rem; font-size: 0.88rem; color: var(--color-stone); font-style: italic; max-width: 60ch; }
+</style>

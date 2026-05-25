@@ -1,0 +1,273 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE, CONTACT } from "../data/site";
+---
+
+<BaseLayout
+  title="Adatvédelmi tájékoztató"
+  description="A Huba ajtó (Szer-X3 Kft.) adatkezelési tájékoztatója — GDPR Art. 13-14 és a 2011. évi CXII. törvény (Infotv.) szerint. Adatkezelő, adatok köre, célja, jogalapja, időtartama, érintett jogai, NAIH-hoz fordulás."
+>
+  <Section tone="paper" eyebrow="Jogi" heading="Adatvédelmi tájékoztató">
+    <div class="legal-prose">
+      <p class="legal-lead">
+        Jelen Adatvédelmi tájékoztató a Huba ajtó honlapján (https://hubaajto.hu) történő
+        adatkezelésekre vonatkozóan tartalmaz tájékoztatást a természetes személy érintettek részére,
+        az Európai Parlament és Tanács (EU) 2016/679 rendelete (általános adatvédelmi rendelet,
+        „GDPR") és a 2011. évi CXII. törvény az információs önrendelkezési jogról és az
+        információszabadságról („Infotv.") szerint.
+      </p>
+
+      <h3>1. Az adatkezelő</h3>
+      <dl class="legal-list">
+        <div>
+          <dt>Adatkezelő neve</dt>
+          <dd>{SITE.legalName}</dd>
+        </div>
+        <div>
+          <dt>Székhely</dt>
+          <dd>{CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}</dd>
+        </div>
+        <div>
+          <dt>Cégjegyzékszám</dt>
+          <dd>13-09-XXXXXXX <em>(az ügyfél megerősítését követően)</em></dd>
+        </div>
+        <div>
+          <dt>Adószám</dt>
+          <dd>XXXXXXXX-2-13 <em>(az ügyfél megerősítését követően)</em></dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a></dd>
+        </div>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></dd>
+        </div>
+        <div>
+          <dt>Honlap</dt>
+          <dd>{SITE.url}</dd>
+        </div>
+      </dl>
+      <p>
+        Az adatkezelő mérete és tevékenysége alapján külön adatvédelmi tisztviselő (DPO) kijelölésére
+        nem köteles. Adatvédelmi kérdésekkel közvetlenül az adatkezelőhöz fordulhat az
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> címen.
+      </p>
+
+      <h3>2. Az adatkezelés célja, jogalapja, kezelt adatok köre, időtartama</h3>
+
+      <article class="legal-block">
+        <h4>2.1 Kapcsolatfelvétel és árajánlatkérés (kapcsolati űrlap, telefonos / e-mailes megkeresés)</h4>
+        <ul>
+          <li><strong>Cél:</strong> a megkereséssel kapcsolatos információadás, helyszíni felmérés
+            időpontjának egyeztetése, árajánlat készítése, szerződéskötés előkészítése.</li>
+          <li><strong>Jogalap:</strong> GDPR 6. cikk (1) bekezdés a) pontja — hozzájárulás;
+            árajánlat-kérés esetén a 6. cikk (1) bekezdés b) pontja — szerződéskötést megelőző
+            intézkedés.</li>
+          <li><strong>Kezelt adatok köre:</strong> név, telefonszám, e-mail cím, az ingatlan
+            irányítószáma / címe, az érintett által megadott üzenet tartalma, a felmérés időpontja.</li>
+          <li><strong>Időtartam:</strong> 5 év — a Ptk. szerinti elévülési idővel összhangban,
+            illetve a hozzájárulás visszavonásáig.</li>
+        </ul>
+      </article>
+
+      <article class="legal-block">
+        <h4>2.2 A megrendelt szolgáltatás teljesítése</h4>
+        <ul>
+          <li><strong>Cél:</strong> a megrendelt biztonsági ajtó gyártása, beépítése, garancia
+            kezelése.</li>
+          <li><strong>Jogalap:</strong> GDPR 6. cikk (1) bekezdés b) pontja — szerződés teljesítése.
+            Számviteli kötelezettségek esetén a 6. cikk (1) bekezdés c) pontja — jogi kötelezettség
+            (2000. évi C. tv. számvitelről).</li>
+          <li><strong>Kezelt adatok köre:</strong> név, számlázási cím, beépítési cím, e-mail,
+            telefonszám, adott esetben adószám.</li>
+          <li><strong>Időtartam:</strong> a számviteli bizonylatok esetében 8 év (számviteli tv.
+            169. § (2)). A garanciális dokumentumokat a garancia teljes időtartamára (15 év
+            szerkezeti garancia) megőrizzük.</li>
+        </ul>
+      </article>
+
+      <article class="legal-block">
+        <h4>2.3 Honlap látogatás — technikai naplózás</h4>
+        <ul>
+          <li><strong>Cél:</strong> a honlap biztonságos üzemeltetése, statisztikai elemzés.</li>
+          <li><strong>Jogalap:</strong> GDPR 6. cikk (1) bekezdés f) pontja — az adatkezelő jogos
+            érdeke a szolgáltatás biztonságos üzemeltetésében.</li>
+          <li><strong>Kezelt adatok köre:</strong> IP-cím, böngésző / operációs rendszer adatai,
+            látogatás időbélyege, hivatkozó oldal.</li>
+          <li><strong>Időtartam:</strong> 30 nap a kiszolgálói naplókban.</li>
+        </ul>
+      </article>
+
+      <article class="legal-block">
+        <h4>2.4 Süti (cookie) használat</h4>
+        <p>
+          A sütik használatára vonatkozó részletes tájékoztatás a külön elérhető
+          <a href="/suti">Süti tájékoztatóban</a> található. A nem szükséges sütiket csak az
+          érintett előzetes, kifejezett, granulált hozzájárulása alapján helyezzük el, az ePrivacy
+          irányelv és a NAIH gyakorlatának megfelelően.
+        </p>
+      </article>
+
+      <h3>3. Az adatok címzettjei, adatfeldolgozók</h3>
+      <p>
+        A személyes adatokat az adatkezelőn kívül az alábbi kategóriákba tartozó adatfeldolgozók
+        kezelik az adatkezelő utasítása szerint:
+      </p>
+      <ul>
+        <li><strong>Tárhelyszolgáltató:</strong> a honlap kiszolgálási szolgáltatását biztosító cég
+          (a részletes adatok az <a href="/impresszum">Impresszumban</a>).</li>
+        <li><strong>Könyvelő iroda:</strong> számviteli bizonylatok kezelése — szerződéskötés esetén.</li>
+        <li><strong>Statisztikai szolgáltatás (Plausible Analytics, EU székhely):</strong> a honlap
+          látogatottsági adatai. Sütimentes, anonim statisztikákat szolgáltat.</li>
+      </ul>
+      <p>
+        Az adatfeldolgozók önálló adatkezelést a {SITE.shortLegal} utasítása nélkül nem végeznek.
+      </p>
+
+      <h3>4. Harmadik országba történő adattovábbítás</h3>
+      <p>
+        Amennyiben a honlap bizonyos szolgáltatásai (pl. ágyazott térkép, statisztikai szolgáltatás)
+        harmadik országbeli — különösen amerikai egyesült államokbeli — szolgáltatótól származnak, az
+        ilyen adattovábbítás jogalapja a GDPR 46. cikkben meghatározott garanciák, jellemzően a
+        Bizottság megfelelőségi határozata (EU-US Data Privacy Framework) vagy az általános
+        adatvédelmi szerződéses feltételek (SCC) alapján történik. A részletekért a süti
+        tájékoztatóban felsorolt egyes szolgáltatások adatkezelési tájékoztatóit kérjük megtekinteni.
+      </p>
+
+      <h3>5. Az érintett jogai</h3>
+      <p>Ön mint érintett az alábbi jogokat gyakorolhatja az adatkezelővel szemben:</p>
+      <ul>
+        <li><strong>Hozzáférési jog</strong> — tájékoztatást kérhet az Önnel kapcsolatban kezelt
+          adatokról (GDPR 15. cikk).</li>
+        <li><strong>Helyesbítéshez való jog</strong> — pontatlan adatok helyesbítését kérheti
+          (GDPR 16. cikk).</li>
+        <li><strong>Törléshez való jog („elfeledtetéshez való jog")</strong> — bizonyos esetekben
+          kérheti az adatok törlését (GDPR 17. cikk).</li>
+        <li><strong>Adatkezelés korlátozásához való jog</strong> (GDPR 18. cikk).</li>
+        <li><strong>Adathordozhatósághoz való jog</strong> — gépi olvasható formátumban kérheti
+          adatait (GDPR 20. cikk).</li>
+        <li><strong>Tiltakozáshoz való jog</strong> — a jogos érdeken alapuló adatkezelés ellen
+          (GDPR 21. cikk).</li>
+        <li><strong>Hozzájárulás visszavonásához való jog</strong> — bármikor, korlátozás nélkül, a
+          visszavonás előtti adatkezelés jogszerűsége nélkül (GDPR 7. cikk (3)).</li>
+      </ul>
+      <p>
+        Joggyakorlási kérelmét az <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> címre vagy
+        a {CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street} postacímre
+        küldheti. Kérelmére az adatkezelő legkésőbb 30 napon belül érdemi választ ad.
+      </p>
+
+      <h3>6. Jogorvoslat — NAIH és bíróság</h3>
+      <p>
+        Adatvédelmi panaszával a Nemzeti Adatvédelmi és Információszabadság Hatóságához (NAIH)
+        fordulhat:
+      </p>
+      <dl class="legal-list">
+        <div>
+          <dt>Cím</dt>
+          <dd>1055 Budapest, Falk Miksa utca 9-11.</dd>
+        </div>
+        <div>
+          <dt>Levélcím</dt>
+          <dd>1363 Budapest, Pf.: 9.</dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd>+36 1 391 1400</dd>
+        </div>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a></dd>
+        </div>
+        <div>
+          <dt>Honlap</dt>
+          <dd><a href="https://www.naih.hu" rel="external">www.naih.hu</a></dd>
+        </div>
+      </dl>
+      <p>
+        Bírósági úton — az illetékes törvényszéken — keresetet indíthat az adatkezelő ellen, ha
+        megítélése szerint az adatkezelő megsértette a személyes adatok kezelésére vonatkozó
+        jogszabályokban vagy az EU kötelező jogi aktusaiban meghatározott jogait. A perre az
+        adatkezelő székhelye szerinti törvényszék vagy az érintett lakóhelye, tartózkodási helye
+        szerinti törvényszék is illetékes (Infotv. 23. §).
+      </p>
+
+      <h3>7. Adatbiztonság</h3>
+      <p>
+        Az adatkezelő a kezelt személyes adatok biztonsága érdekében az adatkezelés jellegéhez és
+        kockázatához igazodó technikai és szervezési intézkedéseket alkalmaz: titkosított adatátvitel
+        (TLS), hozzáférés-szabályozás, rendszeres biztonsági mentés, a munkavállalói hozzáférések
+        szükségesség elve. Az érintett adatait a feldolgozási cél megvalósulása után — a 2.
+        pontban megadott időtartamok lejártát követően — törli vagy anonimizálja.
+      </p>
+
+      <h3>8. A tájékoztató módosítása</h3>
+      <p>
+        Az adatkezelő fenntartja a jogot, hogy jelen tájékoztatót egyoldalúan módosítsa. Lényeges
+        változás esetén a módosításról a honlapon, valamint a már regisztrált érintetteknél az
+        adatkezelés céljának megfelelő csatornán előzetesen tájékoztat.
+      </p>
+
+      <p class="legal-footnote">
+        Hatályos: 2026. május. Az aktuális kérdéseivel kapcsolatban kérjük forduljon hozzánk a
+        fenti elérhetőségeken vagy a <a href="/kapcsolat">Kapcsolat oldalon</a>.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .legal-prose {
+    max-width: var(--container-text); margin-inline: auto;
+    font-size: 1rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-lead {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); margin-bottom: 2.5rem;
+  }
+  .legal-prose h3 {
+    font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .legal-prose h4 {
+    font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-ink);
+    margin: 1.5rem 0 0.6rem;
+  }
+  .legal-prose p { margin-bottom: 1rem; }
+  .legal-prose p:last-child { margin-bottom: 0; }
+  .legal-prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .legal-prose ul li { margin-bottom: 0.5rem; }
+  .legal-prose a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .legal-prose strong { color: var(--color-ink); }
+
+  .legal-block {
+    background: var(--color-cream); padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--color-brass);
+    margin: 1.5rem 0;
+  }
+  .legal-block ul { margin-bottom: 0; padding-left: 1.25rem; }
+  .legal-block ul li { margin-bottom: 0.4rem; }
+
+  .legal-list {
+    display: grid; grid-template-columns: 1fr; gap: 0.6rem 1.5rem; margin: 0;
+  }
+  @media (min-width: 640px) { .legal-list { grid-template-columns: 1fr 2fr; } }
+  .legal-list > div { display: contents; }
+  .legal-list dt {
+    font-size: 0.85rem; color: var(--color-stone);
+    letter-spacing: 0.02em; padding-top: 0.2rem;
+  }
+  .legal-list dd { margin: 0; color: var(--color-ink); }
+  .legal-list dd em { color: var(--color-stone); font-style: italic; font-size: 0.92rem; }
+
+  .legal-footnote {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem; color: var(--color-stone);
+  }
+</style>

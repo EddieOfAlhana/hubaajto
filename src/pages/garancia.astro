@@ -1,0 +1,270 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import SpecCompareTable from "../components/SpecCompareTable.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, CONTACT } from "../data/site";
+
+const warrantyRows = [
+  { item: "Acél tokrendszer és nyílórész szerkezete", duration: "15 év", scope: "Teljes körű — anyaghiba és gyártási hiba miatti szerkezeti elváltozás. A piac leghosszabb vállalása." },
+  { item: "Biztonsági ajtó teljes körű (felület, kilincs, pánt, kiegészítők)", duration: "1 év", scope: "Teljes körű minden meghibásodásra a beépítés napjától számítva." },
+  { item: "Zárszerkezet (cilinder, zártest, csapdaszerkezet)", duration: "18 hónap", scope: "Mottura, Abus, Mul-T-Lock, Iseo, Cisa gyártói garanciára építve." },
+  { item: "Tömítés (befűzött gumi)", duration: "5 év", scope: "Anyagminőségi hiba és időelőtti tönkremenetel ellen." },
+  { item: "Festett / lakkozott felület", duration: "3 év", scope: "Anyagminőségi hiba és tartós elszíneződés ellen — nem hely-specifikus külső behatás esetén." },
+  { item: "ACTUAL Fenster ablak (kombinált csomagban)", duration: "10 év", scope: "ACTUAL gyártói garancia, Huba szervizháttérrel." },
+];
+
+const faqItems = [
+  { q: "Mi a 15 éves szerkezeti garancia pontos tartalma?",
+    a: `<p>A 15 év a <strong>tokrendszer és a nyílórész szerkezetére</strong> vonatkozik — tehát az acél zártszelvény tok épségére, a nyílórész belső szerkezetére, a hegesztések és illesztések épségére. Ha bármilyen szerkezeti elváltozás (görbülés, repedés, hegesztési hiba) keletkezik nem külső behatásból, ingyenesen kicseréljük vagy javítjuk.</p>` },
+  { q: "Mit nem fed a 15 év?",
+    a: `<p>Külső behatásból (betörési kísérlet, ütközés, áradás, tűz) keletkezett kár; rendeltetésszerűtől eltérő használat (pl. ipari környezet, sózott légkör); felhasználói módosítások (saját cilindercsere, kilincscsere). Ezekre a károkra a lakásbiztosító, vagy a kötelező felelősségbiztosítás vonatkozik — ezekben is segítünk eljárni.</p>` },
+  { q: "Mit kell tennem egy garanciális hiba esetén?",
+    a: `<p>Hívja a +36 30 740 4458 számot vagy küldjön e-mailt az ${CONTACT.email} címre. <strong>Munkanapon belül visszahívjuk</strong>. A felmérés ingyenes; ha a kár garanciális, a javítás vagy csere is ingyenes, kiszállással együtt. Nem garanciális hiba esetén előtte írásban árajánlatot adunk.</p>` },
+  { q: "A garancia átruházható az új tulajdonosra?",
+    a: `<p>Igen — a garancia az ajtóra szól, nem a megrendelőre. Lakáseladás esetén kérje, hogy a számla és a beépítési jegyzőkönyv másolatát adja át az új tulajdonosnak. Az új tulajdonos a maradék garanciaidőre ugyanúgy igényt tarthat.</p>` },
+  { q: "A zárszerkezet 18 hónap garanciája miért rövidebb?",
+    a: `<p>A zárszerkezet a működő, kopó alkatrész — minden gyártó (Mottura, Mul-T-Lock, Abus, Iseo, Cisa) saját gyártói garanciát ad, ami jellemzően 12 hónap. A Huba ezt 18 hónapra emeli, és a 18 hónapon túli kopási hibákra is kedvezményesen biztosít szervizet — a saját raktárkészletünkből, nem importon keresztül.</p>` },
+  { q: "Hogyan viszonyul ez a fogyasztóvédelmi jogszabályokhoz?",
+    a: `<p>A Huba 15 év szerkezeti garanciája <strong>jelentősen hosszabb</strong>, mint a Ptk. és a 151/2003. (IX. 22.) Korm. rendelet által előírt kötelező jótállási idő. A vásárlót megillető fogyasztóvédelmi jogokat (visszaküldés, csere, fogyasztói panasz) ez a vállalás nem érinti — kiegészíti. Vita esetén Ön a Pest Vármegyei <a href="/bekelteto">Békéltető Testülethez</a> fordulhat.</p>` },
+  { q: "Évente kell-e karbantartani az ajtót?",
+    a: `<p>Ajánlott — <strong>évente egyszer</strong> érdemes a zárszerkezetet grafit-kenőanyaggal és a tömítést szilikon-zsírral ápolni. Mi az első karbantartást a beépítés után 12 hónappal díjmentesen elvégezzük, és Önnek karbantartási útmutatót adunk. Az évenkénti karbantartás nem feltétele a 15 év szerkezeti garanciának, de a zárszerkezet 18 hónap garanciájának igen.</p>` },
+];
+---
+<BaseLayout
+  title={`${SITE.warrantyYears} év szerkezeti garancia — a piac leghosszabb vállalása`}
+  description={`A Huba ajtó ${SITE.warrantyYears} év szerkezeti garanciát, 1 év teljes körű ajtó- és 18 hónap zárgaranciát ad — minden Hungarian versenytárs maximum 10 évet vállal. Saját gyártás, saját szervizháttér.`}
+>
+  <Hero
+    eyebrow={`${SITE.warrantyYears} év szerkezeti garancia · Saját gyártás`}
+    heading={`<em>${SITE.warrantyYears} év</em> a tokra,<br/>18 hónap a zárra,<br/>1 év mindenre.`}
+    lead={`A magyar biztonsági ajtó-piacon a legtöbb versenytárs 10 év garanciát ad — UNISEC 5+5, Nívó 10. Mi ${SITE.warrantyYears} év szerkezeti garanciát vállalunk, mert saját műhelyünkben gyártjuk az ajtót, és 22+ éve azon a címen vagyunk, ahonnan kifut.`}
+    pillars={[
+      `${SITE.warrantyYears} év szerkezeti`,
+      "18 hónap zárszerkezet",
+      "1 év teljes körű",
+      "Átruházható garancia",
+      "Saját szervizháttér",
+    ]}
+    image="/assets/photos/hero/workshop.jpg"
+    imageAlt="A Huba ajtó kistarcsai műhelyében készülő biztonsági ajtó tokja"
+    imageCaption="Saját gyártás · Kistarcsa"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Minőségünk megtekintése", href: "/minosegunk" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Garanciamátrix"
+    heading="Mire, mennyi időre, milyen tartalommal."
+    lead="A garancia négy szintje — komponensekre és időtartamra bontva. Ez a táblázat a vásárlási szerződés melléklete is, fix formában 30 napra rögzítve."
+  >
+    <table class="warranty-table">
+      <thead>
+        <tr>
+          <th scope="col">Komponens / elem</th>
+          <th scope="col">Időtartam</th>
+          <th scope="col">Tartalom</th>
+        </tr>
+      </thead>
+      <tbody>
+        {warrantyRows.map(r => (
+          <tr>
+            <th scope="row">{r.item}</th>
+            <td class="duration">{r.duration}</td>
+            <td>{r.scope}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="table-note">
+      Az időtartamok a beépítés napjától számítva, írásbeli beépítési jegyzőkönyvvel igazoltan érvényesek. A garancia átruházható a megrendelés-számla és a beépítési jegyzőkönyv másolatával.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Mi fedez — és mi nem"
+    heading="Két lista, hogy ne legyen vita."
+    lead="A garancia hatókörének átláthatósága a magyar bútor- és nyílászárópiacon ritka. A Huba a lefedési és kizárási kört egyaránt nyíltan publikálja."
+  >
+    <div class="cover-grid">
+      <div class="cover-block cover-yes reveal">
+        <p class="cover-eyebrow">A garancia lefedi</p>
+        <ul class="cover-list">
+          <li>Tokrendszer szerkezeti deformációja (görbülés, repedés)</li>
+          <li>Nyílórész belső szerkezeti hibája</li>
+          <li>Hegesztések, illesztések épségének hibája</li>
+          <li>Pánt szerkezeti vagy működési hibája (kopás kivételével)</li>
+          <li>Befűzött tömítés időelőtti tönkremenetele</li>
+          <li>Festett / lakkozott felület anyagminőségi hibája</li>
+          <li>Zárszerkezet működési hibája (gyártói garancia + Huba kiterjesztés)</li>
+          <li>Kilincsgarnitúra szerkezeti hibája</li>
+          <li>Beépítési hibából eredő záródási problémák</li>
+        </ul>
+      </div>
+
+      <div class="cover-block cover-no reveal">
+        <p class="cover-eyebrow">A garancia nem fedi</p>
+        <ul class="cover-list">
+          <li>Külső behatásból eredő kár (betörési kísérlet, ütközés)</li>
+          <li>Vis maior (áradás, tűz, földrengés)</li>
+          <li>Rendeltetésszerűtől eltérő használat</li>
+          <li>Felhasználói módosítások (saját cilindercsere, kilincscsere)</li>
+          <li>Hibás karbantartás, kenés elmulasztása (zárszerkezet)</li>
+          <li>Normál kopás (kilincs felületi kopás, kulcs kopás)</li>
+          <li>Időjárási / UV-kár nem védett külső telepítés esetén</li>
+          <li>Vegyi vagy korrozív környezetből (ipari, sóköd) eredő hibák</li>
+          <li>Garanciális szerviz nélküli idegen beavatkozás utáni hibák</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Garanciaérvényesítés"
+    heading="A hibajelzéstől a megoldásig — 4 lépés."
+  >
+    <ol class="process-list stagger">
+      <li class="process-item">
+        <p class="process-n">01</p>
+        <h3 class="process-step-title">Hibajelzés</h3>
+        <p class="process-step-body">Hívja a <strong>+36 30 740 4458</strong> számot vagy küldjön e-mailt az <strong>info@szerx.hu</strong> címre. Adja meg a rendelési számlaszámot és a beépítés évét, ha kéznél van. Munkanapon belül visszahívjuk.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">02</p>
+        <h3 class="process-step-title">Ingyenes helyszíni szemle</h3>
+        <p class="process-step-body">2–3 napon belül helyszíni szemlét végzünk — díjmentesen. A felmérőnk eldönti, hogy a hiba garanciális-e, és mi szükséges a javításhoz.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">03</p>
+        <h3 class="process-step-title">Megoldási javaslat</h3>
+        <p class="process-step-body">A szemle után 48 órán belül írásban javaslatot adunk. Garanciális hiba: javítás vagy csere ingyenesen. Nem garanciális: árajánlat előzetes elfogadással.</p>
+      </li>
+      <li class="process-item">
+        <p class="process-n">04</p>
+        <h3 class="process-step-title">Javítás / csere</h3>
+        <p class="process-step-body">Javítás esetén egy nap alatt a helyszínen. Csere esetén — pl. teljes nyílórész deformációja — a Kistarcsai műhelyben 5–10 nap, majd helyszíni beépítés.</p>
+      </li>
+    </ol>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Fogyasztói jogok"
+    heading="Mit írnak elő a magyar jogszabályok — és miben adunk többet."
+    lead="A Huba garancia kiegészíti, nem helyettesíti a fogyasztóvédelmi jogokat. A két szint párhuzamosan érvényesíthető."
+  >
+    <div class="legal-grid">
+      <div class="legal-block reveal">
+        <p class="legal-eyebrow">Kötelező jótállás</p>
+        <h3 class="legal-title">151/2003. (IX. 22.) Korm. rendelet</h3>
+        <p class="legal-body">
+          A kormányrendelet az új ingó fogyasztói termékek kötelező jótállását szabályozza. A biztonsági ajtóra mint új építőipari termékre <strong>2 év kötelező jótállást</strong> ír elő, ami a Huba 15 éves szerkezeti és 1 éves teljes körű garanciájával jelentősen meg van haladva.
+        </p>
+      </div>
+      <div class="legal-block reveal">
+        <p class="legal-eyebrow">Szavatosság</p>
+        <h3 class="legal-title">Ptk. 6:159–6:170. §</h3>
+        <p class="legal-body">
+          A Polgári Törvénykönyv a kellék- és termékszavatosságot szabályozza — a vásárlót megillető jogok (kijavítás, kicserélés, árleszállítás, elállás) <strong>2 évig</strong>, rejtett hibák esetén 5 évig érvényesíthetők. Ezek a jogok a Huba garancia mellett, attól függetlenül is érvényesíthetők.
+        </p>
+      </div>
+      <div class="legal-block reveal">
+        <p class="legal-eyebrow">Vitarendezés</p>
+        <h3 class="legal-title">Békéltető Testület — Fgytv. 17/A. §</h3>
+        <p class="legal-body">
+          Fogyasztói vita esetén a Pest Vármegyei Békéltető Testülethez fordulhat: <strong>1055 Budapest, Balassi Bálint u. 25. IV/2.</strong> A békéltető eljárás díjmentes, és bíróságon kívüli megegyezésre törekszik. <a href="/bekelteto">Részletek →</a>
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Miben több ennyivel"
+    heading="Miért tudunk 15 évet vállalni?"
+    lead="A hosszú garancia nem kommunikációs döntés, hanem szerkezeti. A spec-szintű különbségek, amik a 15 évet megalapozzák:"
+  >
+    <SpecCompareTable />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="A garancia előtt jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="A 15 év garancia minden Huba ajtóra automatikusan jár"
+    lead="Felmérés ingyenes, vásárlási kötelezettség nélkül. A garanciapapír a beépítési jegyzőkönyvvel együtt automatikusan jön — nem opcionális, nem felár."
+  />
+</BaseLayout>
+
+<style>
+  .warranty-table {
+    width: 100%; border-collapse: collapse; background: var(--color-paper);
+    font-size: 0.95rem;
+  }
+  .warranty-table th, .warranty-table td {
+    text-align: left; padding: 1rem 1rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+    vertical-align: top; line-height: 1.55;
+  }
+  .warranty-table thead th {
+    font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: var(--color-stone); font-weight: 500;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .warranty-table tbody th { font-weight: 500; color: var(--color-ink); width: 32%; }
+  .warranty-table tbody td { color: var(--color-charcoal); }
+  .warranty-table .duration {
+    font-family: var(--font-serif); color: var(--color-brass-deep); font-size: 1.1rem;
+    white-space: nowrap; width: 14%;
+  }
+  .table-note { margin-top: 1rem; font-size: 0.88rem; color: var(--color-stone); font-style: italic; line-height: 1.55; max-width: 70ch; }
+
+  .cover-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 800px) { .cover-grid { grid-template-columns: 1fr 1fr; } }
+  .cover-block { background: var(--color-paper); padding: 2rem 1.75rem; border-left: 3px solid var(--color-stone); }
+  .cover-yes { border-left-color: var(--color-brass); }
+  .cover-no { border-left-color: var(--color-charcoal); }
+  .cover-eyebrow { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-stone); margin-bottom: 1rem; }
+  .cover-yes .cover-eyebrow { color: var(--color-brass-deep); }
+  .cover-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.94rem; line-height: 1.55; color: var(--color-charcoal); }
+  .cover-list li { padding-left: 1.25rem; position: relative; }
+  .cover-yes .cover-list li::before { content: "+"; position: absolute; left: 0; color: var(--color-brass); font-weight: 600; }
+  .cover-no .cover-list li::before { content: "–"; position: absolute; left: 0; color: var(--color-stone); font-weight: 600; }
+
+  .process-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border-block: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 800px) { .process-list { grid-template-columns: repeat(4, 1fr); } }
+  .process-item { background: var(--color-paper); padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .process-n { font-family: var(--font-serif); font-size: 2.5rem; line-height: 1; color: var(--color-brass); }
+  .process-step-title { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.2; }
+  .process-step-body { font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal); }
+  .process-step-body strong { color: var(--color-ink); }
+
+  .legal-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 900px) { .legal-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+  .legal-block { background: var(--color-paper); padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .legal-eyebrow { font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-brass); }
+  .legal-title { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.2; }
+  .legal-body { font-size: 0.92rem; line-height: 1.65; color: var(--color-charcoal); }
+  .legal-body strong { color: var(--color-ink); }
+  .legal-body a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+</style>

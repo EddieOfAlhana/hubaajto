@@ -1,0 +1,231 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ProductCard from "../components/ProductCard.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
+import SpecCompareTable from "../components/SpecCompareTable.astro";
+import LockBrandWall from "../components/LockBrandWall.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, SLA } from "../data/site";
+
+const products = [
+  {
+    family: "modern" as const,
+    name: "Modern Standard",
+    priceFrom: "330 000 Ft-tól",
+    classBadge: "MABISZ 2. · RC2",
+    bullets: [
+      "Belépőszint, panel- és társasházi lakásra",
+      "Hőhídmentes acél zártszelvény tok",
+      "Üveggyapot bélelés, 3 perc ellenállás",
+    ],
+    image: "/assets/photos/hero/modern-white.jpg",
+    imageAlt: "Modern fehér Huba biztonsági ajtó panel-lakás bejáratán",
+    href: "/biztonsagi-ajto/standard",
+  },
+  {
+    family: "modern" as const,
+    name: "Modern Premium / családi ház",
+    priceFrom: "800 000 – 1 800 000 Ft",
+    classBadge: "MABISZ 3. · RC3",
+    bullets: [
+      "Új építésű és felújított családi házakhoz",
+      "ACTUAL Fenster ablakcsomag mellé",
+      "5 perc ellenállás, prémium zár",
+    ],
+    image: "/assets/photos/hero/modern-anthracite.jpg",
+    imageAlt: "Antracit modern biztonsági ajtó agglomerációs családi házon",
+    href: "/biztonsagi-ajto/premium",
+  },
+  {
+    family: "modern" as const,
+    name: "Panel-lakás bejárati ajtó",
+    priceFrom: "330 000 Ft-tól",
+    classBadge: "MABISZ 2.",
+    bullets: [
+      "Bontás nélküli csere a meglévő tokba",
+      "Standard panel-nyílásméretekhez",
+      "Egy nap alatt beépítve, törmelékkel együtt",
+    ],
+    image: "/assets/photos/hero/modern-white.jpg",
+    imageAlt: "Modern biztonsági ajtó panelházi bejárat tokjában",
+    href: "/biztonsagi-ajto/panel-lakas",
+  },
+  {
+    family: "modern" as const,
+    name: "Társasházi bejárat",
+    priceFrom: "Egyedi árajánlat",
+    classBadge: "MABISZ 2–3.",
+    bullets: [
+      "Közös képviselős egyeztetés mellett",
+      "Egységes lépcsőházi megjelenés",
+      "Több lakásra kedvező csomagajánlat",
+    ],
+    image: "/assets/photos/hero/period-yellow.jpg",
+    imageAlt: "Társasházi bejárati biztonsági ajtó lépcsőházban",
+    href: "/biztonsagi-ajto/tarsashazi",
+  },
+];
+
+const faqItems = [
+  { q: "Mi a különbség a Modern Standard és a Premium kivitel között?",
+    a: `<p>A Standard belépőszint MABISZ 2. (3 perc ellenállás), jellemzően panel- és társasházi lakásokra, <strong>330 000 Ft-tól</strong>. A Premium MABISZ 3. (5 perc), megerősített záródási pontokkal és prémium cilinderrel — családi házakra, új építésre ajánljuk, 800 000 – 1 800 000 Ft sávban. <a href="/biztonsagi-ajto/standard">Standard részletek</a> · <a href="/biztonsagi-ajto/premium">Premium részletek</a>.</p>` },
+  { q: "Méretre tudják gyártani a panel-lakás meglévő nyílásához?",
+    a: `<p>Igen — minden Huba ajtó méretre szabva készül a Kistarcsai műhelyben. A felmérőnk milliméterre pontosan felméri a meglévő tokot, és az új ajtó a meglévő nyílásba illeszkedik. <a href="/biztonsagi-ajto/panel-lakas">Panel-lakás csere részletek →</a></p>` },
+  { q: "Mit jelent a MABISZ 2. vs. MABISZ 3. osztály?",
+    a: `<p>A MABISZ-osztály a szakszerű betörési kísérletnek való ellenállás idejét jelöli: MABISZ 2. = 3 perc, MABISZ 3. = 5 perc, MABISZ 4. = 10 perc. A magyar biztosítók többsége elfogadja a MABISZ-besorolást a lakásbiztosítási alapfeltételhez. <a href="/minosegunk">Minősítésekről részletesen →</a></p>` },
+  { q: "ACTUAL Fenster ablakcsomag mellé hogyan rendelhető az ajtó?",
+    a: `<p>A Szer-X3 Kft. 2005 óta forgalmazza az osztrák <strong>ACTUAL Fenster</strong> ablakokat. Egy helyszíni felmérés, egy szerződés, egy projektvezető — az ajtó és az ablakok ugyanazon a héten kerülnek beépítésre. Tipikusan a Premium családi ház kivitellel kombináljuk.</p>` },
+  { q: "Társasházi közgyűlési határozat kell?",
+    a: `<p>Általában igen — a lépcsőházra néző bejárati ajtó cseréje a közös tulajdon megjelenését érinti. A felmérés után készítünk Önnek egy egyoldalas műszaki tájékoztatót, amit a közös képviselőnek lehet benyújtani. <a href="/biztonsagi-ajto/tarsashazi">Társasházi szabályok →</a></p>` },
+  { q: "Mennyi időbe telik a felméréstől a beépítésig?",
+    a: `<p>${SLA.surveyDays} alatt helyszíni felmérés, ${SLA.manufactureDays} alatt gyártás a Kistarcsai műhelyben, ${SLA.installDays} alatt beépítés. Az egész folyamat tipikusan két hét.</p>` },
+];
+---
+<BaseLayout
+  title="Modern biztonsági ajtó — Kistarcsán gyártva"
+  description={`Saját gyártású modern biztonsági ajtó panel-lakásra, társasházra, családi házra. MABISZ 2.–3. osztály, RC2–RC3 ellenállás, ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól. ${SITE.warrantyYears} év szerkezeti garancia.`}
+>
+  <Hero
+    eyebrow="Modern range · Saját gyártás Kistarcsán"
+    heading={`Modern biztonsági ajtó.<br/><em>Panel-lakástól</em> a családi házig.`}
+    lead={`Négy modern kivitel, egyetlen MABISZ-minősített acél biztonsági magon. Belépőszintünk ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól indul, a prémium családi házas kivitel pedig az új építésű otthonok színvonalát hozza. Mindegyikre ${SITE.warrantyYears} év szerkezeti garanciát vállalunk.`}
+    pillars={[
+      "Hőhídmentes acél tok",
+      "Üveggyapot bélelés",
+      `MABISZ ${SITE.mabiszSince} óta`,
+      "Mottura · Abus · Mul-T-Lock · Iseo · Cisa",
+      `${SITE.warrantyYears} év garancia`,
+    ]}
+    image="/assets/photos/hero/modern-anthracite.jpg"
+    imageAlt="Antracit színű modern Huba biztonsági ajtó egy agglomerációs családi ház bejáratán"
+    imageCaption="Mogyoród · 2024"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Árak megtekintése", href: "/arak" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Modern termékcsalád"
+    heading="Négy kivitel, négy felhasználási mód."
+    lead="Minden kivitel ugyanazon az acél zártszelvény magon alapul. A különbség a borításban, a záródási pontok számában és a MABISZ-osztályban van."
+  >
+    <div class="product-grid stagger">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+    <p class="product-note">
+      A modern range minden eleméhez tartozik 35+ fa minta, 15 mart minta, RAL színskála, és bármely zármárka a Mottura · Abus · Mul-T-Lock · Iseo · Cisa lineupból.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Mit kap az acél magban"
+    heading="A szerkezet, ami minden Huba ajtó alatt fut."
+    lead="Az ajtó látszó borításától függetlenül ugyanaz a tok-, zár- és bélelési rendszer dolgozik. Ezt minősítette a MABISZ 2009-ben, és ezt vállaljuk 15 évre."
+  >
+    <div class="spec-list stagger">
+      <div class="spec-block">
+        <p class="spec-eyebrow">Tok</p>
+        <h3 class="spec-title">Hőhídmentes acél zártszelvény</h3>
+        <p class="spec-body">Méretre szabott zártszelvény tok — nem hajlított vékony lemez. A zárszerkezetek körül megerősített acéllap. A tok két oldalát hőhídmegszakítás választja el, így nem hűl ki a fémen keresztül.</p>
+      </div>
+      <div class="spec-block">
+        <p class="spec-eyebrow">Bélelés</p>
+        <h3 class="spec-title">Therwolin / üveggyapot mag</h3>
+        <p class="spec-body">Hang- és hőszigetelő bélelés a nyílórész belsejében — opcionálisan második acéllemezzel a maximális MABISZ-osztályhoz. A panel-lakás zajos lépcsőházából tényleges csendet csinál.</p>
+      </div>
+      <div class="spec-block">
+        <p class="spec-eyebrow">Záródási pontok</p>
+        <h3 class="spec-title">Felül, alul és hátul is</h3>
+        <p class="spec-body">A nyílórész felül, alul és a zsanéros oldalon is rögzül a tokba — nem csak a zárak vonalában. Standard kivitelnél 5–7 záróponttal, Premiumnál 9+ ponton, a választott zárrendszertől függően.</p>
+      </div>
+      <div class="spec-block">
+        <p class="spec-eyebrow">Tömítés</p>
+        <h3 class="spec-title">Befűzött, körbefutó gumi</h3>
+        <p class="spec-body">Nem ragasztott — befűzött tömítés a tok körbefutó hornyában, ami évek múlva is cserélhető. A nyílórész és a tok között két párhuzamos tömítési sík, hőszigetelés és portömítés egyben.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Hogyan dolgozunk"
+    heading="Két hét — felméréstől beépítésig."
+    lead="A modern range a megkereséstől a beépített ajtóig 12 napon belül zárul. Nem 3 hónap, nem 'majd ősszel'."
+  >
+    <ProcessSteps />
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Miben több ennyivel"
+    heading="Spec-szintű összevetés a katalógusajtóval."
+    lead="A 145–170 000 Ft-os katalógusajtó és a 330 000 Ft-os Huba Standard közötti különbség nem az árban van — hanem ebben."
+  >
+    <SpecCompareTable />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Zárrendszer"
+    heading="Öt prémium európai gyártóból választhat."
+  >
+    <LockBrandWall />
+    <p class="lock-note">
+      A felmérés után Ön választ — nem mi diktáljuk. Mindegyik zármárka hosszú távon szervizelhető, a cilinderek külön rendelhetők, a kódkártyával bevont rendszer pótkulcsot is csak igazolással biztosít.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="A modern range előtt jellemzően ezeket kérdezik."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Ingyenes helyszíni felmérés a modern range bármelyikére"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz, mintamintával. A felmérés ingyenes és semmilyen vásárlási kötelezettséggel nem jár.`}
+  />
+</BaseLayout>
+
+<style>
+  .product-grid {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 700px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+  .product-note {
+    margin-top: 2rem; font-style: italic; color: var(--color-charcoal);
+    text-align: center; max-width: 64ch; margin-inline: auto;
+    font-size: 0.95rem; line-height: 1.6;
+  }
+
+  .spec-list {
+    display: grid; grid-template-columns: 1fr; gap: 2rem;
+  }
+  @media (min-width: 720px) { .spec-list { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 3rem; } }
+  .spec-block { display: flex; flex-direction: column; gap: 0.65rem; }
+  .spec-eyebrow {
+    font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .spec-title {
+    font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.2;
+    letter-spacing: -0.01em; color: var(--color-ink);
+  }
+  .spec-body { font-size: 0.96rem; line-height: 1.65; color: var(--color-charcoal); max-width: 44ch; }
+
+  .lock-note {
+    margin-top: 1.5rem; text-align: center; max-width: 60ch; margin-inline: auto;
+    font-size: 0.92rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+</style>

@@ -1,0 +1,432 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ProductCard from "../components/ProductCard.astro";
+import BeforeAfterSlider from "../components/BeforeAfterSlider.astro";
+import SocialProof from "../components/SocialProof.astro";
+import LockBrandWall from "../components/LockBrandWall.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Stat from "../components/Stat.astro";
+import { SITE, SLA } from "../data/site";
+
+const periodProducts = [
+  {
+    family: "stilus" as const,
+    name: "Huba Klasszikus",
+    priceFrom: "Egyedi árajánlat",
+    classBadge: "RC2–RC3",
+    bullets: [
+      "Kazettás vagy betétes faburkolat",
+      "Lenolaj-alapú felület, RAL 6009 / 8014",
+      "Polgári lakásokhoz, helyi védettség nélkül is",
+    ],
+    image: "/assets/photos/hero/period-double-leaf.jpg",
+    imageAlt: "Kétszárnyú klasszikus kazettás biztonsági ajtó polgári lakásban",
+    href: "/felmeres",
+  },
+  {
+    family: "stilus" as const,
+    name: "Huba Stílus Premium",
+    priceFrom: "Egyedi árajánlat",
+    classBadge: "RC3 / MABISZ 3.",
+    bullets: [
+      "Faragott, profilozott bélelt szárny",
+      "Festett vagy lazúrozott felület",
+      "Sárgaréz vagy kovácsoltvas veretekkel",
+    ],
+    image: "/assets/photos/hero/period-green.jpg",
+    imageAlt: "Stílus premium biztonsági ajtó faragott bélelt szárnnyal",
+    href: "/felmeres",
+  },
+  {
+    family: "muemleki" as const,
+    name: "Huba Műemléki",
+    priceFrom: "Egyedi árajánlat",
+    classBadge: "Műemléki engedélyhez",
+    bullets: [
+      "Az eredeti ajtó alapján rekonstruálva",
+      "Acél belső szerkezet, fa külső megjelenés",
+      "Teljes engedélyezési csomaggal",
+    ],
+    image: "/assets/photos/hero/period-restoration.jpg",
+    imageAlt: "Műemléki kivitelű biztonsági ajtó restaurálás alatt",
+    href: "/muemleki-biztonsagi-ajto",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Egy 1912-es belvárosi polgári lakásba kellett ajtót cserélnünk úgy, hogy a házbéliek és a kerületi főépítészi iroda egyaránt elfogadja. A felmérő az eredeti kapu alapján rajzolta meg az új ajtót, a kazettás osztás mind megmaradt.",
+    name: "Dr. Vámos K.",
+    district: "Budapest, VI. kerület",
+    product: "Huba Stílus Premium · 2024",
+  },
+  {
+    quote:
+      "A lépcsőházi szomszédok addig kifogásolták a fémes ajtókat, amíg meg nem mutattuk a Huba felmérőjének mintaajtaját. Kívülről tölgyfa, kazettás — belül acélbetétes. Egy hangon megszavazták.",
+    name: "Tóth I.",
+    district: "Budapest, VIII. kerület",
+    product: "Huba Klasszikus · 2023",
+  },
+  {
+    quote:
+      "Műemléki védett ház, mégis bejárható lett az engedélyezés. A Huba intézte a teljes papírmunkát, mi csak választottunk színt és vasalatot.",
+    name: "Hegedűs Á.",
+    district: "Budapest, V. kerület",
+    product: "Huba Műemléki · 2024",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Mit jelent pontosan a „stílus biztonsági ajtó”?",
+    a: `<p>Olyan bejárati ajtó, amely <strong>kívülről korhű megjelenésű</strong> — kazettás, betétes vagy festett faburkolattal, eredeti osztással —, belül pedig modern, MABISZ-minősített acél biztonsági szerkezet. Polgári lakásokhoz, századfordulós házakhoz, helyi védettségű épületekhez ajánljuk, ahol a katalógus-szerű modern ajtó stílusilag nem illeszkedne.</p>`,
+  },
+  {
+    q: "Mi a különbség a klasszikus, a stílus premium és a műemléki kivitel között?",
+    a: `<p>A <strong>Klasszikus</strong> egyszerűbb kazettás vagy betétes kivitel, jellemzően helyi védettség nélküli polgári lakásokhoz. A <strong>Stílus Premium</strong> faragott, profilozott bélelt szárnnyal, korhű vasalattal — közös képviselő és tervtanácsi vélemény mellett bevett. A <strong>Műemléki</strong> kivitel az örökségvédelmi hatóság elé kerülő ajtó, az eredeti alapján rekonstruálva. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>`,
+  },
+  {
+    q: "Megtartható az eredeti megjelenés?",
+    a: `<p>Igen, ez a saját gyártásunk fő erőssége. Helyszíni felmérés során lefotózzuk és lemérjük az eredeti ajtó minden részletét — kazettaarányt, osztást, profilszélességet, vasalat elhelyezést, üvegezést — és az új acélszerkezetes ajtót ennek alapján alakítjuk ki. Az eredménye kívülről megtévesztésig korhű, belül azonban RC2–RC3 osztályú biztonsági ajtó.</p>`,
+  },
+  {
+    q: "Milyen anyagokat használnak?",
+    a: `<p>Külső borításra tölgy, vörösfenyő vagy lucfenyő — az eredeti faanyag szerint. Felület: lenolaj-alap vagy szelektív lakk, jellemzően RAL 6009 sötétzöld, RAL 8014 gesztenyebarna vagy RAL 5008 sötétkék árnyalatokban. Vasalat: sárgaréz vagy kovácsoltvas — kilincs, pánt, kopogtató, levélbedobó. Üvegezés: igény szerint ólmozott, metszett vagy homokfúvott.</p>`,
+  },
+  {
+    q: "Helyi védett ház — kell-e külön engedély?",
+    a: `<p>Helyi védettségnél a kerületi önkormányzat polgármestere folytat le <strong>településképi bejelentési eljárást</strong> (TKBE), 15 napos ügyintézési határidővel. Józsefvárosban (1/2022. TKR §53), Budavárban (30/2022.) és más kerületekben a lépcsőházi és utcafronti ajtó cseréje TKBE-köteles. Ezt is mi intézzük az <a href="/engedelyezesi-csomag">engedélyezési csomag</a> keretében.</p>`,
+  },
+  {
+    q: "Mennyi időbe telik egy stílus biztonsági ajtó elkészítése?",
+    a: `<p>Felmérés ${SLA.surveyDays} alatt, klasszikus kivitel jellemzően 6–8 hét gyártás, premium / műemléki rekonstrukció 8–10 hét. Műemléki engedélyezéssel együtt a teljes folyamat ${SLA.permitTotal}. <a href="/engedelyezesi-csomag">Részletes ütemterv →</a></p>`,
+  },
+  {
+    q: "Garancia és biztosítás",
+    a: `<p>${SITE.warrantyYears} év szerkezeti garancia az acél tokra és nyílórészre. Zárszerkezetekre 18 hónap. Az ajtó MABISZ-minősített ${SITE.mabiszSince} óta — a magyar biztosítók által elismert kategóriában. <a href="/garancia">Részletes garancia →</a></p>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Stílus biztonsági ajtó — kazettás, betétes, festett kivitel | Huba ajtó"
+  description="Korhű, kazettás biztonsági ajtó polgári lakásokhoz, századfordulós házakhoz. MABISZ-minősített, 15 év garancia, saját gyártás Kistarcsán. Műemléki engedélyhez illeszkedő kivitelben is."
+>
+  <Hero
+    eyebrow="Stílus / klasszikus termékcsalád"
+    heading="Századfordulóstól<br/>a modernig — <em>itt a klasszikus oldal.</em>"
+    lead="Polgári lakás, eklektikus bérház, helyi védett homlokzat. A modern katalógusajtó stílusban nem fér el itt — a Huba stílus biztonsági ajtaja igen. Kazettás, betétes, festett kivitel, acélbetétes biztonsági szerkezeten."
+    pillars={[
+      "Kazettás · betétes · festett",
+      "Saját gyártás Kistarcsán",
+      `MABISZ ${SITE.mabiszSince} óta`,
+      `${SITE.warrantyYears} év szerkezeti garancia`,
+      "Műemléki környezetben is",
+    ]}
+    image="/assets/photos/hero/period-double-leaf.jpg"
+    imageAlt="Kétszárnyú sárga klasszikus biztonsági ajtó budapesti polgári lakás lépcsőházában"
+    imageCaption="Budapest, V. kerület · korhű rekonstrukció"
+    primaryCta={{ label: "Ingyenes felmérés", href: "/felmeres" }}
+    secondaryCta={{ label: "Műemléki oldal megnyitása", href: "/muemleki-biztonsagi-ajto" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Miért külön termékcsalád?"
+    heading="A polgári lakásnak nem mindegy, hogy néz ki kívülről."
+    lead="Egy 1900–1940 közötti budapesti bérházban a lakásajtó nem műszaki tárgy — az utcakép, a lépcsőház és a közös képviselő szempontjából egyaránt értékelt elem. A katalógus modern ajtó három okból is bukik itt: stílusilag, közösségileg, sokszor jogilag."
+  >
+    <div class="reasons stagger">
+      <article class="reason">
+        <p class="reason-eyebrow">01</p>
+        <h3>Stílus</h3>
+        <p>
+          A századfordulós lépcsőházban a fém, sima felületű, ipari megjelenésű ajtó kívülről
+          idegen test. Az új tulajdonos első napon szereti, fél év múlva már zavarja. A korhű
+          kazettás vagy betétes kivitel az utcaképi és lépcsőházi értéket nem rontja, hanem
+          megemeli.
+        </p>
+      </article>
+      <article class="reason">
+        <p class="reason-eyebrow">02</p>
+        <h3>Közösség</h3>
+        <p>
+          A társasházi közös képviselő és a többi lakó hozzájárulását sokkal könnyebb megkapni,
+          ha az új ajtó nem bontja meg a lépcsőházi egységképet. Mintamintával érkező felmérő
+          + korhű kivitel = a közgyűlésen vita helyett ténymegállapítás.
+        </p>
+      </article>
+      <article class="reason">
+        <p class="reason-eyebrow">03</p>
+        <h3>Jogi környezet</h3>
+        <p>
+          Műemléki, műemléki környezetben álló vagy helyi védettségű épületnél az ajtócsere
+          engedélyköteles vagy bejelentésköteles. Általános modern ajtó ezekbe a folyamatokba
+          nem fér bele — a korhű kivitel viszont igen.
+        </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Termékek"
+    heading="Három kivitel — a fokozatos korhűségi szint szerint."
+    lead="A klasszikustól a műemlékiig. Mindhárom ugyanazon a MABISZ-minősített acél szerkezeti magon — a különbség a külső kivitel, a vasalat és az engedélyezési háttér mélysége."
+  >
+    <div class="product-grid stagger">
+      {periodProducts.map((p) => <ProductCard family="stilus" {...p} />)}
+    </div>
+    <p class="product-note">
+      Minden Huba ajtó ugyanazon az acél biztonsági szerkezeten alapul. A különbség a látszó
+      borításban, a vasalat finomságában és az engedélyezési mélységben van.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Kivitelek"
+    heading="Kazettás, betétes, festett, korhű rekonstrukció."
+    lead="Négy alap kivitel — a leggyakoribb fővárosi polgári lakás-tipológiákhoz illeszkedve. Mindegyik egyedi méretre szabva, mintamintával."
+  >
+    <div class="variants stagger">
+      <article class="variant">
+        <h3>Kazettás kivitel</h3>
+        <p>
+          A leggyakoribb századfordulós megoldás. Általában 4–8 kazettás osztás, vertikális
+          vagy szimmetrikus elrendezésben. Tömör tölgy vagy lucfenyő borítás, eredeti
+          profilrajzzal. A budapesti V., VI., VII. kerületi bérházak alapformája.
+        </p>
+      </article>
+      <article class="variant">
+        <h3>Betétes kivitel</h3>
+        <p>
+          Faragott vagy profilozott betétmezőkkel, jellemzően a Stílus Premium kategóriában.
+          Sokszor üvegezett felső 1/3-dal — eredeti ólmozott, metszett vagy homokfúvott
+          üveggel. Az eklektikus és szecessziós homlokzatokhoz illik.
+        </p>
+      </article>
+      <article class="variant">
+        <h3>Festett kivitel</h3>
+        <p>
+          Lenolaj-alapú vagy szelektív lakk. Tipikus szín: RAL 6009 sötétzöld (Budavári,
+          V., VI., XII. kerület), RAL 8014 gesztenyebarna (VIII., IX. kerület), RAL 5008
+          sötétkék vagy bordó (egyedi helyszínen). Az eredeti értékleltár alapján
+          dokumentáljuk a színt.
+        </p>
+      </article>
+      <article class="variant">
+        <h3>Korhű rekonstrukció</h3>
+        <p>
+          A teljes rekonstrukció: ha a meglévő ajtó nem felel meg, vagy ha az eredeti ajtó
+          már nincs meg, archív fotók és szomszédos lakások mintája alapján visszaépítjük az
+          eredeti megjelenést. Műemléki engedélyezésnél jellemzően ez a követelmény.
+        </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Előtte / utána"
+    heading="Egy ajtócsere, ami visszaadja a lépcsőház karakterét."
+    lead="A 70-es évek vasajtaja vagy a 90-es évek alumínium katalógus-borítása nem illik az 1910-es bérház lépcsőházához. A korhű kivitel ugyanolyan biztonságot ad — kívülről visszaadja az eredeti formát."
+  >
+    <BeforeAfterSlider
+      before="/assets/photos/hero/before-old-door.jpg"
+      after="/assets/photos/hero/period-yellow.jpg"
+      caption="Budapest, V. kerület — eredeti kazettás osztás visszaépítve, acélbetétes szerkezeten."
+    />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Vélemények"
+    heading="Belvárosi tulajdonosok és társasházi közgyűlések."
+  >
+    <SocialProof
+      rating={{ value: 4.8, count: 127, source: "Google" }}
+      testimonials={testimonials}
+    />
+  </Section>
+
+  <Section
+    tone="ink"
+    eyebrow="Műhely + zárak"
+    heading="Saját gyártás. Európai prémium zárakkal."
+    lead="A korhű borítás alatt nem alkalmazunk olcsó márkanév nélküli cilindert. A Huba stílus biztonsági ajtó alapból Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárral készül — Ön választ a felmérés után."
+  >
+    <div class="workshop-stats stagger">
+      <Stat
+        value={`${new Date().getFullYear() - SITE.founded}+`}
+        label="év stílus biztonsági ajtó tapasztalat"
+        sub={`${SITE.founded} óta`}
+      />
+      <Stat
+        value="200+"
+        label="korhű kivitelű ajtó referencia"
+        sub="Budapest belvárosi kerületekben"
+      />
+      <Stat
+        value="5"
+        label="prémium európai zármárka"
+        sub="Mottura · Abus · Mul-T-Lock · Iseo · Cisa"
+      />
+      <Stat
+        value={`${SITE.warrantyYears}`}
+        label="év szerkezeti garancia"
+        sub="a piac leghosszabb vállalása"
+      />
+    </div>
+    <LockBrandWall />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Tovább a műemléki oldalra"
+    heading="Védett vagy műemléki környezetben él?"
+    lead="A stílus biztonsági ajtó polgári lakásokhoz, helyi védettség nélkül is kiváló. Ha az Ön ingatlana műemlék, nyilvántartott műemléki érték vagy műemléki környezetben áll, akkor a teljes engedélyezési csomagunkra van szüksége — külön oldalon részletezzük."
+  >
+    <div class="bridge reveal">
+      <a href="/muemleki-biztonsagi-ajto" class="btn btn-primary btn-large">
+        Műemléki biztonsági ajtó →
+      </a>
+      <a href="/engedelyezesi-csomag" class="btn btn-ghost btn-large">
+        Engedélyezési csomag részletei
+      </a>
+      <p class="bridge-note">
+        Nem biztos, hogy az Ön háza védett? Hívjon — a védettségi ellenőrzés egy munkanap
+        alatt elvégezhető OÉNY-lekérdezéssel.
+      </p>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="GYIK"
+    heading="A stílus biztonsági ajtóról."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA />
+</BaseLayout>
+
+<style>
+  .reasons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 900px) {
+    .reasons {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .reason {
+    background: var(--color-paper);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .reason-eyebrow {
+    font-family: var(--font-serif);
+    color: var(--color-brass);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+  .reason h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .reason p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 700px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .product-note {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--color-charcoal);
+    text-align: center;
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  .variants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 720px) {
+    .variants {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .variant {
+    background: var(--color-cream);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .variant h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+  .variant p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+
+  .workshop-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 900px) {
+    .workshop-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .bridge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .bridge-note {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    max-width: 60ch;
+  }
+</style>

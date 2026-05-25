@@ -1,0 +1,311 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ServiceArea from "../components/ServiceArea.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, SLA } from "../data/site";
+
+// District anchor priority — heritage first (per playbook §7.3), then modern volume.
+const heritageDistricts = [
+  {
+    code: "I",
+    name: "Budavári Várnegyed",
+    note: "UNESCO világörökség",
+    paragraph:
+      "A budai várnegyed a magyar örökségvédelem legszigorúbb területe — 1945 előtt épült házak utcai homlokzatánál a Budavári 30/2022. (XII. 20.) önkormányzati rendelet szerint csak az eredetivel megegyező nyílászáró helyezhető el. Itt a Huba ajtó tölgyfa, kazettás, kovácsoltvas veretű, RAL 6009 / 8014 színvilágú kivitelét építjük be acélbetétes biztonsági szerkezettel — a látható réteg korhű, a védelem a 21. századi.",
+    href: "/orokségvedelmi-engedely/kerulet/i",
+  },
+  {
+    code: "V",
+    name: "Belváros-Lipótváros",
+    note: "5/2020. TKR — tervtanácsi vélemény",
+    paragraph:
+      "A klasszicista és eklektikus polgári bérházak miatt itt az engedélyezés többször tervtanácsi véleményhez kötött. A V. kerületi munkáinkban jellemzően kétszárnyú (kétleveles) kapuk, felülvilágítós (transzom) ajtók és kovácsolt rácsozású üvegezett ajtók készülnek. Az eredeti osztásrend és a homlokzati sík megőrzése kötelező — ezekre fókuszálunk a felmérés első percétől.",
+    href: "/orokségvedelmi-engedely/kerulet/v",
+  },
+  {
+    code: "VI",
+    name: "Terézváros",
+    note: "33/2017. TKR — Andrássy-vonal",
+    paragraph:
+      "Az Andrássy úti UNESCO-tengely és a Nagykörút közötti bérházállomány zömében századfordulós eklektika, sok szecessziós ráhangolódással. Itt egy lépcsőházi lakásajtó cseréje is rendre településképi bejelentésköteles. A VI. kerületi munkáinkat festett, betétes és kazettás kivitelben szállítjuk — sokszor az eredetihez illeszkedő üvegmintával, ólmozott vagy homokfúvott üveggel.",
+    href: "/orokségvedelmi-engedely/kerulet/vi",
+  },
+  {
+    code: "VII",
+    name: "Erzsébetváros",
+    note: "25/2017. + EÉSZ 25/2018.",
+    paragraph:
+      "A zsidónegyed és a belső Erzsébetváros polgári lakásainak ajtaja a város egyik leggazdagabb formavilága — gyakran 5-6 osztású üvegezett felülrésszel, alul kazettás kivitellel, kovácsolt geometrikus rácsozással. A VII. kerületben mindkét felülről jövő szabályozást (Erzsébetváros Építési Szabályzat 25/2018. és a 25/2017. településképi rendelet) figyelembe vesszük; a hatóság elvárása a homlokzati sík és a profil-arányok megőrzése.",
+    href: "/orokségvedelmi-engedely/kerulet/vii",
+  },
+  {
+    code: "VIII",
+    name: "Józsefváros",
+    note: "1/2022. TKR §53 — a legrészletesebb",
+    paragraph:
+      "A Józsefváros 1/2022. (I. 20.) önkormányzati rendelete a magyar főváros legrészletesebb településképi szabályozása — az 53. § kifejezetten nevesíti az utcai, udvari, tetőtéri és lépcsőházi nyílászárók cseréjét mint bejelentésköteles tevékenységet. A 30. § pedig megőrzendőként rögzíti a beépítési síkot, az osztást, a színt és a biztonsági/díszrácsot. Itt minden ajtótervünk M=1:10 méretarányos rajzzal készül, ami a kerületi főépítészi konzultációban azonnal elfogadott.",
+    href: "/orokségvedelmi-engedely/kerulet/viii",
+  },
+  {
+    code: "IX",
+    name: "Ferencváros",
+    note: "8/2024. (IV. 24.) TKR",
+    paragraph:
+      "A IX. kerület új, 2024-es településképi rendelete a Ráday utcai és Ferenc körúti polgári bérházállomány védelmét tovább erősítette. A Ferencvárosban dolgozó kollégáink elsősorban az udvari homlokzati ajtókkal és a lépcsőházi lakásajtókkal találkoznak — utóbbi gyakran a felső 2/3-ban 6-osztású üvegezett, alul betétes kivitel. Az engedélyezést a 8/2024. rendelet szerint mi intézzük.",
+    href: "/orokségvedelmi-engedely/kerulet/ix",
+  },
+  {
+    code: "II",
+    name: "Rózsadomb · Pasarét",
+    note: "Helyi védettség, villanegyed",
+    paragraph:
+      "A budai oldal villanegyedei — Rózsadomb, Pasarét, Törökvész — a két háború közötti modern építészet ikonjai. A helyi védettség alatti épületeknél a homlokzati nyílászárók cseréje általában a kerületi településképi bejelentés körébe esik. A II. kerületi munkáinkban modern, nagyméretű biztonsági bejárati ajtók készülnek, gyakran fa-felületű prémium kivitelben (tölgy, mahagóni), de a modernista karakterhez idomulva.",
+  },
+  {
+    code: "XII",
+    name: "Hegyvidék",
+    note: "Helyi védettség, hegyvidéki villák",
+    paragraph:
+      "A Sashegy, az Istenhegy és a Svábhegy villaállománya — sok az eredeti, két háború közötti polgári villa, és sok az új építésű prémium családi ház is. A XII. kerületben Huba ajtó munkák jellemzően kétféle ágra oszlanak: helyi védettségű villánál korhű, festett vagy lazúrozott kivitel; új építésnél prémium modern bejárati ajtó. Mindegyikhez ugyanaz az acél biztonsági mag.",
+  },
+];
+
+const modernDistricts = [
+  {
+    code: "XIII",
+    name: "Újlipótváros · Angyalföld",
+    paragraph:
+      "A két háború közötti polgári Újlipótváros és a háború utáni paneles állomány ellentéte itt egymás mellett él. Modern lakásokra a Huba Modern Standard (330 000 Ft-tól) vagy Premium kivitelt szállítjuk — bontás nélküli ajtócserével, hőhídmentes acél zártszelvény tokkal és körbefutó tömítéssel.",
+  },
+  {
+    code: "XIV",
+    name: "Zugló",
+    paragraph:
+      "A XIV. kerület vegyes karakterű: a Bosnyák tér környéke polgári téglaépület, kifelé haladva paneles lakótelepek és kertvárosi családi házak. A Huba ajtó gyakran lépcsőházi lakásajtót cserél itt — 1-2 nap alatt, törmelékelszállítással együtt.",
+  },
+  {
+    code: "XV",
+    name: "Rákospalota · Újpalota",
+    paragraph:
+      "Klasszikus pesti panel- és társasházi terep, Kistarcsától 15-20 perc autóval. Itt a modern range belépőszintje a leggyakoribb választás — RC2 / MABISZ 2. osztály, fa-design vagy mart felülettel. Másnapi felméréssel is elérhetők vagyunk.",
+  },
+  {
+    code: "XVI",
+    name: "Sashalom · Mátyásföld · Cinkota",
+    paragraph:
+      "A XVI. kerület Kistarcsa közvetlen szomszédja, és a kerületi családi ház állomány nagy részénél otthonosan mozgunk. Új építésnél a Huba Premium családi ház kivitelt szállítjuk, gyakran ACTUAL Fenster ablakcsomag mellé — egy felmérés, egy garancia, egy beszerzési felelős.",
+  },
+  {
+    code: "XVII",
+    name: "Rákoskeresztúr · Rákoshegy",
+    paragraph:
+      "A XVII. kerület családi házas övezete — eredeti 60-70-es évek kockaházaktól a frissen épült új építkezésig — szintén közvetlen műhelykörzetünk. A felújítások és új építések egyaránt RC2-RC3 közötti biztonsági ajtót kapnak, jellemzően fa- vagy mart felülettel.",
+  },
+  {
+    code: "X",
+    name: "Kőbánya",
+    paragraph:
+      "A X. kerület téglaépítésű állományánál a lakásajtó cseréje gyakran közös képviselői hozzájárulással kezdődik. Itt jellemzően az udvari és lépcsőházi nyílászárókkal találkozunk, modern fa- vagy mart felülettel, MABISZ 2-3 osztály besorolással.",
+  },
+  {
+    code: "IV",
+    name: "Újpest",
+    paragraph:
+      "Újpest paneles állományán a bontás nélküli ajtócsere a leggyakoribb feladat — a régi tok kivágása nélkül, méretre szabott új keretünk a meglévő nyílásba illeszkedik. A munkavégzési idő 1 nap, törmelékelszállítással.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Egész Budapesten dolgoznak?",
+    a: "<p>Igen, Budapest mind a 23 kerületében dolgozunk — a Várnegyedtől a Kispestig. A heritage budai oldal (I., II., XII.) és a belváros (V., VI., VII., VIII., IX.) mellett a Kistarcsához közeli pesti kerületek (XIII., XIV., XV., XVI., XVII.) is a fő működési terepünk. Kistarcsáról 30 perc alatt felmérésre érünk.</p>",
+  },
+  {
+    q: "Mennyibe kerül a felmérés Budapesten?",
+    a: "<p>A helyszíni felmérés ingyenes és kötelezettség nélküli — Budapest egész területére. A felmérőnk mintamintával érkezik, méri a tokot és az ajtószárnyat, és a helyszínen tájékoztatja Önt az árról és a műszaki lehetőségekről.</p>",
+  },
+  {
+    q: "Mennyi idő alatt érkezik felmérésre Budapest belvárosba?",
+    a: `<p>${SLA.surveyDays} alatt foglalható időpontra megyünk Budapestre is. Műemléki / örökségvédelmi környezetben a felmérés első része egyébként is a védettségi ellenőrzés — ezt mi végezzük az OÉNY rendszeren keresztül.</p>`,
+  },
+  {
+    q: "Műemléki környezetben is dolgoznak?",
+    a: '<p>Igen — ez a legfontosabb megkülönböztetésünk a piacon. Az V., VI., VII., VIII., IX. kerületi polgári bérházakban és az I., II., XII. kerületi budai heritage területeken készítünk az eredeti ajtó alapján rekonstruált korhű biztonsági ajtókat, az engedélyezési csomagunkkal együtt. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>',
+  },
+  {
+    q: "Panellakásra is gyártanak ajtót?",
+    a: '<p>Természetesen. A XIII., XIV., XV., XVII., X., IV. kerületi paneles állományon bontás nélküli ajtócserét végzünk: az új keret méretre szabva a meglévő tokba illeszkedik. <a href="/biztonsagi-ajto/panel-lakas">Panel-lakás bejárati ajtó →</a></p>',
+  },
+  {
+    q: "Társasházi engedély kell az ajtócseréhez?",
+    a: '<p>Nem védett ház belső, lépcsőházi lakásajtójánál hatósági engedély általában nem szükséges, de a közös képviselő hozzájárulása igen — ezt a felmérés után dokumentumsablonnal segítjük Önnek. Műemléki vagy helyi védettségű háznál külön engedélyezési eljárás indul. <a href="/orokségvedelmi-engedely">Engedélyezési útmutató →</a></p>',
+  },
+];
+---
+
+<BaseLayout
+  title="Biztonsági ajtó Budapest — minden kerületben"
+  description="Saját gyártású biztonsági ajtó Budapest mind a 23 kerületében. Műemléki engedélyezéssel a belvárosban (V., VI., VII., VIII., IX.) és a Várnegyedben (I.), modern kivitelben a panel- és családiházas övezetekben. MABISZ-minősített, 15 év szerkezeti garancia, 330 000 Ft-tól."
+>
+  <Hero
+    eyebrow="Szolgáltatási terület · Budapest"
+    heading="Biztonsági ajtó <em>Budapest</em> minden kerületében."
+    lead="A Várnegyedtől a Kispestig — műemléki belvárosi polgári bérházban, budai heritage villánegyedben, vagy panel- és családiházas pesti övezetben. Egy gyártó, ugyanaz az acél biztonsági mag, a kerület karakteréhez igazított látható kivitel."
+    pillars={[
+      "23 kerület",
+      "Heritage + modern",
+      `MABISZ ${SITE.mabiszSince} óta`,
+      "30 perc Kistarcsáról",
+      `${SITE.warrantyYears} év garancia`,
+    ]}
+    image="/assets/photos/hero/period-yellow.jpg"
+    imageAlt="Budapesti polgári lakás bejárati ajtaja — sárga, kovácsoltvas filigrán rácsokkal díszített Huba ajtó"
+    imageCaption="Budapest, I. kerület · 2024"
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="A kerületek karakteréhez igazítva"
+    heading="Két ajtófajta, egyetlen biztonsági mag."
+    lead="Budapest belvárosa és a budai heritage negyedek polgári lakásai más ajtót kívánnak, mint a XIII–XVII. paneles és családiházas állomány. A Huba ajtó mindkét formavilágot megépíti — ugyanazon a MABISZ-minősített acélszerkezeti alapon."
+  >
+    <p class="intro-text reveal">
+      Budapest 23 kerülete sosem volt homogén. A Várnegyed UNESCO-világöröksége és a Józsefváros 1/2022. helyi védettsége
+      éppen olyan precíz, kerületi szintű szabályozás, mint a Belváros tervtanácsi gyakorlata vagy a Hegyvidék villanegyedeinek
+      helyi védettsége. Mi mindegyikben kerületi szintű részletességgel dolgozunk — a felmérőnk a helyszínen jelzi, hogy
+      bejelentésköteles, engedélyköteles vagy szabad munkavégzésű tevékenységről van-e szó, és a teljes engedélyezési
+      adminisztrációt — építész és műemléki szakértő partnerünkkel együtt — egy kézbe vesszük.
+    </p>
+    <p class="intro-text reveal">
+      A modern kerületi körzetekben — XIII., XIV., XV., XVI., XVII., X., IV. — a hangsúly másik végén dolgozunk: bontás nélküli
+      ajtócsere panellakásban, prémium modern kivitel családi házban, ACTUAL Fenster ablakcsomag mellé. Kistarcsáról 30 perc
+      alatt érünk a felmérésre, és másnapi időpontot is tudunk adni.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Heritage kerületek"
+    heading="Belváros + budai heritage — engedélyezéssel együtt."
+    lead="Az V., VI., VII., VIII., IX. polgári bérházainál és az I., II., XII. budai heritage területein a védettségi vizsgálattal kezdjük. Az engedélyezést — építész tervezővel és műemléki szakértő partnerrel — mi intézzük."
+  >
+    <div class="district-list stagger">
+      {heritageDistricts.map(d => (
+        <article class="district-card" id={`kerulet-${d.code.toLowerCase()}`}>
+          <header class="district-card-header">
+            <span class="district-code">{d.code}.</span>
+            <div>
+              <h3 class="district-name">{d.name}</h3>
+              {d.note && <p class="district-note">{d.note}</p>}
+            </div>
+          </header>
+          <p class="district-paragraph">{d.paragraph}</p>
+          {d.href && (
+            <a href={d.href} class="district-link">Kerületi útmutató →</a>
+          )}
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Modern volumenű kerületek"
+    heading="Panel, családi ház, társasház — Kistarcsától 30 percre."
+    lead="A Kistarcsához legközelebbi pesti kerületek a Huba ajtó modern gyártóhátországa. Akár másnapi felméréssel, bontás nélküli ajtócserével, az olcsóbb katalógusajtóknál tartósabb, MABISZ-minősített kivitelben."
+  >
+    <div class="district-list stagger">
+      {modernDistricts.map(d => (
+        <article class="district-card" id={`kerulet-${d.code.toLowerCase()}`}>
+          <header class="district-card-header">
+            <span class="district-code">{d.code}.</span>
+            <h3 class="district-name">{d.name}</h3>
+          </header>
+          <p class="district-paragraph">{d.paragraph}</p>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Szolgáltatási terület"
+    heading="Budapest és Pest megye együtt."
+    lead="A budapesti kerületeken túl a teljes Pest-agglomerációt is ellátjuk — keletre Mogyoród, Csömör, Gödöllő irányába, NW Budán Telki, Páty, Budakeszi körzetében."
+  >
+    <ServiceArea />
+    <p class="service-area-link reveal">
+      <a href="/biztonsagi-ajto-pest-megye">Biztonsági ajtó Pest megye — a teljes agglomeráció →</a>
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="Gyakori kérdések budapesti munkáinkról."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Foglaljon felmérést budapesti címére"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz — műemléki belvárosba és pesti panelba egyaránt.`}
+  />
+</BaseLayout>
+
+<style>
+  .intro-text {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); max-width: 64ch; margin-top: 1.5rem;
+  }
+  .intro-text + .intro-text { margin-top: 1rem; }
+
+  .district-list {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+  }
+  @media (min-width: 720px) { .district-list { grid-template-columns: repeat(2, 1fr); } }
+
+  .district-card {
+    background: var(--color-paper); padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(14,15,17,0.08);
+    display: flex; flex-direction: column; gap: 0.85rem;
+    scroll-margin-top: 6rem;
+  }
+  .district-card-header {
+    display: flex; align-items: baseline; gap: 0.85rem;
+  }
+  .district-code {
+    font-family: var(--font-serif); color: var(--color-brass);
+    font-size: 1.8rem; line-height: 1; min-width: 2.2rem;
+  }
+  .district-name {
+    font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.2;
+    color: var(--color-ink);
+  }
+  .district-note {
+    font-size: 0.78rem; letter-spacing: 0.02em;
+    color: var(--color-stone); font-style: italic; margin-top: 0.2rem;
+  }
+  .district-paragraph {
+    font-size: 0.95rem; line-height: 1.6; color: var(--color-charcoal);
+  }
+  .district-link {
+    color: var(--color-brass-deep); text-decoration: underline;
+    text-underline-offset: 3px; font-size: 0.9rem; margin-top: auto;
+  }
+
+  .service-area-link {
+    margin-top: 2rem; font-family: var(--font-serif); font-size: 1.1rem;
+  }
+  .service-area-link a {
+    color: var(--color-brass-deep); text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

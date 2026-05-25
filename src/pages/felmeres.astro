@@ -1,0 +1,592 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import LeadForm from "../components/LeadForm.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import FAQ from "../components/FAQ.astro";
+import { SITE, CONTACT, SLA } from "../data/site";
+
+const phoneTel = CONTACT.phonePrimaryTel.replace(/\s/g, "");
+
+const whatHappens = [
+  {
+    n: "01",
+    t: "Helyszínre érkezés",
+    body:
+      "Kistarcsáról jellemzően 30–40 percen belül elérjük Budapestet és a környékét. Pest megyei és Buda heritage címek esetén ennek megfelelő logisztikával. A felmérő autóval, mintamintával érkezik.",
+  },
+  {
+    n: "02",
+    t: "Méretek + dokumentáció",
+    body:
+      "Lemérjük a nyílást — szélesség, magasság, falvastagság —, lefotózzuk a meglévő ajtót és a lépcsőházi környezetet. Műemléki környezetnél ez egyben a dokumentációs alap az engedélyezéshez.",
+  },
+  {
+    n: "03",
+    t: "Kivitelről beszélgetünk",
+    body:
+      "Modern vagy stílus? Kazettás, betétes vagy festett? Milyen vasalat? Milyen zár? — végigvesszük a választható elemeket. Mintamintánk segít a tapintásos döntésben. 30–45 perc.",
+  },
+  {
+    n: "04",
+    t: "Indikatív ár, fix ajánlat 48 órán belül",
+    body:
+      "A felmérés végén helyben kap egy árbecslést. A pontos, fix ajánlat 48 órán belül e-mailben érkezik — már a választott kivitel, vasalat és zár szerinti tételes bontásban.",
+  },
+];
+
+const noPressureItems = [
+  {
+    t: "Nem írunk alá szerződést a helyszínen",
+    body:
+      "A fix ajánlatot e-mailben kapja meg. Ön nyugodtan átgondolja, családtagjával átbeszéli, ha akarja, más ajánlatokkal összehasonlítja. Nincs „ma kötjük meg az árat” típusú nyomás.",
+  },
+  {
+    t: "Nem hagyunk nyitva értékesítési hurkot",
+    body:
+      "Egyetlen 48 órán belüli ajánlatküldés, majd 1-2 hét múlva egy udvarias visszakérdezés — ha addigra nem jelentkezett vissza, kész. Nincs sorozatos hívás-ostrom.",
+  },
+  {
+    t: "Nem dolgozunk jutalékos felmérővel",
+    body:
+      "A felmérő nem saját ajánlatából él. Cégi alkalmazott, fix fizetéssel — nem érdeke, hogy túlbeszélje Önt. Ezért is bízzák ránk a műemléki és társasházi környezetekben dolgozó tulajdonosok.",
+  },
+];
+
+const prepareItems = [
+  {
+    t: "Méretek (ha tudja)",
+    body:
+      "Ha már lemérte: szélesség × magasság × falvastagság. Ha nem, mi mérjük. Nem előfeltétel.",
+  },
+  {
+    t: "Képek a régi ajtóról",
+    body:
+      "Mobil-fotók kívülről, belülről, oldalról. Műemléki esetben fontos a kivitel és a meglévő veretek dokumentálása.",
+  },
+  {
+    t: "Lakógyűlési határozat (ha társasház)",
+    body:
+      "Ha a közös képviselő vagy közgyűlés már nyilatkozott — hozza el a másolatot. Ha még nem, ne aggódjon, ezt is mi tudjuk segíteni.",
+  },
+  {
+    t: "Műemléki védettség (ha van)",
+    body:
+      "Ha tudja, hogy az ingatlana műemlék vagy védett — jelezze. Ha nem biztos benne, OÉNY-alapú védettségi ellenőrzést mi végzünk az első napon.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Tényleg ingyenes? Nem kell semmit fizetni?",
+    a: `<p>Igen, a felmérés a Huba ajtó / Szer-X3 részéről teljesen ingyenes, kötelezettség nélkül. Akkor sem terhelnek díjat, ha végül nem rendel nálunk. Ezt 2003 óta gyakoroljuk Budapest és Pest megye területén.</p>`,
+  },
+  {
+    q: "Hová mennek ki?",
+    a: `<p>Budapest minden kerülete + Pest megye településeinek többsége. Kistarcsai műhelyünktől a Pest-agglomeráció keleti íve (Mogyoród, Csömör, Veresegyház, Gödöllő, Fót, Pécel, Isaszeg, Kerepes, Nagytarcsa) a hazai pálya. Buda heritage és NW Buda agglomeráció (Telki, Páty, Budakeszi) szintén bevett. <a href="/biztonsagi-ajto-budapest">Részletes szolgáltatási terület →</a></p>`,
+  },
+  {
+    q: "Mennyi időbe telik a felmérés?",
+    a: `<p>Egy átlagos lakásajtó-felmérés 30–45 perc. Stílus vagy műemléki kivitelnél, ahol az eredeti ajtót részletesen dokumentáljuk, 60–75 perc. Több ajtós (utcafronti kapu + lakásajtó) esetén 90 perc.</p>`,
+  },
+  {
+    q: "Helyben kapok árajánlatot?",
+    a: `<p>Helyben kap egy <strong>indikatív</strong> árbecslést, ami a kivitel és méret alapján 80–90%-os pontosságú. A <strong>fix, tételes</strong> árajánlat 48 órán belül e-mailben érkezik — már az Ön által választott kivitel, vasalat és zár konkrét specifikációjával.</p>`,
+  },
+  {
+    q: "Mi van, ha nem tudom eldönteni a kivitelt?",
+    a: `<p>Nem kell eldöntenie. A felmérés célja egyrészt a mérés, másrészt az opciók végigvétele. A felmérő mintamintával érkezik — fafelület minta, vasalat minta, zár minta — így tapintással is tud választani. A döntéssel rá tud aludni, és az e-mailben kapott ajánlatra reagálhat egy hét múlva is.</p>`,
+  },
+  {
+    q: "Mennyi idő múlva tudnak jönni?",
+    a: `<p>Tipikusan ${SLA.surveyDays}. A foglalt időpontokat a +36 30 740 4458 számon vagy az alábbi űrlapon tudjuk pontosítani. Sürgős eset (pl. betörés utáni helyzet) — jelezze, és aznap-másnap megpróbálunk kimenni.</p>`,
+  },
+  {
+    q: "Tud naptári foglalási rendszer is?",
+    a: `<p>Igen — a naptáros, önkiszolgáló foglalási rendszer hamarosan elérhető. Addig a leggyorsabb a telefon (+36 30 740 4458) vagy az alábbi űrlap. Tipikusan munkanapon belül visszahívjuk.</p>`,
+  },
+  {
+    q: "Mi van, ha külön él a felmérés napja és a vásárlás napja?",
+    a: `<p>Pontosan ez a normális. A felmérés és a megrendelés nem ugyanaz a nap — az ajánlatkérés e-mailben jön, Ön gondolkodik, kérdez, és csak akkor írja alá a megrendelést, amikor készen áll rá. A felmérés és a megrendelés között eltelt napok száma általában 7–21.</p>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Ingyenes helyszíni felmérés — Budapest és Pest megye"
+  description={`Ingyenes, kötelezettség nélküli helyszíni felmérés Budapesten és Pest megyében — ${SLA.surveyDays} alatt. Mintamintával, fix ajánlattal 48 órán belül. Saját gyártás Kistarcsán ${SITE.founded} óta.`}
+>
+  <section class="felmeres-hero">
+    <div class="container felmeres-hero-inner">
+      <div class="felmeres-hero-content reveal">
+        <p class="eyebrow">
+          <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
+          Ingyenes helyszíni felmérés
+        </p>
+        <h1 class="felmeres-hero-heading">
+          Ingyenes helyszíni felmérés<br />
+          Budapest és Pest megye területén — <em>{SLA.surveyDays} alatt.</em>
+        </h1>
+        <p class="felmeres-hero-lead">
+          Mintamintával, kötelezettség nélkül. A felmérés célja, hogy Ön megalapozott
+          döntést hozzon — nem az, hogy a helyszínen rávegyük a vásárlásra. A fix ajánlat
+          48 órán belül e-mailben érkezik.
+        </p>
+
+        <ul class="felmeres-hero-pillars stagger">
+          <li><span class="dot" aria-hidden="true">·</span> Ingyenes</li>
+          <li><span class="dot" aria-hidden="true">·</span> Kötelezettség nélkül</li>
+          <li><span class="dot" aria-hidden="true">·</span> Mintaminta a helyszínen</li>
+          <li><span class="dot" aria-hidden="true">·</span> Fix ajánlat 48 órán belül</li>
+          <li><span class="dot" aria-hidden="true">·</span> {SLA.surveyDays} alatt érkezünk</li>
+        </ul>
+
+        <div class="felmeres-hero-ctas">
+          <a href="#form" class="btn btn-primary btn-large">Időpontot kérek →</a>
+          <a href={`tel:${phoneTel}`} class="btn btn-ghost btn-large">
+            Vagy hívjon: {CONTACT.phonePrimary}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section
+    tone="paper"
+    eyebrow="Mi történik a felmérésen?"
+    heading="Négy lépés, körülbelül 30–45 perc."
+    lead="Ha még soha nem foglalkozott biztonsági ajtó cseréjével — itt megtudja, mire számíthat. Semmi rejtett nincs benne; szakmai munka, kötelezettség nélkül."
+  >
+    <ol class="what-happens stagger">
+      {
+        whatHappens.map((s) => (
+          <li class="wh-step">
+            <span class="wh-step-n">{s.n}</span>
+            <h3 class="wh-step-t">{s.t}</h3>
+            <p class="wh-step-body">{s.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Pszichológiai garancia"
+    heading="Nincs nyomás. Nem akarunk a helyszínen aláíratni Önnel semmit."
+    lead="Az iparágban — különösen a nyílászáró-piacon — ismert a „helyszíni nyomásértékesítés” technika: a felmérő rögtön aláírást kér, kedvezményt csak ma ad, családtagra hivatkozik. Mi ezt nem alkalmazzuk. Soha."
+  >
+    <div class="no-pressure stagger">
+      {
+        noPressureItems.map((n) => (
+          <article class="np-item">
+            <h3>{n.t}</h3>
+            <p>{n.body}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="no-pressure-note reveal">
+      Ezt a hozzáállást nem mi találtuk ki, hanem a vevőink kérik vissza. A felmérés és
+      a megrendelés között eltelt napok átlaga az elmúlt két évben 14 nap. Ez a normális
+      ritmus — nem 24 óra.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Mit készítsen elő?"
+    heading="Semmi nem kötelező — de ezek gyorsítanak."
+    lead="A felmérőnk magával hoz mindent, ami a méréshez kell. De néhány Ön oldali előkészület a folyamatot fel tudja gyorsítani — különösen műemléki vagy társasházi környezetben."
+  >
+    <div class="prepare-grid stagger">
+      {
+        prepareItems.map((p) => (
+          <article class="prep">
+            <h3>{p.t}</h3>
+            <p>{p.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Időkeret"
+    heading={`${SLA.surveyDays} — onnantól már a Huba dolgozik.`}
+    lead="A felmérés foglalásának pillanatától kezdve egy meghatározott ütemterv indul. Minden lépésnél tudjuk, mi a következő — Önnek sem kell utánajárnia."
+  >
+    <div class="timeline-felmeres">
+      <article class="tlf reveal">
+        <p class="tlf-when">Nap 0</p>
+        <h3>Foglalás</h3>
+        <p>Telefon vagy űrlap. Munkanapon belül visszahívjuk és pontosítjuk az időpontot.</p>
+      </article>
+      <article class="tlf reveal">
+        <p class="tlf-when">Nap 2–3</p>
+        <h3>Felmérés a helyszínen</h3>
+        <p>30–45 perc. Mérés, dokumentáció, mintaminta, beszélgetés a kivitelről.</p>
+      </article>
+      <article class="tlf reveal">
+        <p class="tlf-when">Nap 4–5</p>
+        <h3>Fix ajánlat e-mailben</h3>
+        <p>Tételes árajánlat 48 órán belül. Ön nyugodtan átgondolja.</p>
+      </article>
+      <article class="tlf reveal">
+        <p class="tlf-when">Nap 7–21</p>
+        <h3>Döntés és megrendelés</h3>
+        <p>Modern ajtó: 10–12 nap gyártás. Műemléki: indul a 4–6 hónapos engedélyezés.</p>
+      </article>
+    </div>
+  </Section>
+
+  <section id="form" class="form-section">
+    <div class="container form-section-inner">
+      <header class="form-section-header reveal">
+        <p class="eyebrow">
+          <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
+          Foglalás
+        </p>
+        <h2 class="form-section-heading">Foglalja le a felmérési időpontot.</h2>
+        <p class="form-section-lead">
+          A telefon a leggyorsabb — {CONTACT.hours.weekday}. Az űrlap is működik:
+          munkanapon belül visszahívjuk, és az időpontot pontosítjuk. A naptáras, önkiszolgáló
+          foglalás hamarosan elérhető.
+        </p>
+      </header>
+
+      <div class="form-grid">
+        <div class="form-side reveal">
+          <p class="form-side-eyebrow">Telefon — leggyorsabb</p>
+          <a href={`tel:${phoneTel}`} class="form-side-phone">
+            {CONTACT.phonePrimary}
+          </a>
+          <p class="form-side-hours">{CONTACT.hours.weekday}<br />{CONTACT.hours.saturday}</p>
+
+          <hr />
+
+          <p class="form-side-eyebrow">E-mail</p>
+          <a href={`mailto:${CONTACT.email}`} class="form-side-mail">{CONTACT.email}</a>
+
+          <hr />
+
+          <p class="form-side-eyebrow">Műhely</p>
+          <p class="form-side-addr">
+            {CONTACT.address.postal} {CONTACT.address.city},<br />
+            {CONTACT.address.street}
+          </p>
+        </div>
+
+        <div class="form-main reveal">
+          <LeadForm variant="full" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A felmérés leggyakoribb kérdései."
+  >
+    <FAQ items={faqItems} />
+  </Section>
+
+  <ContactCTA
+    heading="Nem készen áll még a felmérésre?"
+    lead="Telefonos konzultáció is van — a kerületi szabályzatról, az engedélyezési csomagról, vagy egyszerűen csak a kivitelről. Egyszer hívjon, és válaszolunk."
+  />
+</BaseLayout>
+
+<style>
+  .felmeres-hero {
+    padding-block: clamp(3rem, 6vw, 5rem) clamp(3rem, 5vw, 4rem);
+    background: var(--color-paper);
+  }
+  .felmeres-hero-inner {
+    max-width: 56rem;
+  }
+  .felmeres-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0;
+  }
+  .felmeres-hero-heading {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 4.4vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-top: 1rem;
+    max-width: 22ch;
+  }
+  .felmeres-hero-heading em {
+    font-style: italic;
+    color: var(--color-brass-deep);
+  }
+  .felmeres-hero-lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--color-charcoal);
+    margin-top: 1.25rem;
+    max-width: 50ch;
+  }
+  .felmeres-hero-pillars {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+    color: var(--color-charcoal);
+  }
+  .felmeres-hero-pillars li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .felmeres-hero-pillars .dot {
+    color: var(--color-brass);
+  }
+  .felmeres-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .what-happens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 720px) {
+    .what-happens {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .what-happens {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .wh-step {
+    background: var(--color-paper);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .wh-step-n {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--color-brass);
+  }
+  .wh-step-t {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+  .wh-step-body {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+
+  .no-pressure {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .no-pressure {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .np-item {
+    background: var(--color-paper);
+    padding: 1.75rem 1.5rem;
+    border-left: 3px solid var(--color-brass);
+  }
+  .np-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+  .np-item p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+  .no-pressure-note {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+    max-width: 60ch;
+    font-style: italic;
+  }
+
+  .prepare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 720px) {
+    .prepare-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .prepare-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .prep {
+    background: var(--color-cream);
+    padding: 1.5rem 1.25rem;
+  }
+  .prep h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+  }
+  .prep p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+  }
+
+  .timeline-felmeres {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 720px) {
+    .timeline-felmeres {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .tlf {
+    background: var(--color-paper);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .tlf-when {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .tlf h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin-top: 0.2rem;
+  }
+  .tlf p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+  }
+
+  .form-section {
+    padding-block: clamp(4rem, 7vw, 6rem);
+    background: var(--color-paper);
+    scroll-margin-top: 2rem;
+  }
+  .form-section-header {
+    max-width: 56rem;
+    margin-bottom: 2.5rem;
+  }
+  .form-section-header .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .form-section-heading {
+    font-family: var(--font-serif);
+    font-size: var(--text-h2);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    max-width: 24ch;
+  }
+  .form-section-lead {
+    font-family: var(--font-serif);
+    font-size: var(--text-lead);
+    line-height: 1.5;
+    color: var(--color-charcoal);
+    max-width: 50ch;
+    margin-top: 1.25rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .form-grid {
+      grid-template-columns: 1fr 2fr;
+      gap: 3.5rem;
+    }
+  }
+  .form-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .form-side-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .form-side-phone {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-ink);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .form-side-phone:hover {
+    color: var(--color-brass-deep);
+  }
+  .form-side-mail {
+    font-size: 1rem;
+    color: var(--color-brass-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .form-side-hours,
+  .form-side-addr {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    line-height: 1.5;
+  }
+  .form-side hr {
+    border: none;
+    border-top: 1px solid rgba(14, 15, 17, 0.1);
+    margin: 0.5rem 0;
+  }
+</style>

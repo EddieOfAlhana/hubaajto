@@ -1,0 +1,693 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import EngedelyezesiCsomag from "../components/EngedelyezesiCsomag.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Stat from "../components/Stat.astro";
+import { SITE, SLA } from "../data/site";
+
+const costRows = [
+  {
+    item: "Állapotfelmérés, építész felmérési terv",
+    range: "50 000 – 150 000 Ft",
+    note: "Egy lakásajtó méretű feladatnál — a Huba felmérés ingyenes része.",
+  },
+  {
+    item: "Tervdokumentáció (építész)",
+    range: "100 000 – 400 000 Ft",
+    note: "MÉK Díjszámítási Szabályzat. Partner építészünk készíti.",
+  },
+  {
+    item: "Építéstörténeti tudományos dokumentáció",
+    range: "150 000 – 600 000 Ft",
+    note: "439/2013. Korm. rendelet szerinti névjegyzéki szakértőtől.",
+  },
+  {
+    item: "Tervtanácsi eljárás",
+    range: "Általában ingyenes",
+    note: "V. ker. és más kerületekben kötelező lehet.",
+  },
+  {
+    item: "Örökségvédelmi engedély illetéke",
+    range: "0 Ft",
+    note: "2020 óta illetékmentes.",
+  },
+  {
+    item: "Településképi bejelentés (TKBE)",
+    range: "0 Ft (legtöbb kerület)",
+    note: "Józsefváros, Budavári, Erzsébetváros stb.",
+  },
+  {
+    item: "Korhű Huba ajtó",
+    range: "700 000 – 2 500 000 Ft",
+    note: "Méret, kazettás kivitel, vasalat, üvegezés szerint.",
+  },
+  {
+    item: "Beépítés",
+    range: "80 000 – 250 000 Ft",
+    note: "Szárkő- vagy tokcsere esetén magasabb.",
+  },
+];
+
+const timelinePhases = [
+  { week: "1. nap", what: "Védettségi ellenőrzés", who: "Huba — ingyenes" },
+  { week: "1–2. hét", what: "Helyszíni felmérés + műszaki dokumentáció előkészítése", who: "Huba" },
+  { week: "3–8. hét", what: "Építész tervdokumentáció + építéstörténeti dokumentáció", who: "Partner építész + szakértő" },
+  { week: "9–10. hét", what: "Tervtanácsi prezentáció (ha kötelező)", who: "Partner építész" },
+  { week: "11–14. hét", what: "ÉTDR-kérelem benyújtása, 25 napos eljárás + hiánypótlás", who: "Huba — meghatalmazással" },
+  { week: "14–18. hét", what: "Kerületi TKBE párhuzamosan, 15 napos eljárás", who: "Huba" },
+  { week: "15–22. hét", what: "Korhű ajtó gyártása a kistarcsai műhelyben", who: "Huba — saját gyártás" },
+  { week: "23. hét", what: "Beépítés az engedély kikötései szerint, 1–2 nap", who: "Huba" },
+  { week: "24. hét", what: "Befejezési bejelentés a hatóságnak (8 nap)", who: "Huba" },
+];
+
+const rejectionReasons = [
+  {
+    n: "01",
+    title: "Műanyag / alumínium nyílászáró",
+    body:
+      "Közterületről látható homlokzaton az örökségvédelmi hatóság automatikus elutasítást ad. Megoldás: fa külső borítás, acél belső szerkezet.",
+  },
+  {
+    n: "02",
+    title: "Eredetitől eltérő osztás",
+    body:
+      "A 6-osztású felső üvegezés helyett 4-osztású, vagy módosított kazetta-arány. Megoldás: a felmérés során lefotózzuk és lemérjük az eredetit.",
+  },
+  {
+    n: "03",
+    title: "Modern fényes króm zár / kilincs",
+    body:
+      "A hatóság korhű — sárgaréz vagy kovácsoltvas — vasalatot vár. A Huba alapból ilyennel készíti a műemléki kivitelt.",
+  },
+  {
+    n: "04",
+    title: "Profilarányt megváltoztató hőszigetelő üveg",
+    body:
+      "A vastagabb hőszigetelő üveg a keret arányait széttörheti. Megoldás: a profilhoz tervezett vékonyabb történelmi vagy bevonatos üveg.",
+  },
+  {
+    n: "05",
+    title: "Névjegyzéken kívüli szakértő",
+    body:
+      "A 439/2013. Korm. rendelet szerinti névjegyzékben szereplő szakértő készíthet építéstörténeti dokumentációt. Partner szakértőink mind névjegyzéki tagok.",
+  },
+  {
+    n: "06",
+    title: "Hiányos tervtanácsi vélemény",
+    body:
+      "Belváros-Lipótváros (V. ker.) és más kerületekben kötelező. Partner építészünk a tervtanácson is megjelenik.",
+  },
+  {
+    n: "07",
+    title: "Formailag hibás ÉTDR-meghatalmazás",
+    body:
+      "A leggyakoribb hiánypótlási ok. Az ÉTDR-be a kérelmet a mi partnerünk nyújtja be — formailag hibátlanul.",
+  },
+];
+
+const districtNotes = [
+  {
+    code: "I",
+    name: "Budavári Várnegyed",
+    desc:
+      "30/2022. (XII. 20.) önkormányzati rendelet. UNESCO világörökség — a legszigorúbb. „Világörökség részét képező területen, 1945 előtt épült épület utcai homlokzatainak nyílászáró felújításakor csak az eredeti nyílászáróval megegyező ablak helyezhető el, és külső megjelenése sem térhet el az eredetitől.” Tervtanácsi konzultáció a Budavári Önkormányzat főépítészi irodáján.",
+  },
+  {
+    code: "V",
+    name: "Belváros-Lipótváros",
+    desc:
+      "5/2020. (I. 30.) önkormányzati rendelet. Az Andrássy út MJT részeként szigorúbb. Tervtanácsi véleményt írhat elő — a Belváros-Lipótváros Önkormányzat főépítészi irodája. A klasszikus belvárosi polgári bérházak alapformája a kazettás kétszárnyú kapu.",
+  },
+  {
+    code: "VIII",
+    name: "Józsefváros",
+    desc:
+      "TKR 1/2022. (I. 20.) §53 — utcai, udvari, tetőtéri és <strong>lépcsőházi nyílászáró</strong>, biztonsági és díszrács, valamint redőny felújítása, cseréje TKBE-köteles. §30 megőrzendő: eredeti beépítési sík, osztás, szín, díszrács. A leghatározottabb kerületi szabályrendszer — még belső lépcsőházi ajtóra is kiterjed.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Egy számlát kapok, vagy többet?",
+    a: `<p>Egy számlát kap — a Szer-X3 Kft. (Huba ajtó) állítja ki, és tartalmazza az építész tervezőt, a műemléki szakértőt, a hatósági közreműködést, a gyártást és a beépítést. A partner építész és szakértő részére mi fizetjük ki — Ön egy projektmenedzserrel és egy számlával dolgozik.</p>`,
+  },
+  {
+    q: "Mi van, ha menet közben elutasítják?",
+    a: `<p>Elutasítás esetén 15 napon belül fellebbezhetünk a másodfokú hatósághoz (Építési és Közlekedési Minisztérium). A leggyakoribb elutasítási okokat — a 7 tipikus hibát — a felmérés és tervdokumentáció szakaszában szűrjük. Az eddigi engedélyezési ügyeink mindegyikében pozitív döntés született, általában 1–2 hiánypótlás után.</p>`,
+  },
+  {
+    q: "Mi a vevői részvétel a folyamatban?",
+    a: `<p>Három pontnál van vevői aláírás/jelenlét szükséges: <strong>1)</strong> a meghatalmazás aláírása a felmérés után, <strong>2)</strong> a tervdokumentáció jóváhagyása (jellemzően 6–8. héten), <strong>3)</strong> a beépítés és átadás napján. A közbenső hatósági kommunikációt mi vezetjük.</p>`,
+  },
+  {
+    q: "Mi van, ha a védettség pontos szintjében bizonytalan vagyok?",
+    a: `<p>Helyrajzi szám alapján egy munkanap alatt lekérdezzük az OÉNY védettségi nyilvántartásból, és a kerületi főépítészi irodával is konzultálunk. A védettségi ellenőrzés az engedélyezési csomag első, ingyenes lépése.</p>`,
+  },
+  {
+    q: "Milyen jogi háttérre építünk?",
+    a: `<p>2001. évi LXIV. tv. (Kötv.), 68/2018. (IV. 9.) Korm. rendelet (Övr.), 439/2013. (XI. 20.) Korm. rendelet (szakértői tevékenység), 281/2024. (IX. 30.) Korm. rendelet (Épelj.), 191/2001. Korm. rendelet (bírság), valamint a kerületi településképvédelmi rendeletek (TKR) és Kerületi Építési Szabályzat (KÉSZ). Az aktuális jogszabályi szöveget a partner építészünk követi.</p>`,
+  },
+  {
+    q: "Mennyi az engedély hatálya?",
+    a: `<p>1 év a határozat végrehajthatóvá válásától, 2 éven belül kötelező a befejezést bejelenteni. Kérelemre egyszer 2 évvel meghosszabbítható. A Huba ütemezésben a gyártás-beépítés mindig a hatályon belül zajlik.</p>`,
+  },
+  {
+    q: "Engedély nélkül cseréltem ajtót — most mi lesz?",
+    a: `<p>Az örökségvédelmi bírság a beruházási érték 10–50%-a, illetve a hatóság elrendelheti az eredeti állapot helyreállítását. Településkép-védelmi bírság 200 e–2 millió Ft. Utólagos „fennmaradási engedély” eljárás lehetséges — ezzel a Huba ki tudja menteni a már beépített ajtót, ha a kivitel megfelel a hatósági követelményeknek.</p>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Kulcsrakész engedélyezési csomag — műemléki ajtócsere | Huba ajtó"
+  description="A védettségi ellenőrzéstől a befejezési bejelentésig. 11 lépés, 4–6 hónap, egy számla, egy projektmenedzser. Műemléki, helyi védettségű és műemléki környezetben álló ingatlanokhoz Budapesten."
+>
+  <Hero
+    eyebrow="Stratégiai termékünk · engedélyezési csomag"
+    heading="Mi intézzük az engedélyt is.<br/><em>Ön egy ajtót kap — mi egy döntést.</em>"
+    lead="A budapesti műemléki ajtócsere 4–6 hónapos, 3-hatóságos folyamat. Védettségi ellenőrzéstől a befejezési bejelentésig mindent vállalunk — építész tervezővel és műemléki szakértői névjegyzékbe vett partnerrel együttműködve. Egy számla, egy projektmenedzser."
+    pillars={[
+      "11 lépés, fix lépésrend",
+      "4–6 hónap teljes átfutás",
+      "Egy számla, egy projektmenedzser",
+      "Hatósági illeték 0 Ft",
+      "Eddigi 100%-os engedélyezési sikeresség",
+    ]}
+    image="/assets/photos/hero/period-green.jpg"
+    imageAlt="Sötétzöld, korhű biztonsági ajtó kovácsoltvas díszrácsokkal Buda közép luxus polgári lakásában"
+    imageCaption="Budapest, II. kerület · 2024-es engedélyezés"
+    primaryCta={{ label: "Védettségi ellenőrzés indítása", href: "/felmeres" }}
+    secondaryCta={{ label: "Műemléki termékoldal", href: "/muemleki-biztonsagi-ajto" }}
+  />
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Miért külön szolgáltatás?"
+    heading="A vevő egyedül nem boldogul ezzel."
+    lead="A magyar örökségvédelmi engedélyezés három párhuzamos hatóság, négy jogszabály, egy ÉTDR-rendszer és tipikusan 1–2 hiánypótlás. A legtöbb ajtógyártó visszaadja a vevőnek a papírmunkát. Mi nem — ezért dolgozunk leghatékonyabban éppen ezen a piacon."
+  >
+    <div class="why-grid stagger">
+      <article class="why">
+        <h3>3 hatóság</h3>
+        <p>
+          Budapest Főváros Kormányhivatala Építésügyi és Örökségvédelmi Főosztály
+          (örökségvédelmi engedély) + kerületi önkormányzat polgármestere (TKBE) +
+          adott esetben kerületi tervtanács — három párhuzamos eljárással.
+        </p>
+      </article>
+      <article class="why">
+        <h3>2 szakértői szereplő</h3>
+        <p>
+          A 439/2013. Korm. rendelet szerinti műemléki szakértői névjegyzékben szereplő
+          szakértő (építéstörténeti dokumentáció) + jogosult építész tervező. Mindkettőhöz
+          partnerszerződéses kapcsolatot biztosítunk.
+        </p>
+      </article>
+      <article class="why">
+        <h3>1 ÉTDR-rendszer</h3>
+        <p>
+          Az engedélyezési kérelem kizárólag az ÉTDR rendszerben (etdr.gov.hu) nyújtható
+          be, KAÜ-azonosítással. A meghatalmazás formailag hibás → automatikus
+          hiánypótlás. A mi partnerünk hibátlanul ad be.
+        </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A 11 lépés"
+    heading="A teljes folyamat egy vizuális térképen."
+    lead="A védettségi ellenőrzéstől a hatósági befejezési bejelentésig. Ön mindegyik lépésnél tudja, mi történik, és mit várhat — a következő frissítést időben megkapja."
+  >
+    <EngedelyezesiCsomag />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Költségek — átláthatóan"
+    heading="Ennyibe kerül egy átlagos belvárosi műemlék ajtó. Tételesen."
+    lead="A teljes projekt 1,1–3,8 millió Ft nagyságrend, mérettől, kivitelezéstől és kerületi szabályzattól függően. A hatósági illeték 0 Ft. A versenytárs ajtógyártók ezeket a számokat nem közlik — mi igen, mert csak így van a vevőnek valódi döntési alapja."
+  >
+    <div class="cost-table reveal">
+      <div class="cost-row cost-row-head">
+        <div>Tétel</div>
+        <div>Tipikus tartomány</div>
+        <div>Megjegyzés</div>
+      </div>
+      {
+        costRows.map((c) => (
+          <div class="cost-row">
+            <div class="cost-item">{c.item}</div>
+            <div class="cost-range">{c.range}</div>
+            <div class="cost-note">{c.note}</div>
+          </div>
+        ))
+      }
+      <div class="cost-row cost-row-total">
+        <div class="cost-item"><strong>Összesen</strong></div>
+        <div class="cost-range"><strong>~1 100 000 – 3 800 000 Ft</strong></div>
+        <div class="cost-note">
+          Egy átlagos belvárosi műemlék bejárati ajtó esetén
+        </div>
+      </div>
+    </div>
+    <p class="cost-disclaimer">
+      A tartomány a Huba ajtó eddigi engedélyezési ügyei és a magyar építész szakmai díjszabás
+      (MÉK) alapján. Az Ön konkrét projektjére fix árajánlatot a felmérés után, 48 órán belül adunk.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Időkeret"
+    heading="4–6 hónap — hétről hétre."
+    lead="A projektnek minden hetén tudjuk, mi a soron következő lépés. Ön minden Microsoft Teams / e-mail frissítést időben megkap — nem Önnek kell utánajárnia."
+  >
+    <div class="timeline">
+      {
+        timelinePhases.map((p, i) => (
+          <article class="timeline-step reveal">
+            <p class="timeline-week">{p.week}</p>
+            <h3 class="timeline-what">{p.what}</h3>
+            <p class="timeline-who">{p.who}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="timeline-note">
+      Gyors esetben 3 hónap, fellebbezéssel 9–12 hónap. A leggyakoribb átfutás 4–6 hónap.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="A 7 tipikus elutasítási ok"
+    heading="És mit teszünk ellene."
+    lead="A 68/2018. Korm. rendelet 53. §-a szerint a hatóság elutasítja a kérelmet, ha a tervezett tevékenység szakszerűtlen, vagy a műemlék jellegét sértő módon megváltoztatja. A leggyakoribb okok és a Huba megoldása."
+  >
+    <div class="rejections stagger">
+      {
+        rejectionReasons.map((r) => (
+          <article class="rejection">
+            <span class="rejection-n">{r.n}</span>
+            <h3>{r.title}</h3>
+            <p>{r.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section
+    tone="ink"
+    eyebrow="A csomag tartalma"
+    heading="Amit a Huba ajtó / Szer-X3 vállal."
+    lead="A 7. fejezet (research/06) szerinti teljes szolgáltatás-tervezés. Lépésről lépésre."
+  >
+    <div class="offer-grid stagger">
+      <div class="offer">
+        <h3>01 · Védettségi ellenőrzés</h3>
+        <p>OÉNY-lekérdezés + kerületi főépítészi konzultáció. Egyértelmű válasz: műemlék, helyi védett, vagy műemléki környezet.</p>
+      </div>
+      <div class="offer">
+        <h3>02 · Helyszíni felmérés</h3>
+        <p>Méretek, profilozás, kovácsoltvas elemek, üveg, eredeti szín dokumentálása. Ingyenes alapszolgáltatás.</p>
+      </div>
+      <div class="offer">
+        <h3>03 · Műszaki dokumentáció</h3>
+        <p>Gyártói rajzok M=1:10, profilrajzok, anyagmintatáblák. Az engedélyezés vizuális alapja.</p>
+      </div>
+      <div class="offer">
+        <h3>04 · Építész + szakértő</h3>
+        <p>Jogosult építész tervező és műemléki szakértői névjegyzékbe vett partner. Egy számla.</p>
+      </div>
+      <div class="offer">
+        <h3>05 · Építéstörténeti dokumentáció</h3>
+        <p>Értékleltár vagy kivonatos építéstörténeti dokumentáció — a hatóságnak bizonyítva, hogy ismerjük az eredeti ajtó értékét.</p>
+      </div>
+      <div class="offer">
+        <h3>06 · ÉTDR-kérelem</h3>
+        <p>Meghatalmazással a teljes anyagot benyújtjuk — 25 napos hatósági határidővel.</p>
+      </div>
+      <div class="offer">
+        <h3>07 · Tervtanácsi prezentáció</h3>
+        <p>Ha a kerület kötelezően előírja — a partner építészünk megjelenik.</p>
+      </div>
+      <div class="offer">
+        <h3>08 · Hatósági kommunikáció</h3>
+        <p>Hiánypótlások, hatósági kérdések — mi kezeljük. Ön folyamatos visszajelzést kap.</p>
+      </div>
+      <div class="offer">
+        <h3>09 · Településképi bejelentés</h3>
+        <p>A kerületi TKBE párhuzamos lefolytatása — 15 napos eljárás.</p>
+      </div>
+      <div class="offer">
+        <h3>10 · Gyártás és beépítés</h3>
+        <p>Az engedélyben rögzített kikötések szerint — eredeti osztás, anyaghasználat, szín, vasalat.</p>
+      </div>
+      <div class="offer">
+        <h3>11 · Befejezési bejelentés</h3>
+        <p>8 napon belül bejelentjük a hatóságnak — kötelező záró lépés.</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Budapesti kerületi sajátosságok"
+    heading="Három kerület — három különböző szabályrendszer."
+    lead="A kerületi településképvédelmi rendeletek érdemben különböznek. Alább a három leggyakoribb kerület konkrét rendelete és gyakorlata."
+  >
+    <div class="district-deep stagger">
+      {
+        districtNotes.map((d) => (
+          <article class="district-deep-item">
+            <header class="district-deep-head">
+              <span class="district-deep-code">{d.code}. kerület</span>
+              <h3>{d.name}</h3>
+            </header>
+            <p set:html={d.desc} />
+          </article>
+        ))
+      }
+    </div>
+    <p class="district-deep-note reveal">
+      Más kerületekben hasonló mélységgel ismerjük a rendeletet — Erzsébetváros (EÉSZ 25/2018.),
+      Terézváros (33/2017.), Ferencváros (8/2024.), Hegyvidék (XII.) helyi védett villakerület,
+      II. kerület Rózsadomb–Pasarét.
+    </p>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Az engedélyezési csomag számokban"
+  >
+    <div class="stats-grid stagger">
+      <Stat value="11" label="lépés" sub="védettségi ellenőrzéstől szemléig" />
+      <Stat value="4–6 hó" label="átlagos átfutás" sub="kérelemtől a beépített ajtóig" />
+      <Stat value="3" label="hatóság" sub="kormányhivatal · polgármester · tervtanács" />
+      <Stat value="1" label="számla" sub="építész + szakértő + gyártás + beépítés" />
+    </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A folyamat leggyakoribb kérdései."
+  >
+    <FAQ items={faqItems} />
+    <p class="disclaimer reveal">
+      <em>
+        A jogszabályi környezet változó. Az aktuális helyzetért kérje személyes
+        konzultációnkat. Utolsó frissítés: 2026. május.
+      </em>
+    </p>
+  </Section>
+
+  <ContactCTA
+    heading="Az első lépés ingyenes."
+    lead="Foglaljon helyszíni felmérést. Az OÉNY-alapú védettségi ellenőrzéstől kezdve a teljes folyamatot mi vezetjük."
+  />
+</BaseLayout>
+
+<style>
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 900px) {
+    .why-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .why {
+    background: var(--color-paper);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .why h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .why p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+  }
+
+  .cost-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--color-paper);
+    border: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  .cost-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(14, 15, 17, 0.06);
+    gap: 0.5rem;
+  }
+  @media (min-width: 800px) {
+    .cost-row {
+      grid-template-columns: 1.6fr 1fr 1.6fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+  }
+  .cost-row:last-child {
+    border-bottom: none;
+  }
+  .cost-row-head {
+    background: var(--color-cream);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .cost-row-total {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .cost-row-total .cost-item,
+  .cost-row-total .cost-range,
+  .cost-row-total .cost-note {
+    color: var(--color-paper);
+  }
+  .cost-item {
+    font-size: 0.95rem;
+    color: var(--color-ink);
+  }
+  .cost-range {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--color-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .cost-note {
+    font-size: 0.85rem;
+    color: var(--color-charcoal);
+    line-height: 1.5;
+  }
+  .cost-disclaimer {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-stone);
+    max-width: 70ch;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 720px) {
+    .timeline {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .timeline-step {
+    background: var(--color-paper);
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .timeline-week {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .timeline-what {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--color-ink);
+  }
+  .timeline-who {
+    font-size: 0.82rem;
+    color: var(--color-stone);
+  }
+  .timeline-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-charcoal);
+  }
+
+  .rejections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(14, 15, 17, 0.08);
+    border-block: 1px solid rgba(14, 15, 17, 0.08);
+  }
+  @media (min-width: 720px) {
+    .rejections {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .rejections {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .rejection {
+    background: var(--color-paper);
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .rejection-n {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    color: var(--color-brass);
+    letter-spacing: 0.04em;
+  }
+  .rejection h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+  .rejection p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+  }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 720px) {
+    .offer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .offer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .offer {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem;
+    border: 1px solid rgba(246, 244, 238, 0.08);
+  }
+  .offer h3 {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.25;
+    color: var(--color-paper);
+    margin-bottom: 0.5rem;
+  }
+  .offer p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--color-mist);
+  }
+
+  .district-deep {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .district-deep {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .district-deep-item {
+    background: var(--color-cream);
+    padding: 1.75rem 1.5rem;
+  }
+  .district-deep-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.75rem;
+  }
+  .district-deep-code {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+  .district-deep-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+  .district-deep-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+  }
+  .district-deep-item :global(strong) {
+    color: var(--color-ink);
+  }
+  .district-deep-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    max-width: 70ch;
+    font-style: italic;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .disclaimer {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--color-stone);
+    max-width: 60ch;
+  }
+</style>

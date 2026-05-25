@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE, CONTACT } from "../data/site";
+---
+
+<BaseLayout
+  title="ÁSZF / Vállalási feltételek"
+  description="A Huba ajtó (Szer-X3 Kft.) vállalási feltételei — árajánlat érvényessége, fizetési ütemezés, szállítás és beépítés, 15 év szerkezeti garancia, garanciális eljárás, vis maior, fogyasztói jogok."
+>
+  <Section tone="paper" eyebrow="Jogi" heading="ÁSZF / Vállalási feltételek">
+    <div class="legal-prose">
+      <p class="legal-lead">
+        A jelen Vállalási feltételek (a továbbiakban: „Feltételek") a {SITE.legalName}
+        ({SITE.shortLegal}) — mint vállalkozás — által nyújtott biztonsági ajtó gyártási, szállítási és
+        beépítési szolgáltatások általános feltételeit szabályozzák. Ezek a Feltételek a Polgári
+        Törvénykönyvről szóló 2013. évi V. törvény (Ptk.) és a fogyasztóvédelemről szóló 1997. évi
+        CLV. törvény (Fgytv.) rendelkezéseivel összhangban értelmezendők.
+      </p>
+
+      <h3>1. A szerződő felek</h3>
+      <p>
+        <strong>Vállalkozás:</strong> {SITE.legalName}, székhely:
+        {CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}; telefon:
+        <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a>;
+        e-mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. A részletes adatok az
+        <a href="/impresszum">Impresszumban</a> érhetők el.
+      </p>
+      <p>
+        <strong>Megrendelő:</strong> az a természetes vagy jogi személy, aki vagy amely a
+        Vállalkozással biztonsági ajtó gyártására, szállítására és/vagy beépítésére vonatkozó
+        szerződést köt.
+      </p>
+
+      <h3>2. Az árajánlat</h3>
+      <ul>
+        <li>A helyszíni felmérés <strong>ingyenes</strong> és kötelezettség nélküli.</li>
+        <li>Az árajánlat a kiállítás napjától számított <strong>30 napig érvényes</strong>, kivéve, ha
+          az ajánlat más érvényességi időt rögzít.</li>
+        <li>Az árajánlatban szereplő árak <strong>bruttó forintban</strong>, a 27%-os ÁFA-t
+          tartalmazva értendők — kivéve, ha az ajánlatban kifejezetten más szerepel.</li>
+        <li>Az árajánlat elfogadása írásban — e-mailben vagy aláírással — történik.</li>
+        <li>Az ajánlat alapját a felmérési jegyzőkönyvben rögzített műszaki paraméterek képezik;
+          jelentős eltérés esetén a Vállalkozás új ajánlatot ad.</li>
+      </ul>
+
+      <h3>3. Fizetési feltételek</h3>
+      <ul>
+        <li><strong>30% előleg</strong> a megrendelés visszaigazolását követően, banki átutalással —
+          az árajánlathoz csatolt díjbekérő alapján. Az előleg beérkezésével indul a gyártás.</li>
+        <li><strong>70% végszámla</strong> a beépítés napján, banki átutalással vagy — előzetes
+          egyeztetés alapján — bankkártyával / készpénzzel a helyszínen.</li>
+        <li>Részletfizetés <strong>Cofidis áruhitelen</strong> keresztül lehetséges, az érvényes
+          partnerszerződés szerint. A részletfizetés feltételeit a
+          <a href="/reszletfizetes">Részletfizetés oldal</a> tartalmazza.</li>
+        <li>A számlák a számvitelről szóló 2000. évi C. törvény és az ÁFA-tv. (2007. évi CXXVII.
+          tv.) szerinti tartalommal kerülnek kiállításra.</li>
+      </ul>
+
+      <h3>4. Szállítás és beépítés</h3>
+      <ul>
+        <li>A gyártási idő az előleg beérkezésétől számított <strong>10–12 munkanap</strong> a
+          modern range esetén; egyedi (stílus / műemléki) kivitelnél jellemzően <strong>6–10 hét</strong>.</li>
+        <li>A beépítés <strong>1 munkanap</strong> alatt megtörténik a legtöbb modern és stílus ajtó
+          esetén; bonyolultabb műemléki rekonstrukciónál 2 munkanapot is igénybe vehet.</li>
+        <li>A Vállalkozás <strong>vállalja a régi ajtó bontását és a törmelékelszállítást</strong>,
+          külön díjazás nélkül — kivéve, ha az ajánlat más rendelkezést tartalmaz.</li>
+        <li>A beépítés feltétele a Megrendelő által biztosított hozzáférés a helyszínhez, az
+          esetlegesen szükséges közös képviselői hozzájárulás megléte, és — műemléki környezetben — az
+          érvényes engedély megléte (az engedélyezést a Vállalkozás külön szolgáltatás keretében
+          intézi az Engedélyezési csomag igénybevétele esetén).</li>
+      </ul>
+
+      <h3>5. Garancia</h3>
+      <p>
+        A Vállalkozás a beépített biztonsági ajtóra az alábbi garanciális feltételeket vállalja:
+      </p>
+      <ul>
+        <li><strong>15 év szerkezeti garancia</strong> a tok és a nyílórész acél szerkezeti
+          épségére — a piac leghosszabb szerkezeti garanciája.</li>
+        <li><strong>18 hónap zárszerkezet-garancia</strong> a beépített prémium zárakra (Mottura,
+          Abus, Mul-T-Lock, Iseo, Cisa) — a gyártó által biztosított garancia szerint.</li>
+        <li><strong>12 hónap teljes körű garancia</strong> a felületi kivitelezésre (festés,
+          lazúrozás, lakk).</li>
+        <li>A garancia részletes feltételeit a <a href="/garancia">Garancia oldal</a> tartalmazza.</li>
+      </ul>
+      <p>
+        A garancia nem terjed ki a rendeltetésellenes használatból, erőszakos behatolási
+        kísérletből, természeti káreseményből vagy a Megrendelő által végzett szakszerűtlen
+        átalakításból eredő károkra. A garanciális javítást a Vállalkozás a bejelentéstől
+        számított 30 napon belül elvégzi vagy ütemezetten szervezi.
+      </p>
+
+      <h3>6. Hibás teljesítés, kellék- és termékszavatosság</h3>
+      <p>
+        A Megrendelőt — fogyasztói minőségében — a Ptk. 6:159-6:170. §-ai szerinti
+        kellékszavatossági és termékszavatossági jogok illetik meg a vásárlástól számított
+        kétéves, illetve a termékszavatosság körében hároméves elévülési időn belül. A Megrendelő
+        fogyasztói jogairól és a vitarendezés módjáról részletesen a
+        <a href="/bekelteto">Békéltető testület oldalon</a> tájékozódhat.
+      </p>
+
+      <h3>7. Elállási és felmondási jog (távollévők közötti / üzlethelyiségen kívüli szerződéseknél)</h3>
+      <p>
+        Ha a Megrendelő — fogyasztói minőségben — a szerződést távollévők között vagy
+        üzlethelyiségen kívül kötötte (pl. a felmérőnk a Megrendelő otthonában aláírt szerződést),
+        a fogyasztó és a vállalkozás közötti szerződések részletes szabályairól szóló 45/2014. (II.
+        26.) Korm. rendelet alapján a Megrendelőt <strong>14 napos indokolás nélküli elállási /
+        felmondási jog</strong> illeti meg.
+      </p>
+      <p>
+        A Vállalkozás jogszabályi értelemben „fogyasztó kifejezett előzetes beleegyezésével
+        készített személyre szabott terméket" gyárt, amely a 45/2014. (II. 26.) Korm. rendelet
+        29. § (1) c) pontja alapján <strong>kivétel az elállási jog alól</strong> — ezért az
+        egyedi méretre gyártott, személyre szabott ajtóra vonatkozóan az elállási jog általában
+        nem gyakorolható a gyártás megkezdését követően. A részletekért és a jognyilatkozat-mintákért
+        kérje a felmérőnket.
+      </p>
+
+      <h3>8. Vis maior</h3>
+      <p>
+        A Vállalkozás mentesül a határidő-túllépés következményei alól, ha azt vis maior — különösen
+        természeti katasztrófa, járvány, háborús cselekmény, hatósági korlátozás, sztrájk,
+        anyagbeszerzési akadály a beszállítónál — okozza. A Vállalkozás a vis maior bekövetkeztéről
+        és várható időtartamáról a Megrendelőt ésszerű határidőn belül tájékoztatja.
+      </p>
+
+      <h3>9. Alkalmazandó jog, illetékes bíróság</h3>
+      <p>
+        A jelen Feltételekre Magyarország joga alkalmazandó. A felek a szerződésből eredő
+        jogvitáikat lehetőség szerint békés úton, közvetlen egyeztetéssel rendezik. Fogyasztói
+        jogvita esetén a Megrendelő a Békéltető Testülethez fordulhat (lásd
+        <a href="/bekelteto">Békéltető testület</a>). Egyébként a polgári perrendtartás általános
+        illetékességi szabályai alkalmazandók.
+      </p>
+
+      <h3>10. A Feltételek módosítása</h3>
+      <p>
+        A Vállalkozás fenntartja a jogot, hogy jelen Feltételeket egyoldalúan módosítsa. A
+        módosítás nem érinti a már megkötött szerződéseket. Az aktuális Feltételek a
+        {SITE.url}/aszf címen érhetők el.
+      </p>
+
+      <p class="legal-footnote">
+        Hatályos: 2026. május. Ha a fentiekkel kapcsolatban kérdése van, kérjük írjon az
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> címre vagy hívja a
+        {' '}<a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> számot.
+        <a href="/kapcsolat">Kapcsolatfelvétel →</a>
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .legal-prose {
+    max-width: var(--container-text); margin-inline: auto;
+    font-size: 1rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-lead {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); margin-bottom: 2.5rem;
+  }
+  .legal-prose h3 {
+    font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .legal-prose p { margin-bottom: 1rem; }
+  .legal-prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .legal-prose ul li { margin-bottom: 0.5rem; }
+  .legal-prose a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .legal-prose strong { color: var(--color-ink); }
+
+  .legal-footnote {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem; color: var(--color-stone);
+  }
+</style>

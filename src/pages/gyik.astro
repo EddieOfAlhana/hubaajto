@@ -1,0 +1,182 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import FAQ from "../components/FAQ.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { SITE, SLA } from "../data/site";
+
+const faqGroups = [
+  {
+    label: "Ár, ajánlat, számlázás",
+    items: [
+      { q: "Mennyibe kerül egy biztonsági ajtó?",
+        a: `<p>A Modern Standard belépőszint <strong>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</strong> indul bruttó. A Premium családi házas kivitel 800 000 – 1 800 000 Ft sávban van. Korhű, stílus és műemléki kivitelek <strong>egyedi árajánlat</strong> alapján készülnek — jellemzően 800 000 Ft-tól 2,5 millió Ft-ig, az engedélyezési költségektől függően. <a href="/arak">Részletes árlista →</a></p>` },
+      { q: "Mit tartalmaz a 330 000 Ft-os belépő ár?",
+        a: `<p>Standard panel-nyílásméretben, hőhídmentes acél tokot, üveggyapot bélelést, MABISZ 2. minősítést, alap Abus cilindert, 35+ fa vagy 15 mart minta közüli borítást, RAL színskálát, befűzött körbefutó tömítést, és a beépítést (régi ajtó bontása, törmelékelszállítás benne). 15 év szerkezeti garancia automatikus.</p>` },
+      { q: "Az árak ÁFA-sak vagy nettók?",
+        a: `<p>Minden ár <strong>bruttó</strong>, azaz a 27%-os ÁFA-t tartalmazza. Magánszemélyként ez a fizetendő végösszeg. Cégnek számlázunk nettó + 27% ÁFA bontásban — kérje a felmérőt, ha cégre kéri a számlát.</p>` },
+      { q: "Mennyi időre rögzítik az árajánlatot?",
+        a: `<p>A fix árajánlatot a felmérés után 48 órán belül megküldjük, és <strong>30 napra</strong> rögzítjük az árat. 30 napon belüli megrendelés esetén az árajánlatban szereplő összeg a végleges, semmilyen pótlólagos felárat nem számítunk fel.</p>` },
+      { q: "Készpénzes vásárlásnál van kedvezmény?",
+        a: `<p>Egyedi készpénzes kedvezményt nem adunk — a 0% THM Cofidis áruhitel a Huba számára nem költséges. Viszont a <strong>kombinált csomagokra</strong> (ajtó + ablak, vagy több ajtó egyszerre) 5–12% kedvezményt biztosítunk, fizetési módtól függetlenül.</p>` },
+    ],
+  },
+  {
+    label: "Időzítés, beépítés",
+    items: [
+      { q: "Mennyi időbe telik a felméréstől a beépítésig?",
+        a: `<p>Modern Standard: <strong>2–3 nap felmérés → 10–12 nap gyártás → 1 nap beépítés</strong>. Az egész folyamat kb. két hét. Premium kivitel és különleges méret esetén 14–18 nap gyártás. Műemléki engedélyezéssel együtt 4–6 hónap, mert ott az engedélyezési folyamat dominál.</p>` },
+      { q: "Mikor jönnek felmérni?",
+        a: `<p>A munkanapon belüli megkereséstől számítva ${SLA.surveyDays} alatt. Hétköznap 8–17 óra között, szombaton 8–12 óra között dolgozunk. Egyeztetett időpontban, fél órás időablakkal.</p>` },
+      { q: "Egy nap alatt befejezik a beépítést?",
+        a: `<p>Standard panel-lakás csere: <strong>igen</strong>, egy nap, jellemzően 9–16 óra között. A régi ajtó bontása, az új tok illesztése, a nyílórész behelyezése, a zárak beszerelése, és a törmelék elszállítása mind ebben benne van. Az ajtó este már zár.</p>` },
+      { q: "Bontás nélkül cserélhető panel-lakásban?",
+        a: `<p>A panel-lakás standard tokmérete (kb. 90×210 cm) gyakran átvehető — csak a régi nyílórészt és a sérült tokot bontjuk. Új tok pontosan a meglévő nyílásba illeszkedik. A felmérőnk a helyszínen méri be — gyakori, de nem garantált.</p>` },
+      { q: "Mikor kell kifizetni?",
+        a: `<p>50% a szerződéskötéskor (gyártási előleg), 50% a beépítés napján a beépítés befejeztével. Cofidis áruhitel esetén a teljes összeget a Cofidis kifizeti közvetlenül nekünk, Ön a Cofidis-felé fizet havonta.</p>` },
+    ],
+  },
+  {
+    label: "MABISZ, RC osztályok, minősítések",
+    items: [
+      { q: "Mit jelent a MABISZ-minősítés?",
+        a: `<p>A MABISZ (Magyar Biztosítók Szövetsége) szabványos protokoll alapján sorolja be a biztonsági ajtókat 2–6. osztályba. A magyar biztosítók a MABISZ-besorolást elfogadják a lakásbiztosítási alapfeltétel teljesítéseként. A Huba ajtó MABISZ-minősítését 2009-ben kaptuk meg, 2024-ben felülvizsgáltuk.</p>` },
+      { q: "Mi a különbség a betörésvédelmi osztályok (RC2–RC6) között?",
+        a: `<p>Az RC (Resistance Class) az európai EN 1627 szabvány szerinti betörésvédelmi besorolás. <strong>RC2 = 3 perc · RC3 = 5 perc · RC4 = 10 perc · RC5 = 15 perc · RC6 = 20 perc</strong> szakszerű betörési kísérletnek való ellenállás. Lakásra általában RC2–RC3, kiemelt kockázatra RC4–RC5. <a href="/minosegunk">Minősítések részletesen →</a></p>` },
+      { q: "Mit jelent a CE-jelölés és a DoP?",
+        a: `<p>A CE-jelölés az EU 305/2011 (CPR) építőipari termékrendelet kötelező megfelelőségi jelölése. A DoP (Declaration of Performance / Teljesítménynyilatkozat) a termék EU-szintű műszaki bizonyítványa — építész, biztosító, hatóság előtt elfogadott. Minden Huba ajtóhoz a beépítési jegyzőkönyvvel együtt PDF-ben átadjuk.</p>` },
+      { q: "Az ÉMI is vizsgálja?",
+        a: `<p>Igen — a típusvizsgálat (ITT) akkreditált laboratórium végzi, jellemzően az ÉMI Nonprofit Kft. A DoP az ITT-jegyzőkönyv adatait foglalja össze.</p>` },
+    ],
+  },
+  {
+    label: "Garancia, szerviz",
+    items: [
+      { q: "Mit fedez a 15 éves szerkezeti garancia?",
+        a: `<p>Az acél tokrendszer és a nyílórész szerkezeti épségét — 15 évre. A teljes ajtóra 1 év, a zárszerkezetre 18 hónap, a tömítésre 5 év, a festett felületre 3 év garanciát adunk. <a href="/garancia">Részletes garanciatáblázat →</a></p>` },
+      { q: "Az átköltöző tulajdonosra átruházható?",
+        a: `<p>Igen — a garancia az ajtóra szól, nem a megrendelőre. Lakáseladás esetén a számla és a beépítési jegyzőkönyv másolatát adja át az új tulajdonosnak. Az új tulajdonos a maradék garanciaidőre ugyanúgy igényt tarthat.</p>` },
+      { q: "Mi van, ha 8 év múlva tönkremegy egy alkatrész?",
+        a: `<p>A saját gyártás előnye, hogy a Kistarcsai műhelyben 10 év múlva is rendelhető a pótalkatrész. A magyar piaci versenytársak nagyrésze import gyártásból dolgozik, ahol az importőr 3–5 év után már nem hozza az alkatrészt. A Huba minden Modern modelljéhez 15 évig garantáljuk az alkatrészelérhetőséget.</p>` },
+      { q: "Hogyan jelezzem a garanciális hibát?",
+        a: `<p>Hívja a +36 30 740 4458 számot, vagy küldjön e-mailt az info@szerx.hu címre. Munkanapon belül visszahívjuk, 2–3 napon belül ingyenes helyszíni szemlét végzünk. Garanciális hiba esetén ingyenes javítás vagy csere.</p>` },
+    ],
+  },
+  {
+    label: "Műemléki, polgári lakás, stílus",
+    items: [
+      { q: "Műemléki / örökségvédelmi környezetben mit lehet?",
+        a: `<p>Igen, készítünk az eredeti ajtó alapján rekonstruált, korhű, kazettás, festett kivitelben — <strong>az engedélyezéshez szükséges teljes műszaki dokumentációval</strong>. Sőt, mi intézzük az engedélyezést is, építész tervezővel és műemléki szakértői névjegyzékbe vett partnerrel együttműködve. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a> · <a href="/engedelyezesi-csomag">Engedélyezési csomag →</a></p>` },
+      { q: "Hogyan néz ki egy stílus biztonsági ajtó belülről?",
+        a: `<p>Belül acél biztonsági szerkezet — ugyanaz a tok és nyílórész, mint a modern range esetén. Kívül korhű, faragott vagy kazettás faburkolat, festett vagy lazúrozott felülettel. Az „eredeti ajtó” látványa, MABISZ-minősített biztonsági szint mögötte.</p>` },
+      { q: "Megőrizhetjük az eredeti ajtó megjelenését?",
+        a: `<p>Igen — fotó, helyszíni szemle és lehetőség szerint a meglévő ajtó alapján rekonstruáljuk. A profilozást, kazettás osztásokat, kovácsoltvas elemeket az eredeti rajzok / fotók alapján reprodukáljuk. A felmérőnk építész partnerrel jön ki a műemléki feladatokra.</p>` },
+      { q: "Polgári lakásban (V., VI., VII., VIII., IX. kerület) is jönnek?",
+        a: `<p>Igen — a budapesti műemléki belváros (V., VI., VII., VIII., IX. és I., II., XII.) a Huba másik kulcsterülete. Az engedélyezési folyamatot is ott a leggyakrabban intézzük; közös képviselős egyeztetést is vállalunk.</p>` },
+      { q: "Mennyi időbe telik a műemléki engedélyezés?",
+        a: `<p>Tipikusan <strong>4–6 hónap</strong>: védettségi ellenőrzés → építész tervezés → építéstörténeti dokumentáció → ÉTDR-kérelem → hatósági kommunikáció → engedély → gyártás → beépítés → befejezési bejelentés. A teljes folyamatot mi koordináljuk. <a href="/engedelyezesi-csomag">Engedélyezési csomag →</a></p>` },
+    ],
+  },
+  {
+    label: "Panel-lakás, társasház, közös képviselő",
+    items: [
+      { q: "Mit kell tudni társasházi / panellakásban?",
+        a: `<p>A lépcsőházra néző bejárati ajtó cseréje a közös tulajdon megjelenését érinti — általában <strong>közgyűlési határozat</strong> vagy közös képviselős hozzájárulás szükséges. Mi a felmérés után készítünk egy egyoldalas műszaki tájékoztatót, amit a közös képviselőnek lehet benyújtani.</p>` },
+      { q: "Mit szól a közös képviselő egy színes ajtóhoz?",
+        a: `<p>A legtöbb társasház lépcsőházi egységességet ír elő — vagyis ha a lépcsőházban barna ajtók vannak, az új ajtó is barna kell legyen. Egyetlen ajtót lehet eltérő színűnek, ha a társasházi alapító okirat vagy a közgyűlés ezt engedélyezi. A felmérőnk a meglévő ajtók színét fotózza és színmintázatot ad.</p>` },
+      { q: "Bontás nélkül, lépcsőházi porfelhő nélkül cserélhető?",
+        a: `<p>Igen — panel-lakás esetén a régi tok többnyire átvehető, csak a nyílórészt cseréljük. A bontás minimális, a lépcsőházi por elhanyagolható. Felújított, vakolat-cserés helyzetnél nagyobb a bontás, ott egy munkanap takarítást is végzünk.</p>` },
+      { q: "Másnapi felméréssel jönnek a XIII., XIV., XV., XVI. kerületbe?",
+        a: `<p>Kistarcsához legközelebbi pesti kerületekbe (X., IV., XIII., XIV., XV., XVI., XVII.) <strong>akár másnap</strong> tudunk felmérni. Sürgős esetben hívja a +36 30 740 4458 számot — a felmérőnk a tervezett rutintól eltérőt is el tud intézni.</p>` },
+    ],
+  },
+  {
+    label: "Részletfizetés, hitel",
+    items: [
+      { q: "Lehet részletfizetés?",
+        a: `<p>Igen — <strong>Cofidis áruhitelen keresztül</strong>, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 330 000 Ft / 10 hó = 33 000 Ft / hó, THM 0%, teljes visszafizetendő 330 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
+      { q: "Hogyan igényelhető a Cofidis áruhitel?",
+        a: `<p>A helyszíni felmérés végén a felmérőnk online kitölti a Cofidis igénylőlapját. Iratok: személyi, lakcímkártya, jövedelemigazolás. A hitelbírálat <strong>10 perc</strong>. Pozitív válasz esetén szerződéskötés azonnal, a gyártás aznap indul.</p>` },
+      { q: "Mi van, ha a hitelbírálat elutasít?",
+        a: `<p>Nem keletkezik szerződéses kötelezettsége sem a Huba, sem a Cofidis felé. A felmérés és a hitelbírálat is ingyenes. Alternatívaként ajánljuk a részfizetést (50% beépítéskor, 50% 60 napon belül).</p>` },
+    ],
+  },
+  {
+    label: "Zárak, kulcsok, szerviz",
+    items: [
+      { q: "Milyen zárakat építünk be?",
+        a: `<p>Öt prémium európai gyártóból választhat: <strong>Mottura · Abus · Mul-T-Lock · Iseo · Cisa</strong>. A felmérés után Ön választ — nem mi diktáljuk. Mindegyikhez kódkártyás pótkulcsrendszer, fúrásvédett cilinder, és magyar szervizháttér tartozik. <a href="/minosegunk">Zárrendszerek részletesen →</a></p>` },
+      { q: "Pótkulcs hogyan készíthető?",
+        a: `<p>A Mottura, Mul-T-Lock és Iseo cilinderek <strong>kódkártyás rendszerrel</strong> érkeznek — pótkulcsot csak az eredeti megrendelő igazolásával lehet készíteni. A kódkártyát a kulcsokkal együtt kapja a beépítéskor; őrizze meg külön, lakcímtől eltérő helyen.</p>` },
+      { q: "Mi van, ha elveszítem a kulcsot és a kódkártyát is?",
+        a: `<p>Akkor a teljes cilindert kell cserélni — ami a teljes ajtó megbontása nélkül, kb. 30 perc alatt megoldható. Új cilinder + új kulcssorozat: 25 000 – 60 000 Ft, a választott márkától függően. A szervizt mi végezzük; külön kihívási díj nincs.</p>` },
+      { q: "Lehet a kulcsot duplikáltatni egy 'normál' kulcsmásolónál?",
+        a: `<p>A kódkártyás prémium cilinderek kulcsait <strong>egy normál kulcsmásoló nem tudja másolni</strong> — a kulcsprofil védett, csak a gyártó szerződéses partnerei tudják előállítani. A Huba a felmérés után erre is rendelkezésre áll.</p>` },
+    ],
+  },
+];
+
+const allItems = faqGroups.flatMap(g => g.items);
+---
+<BaseLayout
+  title="GYIK — Gyakran ismételt kérdések"
+  description="Áraktól a műemléki engedélyezésig — a leggyakoribb kérdések és válaszok a Huba ajtó biztonsági ajtóiról. 30+ kérdés ár, időzítés, MABISZ-minősítés, garancia, panel-lakás, polgári lakás, részletfizetés és zárrendszerek témakörben."
+>
+  <section class="hero hero-centered">
+    <div class="container hero-inner">
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span class="tricolor-strip" aria-hidden="true"><span/><span/><span/></span> Gyakran ismételt kérdések</p>
+        <h1 class="hero-heading">A leggyakoribb 30+ kérdés.<br/><em>A felmérés előtt jellemzően ezek merülnek fel.</em></h1>
+        <p class="hero-lead">
+          Áraktól a műemléki engedélyezésig, panel-lakás cserétől a Cofidis áruhitel-feltételekig. Ha nem találja a választ, hívjon minket — munkanapon belül visszahívjuk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div id="below"></div>
+  <TrustStrip />
+
+  {faqGroups.map((g, gi) => (
+    <Section
+      tone={gi % 2 === 0 ? "paper" : "cream"}
+      eyebrow={`${gi + 1}. téma`}
+      heading={g.label}
+    >
+      <FAQ items={g.items} schema={false} />
+    </Section>
+  ))}
+
+  {/* Single FAQPage schema for all items */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: allItems.map(it => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
+    })),
+  })} />
+
+  <ContactCTA
+    heading="Nem találta a választ? Hívjon, vagy kérjen felmérést"
+    lead="Munkanapon belül visszahívjuk. A felmérés ingyenes és nem kötelezi Önt vásárlásra. A felmérőnk a helyszínen minden konkrét kérdésre választ ad."
+  />
+</BaseLayout>
+
+<style>
+  .hero { position: relative; padding-block: clamp(3rem, 6vw, 5rem) clamp(3rem, 6vw, 4rem); overflow: hidden; }
+  .hero-inner { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; max-width: 60rem; margin-inline: auto; text-align: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; justify-content: center; }
+  .hero-heading {
+    font-family: var(--font-serif); font-weight: 400;
+    font-size: clamp(2.2rem, 4.4vw, 4rem); line-height: 1.05;
+    letter-spacing: -0.02em; color: var(--color-ink); max-width: 28ch; margin-inline: auto;
+  }
+  .hero-heading :global(em) { font-style: italic; color: var(--color-brass-deep); }
+  .hero-lead {
+    font-family: var(--font-serif); font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+    line-height: 1.5; color: var(--color-charcoal); max-width: 46ch; margin: 1.5rem auto 0;
+  }
+</style>

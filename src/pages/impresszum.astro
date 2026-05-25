@@ -1,0 +1,184 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE, CONTACT } from "../data/site";
+---
+
+<BaseLayout
+  title="Impresszum"
+  description="A Huba ajtó (Szer-X3 Kereskedelmi és Szolgáltató Kft.) jogi szerinti impresszuma — az elektronikus kereskedelmi szolgáltatásokról szóló 2001. évi CVIII. törvény (Ektv.) 4. § szerint."
+>
+  <Section tone="paper" eyebrow="Jogi" heading="Impresszum">
+    <div class="legal-prose">
+      <p class="legal-lead">
+        Az alábbi adatok a 2001. évi CVIII. törvény (Ektv.) 4. § szerinti kötelező közzétételi
+        kötelezettség teljesítése érdekében szerepelnek ezen az oldalon.
+      </p>
+
+      <h3>1. A szolgáltató (vállalkozás) adatai</h3>
+      <dl class="legal-list">
+        <div>
+          <dt>Cégnév</dt>
+          <dd>{SITE.legalName}</dd>
+        </div>
+        <div>
+          <dt>Rövidített cégnév</dt>
+          <dd>{SITE.shortLegal}</dd>
+        </div>
+        <div>
+          <dt>Kereskedelmi név</dt>
+          <dd>{SITE.brand}</dd>
+        </div>
+        <div>
+          <dt>Székhely</dt>
+          <dd>{CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}, {CONTACT.address.country}</dd>
+        </div>
+        <div>
+          <dt>Cégjegyzékszám</dt>
+          <dd>13-09-XXXXXXX <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
+        </div>
+        <div>
+          <dt>Adószám</dt>
+          <dd>XXXXXXXX-2-13 <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
+        </div>
+        <div>
+          <dt>Statisztikai számjel</dt>
+          <dd>XXXXXXXX-XXXX-113-13 <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
+        </div>
+        <div>
+          <dt>Képviselő (ügyvezető) neve</dt>
+          <dd><em>az ügyfél megerősítését követően kerül kitöltésre</em></dd>
+        </div>
+        <div>
+          <dt>Nyilvántartó hatóság</dt>
+          <dd>Budapest Környéki Törvényszék Cégbírósága</dd>
+        </div>
+      </dl>
+
+      <h3>2. Kapcsolattartás</h3>
+      <dl class="legal-list">
+        <div>
+          <dt>Postacím</dt>
+          <dd>{CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}</dd>
+        </div>
+        <div>
+          <dt>Telefon (elsődleges)</dt>
+          <dd><a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a></dd>
+        </div>
+        <div>
+          <dt>Telefon (vezetékes)</dt>
+          <dd><a href={`tel:${CONTACT.landline.replace(/\s/g, "")}`}>{CONTACT.landline}</a></dd>
+        </div>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></dd>
+        </div>
+        <div>
+          <dt>Honlap</dt>
+          <dd>{SITE.url}</dd>
+        </div>
+        <div>
+          <dt>Ügyfélfogadás</dt>
+          <dd>{CONTACT.hours.weekday} · {CONTACT.hours.saturday}</dd>
+        </div>
+      </dl>
+
+      <h3>3. Kamarai nyilvántartás</h3>
+      <dl class="legal-list">
+        <div>
+          <dt>Kamara</dt>
+          <dd>Pest Vármegyei és Érdi Kereskedelmi és Iparkamara</dd>
+        </div>
+        <div>
+          <dt>Nyilvántartási szám</dt>
+          <dd><em>az ügyfél megerősítését követően kerül kitöltésre</em></dd>
+        </div>
+      </dl>
+
+      <h3>4. Tárhelyszolgáltató</h3>
+      <p>
+        A honlap kiszolgálási szolgáltatását a <strong>Railway Corp.</strong> (USA, San Francisco) biztosítja.
+        A pontos szolgáltatói adatok, székhely és kapcsolattartás
+        <em> az ügyfél által megerősítésre váró technikai adatok kitöltését követően aktuálissá tett </em>
+        verzióban szerepelnek.
+      </p>
+
+      <h3>5. Szakhatósági nyilvántartások és tanúsítványok</h3>
+      <ul>
+        <li>MABISZ-minősített biztonsági ajtó gyártó <strong>2009</strong> óta — termékspecifikus
+          minősítési számok a termékoldalakon és a teljesítménynyilatkozatban (DoP).</li>
+        <li>CE-jelölés és Teljesítménynyilatkozat (DoP) a 305/2011/EU (CPR) rendelet szerint.</li>
+      </ul>
+
+      <h3>6. Adatkezelés</h3>
+      <p>
+        A honlapon keresztül történő kapcsolatfelvétel és árajánlatkérés adatkezelési feltételeit a
+        külön elérhető <a href="/adatvedelem">Adatvédelmi tájékoztató</a> tartalmazza. A süti-kezelés
+        részletei a <a href="/suti">Süti tájékoztatóban</a> érhetők el.
+      </p>
+
+      <h3>7. Vállalkozási feltételek</h3>
+      <p>
+        Az árajánlat érvényessége, a fizetési ütemezés, a szállítási és beépítési feltételek, valamint a
+        garanciális rendelkezések az <a href="/aszf">ÁSZF / Vállalási feltételek</a> oldalon olvashatók.
+      </p>
+
+      <h3>8. Békéltető testület</h3>
+      <p>
+        Fogyasztói jogviták esetén a békéltető testülethez fordulás lehetőségét a
+        <a href="/bekelteto"> Békéltető testület</a> oldal tartalmazza.
+      </p>
+
+      <p class="legal-footnote">
+        Az impresszum jogalapja: a 2001. évi CVIII. törvény (Ektv.) 4. §. Az itt megadott adatok
+        közvetlenül, folyamatosan, könnyen hozzáférhető módon közzétettek.
+        <a href="/kapcsolat">Kapcsolatfelvétel →</a>
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .legal-prose {
+    max-width: var(--container-text); margin-inline: auto;
+    font-size: 1rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-lead {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); margin-bottom: 2.5rem;
+  }
+  .legal-prose h3 {
+    font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .legal-prose p { margin-bottom: 1rem; }
+  .legal-prose p:last-child { margin-bottom: 0; }
+  .legal-prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .legal-prose ul li { margin-bottom: 0.4rem; }
+  .legal-prose a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .legal-prose strong { color: var(--color-ink); }
+
+  .legal-list {
+    display: grid; grid-template-columns: 1fr; gap: 0.85rem 1.5rem;
+    margin: 0;
+  }
+  @media (min-width: 640px) { .legal-list { grid-template-columns: 1fr 2fr; } }
+  .legal-list > div {
+    display: contents;
+  }
+  .legal-list dt {
+    font-size: 0.85rem; color: var(--color-stone);
+    letter-spacing: 0.02em; padding-top: 0.2rem;
+  }
+  .legal-list dd { margin: 0; color: var(--color-ink); }
+  .legal-list dd em { color: var(--color-stone); font-style: italic; font-size: 0.92rem; }
+
+  .legal-footnote {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem; color: var(--color-stone);
+  }
+</style>

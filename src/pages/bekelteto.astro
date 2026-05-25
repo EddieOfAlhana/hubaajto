@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE, CONTACT } from "../data/site";
+---
+
+<BaseLayout
+  title="Békéltető testület — fogyasztói jogviták rendezése"
+  description="Békéltető testületi tájékoztatás a Huba ajtó (Szer-X3 Kft.) fogyasztói részére a Fgytv. 17/A. § szerint. Pest Vármegyei Békéltető Testület, illetékes fogyasztóvédelmi hatóság, EU online vitarendezési platform."
+>
+  <Section tone="paper" eyebrow="Jogi" heading="Békéltető testület">
+    <div class="legal-prose">
+      <p class="legal-lead">
+        Az 1997. évi CLV. törvény (Fgytv.) 17/A. §-a alapján a vállalkozás köteles tájékoztatni a
+        fogyasztót — világosan, érthetően és könnyen elérhető módon — a békéltető testülethez
+        fordulás lehetőségéről. Az alábbi tájékoztatást ennek alapján adjuk meg.
+      </p>
+
+      <h3>1. Mi a békéltető testület?</h3>
+      <p>
+        A békéltető testület a fogyasztó és a vállalkozás közötti jogvita egyszerű, gyors,
+        bíróságon kívüli rendezésére alapított független testület. Az eljárás a fogyasztó
+        kérelmére indul, a fogyasztó számára <strong>ingyenes</strong>, és törvényi határidőn
+        belül lezárul. A vállalkozást az eljárásban együttműködési kötelezettség terheli (Fgytv.
+        29. § (11)).
+      </p>
+
+      <h3>2. Az illetékes békéltető testület</h3>
+      <p>
+        A {SITE.shortLegal} ({CONTACT.address.postal} {CONTACT.address.city},
+        {' '}{CONTACT.address.street}) székhelye szerint illetékes békéltető testület a
+        <strong> Pest Vármegyei Békéltető Testület</strong>.
+      </p>
+      <dl class="legal-list">
+        <div>
+          <dt>Cím</dt>
+          <dd>1055 Budapest, Balassi Bálint utca 25. IV/2.</dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:+3617927881">+36 1 792 7881</a></dd>
+        </div>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:pmbekelteto@pmkik.hu">pmbekelteto@pmkik.hu</a></dd>
+        </div>
+        <div>
+          <dt>Honlap</dt>
+          <dd><a href="https://panaszrendezes.hu" rel="external">panaszrendezes.hu</a></dd>
+        </div>
+      </dl>
+      <p>
+        A fogyasztó a saját lakó- vagy tartózkodási helye szerint illetékes békéltető testülethez is
+        fordulhat (Fgytv. 20. § (3)). A békéltető testületek elérhetőségei a
+        <a href="https://bekeltetes.hu" rel="external"> bekeltetes.hu </a> oldalon érhetők el.
+      </p>
+
+      <h3>3. Az illetékes fogyasztóvédelmi hatóság</h3>
+      <p>
+        A {SITE.shortLegal} székhelye szerint illetékes első fokú fogyasztóvédelmi hatóság a
+        <strong> Pest Vármegyei Kormányhivatal Fogyasztóvédelmi Osztálya</strong>.
+      </p>
+      <dl class="legal-list">
+        <div>
+          <dt>Cím</dt>
+          <dd>1141 Budapest, Komócsy utca 17-19.</dd>
+        </div>
+        <div>
+          <dt>Postacím</dt>
+          <dd>1438 Budapest, Pf. 360.</dd>
+        </div>
+        <div>
+          <dt>Telefon (központi)</dt>
+          <dd><a href="tel:+3614600820">+36 1 460 0820</a></dd>
+        </div>
+        <div>
+          <dt>Honlap</dt>
+          <dd><a href="https://kormanyhivatalok.hu/kormanyhivatalok/pest" rel="external">kormanyhivatalok.hu/pest</a></dd>
+        </div>
+      </dl>
+      <p>
+        A fogyasztó panaszával — a békéltető testületi eljárás mellett vagy attól függetlenül — a
+        fogyasztóvédelmi hatósághoz is fordulhat. A hatóság hatásköréről részletesen az Fgytv. és
+        a Korm. rendelet rendelkezik.
+      </p>
+
+      <h3>4. Az Európai Unió online vitarendezési platformja (ODR)</h3>
+      <p>
+        Az Európai Unió 524/2013/EU rendelete értelmében az Európai Bizottság létrehozott egy
+        online vitarendezési platformot (ODR), amely az online vásárolt termékek vagy
+        szolgáltatások kapcsán felmerülő fogyasztói panaszok elektronikus rendezését segíti. A
+        platform elérhető az alábbi linken:
+      </p>
+      <p>
+        <a href="https://ec.europa.eu/consumers/odr" rel="external">
+          ec.europa.eu/consumers/odr
+        </a>
+      </p>
+      <p>
+        Bár a Huba ajtó tevékenysége túlnyomórészt magyarországi fogyasztói körre koncentrál és nem
+        klasszikus értelemben vett webshop, az ODR-platform elérhetőségét a teljesség és a
+        törvénynek való megfelelés érdekében közzétesszük.
+      </p>
+
+      <h3>5. Panaszkezelés a Huba ajtónál</h3>
+      <p>
+        Mielőtt a békéltető testülethez vagy a fogyasztóvédelmi hatósághoz fordulna, javasoljuk,
+        hogy keresse meg közvetlenül a {SITE.shortLegal}-t — a legtöbb kérdés gyors,
+        bíróságon kívüli rendezéssel megoldható. A panaszt írásban vagy szóban is benyújthatja:
+      </p>
+      <dl class="legal-list">
+        <div>
+          <dt>Postacím</dt>
+          <dd>{CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}</dd>
+        </div>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a></dd>
+        </div>
+      </dl>
+      <p>
+        Az írásbeli panaszra 30 napon belül érdemi választ adunk (Fgytv. 17/A. § (6)). A szóbeli
+        panaszt jegyzőkönyvbe vesszük, ha az helyszínen nem orvosolható.
+      </p>
+
+      <p class="legal-footnote">
+        Hatályos: 2026. május. A békéltető testületek és a fogyasztóvédelmi hatóság aktuális
+        elérhetőségeit a bekeltetes.hu és a kormanyhivatalok.hu oldalakon érdemes ellenőrizni.
+        <a href="/kapcsolat">Kapcsolatfelvétel →</a>
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
+
+<style>
+  .legal-prose {
+    max-width: var(--container-text); margin-inline: auto;
+    font-size: 1rem; line-height: 1.7; color: var(--color-charcoal);
+  }
+  .legal-lead {
+    font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-charcoal); margin-bottom: 2.5rem;
+  }
+  .legal-prose h3 {
+    font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-ink);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(14,15,17,0.08);
+  }
+  .legal-prose p { margin-bottom: 1rem; }
+  .legal-prose a {
+    color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .legal-prose strong { color: var(--color-ink); }
+
+  .legal-list {
+    display: grid; grid-template-columns: 1fr; gap: 0.6rem 1.5rem; margin: 0 0 1.5rem;
+  }
+  @media (min-width: 640px) { .legal-list { grid-template-columns: 1fr 2fr; } }
+  .legal-list > div { display: contents; }
+  .legal-list dt {
+    font-size: 0.85rem; color: var(--color-stone);
+    letter-spacing: 0.02em; padding-top: 0.2rem;
+  }
+  .legal-list dd { margin: 0; color: var(--color-ink); }
+
+  .legal-footnote {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.08);
+    font-size: 0.92rem; color: var(--color-stone);
+  }
+</style>
