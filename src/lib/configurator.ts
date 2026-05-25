@@ -147,6 +147,7 @@ export function initConfigurator(root: HTMLElement): void {
       const id = btn.dataset.option!;
       const label = btn.dataset.label || btn.textContent?.trim() || id;
       const swatch = btn.dataset.swatch || "";
+      const imageUrl = btn.dataset.imageUrl || "";
 
       // Visually mark selected within the panel
       const panel = btn.closest("[data-step]");
@@ -168,11 +169,11 @@ export function initConfigurator(root: HTMLElement): void {
           break;
         case "ext-pattern":
           selection.extPattern = { id, label };
-          applyDoorSwatch("ext", swatch);
+          applyDoorSwatch("ext", swatch, imageUrl);
           break;
         case "ext-colour":
           selection.extColour = { id, label };
-          applyDoorSwatch("ext", swatch);
+          applyDoorSwatch("ext", swatch, imageUrl);
           break;
         case "int-type":
           selection.intType = { id, label };
@@ -182,17 +183,19 @@ export function initConfigurator(root: HTMLElement): void {
           if (id === "same") {
             selection.intPattern = selection.extPattern;
             selection.intColour = selection.extColour;
-            const extSwatch = (root.querySelector<HTMLButtonElement>(`[data-option-step='ext-pattern'][data-option='${selection.extPattern?.id}']`)?.dataset.swatch) || "";
-            applyDoorSwatch("int", extSwatch);
+            const extBtn = root.querySelector<HTMLButtonElement>(`[data-option-step='ext-pattern'][data-option='${selection.extPattern?.id}']`);
+            const extSwatch = extBtn?.dataset.swatch || "";
+            const extImageUrl = extBtn?.dataset.imageUrl || "";
+            applyDoorSwatch("int", extSwatch, extImageUrl);
           }
           break;
         case "int-pattern":
           selection.intPattern = { id, label };
-          applyDoorSwatch("int", swatch);
+          applyDoorSwatch("int", swatch, imageUrl);
           break;
         case "int-colour":
           selection.intColour = { id, label };
-          applyDoorSwatch("int", swatch);
+          applyDoorSwatch("int", swatch, imageUrl);
           break;
       }
 
@@ -278,11 +281,24 @@ export function initConfigurator(root: HTMLElement): void {
     previewFrame.forEach((el) => { el.style.background = swatch; });
   }
 
-  function applyDoorSwatch(side: "ext" | "int", swatch: string) {
-    if (!swatch) return;
+  function applyDoorSwatch(side: "ext" | "int", swatch: string, imageUrl?: string) {
+    if (!swatch && !imageUrl) return;
     const target = side === "ext" ? previewExt : previewInt;
     const leaf = target?.querySelector<HTMLElement>("[data-preview-leaf]");
-    if (leaf) leaf.style.background = swatch;
+    if (!leaf) return;
+    if (imageUrl) {
+      // Use the real pattern photograph as the door surface — cover so the wood
+      // grain fills the leaf shape; fallback colour underneath for load delay.
+      leaf.style.backgroundImage = `url("${imageUrl}")`;
+      leaf.style.backgroundSize = "cover";
+      leaf.style.backgroundPosition = "center";
+      leaf.style.backgroundRepeat = "no-repeat";
+      if (swatch) leaf.style.backgroundColor = swatch.startsWith("linear-gradient") ? "transparent" : swatch;
+    } else {
+      // Colour-only swatch (e.g. RAL frame/colour steps). Reset any prior image.
+      leaf.style.backgroundImage = "none";
+      leaf.style.background = swatch;
+    }
   }
 
   // ──────────────────────────────────────────────
