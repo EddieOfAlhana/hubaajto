@@ -53,9 +53,9 @@ export function initConfigurator(root: HTMLElement): void {
     summaryItems[key] = el;
   });
   const priceLabel = root.querySelector<HTMLElement>("[data-price]");
-  const stepCounter = root.querySelector<HTMLElement>("[data-step-counter]");
-  const backBtn = root.querySelector<HTMLButtonElement>("[data-action='back']");
-  const nextBtn = root.querySelector<HTMLButtonElement>("[data-action='next']");
+  const stepCounters = Array.from(root.querySelectorAll<HTMLElement>("[data-step-counter]"));
+  const backBtns = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-action='back']"));
+  const nextBtns = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-action='next']"));
   const viewToggle = root.querySelectorAll<HTMLButtonElement>("[data-view-toggle]");
   const leadForm = root.querySelector<HTMLFormElement>("[data-lead-form]");
   const leadStatus = root.querySelector<HTMLElement>("[data-lead-status]");
@@ -76,16 +76,14 @@ export function initConfigurator(root: HTMLElement): void {
       d.classList.toggle("is-active", dotIdx === curIdx);
       d.classList.toggle("is-done", dotIdx < curIdx);
     });
-    if (stepCounter) {
-      const idx = STEP_ORDER.indexOf(id) + 1;
-      stepCounter.textContent = `${idx} / ${STEP_ORDER.length}`;
-    }
-    if (backBtn) backBtn.disabled = STEP_ORDER.indexOf(id) === 0;
-    if (nextBtn) {
-      const last = STEP_ORDER.indexOf(id) === STEP_ORDER.length - 1;
-      nextBtn.textContent = last ? "Felmérés foglalása →" : "Tovább →";
-      nextBtn.disabled = !isStepComplete(id) && !last;
-    }
+    const idx = STEP_ORDER.indexOf(id) + 1;
+    stepCounters.forEach((c) => { c.textContent = `${idx} / ${STEP_ORDER.length}`; });
+    backBtns.forEach((b) => { b.disabled = STEP_ORDER.indexOf(id) === 0; });
+    const last = STEP_ORDER.indexOf(id) === STEP_ORDER.length - 1;
+    nextBtns.forEach((n) => {
+      n.textContent = last ? "Felmérés foglalása →" : "Tovább →";
+      n.disabled = !isStepComplete(id) && !last;
+    });
     // Pattern step shows the right catalogue based on the cladding-type choice
     if (id === "ext-pattern") syncPatternCatalogue("ext");
     if (id === "ext-colour") syncColourCatalogue("ext");
@@ -127,8 +125,8 @@ export function initConfigurator(root: HTMLElement): void {
     if (idx > 0) showStep(STEP_ORDER[idx - 1]);
   }
 
-  backBtn?.addEventListener("click", goBack);
-  nextBtn?.addEventListener("click", goNext);
+  backBtns.forEach((b) => b.addEventListener("click", goBack));
+  nextBtns.forEach((n) => n.addEventListener("click", goNext));
 
   // Step dot click — only allow jumping to completed earlier steps
   stepDots.forEach((d) => {
@@ -199,7 +197,7 @@ export function initConfigurator(root: HTMLElement): void {
       }
 
       updateSummary();
-      if (nextBtn) nextBtn.disabled = !isStepComplete(currentStep);
+      nextBtns.forEach((n) => { n.disabled = !isStepComplete(currentStep); });
     });
   });
 
@@ -214,7 +212,7 @@ export function initConfigurator(root: HTMLElement): void {
         g.classList.toggle("is-hidden", g.dataset.lockClasses !== brandId);
       });
       updateSummary();
-      if (nextBtn) nextBtn.disabled = !isStepComplete(currentStep);
+      nextBtns.forEach((n) => { n.disabled = !isStepComplete(currentStep); });
     });
   });
 
@@ -227,7 +225,7 @@ export function initConfigurator(root: HTMLElement): void {
         surcharge: Number(input.dataset.surcharge || 0),
       };
       updateSummary();
-      if (nextBtn) nextBtn.disabled = !isStepComplete(currentStep);
+      nextBtns.forEach((n) => { n.disabled = !isStepComplete(currentStep); });
     });
   });
 

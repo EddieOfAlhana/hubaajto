@@ -89,8 +89,8 @@ export const WOOD_PATTERNS: ConfigOption[] = WOOD_BASES.flatMap((base) =>
     label: `${base.label}-${lac.label}`,
     hint: `${capitalise(base.label)} alap ${lac.label} pácolással`,
     swatch: { kind: "gradient" as const, from: base.swatch, to: lac.tone, angle: 135 },
-    // Future asset migration:
-    // imageUrl: `/assets/configurator/wood/${base.id}-${lac.id}.avif`,
+    // Real photographed sample from the Huba ajtó catalogue.
+    imageUrl: `/assets/configurator/wood/${base.id}-${lac.id}.jpg`,
   })),
 );
 
@@ -100,14 +100,15 @@ export const WOOD_PATTERNS: ConfigOption[] = WOOD_BASES.flatMap((base) =>
 // each id `g1`..`g15` corresponds to `ajtomintak2/G{n}_110.jpg`.
 export const MILLED_PATTERNS: ConfigOption[] = Array.from({ length: 15 }, (_, i) => {
   const n = i + 1;
-  // Visually different placeholder tones so the grid isn't a wall of beige.
   const palette = ["#D7CFBA", "#C9C0A6", "#BCAF8E", "#A89878", "#917F5C"];
   const tone = palette[i % palette.length];
   return {
     id: `g${n}`,
     label: `Mart minta #${n}`,
-    hint: `MDF G${n} mintázat`,
+    hint: `Egyedi mart fa mintázat`,
     swatch: { kind: "gradient" as const, from: "#EEE6D2", to: tone, angle: 135 },
+    // Real photographed sample from the Huba ajtó catalogue (G1..G15).
+    imageUrl: `/assets/configurator/milled/G${n}.jpg`,
   };
 });
 

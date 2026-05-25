@@ -119,7 +119,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                   {opt.hint && <span class="cfg-swatch-hint">{opt.hint}</span>}
@@ -173,7 +179,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                 </span>
@@ -190,7 +202,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                 </span>
@@ -216,7 +234,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                   {opt.hint && <span class="cfg-swatch-hint">{opt.hint}</span>}
@@ -234,7 +258,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                   {opt.hint && <span class="cfg-swatch-hint">{opt.hint}</span>}
@@ -288,7 +318,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                 </span>
@@ -305,7 +341,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                 </span>
@@ -331,7 +373,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                   {opt.hint && <span class="cfg-swatch-hint">{opt.hint}</span>}
@@ -349,7 +397,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
                 data-swatch={optionSwatch(opt)}
                 aria-pressed="false"
               >
-                <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                {opt.imageUrl ? (
+                  <span class="cfg-swatch-paint cfg-swatch-paint-img" style={`background:${optionSwatch(opt)}`}>
+                    <img src={opt.imageUrl} alt="" loading="lazy" />
+                  </span>
+                ) : (
+                  <span class="cfg-swatch-paint" style={`background:${optionSwatch(opt)}`}></span>
+                )}
                 <span class="cfg-swatch-meta">
                   <span class="cfg-swatch-label">{opt.label}</span>
                   {opt.hint && <span class="cfg-swatch-hint">{opt.hint}</span>}
@@ -467,6 +521,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
             </p>
           </div>
         </section>
+
+        <!-- Desktop step navigation -->
+        <nav class="cfg-desktop-nav" aria-label="Lépésnavigáció">
+          <button type="button" data-action="back" class="cfg-desktop-back" aria-label="Vissza">← Vissza</button>
+          <span class="cfg-desktop-counter" data-step-counter>1 / 9</span>
+          <button type="button" data-action="next" class="cfg-desktop-next btn btn-primary">Tovább →</button>
+        </nav>
       </div>
 
       <!-- RIGHT — persistent summary panel (collapsible on mobile) -->
@@ -673,8 +734,9 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
   }
   .cfg-swatch:hover { border-color: var(--color-ink); transform: translateY(-1px); box-shadow: var(--shadow-soft); }
   .cfg-swatch.is-selected { border-color: var(--color-brass); box-shadow: 0 0 0 2px var(--color-brass); }
-  .cfg-swatch-paint { display: block; width: 100%; aspect-ratio: 4 / 3; background: var(--color-mist); }
-  .cfg-swatch-sm .cfg-swatch-paint { aspect-ratio: 1 / 1; }
+  .cfg-swatch-paint { display: block; width: 100%; aspect-ratio: 4 / 3; background: var(--color-mist); overflow: hidden; position: relative; }
+  .cfg-swatch-sm .cfg-swatch-paint { aspect-ratio: 4 / 5; }
+  .cfg-swatch-paint-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .cfg-swatch-meta { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.5rem 0.65rem 0.65rem; min-height: 2.2rem; }
   .cfg-swatch-label { font-size: 0.82rem; font-weight: 500; color: var(--color-ink); }
   .cfg-swatch-hint  { font-size: 0.72rem; color: var(--color-stone); }
@@ -776,6 +838,32 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
     border-left: 3px solid var(--color-brass); font-size: 0.92rem; color: var(--color-charcoal);
   }
   .cfg-bespoke-route a { color: var(--color-brass-deep); text-decoration: underline; margin-left: 0.25em; }
+
+  /* ── DESKTOP STEP NAV ────────────────────────────────── */
+  .cfg-desktop-nav {
+    display: none;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(14,15,17,0.1);
+    align-items: center;
+    gap: 1rem;
+  }
+  @media (min-width: 900px) { .cfg-desktop-nav { display: flex; } }
+  .cfg-desktop-back {
+    appearance: none; background: transparent;
+    border: 1px solid rgba(14,15,17,0.25);
+    color: var(--color-ink); padding: 0.7rem 1.1rem;
+    font: inherit; font-size: 0.9rem; cursor: pointer;
+    transition: border-color var(--dur-fast), color var(--dur-fast);
+  }
+  .cfg-desktop-back:hover:not(:disabled) { border-color: var(--color-ink); }
+  .cfg-desktop-back:disabled { opacity: 0.35; cursor: not-allowed; }
+  .cfg-desktop-counter {
+    flex: 1; text-align: center; font-size: 0.85rem;
+    color: var(--color-stone); letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .cfg-desktop-next:disabled { opacity: 0.4; cursor: not-allowed; }
 
   /* ── MOBILE STICKY BAR ───────────────────────────────── */
   .cfg-mobile-bar {
