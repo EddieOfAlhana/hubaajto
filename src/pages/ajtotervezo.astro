@@ -681,8 +681,15 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
   }
   .cfg-leaf {
     position: relative; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #9B6A36 0%, #4A2A18 100%);
-    transition: background var(--dur) var(--ease-out-soft);
+    background-color: #6E4E2A;
+    background-image: linear-gradient(135deg, rgba(155,106,54,0.0) 0%, rgba(74,42,24,0.4) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Multiply blend lets a RAL colour tint the milled-pattern photograph
+       (mostly white) and lets a wood-lacquer tone deepen the wood grain. */
+    background-blend-mode: multiply;
+    transition: background-color var(--dur) var(--ease-out-soft), background-image var(--dur) var(--ease-out-soft);
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.18), inset 0 12px 30px rgba(255,255,255,0.04);
   }
   .cfg-leaf::before, .cfg-leaf::after {
@@ -697,6 +704,13 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
     width: 4%; aspect-ratio: 1 / 5; background: var(--color-brass);
     box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
   }
+  /* Inside view: physically mirror the leaf so the handle moves to the
+     left (as you'd see it from inside the room) and any asymmetry in the
+     pattern photograph flips with it. The frame around it stays in place. */
+  .cfg-preview-int .cfg-leaf { transform: scaleX(-1); }
+  .cfg-preview-int .cfg-leaf::before,
+  .cfg-preview-int .cfg-leaf::after,
+  .cfg-preview-int .cfg-handle { /* re-flip text-bearing elements would go here if any */ }
   .cfg-preview-note {
     position: absolute; left: 0; right: 0; bottom: 0;
     background: rgba(14,15,17,0.78); color: var(--color-paper);

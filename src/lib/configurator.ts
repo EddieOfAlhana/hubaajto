@@ -183,10 +183,12 @@ export function initConfigurator(root: HTMLElement): void {
           if (id === "same") {
             selection.intPattern = selection.extPattern;
             selection.intColour = selection.extColour;
-            const extBtn = root.querySelector<HTMLButtonElement>(`[data-option-step='ext-pattern'][data-option='${selection.extPattern?.id}']`);
-            const extSwatch = extBtn?.dataset.swatch || "";
-            const extImageUrl = extBtn?.dataset.imageUrl || "";
-            applyDoorSwatch("int", extSwatch, extImageUrl);
+            // First apply the exterior pattern image to the interior leaf.
+            const extPatternBtn = root.querySelector<HTMLButtonElement>(`[data-option-step='ext-pattern'][data-option='${selection.extPattern?.id}']`);
+            applyDoorSwatch("int", extPatternBtn?.dataset.swatch || "", extPatternBtn?.dataset.imageUrl || "");
+            // Then layer the exterior colour underneath as the multiply-blend tint.
+            const extColourBtn = root.querySelector<HTMLButtonElement>(`[data-option-step='ext-colour'][data-option='${selection.extColour?.id}']`);
+            if (extColourBtn) applyDoorSwatch("int", extColourBtn.dataset.swatch || "");
           }
           break;
         case "int-pattern":
@@ -281,23 +283,46 @@ export function initConfigurator(root: HTMLElement): void {
     previewFrame.forEach((el) => { el.style.background = swatch; });
   }
 
+  /**
+   * Paint the door leaf for the given side.
+   *
+   * Two distinct sources combine into the leaf surface:
+   *   • pattern image (set by step "ext-pattern" / "int-pattern") — supplies the
+   *     photographed wood grain or milled pattern as a background-image.
+   *   • tint colour (set by step "ext-colour" / "int-colour") — supplies a
+   *     background-color underneath the image.
+   *
+   * `background-blend-mode: multiply` (declared in CSS) combines the two so that
+   * a chosen RAL colour tints the (mostly-white) milled photo, and wood-lacquer
+   * tones deepen the wood photo without losing the grain.
+   *
+   * When called from a colour step, `imageUrl` is undefined — we preserve the
+   * existing image. When called from a pattern step, `swatch` may be empty but
+   * we still want the image to apply on top of any prior colour.
+   */
   function applyDoorSwatch(side: "ext" | "int", swatch: string, imageUrl?: string) {
-    if (!swatch && !imageUrl) return;
     const target = side === "ext" ? previewExt : previewInt;
     const leaf = target?.querySelector<HTMLElement>("[data-preview-leaf]");
     if (!leaf) return;
+
     if (imageUrl) {
-      // Use the real pattern photograph as the door surface — cover so the wood
-      // grain fills the leaf shape; fallback colour underneath for load delay.
       leaf.style.backgroundImage = `url("${imageUrl}")`;
       leaf.style.backgroundSize = "cover";
       leaf.style.backgroundPosition = "center";
       leaf.style.backgroundRepeat = "no-repeat";
-      if (swatch) leaf.style.backgroundColor = swatch.startsWith("linear-gradient") ? "transparent" : swatch;
-    } else {
-      // Colour-only swatch (e.g. RAL frame/colour steps). Reset any prior image.
-      leaf.style.backgroundImage = "none";
-      leaf.style.background = swatch;
+    }
+
+    if (swatch) {
+      // Solid RAL colour: tints the underlying image via background-blend-mode.
+      // Gradient swatch (wood pattern hint): used only when no image is present
+      // (e.g. before image loads, or as a colour-step preview with no pattern).
+      if (swatch.startsWith("linear-gradient") && leaf.style.backgroundImage && leaf.style.backgroundImage !== "none") {
+        // Skip — gradient under image would clash with multiply blend.
+      } else {
+        leaf.style.backgroundColor = swatch.startsWith("linear-gradient")
+          ? swatch.match(/#[0-9a-fA-F]{6}/)?.[0] ?? swatch
+          : swatch;
+      }
     }
   }
 
