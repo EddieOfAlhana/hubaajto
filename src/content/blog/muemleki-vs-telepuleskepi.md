@@ -1,7 +1,7 @@
 ---
 title: "Műemléki engedélyezés vs. településképi bejelentés: a két különálló eljárás"
 description: "Az örökségvédelmi engedélyezés (kormányhivatal) és a településképi bejelentési eljárás (kerület) — két párhuzamos hatóság, két különálló logika."
-publishDate: 2026-04-22
+publishDate: 2026-09-04
 pillar: muemleki
 tags: ["engedélyezés", "TKBE", "kerület", "kormányhivatal"]
 heroImage: "/assets/photos/hero/period-restoration.jpg"

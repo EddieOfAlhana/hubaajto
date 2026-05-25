@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import TrustStrip from "../../components/TrustStrip.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import CookieBanner from "../../components/CookieBanner.astro";
+
+const faq = [
+  { q: "Kell-e a közös képviselő hozzájárulása a lakásajtó cseréhez?",
+    a: `<p>A 2003. évi CXXXIII. törvény (társasházi tv.) szerint a lakás bejárati ajtaja közös tulajdoni rész jellemzően, ezért a közös képviselő — vagy közgyűlési határozat — engedélye szükséges. A felmérés után írásban megadjuk az engedélykéréshez szükséges minden technikai adatot.</p>` },
+  { q: "Mit kell írni a kérelemben?",
+    a: `<p>A meglévő ajtó méretét, az új ajtó pontos méretét, anyagát, színét, a tervezett zárrendszert. Műemléki vagy helyi védettségű épület esetén külön mellékelni kell az örökségvédelmi vagy településképi engedélyt — ezt mi intézzük.</p>` },
+  { q: "Mit jelent, ha az épület helyi védett vagy műemlék?",
+    a: `<p>Akkor a közös képviselő mellett településképi vagy örökségvédelmi engedély is kell. Az ilyen ügyek a <a href="/engedelyezesi-csomag">kulcsrakész engedélyezési csomagba</a> tartoznak — mi vezetjük végig a hatósági ügymenetet.</p>` },
+  { q: "Mennyi időbe telik a közgyűlési határozat?",
+    a: `<p>Általában 1-3 hónap, attól függően, mikor van a következő rendes közgyűlés. Lehet rendkívüli közgyűlést is összehívni — a közös képviselő dönt.</p>` },
+];
+---
+<BaseLayout
+  title="Társasházi biztonsági ajtó — közös képviselő, közgyűlés, engedélyek"
+  description="Mit kell tudni a társasházi biztonsági ajtó cseréhez? A 2003. évi CXXXIII. törvény szerinti szabályok, közös képviselői engedélyek, mintázatok és színek."
+>
+  <Hero
+    eyebrow="Modern range · Társasházi"
+    heading="Társasházi lakásajtó.<br/><em>Az engedélyezést mi vezetjük.</em>"
+    lead="A 2003. évi CXXXIII. társasházi törvény szerint a lakásajtó közös tulajdoni rész. A közös képviselő hozzájárulását mi készítjük elő — műszaki adatlap, méretrajz, anyagminta."
+    pillars={["Közös képviselői engedélykészítés", "Méretrajz + anyagminta", "Lépcsőházi egységes stílus", "Műemléki + helyi védett ügyek is", "15 év garancia"]}
+    image="/assets/photos/hero/period-brown.jpg"
+    imageAlt="Társasházi bejárati ajtó polgári lakásban"
+  />
+
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Mit vállalunk"
+    heading="A teljes engedélyezést — egytől egyig."
+    lead="A felmérés után 24 órán belül elkészítjük a közös képviselői kérelemhez szükséges teljes dokumentációt: méretrajz, anyagminta, zárrendszer, szín."
+  >
+    <ul class="bullets">
+      <li><strong>Műszaki adatlap</strong> — az új ajtó pontos paramétereivel</li>
+      <li><strong>Méretrajz</strong> — M=1:10 vagy M=1:5 részletességgel</li>
+      <li><strong>Anyagminta</strong> — fa vagy mart borításhoz</li>
+      <li><strong>Zárrendszer specifikáció</strong> — Mottura / Abus / Mul-T-Lock / Iseo / Cisa</li>
+      <li><strong>Közös képviselői mintakérelem</strong> — kitöltésre kész formában</li>
+      <li><strong>Műemléki / helyi védettség esetén</strong> — örökségvédelmi engedélyt is mi intézzük</li>
+    </ul>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A lépcsőházi egység"
+    heading="Egy stílus, egy lépcsőház."
+    lead="Sok társasház azt szeretné, hogy a lépcsőházi ajtók egységes megjelenésűek maradjanak. Az új Huba ajtót az adott lépcsőház meglévő ajtóinak stílusához igazítjuk — szín, mintázat, üvegezés."
+  >
+    <p class="prose">
+      Ha az épület műemléki vagy helyi védettségű, az engedély a kerületi településképi rendelet
+      (TKR) szerint kérelmezendő. Például Józsefvárosban a <a href="/blog/josefvaros-ajtocsere-tkr">1/2022. TKR §53</a>
+      kifejezetten nevezi a lépcsőházi nyílászárót — ennek értelmezésében és a kérelmezésben is segítünk.
+    </p>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="Társasházi specifikus kérdések."
+  >
+    <FAQ items={faq} />
+  </Section>
+
+  <ContactCTA
+    heading="Társasházi ajtócserét tervez?"
+    lead="Kérjen ingyenes helyszíni felmérést — a közös képviselői kérelmet mi készítjük el."
+  />
+  <CookieBanner />
+</BaseLayout>
+
+<style>
+  .bullets { display: flex; flex-direction: column; gap: 0.65rem; max-width: 60ch; font-size: 1.05rem; line-height: 1.6; padding-left: 1.5rem; }
+  .bullets li::marker { color: var(--color-brass); }
+  .bullets strong { color: var(--color-ink); }
+  .prose { font-size: 1.05rem; line-height: 1.65; color: var(--color-charcoal); max-width: 60ch; }
+  .prose a { color: var(--color-brass-deep); text-decoration: underline; text-underline-offset: 3px; }
+</style>

@@ -1,7 +1,7 @@
 ---
 title: "A közös képviselő szerepe a műemléki lakásajtó cseréjében"
 description: "A társasházi közös képviselő szerepe és kötelezettsége egy műemléki lakásajtó cseréjekor — Ptk., társasházi tv., gyakorlati esetek."
-publishDate: 2026-02-04
+publishDate: 2026-06-18
 pillar: muemleki
 tags: ["közös képviselő", "társasház", "lakásajtó", "hozzájárulás"]
 heroImage: "/assets/photos/hero/period-double-leaf.jpg"

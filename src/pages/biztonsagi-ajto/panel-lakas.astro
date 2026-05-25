@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Section from "../../components/Section.astro";
+import TrustStrip from "../../components/TrustStrip.astro";
+import ProcessSteps from "../../components/ProcessSteps.astro";
+import FAQ from "../../components/FAQ.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import CookieBanner from "../../components/CookieBanner.astro";
+import { SLA, SITE } from "../../data/site";
+
+const faq = [
+  { q: "Bontás nélkül lehet a panel-lakás bejárati ajtót cserélni?",
+    a: `<p>Igen, a legtöbb panel-lakásnál a meglévő tokra illeszthető acélkeretes megoldással bontás nélkül cseréljük az ajtót. A felmérésen ellenőrizzük a falazat és a tok állapotát.</p>` },
+  { q: "Milyen méretű a tipikus panel-lakás bejárati ajtó?",
+    a: `<p>90×210 cm vagy 90×220 cm jellemzően. A felmérésen pontosan megmérjük — a méretre szabás benne van az árban.</p>` },
+  { q: "Kell-e közös képviselő hozzájárulás?",
+    a: `<p>Ha a lépcsőházi rész közös tulajdon, igen — a társasházi SZMSZ szerint a közös képviselő engedélye szükséges. A felmérés után segítünk a kérelem megfogalmazásában. <a href="/blog/tarsashazi-bejarati-ajto">Olvassa el a társasházi útmutatónkat →</a></p>` },
+  { q: "Mennyi idő alatt cseréljük?",
+    a: `<p>${SLA.surveyDays} a helyszíni felmérés, ${SLA.manufactureDays} a gyártás, ${SLA.installDays} a beépítés — bontás, törmelékelszállítás benne van.</p>` },
+];
+---
+<BaseLayout
+  title="Panel-lakás biztonsági ajtó csere — bontás nélkül, 1 nap alatt"
+  description={`Panel-lakás bejárati ajtó cseréje ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól. Bontás nélkül, méretre szabva, közös képviselői egyeztetéssel együtt.`}
+>
+  <Hero
+    eyebrow="Modern range · Panel-lakás"
+    heading="Panel-lakás bejárati ajtó.<br/>Bontás nélkül,<br/><em>egy nap alatt.</em>"
+    lead={`Tipikus 90×210 vagy 90×220 cm méretű panel-lakás ajtót cserélünk a meglévő tokra illeszkedő megoldással, bontás nélkül. ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól, MABISZ 2. osztály.`}
+    pillars={["Bontás nélkül", "Méretre szabva", "Közös képviselői tájékoztatás", "1 nap alatt", `${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`]}
+    image="/assets/photos/hero/modern-white.jpg"
+    imageAlt="Panel-lakás modern bejárati ajtó"
+  />
+
+  <TrustStrip />
+
+  <Section
+    tone="paper"
+    eyebrow="Mit kap"
+    heading="Acél biztonsági szerkezet, panel-lakás méretre."
+    lead="Hőhídmentes acél zártszelvény tok, üveggyapot bélelés, körbefutó tömítés, megerősített zárlemez. 35+ fa vagy 15 mart minta közül választhat."
+  >
+    <ul class="bullets">
+      <li><strong>Méret:</strong> méretre szabva — bármilyen panel-lakás nyíláshoz</li>
+      <li><strong>Szerkezet:</strong> hőhídmentes acél zártszelvény, megerősített zárlemez</li>
+      <li><strong>Borítás:</strong> 35+ fa minta vagy 15 mart minta — Ön választ</li>
+      <li><strong>Zár:</strong> Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárrendszerrel</li>
+      <li><strong>MABISZ:</strong> 2. osztály (3 perc) alapáron, 3-as osztály (5 perc) felárral</li>
+      <li><strong>Garancia:</strong> 15 év szerkezeti, 18 hónap zárszerkezet</li>
+    </ul>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="A folyamat"
+    heading="Felmérés → gyártás → 1 nap beépítés."
+    lead="A megkereséstől a beépített ajtóig 12 nap. A beépítés napján reggel jövünk, este már az új ajtó zárja az otthonát."
+  >
+    <ProcessSteps />
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="GYIK"
+    heading="A leggyakoribb panel-lakás kérdések."
+  >
+    <FAQ items={faq} />
+  </Section>
+
+  <ContactCTA
+    heading="Panel-lakás cseréjét tervezi?"
+    lead={`Ingyenes helyszíni felmérés ${SLA.surveyDays} alatt. Méreteket Önnek nem kell tudnia — mi mérünk.`}
+  />
+  <CookieBanner />
+</BaseLayout>
+
+<style>
+  .bullets { display: flex; flex-direction: column; gap: 0.65rem; max-width: 60ch; font-size: 1.05rem; line-height: 1.6; padding-left: 1.5rem; }
+  .bullets li::marker { color: var(--color-brass); }
+  .bullets strong { color: var(--color-ink); }
+</style>

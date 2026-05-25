@@ -1,7 +1,7 @@
 ---
 title: "Korhű kazettás ajtó vs. modern biztonsági ajtó: amikor mindkettő kell egyben"
 description: "Mikor kell egyszerre korhű és modern biztonsági ajtó? A két igény műszaki összeegyeztetése egy szerkezeten."
-publishDate: 2026-03-15
+publishDate: 2026-07-22
 pillar: muemleki
 tags: ["kazettás", "modern", "kombináció", "MABISZ"]
 heroImage: "/assets/photos/hero/period-yellow.jpg"
