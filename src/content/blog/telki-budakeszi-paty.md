@@ -1,11 +1,11 @@
 ---
-title: "Telki, Budakeszi, Páty — NW Buda agglomeráció, prémium családi ház"
+title: "Telki, Budakeszi, Páty — budai agglomeráció, prémium családi ház"
 description: "A Budai északnyugati agglomeráció prémium családi házaihoz illő bejárati ajtó: helyi piaci kontextus, építészeti karakter, logisztikai szempontok."
 publishDate: 2025-09-10
 pillar: premium-csaladi
 tags: ["Telki", "Budakeszi", "Páty", "Buda agglomeráció", "családi ház"]
 heroImage: "/assets/photos/hero/modern-anthracite.jpg"
-heroImageAlt: "Antracit prémium bejárati ajtó NW Buda agglomerációs családi házon"
+heroImageAlt: "Antracit prémium bejárati ajtó budai agglomerációs családi házon"
 readingMinutes: 5
 seo:
   keywords: ["biztonsági ajtó Budakeszi", "biztonsági ajtó Telki", "biztonsági ajtó Páty", "prémium családi ház Buda"]
@@ -27,7 +27,7 @@ Az ingatlan.com 2025-ös adatai szerint **Budakeszi keresési volumene 49%-kal n
 
 ## Az építészeti karakter
 
-A NW Buda agglomeráció prémium családi házai jellemzően:
+A budai agglomeráció prémium családi házai jellemzően:
 
 - **Természetes anyagokat** kombinálnak — vakolt felület, faburkolat, helyi mészkő.
 - **Földszínek** dominálnak — antracit, mély szürke, természetes fa-árnyalatok, mély zöld lazúr.
@@ -71,4 +71,4 @@ Az új építésű családi házak nyílászáróit egyszerre érdemes intézni 
 
 ## Foglaljon ingyenes helyszíni felmérést
 
-[Foglaljon ingyenes helyszíni felmérést](/felmeres) NW Buda agglomeráció területén, vagy [induljon az ajtótervezővel](/ajtotervezo) most. A felmérőnk minden anyagmintát Önhöz hoz, és a tervrajzokat áttekintve előzetes ütemtervet ad még a gyártás megkezdése előtt.
+[Foglaljon ingyenes helyszíni felmérést](/felmeres) budai agglomeráció területén, vagy [induljon az ajtótervezővel](/ajtotervezo) most. A felmérőnk minden anyagmintát Önhöz hoz, és a tervrajzokat áttekintve előzetes ütemtervet ad még a gyártás megkezdése előtt.

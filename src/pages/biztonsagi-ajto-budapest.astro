@@ -8,7 +8,7 @@ import FAQ from "../components/FAQ.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import { SITE, SLA } from "../data/site";
 
-// District anchor priority — heritage first (per playbook §7.3), then modern volume.
+// District anchor priority — műemléki kerületek először, aztán a modern volumen.
 const heritageDistricts = [
   {
     code: "I",
@@ -91,7 +91,7 @@ const modernDistricts = [
     code: "XV",
     name: "Rákospalota · Újpalota",
     paragraph:
-      "Klasszikus pesti panel- és társasházi terep, Kistarcsától 15-20 perc autóval. Itt a modern range belépőszintje a leggyakoribb választás — RC2 / MABISZ 2. osztály, fa-design vagy mart felülettel. Másnapi felméréssel is elérhetők vagyunk.",
+      "Klasszikus pesti panel- és társasházi terep, Kistarcsától 15-20 perc autóval. Itt a modern modellek belépőszintje a leggyakoribb választás — RC2 / MABISZ 2. osztály, fa-design vagy mart felülettel. Másnapi felméréssel is elérhetők vagyunk.",
   },
   {
     code: "XVI",
@@ -122,11 +122,11 @@ const modernDistricts = [
 const faqItems = [
   {
     q: "Egész Budapesten dolgoznak?",
-    a: "<p>Igen, Budapest mind a 23 kerületében dolgozunk — a Várnegyedtől a Kispestig. A heritage budai oldal (I., II., XII.) és a belváros (V., VI., VII., VIII., IX.) mellett a Kistarcsához közeli pesti kerületek (XIII., XIV., XV., XVI., XVII.) is a fő működési terepünk. Kistarcsáról 30 perc alatt felmérésre érünk.</p>",
+    a: "<p>Igen, Budapest mind a 23 kerületében dolgozunk — a Várnegyedtől a Kispestig. A műemléki budai oldal (I., II., XII.) és a belváros (V., VI., VII., VIII., IX.) mellett a Kistarcsához közeli pesti kerületek (XIII., XIV., XV., XVI., XVII.) is a fő működési terepünk. Kistarcsáról 30 perc alatt felmérésre érünk.</p>",
   },
   {
     q: "Mennyibe kerül a felmérés Budapesten?",
-    a: "<p>A helyszíni felmérés ingyenes és kötelezettség nélküli — Budapest egész területére. A felmérőnk mintamintával érkezik, méri a tokot és az ajtószárnyat, és a helyszínen tájékoztatja Önt az árról és a műszaki lehetőségekről.</p>",
+    a: "<p>A helyszíni felmérés ingyenes és kötelezettség nélküli — Budapest egész területére. A felmérőnk anyagmintákkal érkezik, méri a tokot és az ajtószárnyat, és a helyszínen tájékoztatja Önt az árról és a műszaki lehetőségekről.</p>",
   },
   {
     q: "Mennyi idő alatt érkezik felmérésre Budapest belvárosba?",
@@ -134,7 +134,7 @@ const faqItems = [
   },
   {
     q: "Műemléki környezetben is dolgoznak?",
-    a: '<p>Igen — ez a legfontosabb megkülönböztetésünk a piacon. Az V., VI., VII., VIII., IX. kerületi polgári bérházakban és az I., II., XII. kerületi budai heritage területeken készítünk az eredeti ajtó alapján rekonstruált korhű biztonsági ajtókat, az engedélyezési csomagunkkal együtt. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>',
+    a: '<p>Igen — ez a legfontosabb megkülönböztetésünk a piacon. Az V., VI., VII., VIII., IX. kerületi polgári bérházakban és az I., II., XII. kerületi budai műemléki területeken az eredeti ajtó alapján rekonstruált korhű biztonsági ajtókat készítünk, az engedélyezési csomagunkkal együtt. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>',
   },
   {
     q: "Panellakásra is gyártanak ajtót?",
@@ -154,10 +154,10 @@ const faqItems = [
   <Hero
     eyebrow="Szolgáltatási terület · Budapest"
     heading="Biztonsági ajtó <em>Budapest</em> minden kerületében."
-    lead="A Várnegyedtől a Kispestig — műemléki belvárosi polgári bérházban, budai heritage villánegyedben, vagy panel- és családiházas pesti övezetben. Egy gyártó, ugyanaz az acél biztonsági mag, a kerület karakteréhez igazított látható kivitel."
+    lead="A Várnegyedtől a Kispestig — műemléki belvárosi polgári bérházban, budai műemléki villanegyedben, vagy panel- és családiházas pesti övezetben. Egy gyártó, ugyanaz az acél biztonsági mag, a kerület karakteréhez igazított látható kivitel."
     pillars={[
       "23 kerület",
-      "Heritage + modern",
+      "Műemléki + modern",
       `MABISZ ${SITE.mabiszSince} óta`,
       "30 perc Kistarcsáról",
       `${SITE.warrantyYears} év garancia`,
@@ -174,7 +174,7 @@ const faqItems = [
     tone="paper"
     eyebrow="A kerületek karakteréhez igazítva"
     heading="Két ajtófajta, egyetlen biztonsági mag."
-    lead="Budapest belvárosa és a budai heritage negyedek polgári lakásai más ajtót kívánnak, mint a XIII–XVII. paneles és családiházas állomány. A Huba ajtó mindkét formavilágot megépíti — ugyanazon a MABISZ-minősített acélszerkezeti alapon."
+    lead="Budapest belvárosa és a budai műemléki negyedek polgári lakásai más ajtót kívánnak, mint a XIII–XVII. paneles és családiházas állomány. A Huba ajtó mindkét formavilágot megépíti — ugyanazon a MABISZ-minősített acélszerkezeti alapon."
   >
     <p class="intro-text reveal">
       Budapest 23 kerülete sosem volt homogén. A Várnegyed UNESCO-világöröksége és a Józsefváros 1/2022. helyi védettsége
@@ -192,9 +192,9 @@ const faqItems = [
 
   <Section
     tone="cream"
-    eyebrow="Heritage kerületek"
-    heading="Belváros + budai heritage — engedélyezéssel együtt."
-    lead="Az V., VI., VII., VIII., IX. polgári bérházainál és az I., II., XII. budai heritage területein a védettségi vizsgálattal kezdjük. Az engedélyezést — építész tervezővel és műemléki szakértő partnerrel — mi intézzük."
+    eyebrow="Műemléki kerületek"
+    heading="Belváros és budai műemléki környezet — engedélyezéssel együtt."
+    lead="Az V., VI., VII., VIII., IX. polgári bérházainál és az I., II., XII. budai műemléki területein a védettségi vizsgálattal kezdjük. Az engedélyezést — építész tervezővel és műemléki szakértő partnerrel — mi intézzük."
   >
     <div class="district-list stagger">
       {heritageDistricts.map(d => (

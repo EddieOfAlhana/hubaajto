@@ -11,17 +11,17 @@ import { SITE, SLA } from "../../data/site";
 
 const faqItems = [
   { q: "Mi a Modern Standard pontos belépő ára?",
-    a: `<p>A Modern Standard kivitel <strong>330 000 Ft-tól</strong> indul bruttó, ami panel-nyílásméretre, fehér RAL színben, standard mart vagy fa borítással, Abus zárszerkezettel értendő. A végleges ár a felmérés után, a kiválasztott mintázat, üvegezés, zárrendszer és kiegészítők alapján alakul ki. Tipikus végösszeg 350 000 – 480 000 Ft sávban szokott landolni.</p>` },
+    a: `<p>A Modern Standard kivitel <strong>330 000 Ft-tól</strong> indul bruttó, ami panel-nyílásméretre, fehér RAL színben, standard mart vagy fa borítással, Abus zárszerkezettel értendő. A végleges ár a felmérés után, a kiválasztott mintázat, üvegezés, zárrendszer és kiegészítők alapján alakul ki. A tipikus végösszeg 350 000 – 480 000 Ft sávba esik.</p>` },
   { q: "Melyik MABISZ-osztály ez pontosan?",
     a: `<p><strong>MABISZ 2. osztály</strong> — szakszerű betörési kísérletnek 3 percig áll ellen, ami a magyar lakásbiztosítási alapfeltételhez elegendő. Az ehhez tartozó betörésvédelmi osztály az európai szabvány szerint <strong>RC2</strong>.</p>` },
   { q: "Beépíthető-e a meglévő paneltokba bontás nélkül?",
     a: `<p>A panel-lakás standard tokmérete (kb. 90×210 cm) többnyire átvehető — ilyenkor csak a régi nyílórészt és a sérült tokot bontjuk ki, az új tok a meglévő nyílásba illeszkedik. Egy nap alatt befejezzük, törmelékelszállítással együtt. Társasházi lépcsőházban nem keletkezik porfelhő.</p>` },
   { q: "Mit fed le a 15 év garancia?",
-    a: `<p>A 15 év szerkezeti garancia az acél tokrendszerre és a nyílórész szerkezeti épségére vonatkozik. A teljes ajtóra (felület, kilincs, tömítés) 1 év, a zárszerkezetre 18 hónap teljes körű garanciát adunk. <a href="/garancia">Részletes garancia →</a></p>` },
+    a: `<p>A 15 év szerkezeti garancia az acél tokrendszerre és a nyílórész szerkezeti épségére vonatkozik. A teljes ajtóra (felület, kilincs, tömítés) 1 év, a zárszerkezetre 18 hónap teljes körű garanciát adunk. <a href="/garancia">Részletes garanciafeltételek →</a></p>` },
   { q: "Lehet-e részletre venni?",
-    a: `<p>Igen — Cofidis áruhitelen keresztül, akár 0% THM-mel. Reprezentatív példa a Modern Standard belépő árára: <strong>330 000 Ft / 10 hó = 33 000 Ft / hó</strong>, THM 0%, teljes visszafizetendő 330 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
-  { q: "Miért nem az 145 000 Ft-os ajtó éri meg?",
-    a: `<p>A Standard 330 000 Ft hőhídmentes acél tokot, megerősített zárlemezt, MABISZ 2. minősítést, márkás zárcilindert és 15 év garanciát tartalmaz. A 145 000 Ft-os import katalógusajtó tipikusan hajlított vékony lemez tok, márka nélküli zár, MABISZ-besorolás nélkül vagy alatta, és 1–2 év garancia. <a href="#osszehasonlitas">Részletes spec-összevetés →</a></p>` },
+    a: `<p>Igen — Cofidis áruhitelen keresztül, akár 0% THM-mel. Reprezentatív példa a Modern Standard belépő árára: <strong>330 000 Ft / 10 hó = 33 000 Ft / hó</strong>, THM 0%, teljes visszafizetendő 330 000 Ft. <a href="/reszletfizetes">Részletfizetés részletei →</a></p>` },
+  { q: "Miért nem a 145 000 Ft-os ajtó éri meg?",
+    a: `<p>A Standard 330 000 Ft hőhídmentes acél tokot, megerősített zárlemezt, MABISZ 2. minősítést, márkás zárcilindert és 15 év garanciát tartalmaz. A 145 000 Ft-os import katalógusajtó tipikusan hajlított vékony lemez tok, márka nélküli zár, MABISZ-besorolás nélküli vagy az alatti termék, 1–2 év garanciával. <a href="#osszehasonlitas">Részletes műszaki összevetés →</a></p>` },
 ];
 ---
 <BaseLayout
@@ -31,7 +31,7 @@ const faqItems = [
   <Hero
     eyebrow="Modern Standard · MABISZ 2. osztály"
     heading={`Modern Standard.<br/><em>330 000 Ft-tól</em>, méretre szabva.`}
-    lead="A modern range belépőszintje — panel-lakásra, társasházi bejáratra, családi ház hátsó ajtajára. Hőhídmentes acél tok, üveggyapot mag, MABISZ 2. minősítés, 15 év szerkezeti garancia. Saját műhelyünkben gyártjuk Kistarcsán."
+    lead="A modern modellek belépőszintje — panel-lakásra, társasházi bejáratra, családi ház hátsó ajtajára. Hőhídmentes acél tok, üveggyapot mag, MABISZ 2. minősítés, 15 év szerkezeti garancia. Saját műhelyünkben gyártjuk Kistarcsán."
     pillars={[
       "330 000 Ft-tól bruttó",
       "MABISZ 2. · RC2 · 3 perc",
@@ -53,7 +53,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Kinek ajánljuk"
     heading="A Standard kivitel arra való, hogy ne kelljen kompromisszumot kötni a belépő áron."
-    lead="A Modern Standard nem 'olcsó kivitel' — hanem a teljes Huba szerkezeti rendszer egyszerűbb borítással, alapszintű MABISZ-minősítéssel. Tipikus vásárlóink:"
+    lead={`A Modern Standard nem „olcsó kivitel” — hanem a teljes Huba szerkezeti rendszer egyszerűbb borítással, alapszintű MABISZ-minősítéssel. Tipikus vásárlóink:`}
   >
     <ul class="audience-list stagger">
       <li>
@@ -79,7 +79,7 @@ const faqItems = [
     tone="cream"
     eyebrow="Műszaki adatok"
     heading="Mit pontosan kap 330 000 Ft-ért?"
-    lead="A belépő ár konkrét tartalma — semmi 'opcionális', semmi 'felár'. Ezt a szintet kapja minden Modern Standard kivitelre."
+    lead={`A belépő ár konkrét tartalma — semmi „opcionális”, semmi „felár”. Ezt a szintet kapja minden Modern Standard kivitelre.`}
   >
     <table class="spec-table">
       <thead>
@@ -121,13 +121,13 @@ const faqItems = [
     heading="Mit lehet hozzátenni — és mennyiért."
   >
     <ul class="extras-list stagger">
-      <li><strong>Üvegezés a nyílórészen</strong> — biztonsági fólia + ragasztott üvegpaket. Felár jellemzően 35 000 – 65 000 Ft, méret-függő.</li>
-      <li><strong>Felülvilágító transom</strong> — fix vagy nyitható, méretre. Felár 45 000 Ft-tól.</li>
-      <li><strong>Második acéllemez</strong> a nyílórészbe — MABISZ 3. szintre emelheti. Felár 40 000 – 70 000 Ft.</li>
+      <li><strong>Üvegezés a nyílórészen</strong> — biztonsági fólia + ragasztott üvegpakett. A felár jellemzően 35 000 – 65 000 Ft, mérettől függően.</li>
+      <li><strong>Felülvilágító</strong> — fix vagy nyitható, méretre. Felár 45 000 Ft-tól.</li>
+      <li><strong>Második acéllemez</strong> a nyílórészbe — MABISZ 3. szintre emelhető. Felár 40 000 – 70 000 Ft.</li>
       <li><strong>Mottura vagy Mul-T-Lock cilinder</strong> az alap Abus helyett. Felár 25 000 – 60 000 Ft.</li>
-      <li><strong>Kódkártyás zárrendszer</strong> — pótkulcs csak igazolással másolható. Felár 15 000 – 30 000 Ft.</li>
-      <li><strong>Belső / külső eltérő mintázat</strong> — a két ajtófelület eltérő színnel / borítással. Általában felár nélkül.</li>
-      <li><strong>Hosszabbított kilincsgarnitúra, brass / fekete / inox</strong>. Felár 8 000 – 25 000 Ft.</li>
+      <li><strong>Kódkártyás zárrendszer</strong> — pótkulcs csak igazolással készíthető. Felár 15 000 – 30 000 Ft.</li>
+      <li><strong>Belső és külső eltérő mintázat</strong> — a két ajtófelület eltérő színben vagy borítással. Általában felár nélkül.</li>
+      <li><strong>Hosszabbított kilincsgarnitúra, sárgaréz, fekete vagy inox kivitelben</strong>. Felár 8 000 – 25 000 Ft.</li>
     </ul>
     <p class="extras-note">A pontos felárakat a felmérés után írásban kapja, fix ajánlatként 30 napra rögzítve.</p>
   </Section>
@@ -150,7 +150,7 @@ const faqItems = [
 
   <ContactCTA
     heading="Foglaljon helyszíni felmérést — a Standard kivitelre is ingyenes"
-    lead={`A felmérőnk ${SLA.surveyDays} alatt érkezik Önhöz, méretet vesz, mintamintát hoz, és a felmérés után 48 órán belül fix árajánlatot ad.`}
+    lead={`A felmérőnk ${SLA.surveyDays} alatt érkezik Önhöz, méretet vesz, anyagmintákat hoz, és a felmérés után 48 órán belül fix árajánlatot ad.`}
   />
 </BaseLayout>
 

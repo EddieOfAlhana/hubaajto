@@ -34,7 +34,7 @@ Az alábbi tartományok a saját 2026-os listaárainkat tükrözik. A pontos vé
 |---|---|
 | Kiszállás Budapest belváros (V., VI., VII., VIII., IX.) | 18 000 – 25 000 Ft |
 | Kiszállás Pest megye Kistarcsa körzet (15 km) | 12 000 – 18 000 Ft |
-| Kiszállás NW Buda agglomeráció (Telki, Páty, Budakeszi) | 28 000 – 38 000 Ft |
+| Kiszállás budai agglomeráció (Telki, Páty, Budakeszi) | 28 000 – 38 000 Ft |
 | Bontás panel-lakás esetén (bontás nélküli csere) | **0 Ft** — nincs bontás |
 | Bontás régi acél tok családi házból | 25 000 – 45 000 Ft |
 | Bontás kovácsoltvasas vagy beépített tok | 45 000 – 80 000 Ft |
@@ -64,7 +64,7 @@ A műhelyünk **2143 Kistarcsa, Nagytarcsai út 6.** alatti elhelyezkedése — 
 | XVI. kerület (Cinkota, Mátyásföld), Veresegyház, Mogyoród | 8–15 km | 20–25 perc |
 | XIII., XIV. kerület, Gödöllő, Fót | 15–25 km | 30–40 perc |
 | Budapest belváros (V–IX. kerület) | 25–35 km | 45–60 perc |
-| NW Buda agglomeráció (Telki, Páty, Budakeszi) | 35–50 km | 60–90 perc |
+| budai agglomeráció (Telki, Páty, Budakeszi) | 35–50 km | 60–90 perc |
 
 A kiszállási díj a fenti sáv-szerinti számítást követi, és **a felmérésnél előre tudja**, mit fizet — nem utólagos meglepetés.
 

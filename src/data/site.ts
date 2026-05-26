@@ -84,7 +84,7 @@ export const SERVICE_AREA = {
     ],
   },
   modernBuda: {
-    label: "Prémium családi házak — NW Buda agglomeráció",
+    label: "Prémium családi házak — budai agglomeráció",
     towns: ["Telki", "Páty", "Budakeszi", "Nagykovácsi", "Solymár", "Pilisborosjenő", "Üröm", "Budakalász", "Pomáz"],
   },
   modernPest: {

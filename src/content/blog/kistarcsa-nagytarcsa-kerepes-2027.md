@@ -61,7 +61,7 @@ A saját 2024–2026-os megrendeléseink terület-eloszlása (kerekített adatok
 | XVI–XVII. kerület (Cinkota, Rákosmente) | 12% | stabil |
 | Budapest belváros (V., VI., VII., VIII., IX.) | 22% | stabil, részben műemléki |
 | II., XII. kerület (Buda hegyvidék) | 9% | növekvő, főleg felújítások |
-| NW Buda agglomeráció (Telki, Páty, Budakeszi) | 10% | növekvő |
+| budai agglomeráció (Telki, Páty, Budakeszi) | 10% | növekvő |
 | Egyéb | 8% | — |
 
 A keleti agglomeráció — Kistarcsa és közvetlen környéke — az össz-megrendelések kb. **40%-át** adja. Ez a műhelyünk természetes piaca, és a 2026–2027-es építkezési hullám fenntartja a növekedést.

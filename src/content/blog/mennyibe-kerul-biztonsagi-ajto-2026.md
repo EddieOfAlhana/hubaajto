@@ -130,7 +130,7 @@ Egy **polgári lakás** vagy **műemléki környezetben lévő ingatlan** eseté
 
 ## A következő lépés
 
-A pontos ár mindig **helyszíni felmérés után** alakul ki. A felmérés ingyenes, kötelezettség nélküli, és Kistarcsai műhelyünkből 30 perc alatt érünk Önhöz Budapesten és Pest megyében. A felmérő mintamintát hoz, a méreteket pontosan rögzíti, és **48 órán belül fix árajánlatot kap**.
+A pontos ár mindig **helyszíni felmérés után** alakul ki. A felmérés ingyenes, kötelezettség nélküli, és Kistarcsai műhelyünkből 30 perc alatt érünk Önhöz Budapesten és Pest megyében. A felmérő anyagmintákat hoz, a méreteket pontosan rögzíti, és **48 órán belül fix árajánlatot kap**.
 
 Ha szeretné előre kalkulálni a végösszeget, a [teljes árlistát](/arak) az árak oldalon nézheti meg, a részletfizetési lehetőségekről pedig a [részletfizetés oldal](/reszletfizetes) ad pontos információt. Az [ajtótervező](/ajtotervezo) segítségével pedig vizuálisan is összeállíthatja a saját ajtaját — szín, minta, zár — és a tervezés végén a becsült ár is megjelenik.
 

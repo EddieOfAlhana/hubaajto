@@ -169,7 +169,7 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
           <header>
             <p class="cfg-step-eyebrow">3 / 9 — Külső mintázat</p>
             <h2 class="cfg-step-h" id="cfg-h-ext-pattern">Külső mintázat kiválasztása</h2>
-            <p class="cfg-step-hint">35 fa kombináció vagy 15 mart minta — a 2. lépésben tett választás alapján.</p>
+            <p class="cfg-step-hint">35 fa kombináció vagy 15 mart minta — a 2. lépésben tett választás szerint.</p>
           </header>
           <div data-pattern-group="fa" class="cfg-grid cfg-grid-patterns is-hidden">
             {WOOD_PATTERNS.map((opt) => (
@@ -429,7 +429,7 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
           <header>
             <p class="cfg-step-eyebrow">8 / 9 — Zár</p>
             <h2 class="cfg-step-h" id="cfg-h-lock">Válasszon zárrendszert</h2>
-            <p class="cfg-step-hint">Öt prémium márka, mindegyik MABISZ-besorolással. A magasabb osztály több perc ellenállási időt jelent.</p>
+            <p class="cfg-step-hint">Öt prémium márka, mindegyik MABISZ-besorolással. A magasabb osztály hosszabb betörési ellenállási időt jelent.</p>
           </header>
           <div class="cfg-grid cfg-grid-cards">
             {LOCKS.map((lock) => (
@@ -472,7 +472,7 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
           <header>
             <p class="cfg-step-eyebrow">9 / 9 — Összegzés</p>
             <h2 class="cfg-step-h" id="cfg-h-summary">Foglalja le ingyenes helyszíni felmérését</h2>
-            <p class="cfg-step-hint">Kistarcsáról {SLA.surveyDays} alatt érünk Önhöz. Mintamintával, kötelezettség nélkül. A pontos ár a helyszíni felmérés után válik véglegessé.</p>
+            <p class="cfg-step-hint">Kistarcsáról {SLA.surveyDays} alatt érkezünk Önhöz, anyagmintákkal, kötelezettség nélkül. A pontos ár a helyszíni felmérés után válik véglegessé.</p>
           </header>
 
           <form class="cfg-lead-form" data-lead-form novalidate>
@@ -558,7 +558,7 @@ const optionSwatch = (opt: ConfigOption) => paint(opt.swatch);
             <div><dt>Belső szín</dt><dd data-summary-item="int-colour">—</dd></div>
             <div><dt>Zár</dt><dd data-summary-item="lock">—</dd></div>
           </dl>
-          <p class="cfg-summary-note">Az ár tájékoztató — a végleges összeg helyszíni felmérés után válik fixxé.</p>
+          <p class="cfg-summary-note">Az ár tájékoztató jellegű — a végleges összeg a helyszíni felmérés után válik fixé.</p>
         </details>
       </aside>
 

@@ -34,7 +34,7 @@ const contactSchema = {
         <p class="contact-hero-lead">
           Három mobil, egy vezetékes, egy e-mail cím, egy műhely. A felmérőnk
           ${SLA.surveyDays} alatt érkezik Önhöz Budapesten és Pest megyében — kötelezettség
-          nélkül, mintamintával.
+          nélkül, anyagmintákkal.
         </p>
       </div>
     </div>
@@ -61,7 +61,8 @@ const contactSchema = {
           </li>
         </ul>
         <p class="contact-card-sub">
-          Bármelyiket hívhatja — egymással kommunikáló kollégák. {CONTACT.hours.weekday}.
+          Bármelyiket hívhatja — kollégáink egymás közt összehangolják az időpontokat.
+          {CONTACT.hours.weekday}.
         </p>
       </article>
 
@@ -110,7 +111,7 @@ const contactSchema = {
         <p class="info-block-tag">01</p>
         <h3>Helyszíni felmérésre van szüksége</h3>
         <p>
-          Ingyenes, kötelezettség nélkül. A felmérőnk mintamintával érkezik, megméri a
+          Ingyenes, kötelezettség nélkül. A felmérőnk anyagmintákkal érkezik, megméri a
           nyílást, lefotózza az eredeti ajtót, és helyben megbeszéljük a kivitelt. A
           felmérés átlagosan 30–45 perc.
         </p>
@@ -189,8 +190,8 @@ const contactSchema = {
   <Section
     tone="cream"
     eyebrow="Írjon nekünk"
-    heading="Vagy küldje el az ajánlatkérést."
-    lead="Egy formanyomtatványon az alapadatok — nevet, telefont, irányítószámot és pár sornyi üzenetet kérünk. Munkanapon belül visszahívjuk."
+    heading="Vagy küldje el az ajánlatkérését."
+    lead="Az űrlapon csak az alapadatokra van szükség — név, telefon, irányítószám, pár sornyi üzenet. Munkanapon belül visszahívjuk."
   >
     <div class="form-wrap reveal">
       <LeadForm variant="full" />
@@ -199,8 +200,8 @@ const contactSchema = {
 
   <ContactCTA
     variant="paper"
-    heading="Vagy egyetlen kattintással — felmérést foglal."
-    lead={`Ha még nem szeretne formanyomtatványt kitölteni: a felmérés foglalása oldalon egy oldalas elérhetőségi űrlap. ${SLA.surveyDays} alatt jövünk Önhöz.`}
+    heading="Vagy foglaljon felmérést egy kattintással."
+    lead={`Ha nem akar most űrlapot kitölteni: a felmérés foglalása oldalon csak az elérhetőségét kérjük. ${SLA.surveyDays} alatt jövünk Önhöz.`}
   />
 </BaseLayout>
 

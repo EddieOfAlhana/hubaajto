@@ -13,7 +13,7 @@ const warrantyRows = [
   { item: "Biztonsági ajtó teljes körű (felület, kilincs, pánt, kiegészítők)", duration: "1 év", scope: "Teljes körű minden meghibásodásra a beépítés napjától számítva." },
   { item: "Zárszerkezet (cilinder, zártest, csapdaszerkezet)", duration: "18 hónap", scope: "Mottura, Abus, Mul-T-Lock, Iseo, Cisa gyártói garanciára építve." },
   { item: "Tömítés (befűzött gumi)", duration: "5 év", scope: "Anyagminőségi hiba és időelőtti tönkremenetel ellen." },
-  { item: "Festett / lakkozott felület", duration: "3 év", scope: "Anyagminőségi hiba és tartós elszíneződés ellen — nem hely-specifikus külső behatás esetén." },
+  { item: "Festett / lakkozott felület", duration: "3 év", scope: "Anyagminőségi hiba és tartós elszíneződés ellen — kivéve a helyszíni adottságokból eredő külső behatás esetén." },
   { item: "ACTUAL Fenster ablak (kombinált csomagban)", duration: "10 év", scope: "ACTUAL gyártói garancia, Huba szervizháttérrel." },
 ];
 
@@ -21,22 +21,22 @@ const faqItems = [
   { q: "Mi a 15 éves szerkezeti garancia pontos tartalma?",
     a: `<p>A 15 év a <strong>tokrendszer és a nyílórész szerkezetére</strong> vonatkozik — tehát az acél zártszelvény tok épségére, a nyílórész belső szerkezetére, a hegesztések és illesztések épségére. Ha bármilyen szerkezeti elváltozás (görbülés, repedés, hegesztési hiba) keletkezik nem külső behatásból, ingyenesen kicseréljük vagy javítjuk.</p>` },
   { q: "Mit nem fed a 15 év?",
-    a: `<p>Külső behatásból (betörési kísérlet, ütközés, áradás, tűz) keletkezett kár; rendeltetésszerűtől eltérő használat (pl. ipari környezet, sózott légkör); felhasználói módosítások (saját cilindercsere, kilincscsere). Ezekre a károkra a lakásbiztosító, vagy a kötelező felelősségbiztosítás vonatkozik — ezekben is segítünk eljárni.</p>` },
+    a: `<p>Külső behatásból (betörési kísérlet, ütközés, áradás, tűz) keletkezett kár; rendeltetésellenes használat (pl. ipari környezet, sós légkör); felhasználói módosítások (saját cilindercsere, kilincscsere). Ezekre a károkra a lakásbiztosító vagy a kötelező felelősségbiztosítás vonatkozik — ezekben is segítünk eljárni.</p>` },
   { q: "Mit kell tennem egy garanciális hiba esetén?",
-    a: `<p>Hívja a +36 30 740 4458 számot vagy küldjön e-mailt az ${CONTACT.email} címre. <strong>Munkanapon belül visszahívjuk</strong>. A felmérés ingyenes; ha a kár garanciális, a javítás vagy csere is ingyenes, kiszállással együtt. Nem garanciális hiba esetén előtte írásban árajánlatot adunk.</p>` },
+    a: `<p>Hívja a +36 30 740 4458 számot vagy küldjön e-mailt az ${CONTACT.email} címre. <strong>Munkanapon belül visszahívjuk</strong>. A felmérés ingyenes; ha a kár garanciális, a javítás vagy csere is ingyenes, kiszállással együtt. Nem garanciális hiba esetén előzetesen írásban árajánlatot adunk.</p>` },
   { q: "A garancia átruházható az új tulajdonosra?",
     a: `<p>Igen — a garancia az ajtóra szól, nem a megrendelőre. Lakáseladás esetén kérje, hogy a számla és a beépítési jegyzőkönyv másolatát adja át az új tulajdonosnak. Az új tulajdonos a maradék garanciaidőre ugyanúgy igényt tarthat.</p>` },
   { q: "A zárszerkezet 18 hónap garanciája miért rövidebb?",
     a: `<p>A zárszerkezet a működő, kopó alkatrész — minden gyártó (Mottura, Mul-T-Lock, Abus, Iseo, Cisa) saját gyártói garanciát ad, ami jellemzően 12 hónap. A Huba ezt 18 hónapra emeli, és a 18 hónapon túli kopási hibákra is kedvezményesen biztosít szervizet — a saját raktárkészletünkből, nem importon keresztül.</p>` },
   { q: "Hogyan viszonyul ez a fogyasztóvédelmi jogszabályokhoz?",
-    a: `<p>A Huba 15 év szerkezeti garanciája <strong>jelentősen hosszabb</strong>, mint a Ptk. és a 151/2003. (IX. 22.) Korm. rendelet által előírt kötelező jótállási idő. A vásárlót megillető fogyasztóvédelmi jogokat (visszaküldés, csere, fogyasztói panasz) ez a vállalás nem érinti — kiegészíti. Vita esetén Ön a Pest Vármegyei <a href="/bekelteto">Békéltető Testülethez</a> fordulhat.</p>` },
+    a: `<p>A Huba 15 év szerkezeti garanciája <strong>jelentősen hosszabb</strong>, mint a Ptk. és a 151/2003. (IX. 22.) Korm. rendelet által előírt kötelező jótállási idő. A vásárlót megillető fogyasztóvédelmi jogokat (visszaküldés, csere, fogyasztói panasz) ez a vállalás nem érinti, csak kiegészíti. Vita esetén Ön a Pest Vármegyei <a href="/bekelteto">Békéltető Testülethez</a> fordulhat.</p>` },
   { q: "Évente kell-e karbantartani az ajtót?",
     a: `<p>Ajánlott — <strong>évente egyszer</strong> érdemes a zárszerkezetet grafit-kenőanyaggal és a tömítést szilikon-zsírral ápolni. Mi az első karbantartást a beépítés után 12 hónappal díjmentesen elvégezzük, és Önnek karbantartási útmutatót adunk. Az évenkénti karbantartás nem feltétele a 15 év szerkezeti garanciának, de a zárszerkezet 18 hónap garanciájának igen.</p>` },
 ];
 ---
 <BaseLayout
   title={`${SITE.warrantyYears} év szerkezeti garancia — a piac leghosszabb vállalása`}
-  description={`A Huba ajtó ${SITE.warrantyYears} év szerkezeti garanciát, 1 év teljes körű ajtó- és 18 hónap zárgaranciát ad — minden Hungarian versenytárs maximum 10 évet vállal. Saját gyártás, saját szervizháttér.`}
+  description={`A Huba ajtó ${SITE.warrantyYears} év szerkezeti garanciát, 1 év teljes körű ajtó- és 18 hónap zárgaranciát ad — minden hazai versenytárs maximum 10 évet vállal. Saját gyártás, saját szervizháttér.`}
 >
   <Hero
     eyebrow={`${SITE.warrantyYears} év szerkezeti garancia · Saját gyártás`}
@@ -167,7 +167,7 @@ const faqItems = [
         <p class="legal-eyebrow">Kötelező jótállás</p>
         <h3 class="legal-title">151/2003. (IX. 22.) Korm. rendelet</h3>
         <p class="legal-body">
-          A kormányrendelet az új ingó fogyasztói termékek kötelező jótállását szabályozza. A biztonsági ajtóra mint új építőipari termékre <strong>2 év kötelező jótállást</strong> ír elő, ami a Huba 15 éves szerkezeti és 1 éves teljes körű garanciájával jelentősen meg van haladva.
+          A kormányrendelet az új ingó fogyasztói termékek kötelező jótállását szabályozza. A biztonsági ajtóra mint új építőipari termékre <strong>2 év kötelező jótállást</strong> ír elő, amelyet a Huba 15 éves szerkezeti és 1 éves teljes körű garanciája jelentősen meghalad.
         </p>
       </div>
       <div class="legal-block reveal">

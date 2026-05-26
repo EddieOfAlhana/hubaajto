@@ -20,7 +20,7 @@ const towns = [
   { name: "Gödöllő", distance: "16 km", time: "25 perc", group: "east" },
   { name: "Dunakeszi", distance: "18 km", time: "28 perc", group: "east" },
   { name: "Veresegyház", distance: "20 km", time: "30 perc", group: "east" },
-  // NW Buda agglo
+  // budai agglo
   { name: "Pilisborosjenő", distance: "28 km", time: "55 perc", group: "buda" },
   { name: "Páty", distance: "28 km", time: "55 perc", group: "buda" },
   { name: "Solymár", distance: "30 km", time: "55 perc", group: "buda" },
@@ -30,7 +30,7 @@ const towns = [
   { name: "Üröm", distance: "26 km", time: "50 perc", group: "buda" },
   { name: "Pomáz", distance: "30 km", time: "55 perc", group: "buda" },
   { name: "Budakalász", distance: "27 km", time: "50 perc", group: "buda" },
-  // Budapest districts (heritage + modern)
+  // Budapest districts (műemléki + modern)
   { name: "Budapest I. (Várnegyed)", distance: "23 km", time: "45 perc", group: "bp" },
   { name: "Budapest II. (Rózsadomb)", distance: "21 km", time: "40 perc", group: "bp" },
   { name: "Budapest V. (Belváros)", distance: "18 km", time: "35 perc", group: "bp" },
@@ -50,8 +50,8 @@ const towns = [
 
 const groups = {
   east: { label: "Pest-agglomeráció · keleti ív", note: "Tier 1 — Kistarcsa hazai pálya" },
-  buda: { label: "NW Buda agglomeráció", note: "Tier 2 — prémium családi ház" },
-  bp: { label: "Budapest", note: "Heritage + modern kerületek" },
+  buda: { label: "Budai agglomeráció", note: "Tier 2 — prémium családi ház" },
+  bp: { label: "Budapest", note: "Műemléki + modern kerületek" },
 };
 
 // Google Maps embed URL — centered on Kistarcsa workshop, zoom ~10 covers the whole agglo.
@@ -60,17 +60,17 @@ const mapEmbedSrc = `https://www.google.com/maps?q=${CONTACT.address.latitude},$
 
 <BaseLayout
   title="Szolgáltatási terület — Budapest és Pest megye"
-  description="Hol dolgozunk: Budapest 23 kerülete, a teljes Pest-agglomeráció keleti íve (Mogyoród, Csömör, Gödöllő, Veresegyház) és NW Buda íve (Telki, Páty, Budakeszi). Kistarcsai műhelyünkből 30 perc alatt felmérésre érünk."
+  description="Hol dolgozunk: Budapest 23 kerülete, a teljes Pest-agglomeráció keleti íve (Mogyoród, Csömör, Gödöllő, Veresegyház) és budai íve (Telki, Páty, Budakeszi). Kistarcsai műhelyünkből 30 perc alatt felmérésre érünk."
 >
   <Hero
     eyebrow="Szolgáltatási terület"
     heading="Hol dolgozunk — <em>Budapest</em> és <em>Pest megye</em>."
-    lead="A Kistarcsai műhelyünk térképileg a Pest agglomeráció keleti ívének középpontjában áll. Innen 30 perc alatt érünk Budapest belvárosába, és napon belül a teljes keleti agglomerációs sávra. NW Budára (Telki, Páty, Budakeszi) is rendszeresen kiszállunk."
+    lead="A kistarcsai műhelyünk a Pest-agglomeráció keleti ívének földrajzi középpontjában áll. Innen 30 perc alatt érünk Budapest belvárosába, és napon belül a teljes keleti agglomerációs sávra. Az északnyugat-budai agglomerációba (Telki, Páty, Budakeszi) is rendszeresen kiszállunk."
     pillars={[
       "Kistarcsa, 2143",
       "30 perc Budapestre",
       "35+ település",
-      "Heritage + modern",
+      "Műemléki + modern",
       "Ingyenes felmérés",
     ]}
     image="/assets/photos/hero/workshop.jpg"
@@ -85,7 +85,7 @@ const mapEmbedSrc = `https://www.google.com/maps?q=${CONTACT.address.latitude},$
     tone="paper"
     eyebrow="Műhelyünk térképen"
     heading="Kistarcsa — az agglomeráció középpontja."
-    lead="A 2143 Kistarcsa, Nagytarcsai út 6. szám alatti üzemünk Pest megye keleti ívének földrajzi közepén áll — innen érjük el a legrövidebb idő alatt a környékbeli családi házakat és Budapest belvárosát is."
+    lead="A 2143 Kistarcsa, Nagytarcsai út 6. szám alatti üzemünk Pest megye keleti ívének földrajzi közepén áll — innen érjük el a legrövidebb idő alatt a környékbeli családi házakat és Budapest belvárosát."
   >
     <figure class="map-frame reveal">
       <iframe
@@ -148,10 +148,10 @@ const mapEmbedSrc = `https://www.google.com/maps?q=${CONTACT.address.latitude},$
 
   <Section tone="cream" eyebrow="A hozzánk nem tartozó távolságok" heading="Ami a térképen kívül van.">
     <p class="exclusion-text reveal">
-      Nem dolgozunk országos szinten. A Huba ajtó — pont a saját gyártású, helyi mesterműhely karakter
+      Nem dolgozunk országos szinten. A Huba ajtó — éppen a saját gyártású, helyi mesterműhely karakter
       megőrzése érdekében — Budapest és Pest megye területére koncentrál. A Pest-Buda agglomeráció határán
       túli megrendeléseket egyedi elbírálással vesszük fel, ahol a szállítás és a beépítés gazdaságilag is
-      indokolt. Ha bizonytalan a város kerületében, hívjon — a felmérőnk öt percen belül visszahívja.
+      indokolt. Ha bizonytalan a város vagy a kerület kapcsán, hívjon — a felmérőnk öt percen belül visszahívja.
     </p>
   </Section>
 

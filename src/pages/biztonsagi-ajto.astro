@@ -78,7 +78,7 @@ const faqItems = [
   { q: "Mit jelent a MABISZ 2. vs. MABISZ 3. osztály?",
     a: `<p>A MABISZ-osztály a szakszerű betörési kísérletnek való ellenállás idejét jelöli: MABISZ 2. = 3 perc, MABISZ 3. = 5 perc, MABISZ 4. = 10 perc. A magyar biztosítók többsége elfogadja a MABISZ-besorolást a lakásbiztosítási alapfeltételhez. <a href="/minosegunk">Minősítésekről részletesen →</a></p>` },
   { q: "ACTUAL Fenster ablakcsomag mellé hogyan rendelhető az ajtó?",
-    a: `<p>A Szer-X3 Kft. 2005 óta forgalmazza az osztrák <strong>ACTUAL Fenster</strong> ablakokat. Egy helyszíni felmérés, egy szerződés, egy projektvezető — az ajtó és az ablakok ugyanazon a héten kerülnek beépítésre. Tipikusan a Premium családi ház kivitellel kombináljuk.</p>` },
+    a: `<p>A Szer-X3 Kft. 2005 óta forgalmazza az osztrák <strong>ACTUAL Fenster</strong> ablakokat. Egy helyszíni felmérés, egy szerződés, egy projektvezető — az ajtót és az ablakokat ugyanazon a héten építjük be. Tipikusan a Premium családi ház kivitellel kombináljuk.</p>` },
   { q: "Társasházi közgyűlési határozat kell?",
     a: `<p>Általában igen — a lépcsőházra néző bejárati ajtó cseréje a közös tulajdon megjelenését érinti. A felmérés után készítünk Önnek egy egyoldalas műszaki tájékoztatót, amit a közös képviselőnek lehet benyújtani. <a href="/biztonsagi-ajto/tarsashazi">Társasházi szabályok →</a></p>` },
   { q: "Mennyi időbe telik a felméréstől a beépítésig?",
@@ -90,7 +90,7 @@ const faqItems = [
   description={`Saját gyártású modern biztonsági ajtó panel-lakásra, társasházra, családi házra. MABISZ 2.–3. osztály, RC2–RC3 ellenállás, ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól. ${SITE.warrantyYears} év szerkezeti garancia.`}
 >
   <Hero
-    eyebrow="Modern range · Saját gyártás Kistarcsán"
+    eyebrow="Modern modellek · Saját gyártás Kistarcsán"
     heading={`Modern biztonsági ajtó.<br/><em>Panel-lakástól</em> a családi házig.`}
     lead={`Négy modern kivitel, egyetlen MABISZ-minősített acél biztonsági magon. Belépőszintünk ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól indul, a prémium családi házas kivitel pedig az új építésű otthonok színvonalát hozza. Mindegyikre ${SITE.warrantyYears} év szerkezeti garanciát vállalunk.`}
     pillars={[
@@ -120,7 +120,7 @@ const faqItems = [
       {products.map(p => <ProductCard {...p} />)}
     </div>
     <p class="product-note">
-      A modern range minden eleméhez tartozik 35+ fa minta, 15 mart minta, RAL színskála, és bármely zármárka a Mottura · Abus · Mul-T-Lock · Iseo · Cisa lineupból.
+      A modern modellek mindegyikéhez 35+ fa minta, 15 mart minta, teljes RAL színskála és bármelyik zármárkánk választható — Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa.
     </p>
   </Section>
 
@@ -158,16 +158,16 @@ const faqItems = [
     tone="paper"
     eyebrow="Hogyan dolgozunk"
     heading="Két hét — felméréstől beépítésig."
-    lead="A modern range a megkereséstől a beépített ajtóig 12 napon belül zárul. Nem 3 hónap, nem 'majd ősszel'."
+    lead="Modern modelljeinknél a megkereséstől a beépített ajtóig 12 nap a teljes átfutás. Nem 3 hónap, nem „majd ősszel”."
   >
     <ProcessSteps />
   </Section>
 
   <Section
     tone="cream"
-    eyebrow="Miben több ennyivel"
-    heading="Spec-szintű összevetés a katalógusajtóval."
-    lead="A 145–170 000 Ft-os katalógusajtó és a 330 000 Ft-os Huba Standard közötti különbség nem az árban van — hanem ebben."
+    eyebrow="Mit kap a felárért"
+    heading="Tételes összevetés a katalógusajtóval."
+    lead="A 145–170 000 Ft-os katalógusajtó és a 330 000 Ft-os Huba Standard közötti különbség nem az árban — hanem ezekben a tételekben — látszik."
   >
     <SpecCompareTable />
   </Section>
@@ -186,14 +186,14 @@ const faqItems = [
   <Section
     tone="cream"
     eyebrow="GYIK"
-    heading="A modern range előtt jellemzően ezeket kérdezik."
+    heading="A modern modellek előtt jellemzően ezeket kérdezik."
   >
     <FAQ items={faqItems} />
   </Section>
 
   <ContactCTA
-    heading="Ingyenes helyszíni felmérés a modern range bármelyikére"
-    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz, mintamintával. A felmérés ingyenes és semmilyen vásárlási kötelezettséggel nem jár.`}
+    heading="Ingyenes helyszíni felmérés a modern modellek bármelyikére"
+    lead={`Kistarcsáról ${SLA.surveyDays} alatt érünk Önhöz, anyagmintákkal. A felmérés ingyenes és semmilyen vásárlási kötelezettséggel nem jár.`}
   />
 </BaseLayout>
 

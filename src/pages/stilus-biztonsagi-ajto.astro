@@ -119,8 +119,8 @@ const faqItems = [
 >
   <Hero
     eyebrow="Stílus / klasszikus termékcsalád"
-    heading="Századfordulóstól<br/>a modernig — <em>itt a klasszikus oldal.</em>"
-    lead="Polgári lakás, eklektikus bérház, helyi védett homlokzat. A modern katalógusajtó stílusban nem fér el itt — a Huba stílus biztonsági ajtaja igen. Kazettás, betétes, festett kivitel, acélbetétes biztonsági szerkezeten."
+    heading="Századfordulós lakásokba —<br/><em>korhű biztonsági ajtó.</em>"
+    lead="Polgári lakás, eklektikus bérház, helyi védett homlokzat. A modern katalógusajtó stílusban nem illik ide — a Huba stílus biztonsági ajtaja viszont igen. Kazettás, betétes vagy festett kivitelben, acélbetétes biztonsági szerkezeten."
     pillars={[
       "Kazettás · betétes · festett",
       "Saját gyártás Kistarcsán",
@@ -142,7 +142,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Miért külön termékcsalád?"
     heading="A polgári lakásnak nem mindegy, hogy néz ki kívülről."
-    lead="Egy 1900–1940 közötti budapesti bérházban a lakásajtó nem műszaki tárgy — az utcakép, a lépcsőház és a közös képviselő szempontjából egyaránt értékelt elem. A katalógus modern ajtó három okból is bukik itt: stílusilag, közösségileg, sokszor jogilag."
+    lead="Egy 1900–1940 között épült budapesti bérházban a lakásajtó nem műszaki tárgy — az utcakép, a lépcsőház és a közös képviselő szemszögéből is megítélik. Egy modern katalógusajtó itt három okból sem állja meg a helyét: stílusban, a társasházi közösségben, és gyakran jogilag is."
   >
     <div class="reasons stagger">
       <article class="reason">
@@ -160,8 +160,8 @@ const faqItems = [
         <h3>Közösség</h3>
         <p>
           A társasházi közös képviselő és a többi lakó hozzájárulását sokkal könnyebb megkapni,
-          ha az új ajtó nem bontja meg a lépcsőházi egységképet. Mintamintával érkező felmérő
-          + korhű kivitel = a közgyűlésen vita helyett ténymegállapítás.
+          ha az új ajtó nem bontja meg a lépcsőházi egységképet. Anyagmintákkal érkező felmérő
+          és korhű kivitel — a közgyűlésen vita helyett ténymegállapítás.
         </p>
       </article>
       <article class="reason">
@@ -179,15 +179,15 @@ const faqItems = [
   <Section
     tone="cream"
     eyebrow="Termékek"
-    heading="Három kivitel — a fokozatos korhűségi szint szerint."
-    lead="A klasszikustól a műemlékiig. Mindhárom ugyanazon a MABISZ-minősített acél szerkezeti magon — a különbség a külső kivitel, a vasalat és az engedélyezési háttér mélysége."
+    heading="Három kivitel — a korhűség mélysége szerint."
+    lead="A klasszikustól a műemlékiig. Mindhárom ugyanarra a MABISZ-minősített acél szerkezetre épül — a különbség a látható borításban, a vasalat finomságában és az engedélyezés mélységében van."
   >
     <div class="product-grid stagger">
       {periodProducts.map((p) => <ProductCard family="stilus" {...p} />)}
     </div>
     <p class="product-note">
-      Minden Huba ajtó ugyanazon az acél biztonsági szerkezeten alapul. A különbség a látszó
-      borításban, a vasalat finomságában és az engedélyezési mélységben van.
+      Minden Huba ajtó ugyanazt az acél biztonsági szerkezetet kapja. Csak a látható borítás,
+      a vasalat finomsága és az engedélyezés mélysége különbözik.
     </p>
   </Section>
 
@@ -195,7 +195,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Kivitelek"
     heading="Kazettás, betétes, festett, korhű rekonstrukció."
-    lead="Négy alap kivitel — a leggyakoribb fővárosi polgári lakás-tipológiákhoz illeszkedve. Mindegyik egyedi méretre szabva, mintamintával."
+    lead="Négy alapkivitel — a leggyakoribb budapesti polgári lakástípusokhoz igazítva. Mindegyik egyedi méretre szabva, anyagmintákkal."
   >
     <div class="variants stagger">
       <article class="variant">
@@ -260,20 +260,20 @@ const faqItems = [
 
   <Section
     tone="ink"
-    eyebrow="Műhely + zárak"
-    heading="Saját gyártás. Európai prémium zárakkal."
-    lead="A korhű borítás alatt nem alkalmazunk olcsó márkanév nélküli cilindert. A Huba stílus biztonsági ajtó alapból Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárral készül — Ön választ a felmérés után."
+    eyebrow="Műhely és zárak"
+    heading="Saját gyártás. Prémium európai zárakkal."
+    lead="A korhű borítás alá nem teszünk olcsó, márkajelzés nélküli cilindereket. A Huba stílus biztonsági ajtó alapból Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárral készül — a felmérés után Ön választhat közülük."
   >
     <div class="workshop-stats stagger">
       <Stat
         value={`${new Date().getFullYear() - SITE.founded}+`}
-        label="év stílus biztonsági ajtó tapasztalat"
+        label="év, mióta stílusajtót gyártunk"
         sub={`${SITE.founded} óta`}
       />
       <Stat
         value="200+"
-        label="korhű kivitelű ajtó referencia"
-        sub="Budapest belvárosi kerületekben"
+        label="korhű referenciaajtó"
+        sub="Budapest belvárosi kerületeiben"
       />
       <Stat
         value="5"

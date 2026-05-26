@@ -27,12 +27,12 @@ const priceFamilies = [
   {
     family: "Modern Premium / RC3",
     badge: "MABISZ 3. · RC3",
-    summary: "Új építésű és felújított családi házakra, agglomerációba (Mogyoród, Csömör, Telki, Budakeszi).",
+    summary: "Új építésű és felújított családi házakhoz, agglomerációba (Mogyoród, Csömör, Telki, Budakeszi).",
     rows: [
       { item: "Modern Premium belépő ár", price: "480 000 Ft-tól" },
       { item: "Premium teljes konfiguráció (jellemző sáv)", price: "720 000 – 1 200 000 Ft" },
       { item: "Premium maximális kivitel (RC4-szintű)", price: "1 200 000 – 1 800 000 Ft" },
-      { item: "ACTUAL Fenster ablakcsomag mellé · 8–12% kombinált kedvezmény", price: "Csomagtól függő" },
+      { item: "ACTUAL Fenster ablakcsomag mellé · 8–12% kombinált kedvezmény", price: "Csomagtól függ" },
     ],
     note: "A Premium szint méretre szabva készül — nincs „panel-szabvány”. Az ár a méret, a borítás és a zárrendszer függvénye.",
     cta: { label: "Premium részletei", href: "/biztonsagi-ajto/premium" },
@@ -71,7 +71,7 @@ const priceFamilies = [
     rows: [
       { item: "Stílus / Klasszikus belépő ár", price: "Egyedi árajánlat" },
       { item: "Tipikus sáv polgári lakásra", price: "800 000 – 1 500 000 Ft" },
-      { item: "Egyedi profilozás, mintázat", price: "Felmérés-függő" },
+      { item: "Egyedi profilozás, mintázat", price: "Felméréstől függ" },
     ],
     note: "A klasszikus kivitelt műemléki környezetben nem álló budapesti polgári lakásokba ajánljuk — ahol az esztétikai eredetiség nem hatósági kötelezettség, hanem a tulajdonos választása.",
     cta: { label: "Stílus ajtók részletei", href: "/stilus-biztonsagi-ajto" },
@@ -112,10 +112,10 @@ const faqItems = [
     a: `<p>Igen — <strong>minden ár bruttó, 27% ÁFA-t tartalmaz</strong>. Cégnek nettó + 27% ÁFA bontásban számlázunk; magánszemélynek a bruttó összeg a fizetendő.</p>` },
   { q: "Mi van benne, és mi a felár?",
     a: `<p>A belépő árban benne van: az ajtó (tok + nyílórész), a választott borítás (alapminta), a választott RAL szín (alapfelár nélkül), az alap zárrendszer, a kilincsgarnitúra, az 5 alapkulcs, a beépítés, a régi ajtó bontása, és a törmelékelszállítás. Felár: különleges méret, üvegezés, dupla acéllemez, prémium cilinder, kódkártyás rendszer, egyedi minta.</p>` },
-  { q: "Cofidis áruhitel hogyan érinti az árat?",
-    a: `<p>Sehogy — a 0% THM Cofidis áruhitel mellett <strong>ugyanannyit fizet</strong>, mint készpénzben. A kamatkockázatot a Cofidis viseli, a Huba a kampánykeretért nem számít fel külön díjat. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
-  { q: "Kombinált csomag — több ajtó vagy ajtó + ablak — kedvezmény?",
-    a: `<p>Igen — <strong>5–12% kombinált kedvezményt</strong> tudunk adni, ha egy projektben több ajtó van (pl. családi ház 3 ajtaja), vagy ha az ACTUAL Fenster ablakcsomaggal kombinálva rendeli. A kedvezmény a megrendelés komplexitásától függ; a felmérőnk konkrét számokat ad.</p>` },
+  { q: "A Cofidis áruhitel hogyan érinti az árat?",
+    a: `<p>Sehogy — a 0% THM Cofidis áruhitel mellett <strong>ugyanannyit fizet</strong>, mint készpénzben. A kamatkockázatot a Cofidis viseli, a Huba a kampánykeretért nem számít fel külön díjat. <a href="/reszletfizetes">Részletfizetés részletei →</a></p>` },
+  { q: "Kombinált csomag — több ajtó vagy ajtó + ablak — jár kedvezmény?",
+    a: `<p>Igen — <strong>5–12% kombinált kedvezményt</strong> tudunk adni, ha egy projektben több ajtó szerepel (pl. egy családi ház 3 ajtaja), vagy ha az ACTUAL Fenster ablakcsomaggal együtt rendeli. A kedvezmény mértéke a megrendelés összetettségétől függ; a felmérőnk konkrét számokat ad.</p>` },
 ];
 ---
 <BaseLayout
@@ -124,8 +124,8 @@ const faqItems = [
 >
   <Hero
     eyebrow="Transzparens árlista · 27% ÁFA-t tartalmaz"
-    heading={`<em>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</em> 2 500 000 Ft-ig —<br/>minden kategória, fix kategorizálással.`}
-    lead="A Huba ajtó-piacon az árak jelentős részét a versenytársak elrejtik. Mi azt választottuk, hogy a kategóriák szerinti sávokat nyíltan közöljük — a fix árajánlat a felmérés után, 48 órán belül érkezik."
+    heading={`<em>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</em> 2 500 000 Ft-ig —<br/>minden kategória nyílt ársávval.`}
+    lead="A biztonsági ajtó piacán az árak jelentős részét a versenytársak elrejtik. Mi azt választottuk, hogy a kategóriánkénti árszintet nyíltan közöljük — a fix árajánlat a felmérés után 48 órán belül érkezik."
     pillars={[
       `Modern Standard: ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`,
       "Premium: 800k – 1,8M Ft",
@@ -176,7 +176,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Beépítés és kiegészítő költségek"
     heading="Mi van benne, mi az extra?"
-    lead="A beépítés a magyar piacon gyakran 'plusz tétel' — a Huba a teljes folyamatot egy árajánlatban közli. A bontás és a törmelékelszállítás minden esetben benne van."
+    lead={`A beépítés a magyar piacon gyakran „plusz tétel” — a Huba a teljes folyamatot egy árajánlatban közli. A bontás és a törmelékelszállítás minden esetben benne van.`}
   >
     <table class="price-table">
       <thead>
@@ -225,7 +225,7 @@ const faqItems = [
 
   <ContactCTA
     heading="Fix árajánlat a felmérés után 48 órán belül"
-    lead="A helyszíni felmérés ingyenes és nem kötelezi vásárlásra. A felmérőnk a helyszínen méri be az ingatlant, mintamintát hoz, és a felmérés után 48 órán belül írásban, 30 napra rögzített fix árajánlatot ad."
+    lead="A helyszíni felmérés ingyenes és nem kötelezi vásárlásra. A felmérőnk a helyszínen méri be az ingatlant, anyagmintákat hoz, és a felmérés után 48 órán belül írásban, 30 napra rögzített fix árajánlatot ad."
   />
 </BaseLayout>
 

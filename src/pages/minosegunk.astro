@@ -25,17 +25,17 @@ const lockBrands = [
   {
     name: "Abus",
     country: "Németország",
-    body: "A német Abus zárgyártó 1924 óta működik — a Huba Modern Standard alapcilindere. A 'Plus' és 'Bravus' termékvonal anti-bumping védettséggel és kódkártyás kulcsmásolási kontrollal érkezik.",
+    body: "A német Abus zárgyártó 1924 óta működik — a Huba Modern Standard alapcilindere. A „Plus” és „Bravus” termékvonal anti-bumping védettséggel és kódkártyás kulcsmásolási kontrollal érkezik.",
   },
   {
     name: "Mul-T-Lock",
     country: "Izrael",
-    body: "A Mul-T-Lock telecirkulált rendszerű kulccsal és patentált cilinder-architektúrával dolgozik. A magas kockázatú telepítésekhez (RC4+) ajánljuk — az anti-bumping és anti-pick technológia a piac egyik legfejlettebbje.",
+    body: "A Mul-T-Lock telecirkulált rendszerű kulccsal és szabadalmaztatott cilinderfelépítéssel dolgozik. A magas kockázatú telepítésekhez (RC4+) ajánljuk — az anti-bumping és anti-pick technológia a piac egyik legfejlettebbje.",
   },
   {
     name: "Iseo",
     country: "Olaszország",
-    body: "Az Iseo a 'modern smart-lock' és a tradicionális cilinder között foglal helyet — a hagyományos zárakon felül elektronikus kód- és okostelefonos azonosítási opciókat is biztosít. A Premium szint elektronikus integrációs alapja.",
+    body: "Az Iseo a modern okoszár és a hagyományos cilinder között foglal helyet — a hagyományos zárakon felül elektronikus kód- és okostelefonos azonosítási lehetőséget is biztosít. A Premium szint elektronikus integrációs alapja.",
   },
   {
     name: "Cisa",
@@ -52,7 +52,7 @@ const faqItems = [
   { q: "Hol látható a CE-jelölés és a Teljesítménynyilatkozat?",
     a: `<p>Minden Huba ajtó nyílórészének belső oldalán, a felső pánt mellett található a <strong>CE-jelölés</strong> a teljesítményadatokkal. A Teljesítménynyilatkozatot (DoP — Declaration of Performance) a beépítési jegyzőkönyvvel együtt PDF formátumban átadjuk. A DoP a 305/2011/EU rendelet (CPR) szerint minden EU-piacon forgalomba hozott építőipari termék kötelező irata.</p>` },
   { q: "Az ÉMI is bevizsgálja-e?",
-    a: `<p>Az <strong>ÉMI</strong> (Építésügyi Minőségellenőrző Innovációs Nonprofit Kft.) a magyar állam által akkreditált műszaki vizsgáló intézet — a CE-jelöléshez szükséges 'initial type-testing' (ITT) tipikusan ÉMI- vagy ezzel egyenértékű akkreditált laboratórium által történik. A Huba ajtó típusvizsgálatát a vonatkozó kategóriákban elvégeztük; az ITT-jegyzőkönyvet a Teljesítménynyilatkozat háttéranyagaként tartjuk nyilván.</p>` },
+    a: `<p>Az <strong>ÉMI</strong> (Építésügyi Minőségellenőrző Innovációs Nonprofit Kft.) a magyar állam által akkreditált műszaki vizsgáló intézet — a CE-jelöléshez szükséges első típusvizsgálatot (ITT) jellemzően az ÉMI vagy azzal egyenértékű akkreditált laboratórium végzi. A Huba ajtó típusvizsgálatát a vonatkozó kategóriákban elvégeztük; az ITT-jegyzőkönyvet a Teljesítménynyilatkozat háttéranyagaként tartjuk nyilván.</p>` },
   { q: "Cserélhető-e a zárcilinder a kulcs elvesztése esetén?",
     a: `<p>Igen — minden Huba ajtóba olyan rendszer kerül, amely a teljes ajtó megbontása nélkül engedi a cilinder cseréjét. A Mottura, Mul-T-Lock és Iseo cilindereknél <strong>kódkártyás rendszer</strong> működik: pótkulcsot csak az eredeti megrendelő igazolásával lehet készíteni. Elvesztés esetén a teljes cilinderet javasolt cserélni — ez 25 000 – 60 000 Ft.</p>` },
   { q: "Melyik MABISZ-osztály ajánlott a panel-lakásomra?",
@@ -68,7 +68,7 @@ const faqItems = [
   <Hero
     eyebrow={`MABISZ-minősített ${SITE.mabiszSince} óta · CE-jelölt`}
     heading={`Minősítés. Mérés.<br/><em>Mérhető védelem.</em>`}
-    lead={`A „minőségi biztonsági ajtó” jelző önmagában nem jelent semmit. A védelmi szintet a típusvizsgálat, az akkreditált bizonyítvány, és a zárrendszer prémium fokozata adja. A Huba ajtó MABISZ 2009 óta, CE-jelölt a CPR 305/2011 szerint, és RC2–RC6 osztályokban gyártható.`}
+    lead={`A „minőségi biztonsági ajtó” jelző önmagában nem jelent semmit. A védelmi szintet a típusvizsgálat, az akkreditált bizonyítvány és a zárrendszer prémium fokozata adja. A Huba ajtó MABISZ-minősített 2009 óta, CE-jelölt a CPR 305/2011 szerint, és RC2–RC6 osztályokban gyártható.`}
     pillars={[
       `MABISZ ${SITE.mabiszSince}-től`,
       "CE-jelölés (CPR 305/2011)",
@@ -166,7 +166,7 @@ const faqItems = [
     tone="cream"
     eyebrow="Anyagok"
     heading="Mi van a borítás alatt — réteg-szinten."
-    lead="A Huba ajtó nem csak 'acéllemez'. A nyílórész 5–7 funkcionális rétegből épül fel, mindegyiknek mérhető szerepe van."
+    lead={`A Huba ajtó nem csak „acéllemez”. A nyílórész 5–7 funkcionális rétegből épül fel, mindegyiknek mérhető szerepe van.`}
   >
     <ol class="layers stagger">
       <li class="layer">

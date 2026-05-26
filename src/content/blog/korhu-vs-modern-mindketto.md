@@ -19,7 +19,7 @@ A megrendelők három jellegzetes szituációba érkeznek:
 
 1. **Védettség miatt korhű ajtó kötelező, de a tulajdonos MABISZ-minősített biztonsági ajtót szeretne.** A leggyakoribb eset egy belvárosi 1900 körüli lakásban. A homlokzati megjelenés a hatósági követelmény miatt nem alkudható meg, de a biztonság az ügyfél jogos igénye.
 2. **A homlokzat nem védett, de a tulajdonos a stílushoz illő ajtót szeretne.** Egy V., VI. vagy VII. kerületi polgári lakásban, ahol az épület „nyilvántartott műemléki érték" vagy nem védett, a kazettás megjelenés esztétikai választás.
-3. **Modern családi ház, ahol az építész kazettás ajtót tervezett.** Ez az NW Buda és az agglomerációs prémium szegmensben fordul elő, ahol a klasszikus stílusú villa új építésű, de a homlokzati nyelvezet 1900 körüli — Telki, Budakeszi, Páty tipikus eset.
+3. **Modern családi ház, ahol az építész kazettás ajtót tervezett.** Ez az budai és az agglomerációs prémium szegmensben fordul elő, ahol a klasszikus stílusú villa új építésű, de a homlokzati nyelvezet 1900 körüli — Telki, Budakeszi, Páty tipikus eset.
 
 Mindhárom esetben ugyanaz a műszaki konstrukció a megoldás: **rejtett acélbetétes szerkezet, fa kazettás homlokzati borítással**.
 

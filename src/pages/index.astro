@@ -24,9 +24,9 @@ const products = [
     priceFrom: "Egyedi árajánlat",
     classBadge: "Műemléki",
     bullets: [
-      "Kazettás, betétes, festett kivitel",
+      "Kazettás, betétes vagy festett kivitelben",
       "Az eredeti ajtó alapján rekonstruálva",
-      "Műemléki engedélyezést mi intézzük",
+      "A műemléki engedélyt is mi intézzük",
     ],
     image: "/assets/photos/hero/period-yellow.jpg",
     imageAlt: "Korhű biztonsági ajtó polgári lakásban",
@@ -38,9 +38,9 @@ const products = [
     priceFrom: "330 000 Ft-tól",
     classBadge: "MABISZ 2.",
     bullets: [
-      "Hőhídmentes acél zártszelvény tok",
+      "Hőhídmentes acél zártszelvényből készült tok",
       "Üveggyapot bélelés, körbefutó tömítés",
-      "35+ fa minta, 15 mart minta közül",
+      "35 fa minta és 15 mart minta közül választható",
     ],
     image: "/assets/photos/hero/modern-white.jpg",
     imageAlt: "Modern fehér biztonsági ajtó",
@@ -48,13 +48,13 @@ const products = [
   },
   {
     family: "modern" as const,
-    name: "Premium családi ház",
+    name: "Prémium családi ház",
     priceFrom: "800 000 – 1 800 000 Ft",
     classBadge: "RC3 / MABISZ 3.",
     bullets: [
       "Új építésű és felújított házakhoz",
-      "ACTUAL Fenster ablakcsomag mellé",
-      "Architect-grade kivitelben",
+      "ACTUAL Fenster ablakcsomaggal kombinálható",
+      "Építészeti minőségű kivitelben",
     ],
     image: "/assets/photos/hero/modern-anthracite.jpg",
     imageAlt: "Prémium modern bejárati ajtó családi házban",
@@ -85,21 +85,21 @@ const testimonials = [
 
 const faqItems = [
   { q: "Mennyibe kerül egy biztonsági ajtó?",
-    a: `<p>A modern range belépőszintje <strong>330 000 Ft</strong>, a prémium kivitel jellemzően 800 000 – 1 800 000 Ft. A korhű / műemléki kivitel egyedi árajánlat alapján készül. A pontos ár a helyszíni felmérés után válik véglegessé. <a href="/arak">Részletes árlista →</a></p>` },
-  { q: "Mennyi időbe telik a beépítés?",
-    a: `<p>Modern ajtó esetén ${SLA.surveyDays} alatt helyszíni felmérés, ${SLA.manufactureDays} alatt gyártás, ${SLA.installDays} alatt beépítés. Műemléki engedélyezéssel együtt ${SLA.permitTotal}.</p>` },
-  { q: "Műemléki / örökségvédelmi környezetben mit lehet?",
-    a: `<p>Igen, készítünk az eredeti ajtó alapján rekonstruált korhű, kazettás, festett kivitelben — az engedélyezéshez szükséges teljes műszaki dokumentációval. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
+    a: `<p>A modern modelleink belépőszintje <strong>330 000 Ft</strong>, a prémium kivitel jellemzően 800 000 és 1 800 000 Ft között mozog. A korhű és műemléki ajtókat egyedi árazással készítjük. A végleges árat a helyszíni felmérés után tudjuk megadni. <a href="/arak">Részletes árlista →</a></p>` },
+  { q: "Mennyi idő, mire elkészül és beépítjük?",
+    a: `<p>Modern ajtónál ${SLA.surveyDays} a helyszíni felmérés, ${SLA.manufactureDays} a gyártás, és ${SLA.installDays} a beépítés. A műemléki engedélyezéssel együtt ${SLA.permitTotal}.</p>` },
+  { q: "Műemléki vagy védett épületbe is építenek ajtót?",
+    a: `<p>Igen. Az eredeti ajtó alapján rekonstruált, korhű, kazettás vagy festett kivitelt készítünk — az engedélyezéshez szükséges teljes műszaki dokumentációval együtt. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
   { q: "Mi a különbség a betörésvédelmi osztályok (RC2–RC6) között?",
-    a: `<p>RC2: 3 perc · RC3: 5 perc · RC4: 10 perc · RC5: 15 perc · RC6: 20 perc — ennyi ideig ellenáll szakszerű betörési kísérletnek. Lakásra általában RC2–RC3, kiemelt kockázatra RC4-RC5.</p>` },
+    a: `<p>Az osztály azt mutatja, hogy az ajtónak mennyi ideig kell ellenállnia egy szakszerű betörési kísérletnek: RC2 — 3 perc, RC3 — 5 perc, RC4 — 10 perc, RC5 — 15 perc, RC6 — 20 perc. Lakásba általában RC2–RC3-at, magas kockázatú helyre RC4–RC5-öt ajánlunk.</p>` },
   { q: "Mit fedez a 15 éves szerkezeti garancia?",
-    a: `<p>Az acél tokrendszer és nyílórész szerkezeti épségét teljes körűen 15 évre garantáljuk. Zárszerkezetekre 18 hónap, biztonsági ajtóra 1 év teljes körű garancia. <a href="/garancia">Részletes garancia →</a></p>` },
-  { q: "Milyen zárakat építünk be?",
-    a: `<p>Mottura, Abus, Mul-T-Lock, Iseo és Cisa — Ön a helyszíni felmérés után választhat. Mindegyik prémium európai gyártó, márkás cilinderekkel és pótalkatrész-elérhetőséggel.</p>` },
+    a: `<p>Az acél tokra és az ajtószárny szerkezetére 15 év teljes körű garanciát adunk. A zárszerkezetre 18 hónap, a teljes biztonsági ajtóra 1 év garancia jár. <a href="/garancia">Részletes garancia →</a></p>` },
+  { q: "Milyen zárakat építenek be?",
+    a: `<p>Mottura, Abus, Mul-T-Lock, Iseo és Cisa zárak közül a helyszíni felmérés után választhat. Mindegyik prémium európai gyártó — márkás cilinderekkel, és évek múlva is rendelhető pótalkatrésszel.</p>` },
   { q: "Miben jobb egy Huba ajtó, mint egy 150 000 Ft-os katalógusajtó?",
-    a: `<p>Acél zártszelvény tok (vékony lemez helyett), megerősített zárlemez, MABISZ 2–5 osztály választhatóság, márkás európai zárszerkezetek, 15 év szerkezeti garancia, 10 év múlva is rendelhető pótalkatrész. <a href="#miben-tobb">Részletes spec-összevetés →</a></p>` },
+    a: `<p>Vékony hajlított lemez helyett zártszelvényből készült acél tok, megerősített zárlemez, MABISZ 2.–5. osztály közül szabadon választható kivitel, márkás európai zárszerkezet, 15 év szerkezeti garancia, és tíz év múlva is rendelhető pótalkatrész. <a href="#miben-tobb">Részletes összehasonlítás →</a></p>` },
   { q: "Lehet részletfizetés?",
-    a: `<p>Igen — Cofidis áruhitelen keresztül, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 330 000 Ft / 10 hó ≈ 33 000 Ft / hó. <a href="/reszletfizetes">Részletfizetés →</a></p>` },
+    a: `<p>Igen — Cofidis áruhitellel, az aktuális kampányoktól függően akár 0%-os THM mellett. Reprezentatív példa: 330 000 Ft / 10 hó ≈ 33 000 Ft / hó. <a href="/reszletfizetes">Részletfizetés →</a></p>` },
 ];
 ---
 <BaseLayout
@@ -109,7 +109,7 @@ const faqItems = [
   <Hero
     eyebrow={`Saját gyártás Kistarcsán · ${SITE.founded} óta`}
     heading="Századfordulós lakástól<br/>a modern családi házig.<br/><em>Egy gyártóból.</em>"
-    lead="Saját üzemünkben készítjük minden ajtót — műemléki engedélyhez korhű kivitelben, modern lakásokhoz acél biztonsági szerkezettel. Mindegyikben MABISZ-minősítés és 15 év szerkezeti garancia."
+    lead="Minden ajtót a Kistarcsai műhelyünkben készítünk — műemléki környezetbe korhű kivitelben, modern lakásokba acél biztonsági szerkezettel. Mindegyikre MABISZ-minősítés és 15 év szerkezeti garancia jár."
     pillars={[
       "Saját gyártás",
       `MABISZ ${SITE.mabiszSince} óta`,
@@ -118,7 +118,7 @@ const faqItems = [
       `${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`,
     ]}
     image="/assets/photos/hero/period-yellow.jpg"
-    imageAlt="Korhű, kovácsoltvas rácsokkal díszített biztonsági ajtó egy budapesti polgári lakás stílusában"
+    imageAlt="Korhű, kovácsoltvas rácsokkal díszített biztonsági ajtó egy budapesti polgári lakásban"
     imageCaption="Budapest, I. kerület · 2024"
   />
 
@@ -129,7 +129,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Vélemények"
     heading="Magyar tulajdonosoktól, magyar otthonokban."
-    lead="Több mint 20 éve dolgozunk Budapest és Pest megye tulajdonosaiért — műemléki belvárostól az agglomeráció prémium családi házaiig."
+    lead="Több mint húsz éve dolgozunk budapesti és Pest megyei otthonokon — a műemléki belvárostól az agglomeráció prémium családi házaiig."
   >
     <SocialProof
       rating={{ value: 4.8, count: 127, source: "Google" }}
@@ -140,14 +140,14 @@ const faqItems = [
   <Section
     tone="cream"
     eyebrow="Termékcsaládok"
-    heading="A teljes spektrum — egyetlen acél biztonsági magon."
-    lead="Stílus és modern kivitel ugyanazon a MABISZ-minősített szerkezeti alapon. A különbség a látszó borításban és az engedélyezési csomagban van."
+    heading="A teljes kínálat — egyetlen acél szerkezetre építve."
+    lead="A klasszikus stílusú és a modern ajtók ugyanarra a MABISZ-minősített acél szerkezetre épülnek. A különbség a látható borításban és a hozzá tartozó engedélyezésben van."
   >
     <div class="product-grid stagger">
       {products.map(p => <ProductCard {...p} />)}
     </div>
     <p class="product-note">
-      Minden Huba ajtó ugyanazon az acél biztonsági szerkezeten alapul. A különbség a látszó borítás és a kivitelezés.
+      Minden Huba ajtó ugyanazt az acél biztonsági szerkezetet kapja — csak a látható borítás és a kivitelezés különbözik.
     </p>
   </Section>
 
@@ -155,12 +155,12 @@ const faqItems = [
     tone="paper"
     eyebrow="Előtte / utána"
     heading="Egy ajtócsere, ami az egész lépcsőházat átalakítja."
-    lead="Régi vasajtótól vagy elavult acélajtótól a korhű, mégis biztonsági szintű új ajtóig — ugyanaz a nyílás, más évszázad."
+    lead="Megkopott vasajtótól vagy elavult acélajtótól a korhű, mégis modern biztonságot adó új ajtóig — ugyanaz a nyílás, más évszázad."
   >
     <BeforeAfterSlider
       before="/assets/photos/hero/before-old-door.jpg"
       after="/assets/photos/hero/period-yellow.jpg"
-      caption="Budapest, V. kerület — 1928-as polgári ház, eredeti ajtó alapján rekonstruálva."
+      caption="Budapest, V. kerület — 1928-as polgári ház, az eredeti ajtó alapján rekonstruálva."
     />
   </Section>
 
@@ -168,7 +168,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Hogyan dolgozunk"
     heading="Egy felmérés. Négy lépés. Tizenkét nap."
-    lead="A modern range a megkereséstől a beépített ajtóig 12 napon belül. Műemléki engedélyezéssel 4–6 hónap, lépésről lépésre."
+    lead="A modern ajtóknál a megkereséstől a beépítésig 12 nap. Műemléki engedélyezéssel 4–6 hónap, lépésről lépésre."
   >
     <ProcessSteps />
   </Section>
@@ -180,11 +180,11 @@ const faqItems = [
           <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
           Műemléki engedélyezési csomag
         </p>
-        <h2 class="ec-section-heading">Mi intézzük az engedélyt is.<br/>Ön egy ajtót kap — mi egy döntést.</h2>
+        <h2 class="ec-section-heading">Az engedélyt is mi intézzük.<br/>Ön egy ajtót kap — mi egy döntést.</h2>
         <p class="ec-section-lead">
-          A budapesti műemléki ajtócsere 4–6 hónapos, 3-hatóságos folyamat. A védettségi
-          ellenőrzéstől a befejezési bejelentésig mindent vállalunk — építész tervezővel és
-          műemléki szakértői névjegyzékbe vett partnerrel együttműködve.
+          A budapesti műemléki ajtócsere 4–6 hónapos, három hatóságot érintő ügyintézés. A védettségi
+          ellenőrzéstől a befejezés bejelentéséig mindent intézünk — építész tervezővel és a
+          műemléki szakértői névjegyzékben szereplő szakemberrel közösen.
         </p>
       </header>
       <EngedelyezesiCsomag />
@@ -199,13 +199,13 @@ const faqItems = [
     tone="cream"
     eyebrow="Ajtótervező"
     heading="Tervezze meg saját ajtaját — 60 másodperc alatt."
-    lead="Külső borítás, mintázat, szín, zár — vizsgálja végig a 35+ fa és 15 mart mintát, majd kérje az árajánlatot."
+    lead="Külső borítás, mintázat, szín, zár — nézze végig a 35 fa és 15 mart mintát, majd kérje az árajánlatot."
     align="center"
   >
     <div class="configurator-banner reveal">
       <a href="/ajtotervezo" class="btn btn-primary btn-large">Ajtótervező indítása →</a>
       <p class="configurator-note">
-        Stílus- vagy műemléki ajtót keres? <a href="/felmeres">Itt jelezzen felmérést</a> — egyedi tervezést a felmérőnk irányít.
+        Stílus- vagy műemléki ajtót keres? <a href="/felmeres">Kérjen felmérést itt</a> — az egyedi tervezést a felmérőnkkel együtt alakítjuk ki.
       </p>
     </div>
   </Section>
@@ -213,8 +213,8 @@ const faqItems = [
   <Section
     tone="ink"
     eyebrow="Miben több ennyivel"
-    heading="Mire fizet rá egy katalógusajtóval — és mire nem."
-    lead="Defenzív összevetés objektív specifikációkon. Sem ország, sem konkrét márka — csak mérhető tulajdonság."
+    heading="Mire fizet rá egy katalógusajtónál — és mire nem."
+    lead="Tényekre alapozott összehasonlítás. Sem országot, sem konkrét márkát nem említünk — csak mérhető tulajdonságokat."
   >
     <div id="miben-tobb">
       <SpecCompareTable />
@@ -244,8 +244,8 @@ const faqItems = [
   <Section
     tone="cream"
     eyebrow="Szolgáltatási terület"
-    heading="Belvárostól az agglomerációig — a hozzánk illő helyeken."
-    lead="A műemléki belvárosi munkáktól a Pest megyei prémium családi házakig. Kistarcsáról 30 perc alatt felmérésre érünk."
+    heading="Belvárostól az agglomerációig — ahova el is jutunk."
+    lead="A műemléki belvárosi munkáktól a Pest megyei prémium családi házakig. Kistarcsáról 30 perc alatt a helyszínen vagyunk."
   >
     <ServiceArea />
   </Section>
