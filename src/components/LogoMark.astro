@@ -12,17 +12,21 @@ const src = variant === "monogram"
   : "/assets/brand/wordmark-primary.png";
 
 const widths = {
-  sm: variant === "monogram" ? 40 : 140,
-  md: variant === "monogram" ? 56 : 200,
-  lg: variant === "monogram" ? 80 : 280,
+  sm: variant === "monogram" ? 40 : 200,
+  md: variant === "monogram" ? 56 : 260,
+  lg: variant === "monogram" ? 80 : 360,
 };
+
+// wordmark aspect ratio: 787 / 346 ≈ 2.27 (width / height)
+const wordmarkRatio = 2.27;
+const ratio = variant === "monogram" ? 1 : 1 / wordmarkRatio;
 ---
 <a href="/" class={`inline-flex items-center ${className}`} aria-label="Huba ajtó — kezdőlap">
   <img
     src={src}
     alt="Huba ajtó"
     width={widths[size]}
-    height={widths[size] * (variant === "monogram" ? 1 : 0.4)}
+    height={Math.round(widths[size] * ratio)}
     style={`width: ${widths[size]}px; height: auto;`}
     decoding="async"
     fetchpriority={variant === "monogram" ? "low" : "high"}
