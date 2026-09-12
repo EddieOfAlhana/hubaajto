@@ -67,7 +67,7 @@ Az ár tipikusan 900 000 – 1 600 000 Ft (bruttó), a kivitel függvényében. 
 
 ## Az ablak + ajtó csomag itt különösen hasznos
 
-Az új építésű családi házak nyílászáróit egyszerre érdemes intézni — erről részletesen az [ACTUAL ablak + Huba ajtó cikkben](/blog/ajto-actual-ablak-egyutt) írunk. Telki, Budakeszi és Páty területén az építkezések ütemezése igazolja: a közös felmérés és koordináció 4–6 hetet takarít meg.
+Telki, Budakeszi és Páty területén az építkezések ütemezése miatt érdemes a bejárati ajtó felmérését is időben, a kivitelezés korai szakaszában lefoglalni.
 
 ## Foglaljon ingyenes helyszíni felmérést
 

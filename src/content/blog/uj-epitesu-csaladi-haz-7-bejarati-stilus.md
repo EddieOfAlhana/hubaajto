@@ -57,9 +57,9 @@ A legmagasabb design-érzelmű választás. **Patinázott bronz** vagy oxidált 
 
 ## A 7 stílus közös acél biztonsági magja
 
-Egy fontos szempont, ami minden stílust összeköt: **a Huba ajtó belső szerkezete azonos**, a hét stílus közötti különbség a látszó borításban van. A hőhídmentes acél zártszelvény tok, a megerősített zárlemez, a Therwolin / üveggyapot bélelés, a körbefutó (befűzött, nem ragasztott) gumitömítés, a Mottura / Abus / Mul-T-Lock / Iseo / Cisa zárszerkezet, és a [MABISZ-minősítés](/blog/mabisz-rc-osztaly-elemzes) ugyanaz minden stílus esetében. Ezért nem szükséges a biztonság és az esztétika között választani.
+Egy fontos szempont, ami minden stílust összeköt: **a Huba ajtó belső szerkezete azonos**, a hét stílus közötti különbség a látszó borításban van. A hőhídmentes acél zártszelvény tok, a megerősített zárlemez, a Therwolin / kőzetgyapot bélelés, a körbefutó (befűzött, nem ragasztott) gumitömítés, a Mottura / Abus / Mul-T-Lock / Iseo / Cisa zárszerkezet, és a [MABISZ-minősítés](/blog/mabisz-rc-osztaly-elemzes) ugyanaz minden stílus esetében. Ezért nem szükséges a biztonság és az esztétika között választani.
 
-Az új építésű családi ház bejárati ajtaja 800 000 – 1 800 000 Ft között szól (bruttó), kivitelfüggő. Részletes árszerkezetet a [pontos árak oldalon](/arak), valamint az [új építésű családi ház 7 dolog](/blog/uj-epitesu-csaladi-haz-ajto) cikkünkben olvashat.
+Az új építésű családi ház bejárati ajtaja 600 000 Ft-tól indul (bruttó), kivitelfüggő. Részletes árszerkezetet a [pontos árak oldalon](/arak), valamint az [új építésű családi ház 7 dolog](/blog/uj-epitesu-csaladi-haz-ajto) cikkünkben olvashat.
 
 ## Tervezte már a homlokzatot? Foglaljon felmérést
 

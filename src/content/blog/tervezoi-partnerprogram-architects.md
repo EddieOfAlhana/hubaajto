@@ -23,7 +23,7 @@ Egy tervezői telefonhívás vagy e-mail után — beleértve a hétvégit is �
 
 ### 2. Méretezett tervezői dokumentáció
 
-A felmérés után **M=1:10 méretarányú profilrajzot, csomópont-metszetet, tokrögzítési rajzot és anyaglistát** kapnak — PDF és DWG formátumban, az építész CAD-folyamatába illeszthető rétegszerkezettel. A dokumentáció tartalmazza a hőhídmentes acél zártszelvény tok pontos profilját, a Therwolin / üveggyapot bélelés rétegrendjét, az U-érték-számítást (jellemzően 1,2–1,8 W/m²K a kivitel függvényében), valamint a MABISZ-besorolást.
+A felmérés után **M=1:10 méretarányú profilrajzot, csomópont-metszetet, tokrögzítési rajzot és anyaglistát** kapnak — PDF és DWG formátumban, az építész CAD-folyamatába illeszthető rétegszerkezettel. A dokumentáció tartalmazza a hőhídmentes acél zártszelvény tok pontos profilját, a Therwolin / kőzetgyapot bélelés rétegrendjét, az U-érték-számítást (jellemzően 1,2–1,8 W/m²K a kivitel függvényében), valamint a MABISZ-besorolást.
 
 ### 3. BIM-blokkok és Revit-családok
 
@@ -54,9 +54,9 @@ Minden új tervezői partner regisztráció után megkapja:
 - **48 órás telefonos vagy helyszíni elérhetőséget** a felmérővezetőnkhöz,
 - **Saját kapcsolattartót** a Huba oldaláról, aki a megrendeléseket koordinálja.
 
-## Hogyan illeszkedik az ACTUAL Fenster ablakokhoz?
+## Méretre gyártás a tervezői ütemezéshez
 
-A Szer-X3 Kft. — amely a Huba ajtó gyártója — egyben **az osztrák ACTUAL Fenster** képviselője Magyarországon. Egy új építésű családi háznál a bejárati ajtó és a homlokzati ablakok ugyanazon a felmérésen, ugyanattól a projektmenedzsertől kerülnek megrendelésre. Roto NT vasalattal, SECUSTIC kilinccsel, három körbefutó tömítéssel — egy garancia, egy szerelőcsapat. A tervező partnerek ezt az asszet-et a [bejárati ajtó és ACTUAL ablak együtt](/blog/ajto-actual-ablak-egyutt) cikkben részletesen olvashatják.
+A Szer-X3 Kft. — amely a Huba ajtó gyártója — saját műhelyben, méretre gyártja a bejárati ajtót, Roto NT vasalattal, SECUSTIC kilinccsel, három körbefutó tömítéssel is rendelhető kivitelben.
 
 ## Hogyan kezdjen el dolgozni velünk?
 

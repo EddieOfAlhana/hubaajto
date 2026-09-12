@@ -29,10 +29,9 @@ const priceFamilies = [
     badge: "MABISZ 3. · RC3",
     summary: "Új építésű és felújított családi házakhoz, agglomerációba (Mogyoród, Csömör, Telki, Budakeszi).",
     rows: [
-      { item: "Modern Premium belépő ár", price: "480 000 Ft-tól" },
-      { item: "Premium teljes konfiguráció (jellemző sáv)", price: "720 000 – 1 200 000 Ft" },
-      { item: "Premium maximális kivitel (RC4-szintű)", price: "1 200 000 – 1 800 000 Ft" },
-      { item: "ACTUAL Fenster ablakcsomag mellé · 8–12% kombinált kedvezmény", price: "Csomagtól függ" },
+      { item: "Modern Premium belépő ár", price: "600 000 Ft-tól" },
+      { item: "Premium teljes konfiguráció (jellemző sáv)", price: "840 000 – 1 320 000 Ft" },
+      { item: "RC4-szintű emelés (dupla acéllemez, vastagabb zárszerkezet)", price: "Egyedi felár" },
     ],
     note: "A Premium szint méretre szabva készül — nincs „panel-szabvány”. Az ár a méret, a borítás és a zárrendszer függvénye.",
     cta: { label: "Premium részletei", href: "/biztonsagi-ajto/premium" },
@@ -111,12 +110,12 @@ const faqItems = [
   { q: "A Cofidis áruhitel hogyan érinti az árat?",
     a: `<p>Sehogy — a 0% THM Cofidis áruhitel mellett <strong>ugyanannyit fizet</strong>, mint készpénzben. A kamatkockázatot a Cofidis viseli, a Huba a kampánykeretért nem számít fel külön díjat. <a href="/reszletfizetes">Részletfizetés részletei →</a></p>` },
   { q: "Kombinált csomag — több ajtó vagy ajtó + ablak — jár kedvezmény?",
-    a: `<p>Igen — <strong>5–12% kombinált kedvezményt</strong> tudunk adni, ha egy projektben több ajtó szerepel (pl. egy családi ház 3 ajtaja), vagy ha az ACTUAL Fenster ablakcsomaggal együtt rendeli. A kedvezmény mértéke a megrendelés összetettségétől függ; a felmérőnk konkrét számokat ad.</p>` },
+    a: `<p>Igen — <strong>5–12% kombinált kedvezményt</strong> tudunk adni, ha egy projektben több ajtó szerepel, például egy családi ház 3 ajtaja. A kedvezmény mértéke a megrendelés összetettségétől függ; a felmérőnk konkrét számokat ad.</p>` },
 ];
 ---
 <BaseLayout
   title="Árak — Transzparens árlista minden családra"
-  description={`A teljes Huba ajtó árlista: Modern Standard 440 000 Ft-tól, Premium 800 000 – 1 800 000 Ft, Mart Design 420 000 – 680 000 Ft, Fa-design 480 000 – 780 000 Ft, Stílus és műemléki egyedi árajánlat. Az árak a 27% ÁFA-t tartalmazzák.`}
+  description={`A teljes Huba ajtó árlista: Modern Standard 440 000 Ft-tól, Premium 600 000 Ft-tól, Mart Design 420 000 – 680 000 Ft, Fa-design 480 000 – 780 000 Ft, Stílus és műemléki egyedi árajánlat. Az árak a 27% ÁFA-t tartalmazzák.`}
 >
   <Hero
     eyebrow="Transzparens árlista · 27% ÁFA-t tartalmaz"
@@ -124,7 +123,7 @@ const faqItems = [
     lead="A biztonsági ajtó piacán az árak jelentős részét a versenytársak elrejtik. Mi azt választottuk, hogy a kategóriánkénti árszintet nyíltan közöljük — a fix árajánlat a felmérés után 48 órán belül érkezik."
     pillars={[
       `Modern Standard: ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól`,
-      "Premium: 800k – 1,8M Ft",
+      "Premium: 600k Ft-tól",
       "Mart / Fa-design: 420k – 780k Ft",
       "Műemléki: egyedi árajánlat",
       "Ingyenes felmérés",

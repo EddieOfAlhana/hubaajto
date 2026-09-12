@@ -15,7 +15,7 @@ A felmérőnk hetente legalább egyszer hallja a kérdést: „Miért kerül egy
 
 ## A kiindulási árak — mit mond a két piac
 
-Egy modern, MABISZ-minősített Huba ajtó **panel-lakás kiépítésben 440 000 Ft-tól** indul (bruttó, beépítéssel). Ugyanez a műszaki tartalom egy családi ház homlokzatán **520 000 Ft-tól** indul, és felfelé a kivitel függvényében 1 800 000 Ft-ig nyúlik. A különbség tehát alaphelyzetben is 80 000 Ft — és ez még a legolcsóbb családi házas változat.
+Egy modern, MABISZ-minősített Huba ajtó **panel-lakás kiépítésben 440 000 Ft-tól** indul (bruttó, beépítéssel). Ugyanez a műszaki tartalom egy családi ház homlokzatán **520 000 Ft-tól** indul, felfelé nyitott ársávban, a kivitel függvényében. A különbség tehát alaphelyzetben is 80 000 Ft — és ez még a legolcsóbb családi házas változat.
 
 A két ártartomány jellemző sávjai a saját 2024–2026-os rendeléseink alapján:
 

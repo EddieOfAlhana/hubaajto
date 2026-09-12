@@ -33,7 +33,7 @@ A **„hőhídmentes" megoldás** azt jelenti, hogy a tok belső (lakásfelőli)
 | Termikus szakasz (hőhídmegszakító) | Magas sűrűségű poliuretán vagy fenol-élesít beillesztés | Hővezetést megakadályozza (λ ≈ 0,025–0,05 W/(m·K)) |
 | Belső acél zártszelvény | 2,0–3,0 mm vastag acél | A zsanér és zár rögzítési pontjai |
 
-A két acélréteg között **fizikai kapcsolat nincs**, csak a hőhídmegszakító elem köti össze. Az egész szerkezetbe szervesen integrálódik a Therwolin vagy üveggyapot bélelés a lemezek közötti üregben.
+A két acélréteg között **fizikai kapcsolat nincs**, csak a hőhídmegszakító elem köti össze. Az egész szerkezetbe szervesen integrálódik a Therwolin vagy kőzetgyapot bélelés a lemezek közötti üregben.
 
 ## Miért nem felel meg a „vasalt lemeztok"?
 
@@ -68,7 +68,7 @@ A különbség **nem marketingfogás**, hanem mérhető fizika. Erre épül az �
 
 A Huba ajtók **minden esetben** hőhídmentes acél zártszelvény tokkal készülnek — ez nem opció, hanem alapkivitel. A tok belső profilját az ajtótípus függvényében változtatjuk (modern, kazettás, stílus, műemléki — mindegyiknél optimalizált tokvastagsággal). A teljes U-érték a kivitel és üvegezés függvényében jellemzően **1,2–1,6 W/m²K** a modern családi házakhoz, **1,3–1,8 W/m²K** a stílus és műemléki kazettás kivitelnél.
 
-A részletes anyaglistát, a CE-jelölést és a hőtechnikai paramétereket az [árak oldalunkon](/arak), valamint az [új építésű családi ház 7 dolog](/blog/uj-epitesu-csaladi-haz-ajto) cikkünkben olvashatja. A teljes [minőségünkről](/minosegunk) szóló oldal a gyártási folyamatot is bemutatja. Tervező építészek a [bejárati ajtó és ACTUAL ablak együtt](/blog/ajto-actual-ablak-egyutt) megközelítést is mérlegelhetik az egységes hőtechnikai besorolás érdekében.
+A részletes anyaglistát, a CE-jelölést és a hőtechnikai paramétereket az [árak oldalunkon](/arak), valamint az [új építésű családi ház 7 dolog](/blog/uj-epitesu-csaladi-haz-ajto) cikkünkben olvashatja. A teljes [minőségünkről](/minosegunk) szóló oldal a gyártási folyamatot is bemutatja.
 
 ## Foglaljon ingyenes felmérést
 

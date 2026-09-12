@@ -97,7 +97,7 @@ A Huba ajtó által végzett felmérésnél mindhárom forrást figyelembe vessz
 
 Egy 2024-es projektünkben egy Bródy Sándor utcai polgári lakás bejárati ajtaját cseréltük. A lépcsőházra nyíló ajtó eredetileg felső 1/3 részén 6-osztású ólomüveges, alsó 2/3 részén kétkazettás, sötétzöld (RAL 6009) tölgyfa ajtó volt. A 80-as években egy szürke lemezajtóra cserélték.
 
-Az új Huba ajtó: belül **hőhídmentes acél zártszelvény tok, megerősített zárszerkezet 5 záróponttal, MABISZ 3. osztály (5 perc ellenállás)**. Kívülről teljesen visszaállítottuk az eredeti megjelenést — tölgyfa borítás, 6-osztású ólomüveg az eredeti minta szerint, kétkazettás alsó szakasz, kovácsoltvas pánt és fogantyú. A TKBE-kérelem 11 napon belül tudomásul vételt kapott egy kikötéssel: a fogantyú elhelyezésének magasságát az eredeti dokumentációhoz kellett igazítani.
+Az új Huba ajtó: belül **hőhídmentes acél zártszelvény tok, megerősített zárszerkezet 5 záróponttal, MABISZ 3. osztály (15 perc ellenállás)**. Kívülről teljesen visszaállítottuk az eredeti megjelenést — tölgyfa borítás, 6-osztású ólomüveg az eredeti minta szerint, kétkazettás alsó szakasz, kovácsoltvas pánt és fogantyú. A TKBE-kérelem 11 napon belül tudomásul vételt kapott egy kikötéssel: a fogantyú elhelyezésének magasságát az eredeti dokumentációhoz kellett igazítani.
 
 Az ajtó beépítése egy nap volt. A teljes átfutás a védettségi ellenőrzéstől a befejezési bejelentésig 9 hét volt — Józsefváros esetében ez nagyjából a gyorsabbik fele a tartománynak.
 

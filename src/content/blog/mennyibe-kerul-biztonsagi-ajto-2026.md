@@ -24,7 +24,7 @@ A számok 2026 januári állapotot tükröznek, és a saját kistarcsai üzemün
 |---|---|---|
 | **Modern Standard** | 440 000–560 000 Ft | Panel-lakás, lakótelepi társasház |
 | **Modern Premium** | 450 000–800 000 Ft | Társasházi újépítés, családi ház |
-| **Prémium családi ház** | 800 000–1 800 000 Ft | Új építésű családi ház, kiemelt kockázat |
+| **Prémium családi ház** | 600 000 Ft-tól | Új építésű családi ház, kiemelt kockázat |
 | **Stílus / Műemléki** | 1 100 000–2 500 000 Ft | Polgári lakás, századfordulós ház, műemléki környezet |
 
 Ezek a tartományok a teljes csomagot tartalmazzák: ajtó, beépítés, bontás és törmelékelszállítás, MABISZ-tanúsítvány, 15 év szerkezeti garancia. Az ÁFA (27%) minden esetben beépítve.
@@ -46,8 +46,8 @@ A felső kategóriákban az arány eltolódik. Egy 1,5 millió Ft-os **műemlék
 A piacon szokás belépőárakat hirdetni — és a vevő gyakran csalódik, mert a hirdetett összeg nem fedi le, amit ténylegesen kapni szeretne. A Huba ajtó esetében a **440 000 Ft-tól** ár az alábbiakat tartalmazza:
 
 - **Hőhídmentes acél zártszelvény tok** — nem hajlított lemez, hanem zárt acélprofil.
-- **Acél biztonsági szárny** — Therwolin vagy üveggyapot béléssel, hő- és hangszigeteléssel.
-- **MABISZ 2. osztály (3 perc ellenállás)** — minősítéssel és tanúsítvánnyal.
+- **Acél biztonsági szárny** — Therwolin vagy kőzetgyapot béléssel, hő- és hangszigeteléssel.
+- **MABISZ 2. osztály (10 perc ellenállás)** — minősítéssel és tanúsítvánnyal.
 - **Több ponton záródó zárszerkezet** — felül, alul és hátul is záródik.
 - **Cilinder, kilincs, ajtófogantyú** — magyar / európai gyártásból.
 - **Beépítés** — egy nap alatt, a régi ajtó bontása és törmelékelszállítása beleértve.

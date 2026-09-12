@@ -21,9 +21,9 @@ Egy biztonsági ajtó nem önmagában „biztonságos" — a tényleges védelmi
 |---|---|---|
 | Tok és nyílórész szerkezet | Vékony lemezből hajlított keret | Hőhídmentes acél zártszelvény, méretre szabva |
 | Acéllemez vastagság a zárak körül | 1–1,2 mm vagy hiányzó megerősítés | Megerősített acéllap a zárszerkezetek körül |
-| Bélelés | Hab vagy hiányzó bélelés | Therwolin / üveggyapot, hő- és hangszigetelő |
+| Bélelés | Hab vagy hiányzó bélelés | Therwolin / kőzetgyapot, hő- és hangszigetelő |
 | Záródási pontok | 3–5 ponton, gyakran egy irányban | Több ponton, felül–alul–hátul is záródó kivitel |
-| MABISZ besorolás | Tipikusan 2. osztály (3 perc) vagy nincs | MABISZ 2.–5. osztály (3–15 perc) választható |
+| MABISZ besorolás | Tipikusan 2. osztály (3 perc) vagy nincs | MABISZ 2.–5. osztály (10–15 perc áttörés elleni védelem) választható |
 | Cilinder és zártest | Márka nélküli, gyakran cserélendő | Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa |
 | Garancia | 1–2 év | 15 év szerkezeti, 18 hónap zárszerkezet |
 

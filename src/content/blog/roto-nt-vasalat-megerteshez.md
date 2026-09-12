@@ -1,9 +1,9 @@
 ---
 title: "Roto NT vasalatrendszer — gombacsapos retesz és hárompontos záródás"
-description: "A Roto NT vasalat: gombacsapos retesz, hárompontos záródás, SECUSTIC kilincs. Mikor opció, mikor felár, mit ad a klasszikus zárhoz képest. Az ACTUAL ablak vasalatával való rokonság."
+description: "A Roto NT vasalat: gombacsapos retesz, hárompontos záródás, SECUSTIC kilincs. Mikor opció, mikor felár, mit ad a klasszikus zárhoz képest."
 publishDate: 2027-04-16
 pillar: tudnivalok
-tags: ["Roto NT", "vasalat", "gombacsap", "SECUSTIC", "ablak", "ACTUAL"]
+tags: ["Roto NT", "vasalat", "gombacsap", "SECUSTIC", "ablak"]
 heroImage: "/assets/photos/hero/modern-white.jpg"
 heroImageAlt: "Modern fehér Huba ajtó Roto NT vasalatrendszerrel — gombacsapos retesz"
 readingMinutes: 6
@@ -11,7 +11,7 @@ seo:
   keywords: ["Roto NT vasalat", "gombacsapos retesz", "SECUSTIC kilincs", "hárompontos záródás", "ablakvasalat biztonsági ajtó"]
 ---
 
-A „vasalat" szó a magyar nyilászáró-piacon kissé összemosódott: néha a kilincset, néha a zárszerkezetet, néha a komplett mozgató-szerkezetet (zsanér + záróelem) jelenti. A Roto NT egy konkrét német vasalatrendszer, amely **a záróelemeket, a mozgató mechanizmust és a kilincs felőli reteszelést egyetlen integrált rendszerként** kezeli. Ablakoknál a Roto NT az európai prémium standard — a Huba ajtó forgalmazta [ACTUAL Fenster](/blog/ajto-actual-ablak-egyutt) ablakok alapfelszereltsége. Egyes bejárati ajtó-kivitelekben **felárral elérhető**, és valódi hozzáadott értéket képvisel a klasszikus reteszelésű zárakhoz képest.
+A „vasalat" szó a magyar nyilászáró-piacon kissé összemosódott: néha a kilincset, néha a zárszerkezetet, néha a komplett mozgató-szerkezetet (zsanér + záróelem) jelenti. A Roto NT egy konkrét német vasalatrendszer, amely **a záróelemeket, a mozgató mechanizmust és a kilincs felőli reteszelést egyetlen integrált rendszerként** kezeli. Ablakoknál a Roto NT az európai prémium standard. Egyes bejárati ajtó-kivitelekben **felárral elérhető**, és valódi hozzáadott értéket képvisel a klasszikus reteszelésű zárakhoz képest.
 
 ## Mi a Roto NT pontosan?
 
@@ -65,7 +65,7 @@ A három rendszer **párhuzamosan működik**: ha a Mottura cilindert kifúrnák
 
 ## A rokonság az ACTUAL ablakkal
 
-A Huba ajtó forgalmazta [ACTUAL Fenster](/blog/ajto-actual-ablak-egyutt) ablakok mindegyike **Roto NT vasalattal és SECUSTIC kilinccsel** készül. Egy új építésű családi háznál, ahol a bejárati ajtót és a homlokzati ablakokat egyszerre rendeli, a teljes nyílászáró-rendszer egyetlen vasalat-családra épülhet — egy szervizes, egy garanciális csere-folyamat, egy karbantartási rutin.
+Egy új építésű családi háznál, ahol a bejárati ajtót és a homlokzati ablakokat is Roto NT vasalatú kivitelben rendeli, a teljes nyílászáró-rendszer egyetlen vasalat-családra épülhet — egy szervizes, egy garanciális csere-folyamat, egy karbantartási rutin.
 
 ## Mit ajánlunk Huba ajtóként?
 

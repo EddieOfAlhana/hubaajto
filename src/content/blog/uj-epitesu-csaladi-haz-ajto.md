@@ -23,11 +23,11 @@ Egy fa-felületű ajtó 35 különböző mintából választható (bükk, cseres
 
 ## 3. Az „energetikai osztály" kérdés az ajtónál is fontos
 
-Az új építésű családi házaknál a 7/2006 (V.24.) TNM rendelet szigorú energetikai követelményeket szab. A bejárati ajtó hőátbocsátási együtthatója (U-érték) hatással van a ház teljes energetikai besorolására. A Huba modern ajtók hőhídmentes acél zártszelvény tokkal és Therwolin / üveggyapot béleléssel készülnek — az U-érték a fa-felület és üvegezés függvényében 1,2–1,8 W/m²K közötti.
+Az új építésű családi házaknál a 7/2006 (V.24.) TNM rendelet szigorú energetikai követelményeket szab. A bejárati ajtó hőátbocsátási együtthatója (U-érték) hatással van a ház teljes energetikai besorolására. A Huba modern ajtók hőhídmentes acél zártszelvény tokkal és kőzetgyapot béleléssel készülnek — az U-érték a fa-felület és üvegezés függvényében 1,2–1,8 W/m²K közötti.
 
 ## 4. A biztonsági osztály nem csak panelnek számít
 
-Sok új építésű családi ház tulajdonosa azt gondolja: „itt nem lopnak". A KSH statisztikák ezzel ellentétben azt mutatják, hogy az **agglomerációs új építésű családi házakba** célzottan járnak betörők, főleg a nyári hónapokban, mert nincs portás, és a szomszédok ritkábban vannak otthon. Egy MABISZ 3. osztályú (RC3) ajtó 5 perces ellenállási idővel reális minimum egy 200 milliós ház belépőjén.
+Sok új építésű családi ház tulajdonosa azt gondolja: „itt nem lopnak". A KSH statisztikák ezzel ellentétben azt mutatják, hogy az **agglomerációs új építésű családi házakba** célzottan járnak betörők, főleg a nyári hónapokban, mert nincs portás, és a szomszédok ritkábban vannak otthon. Egy MABISZ 3. osztályú (RC3) ajtó 15 perces ellenállási idővel reális minimum egy 200 milliós ház belépőjén.
 
 ## 5. A zárszerkezet választása nem mindegy
 
@@ -45,11 +45,7 @@ Ezt időzítse az építkezés ütemezésével úgy, hogy az ajtó a vakolat-fes
 
 ## 7. A teljes ár nem csak az ajtó
 
-Egy prémium új építésű családi ház modern Huba ajtóval jellemzően 600 000 és 1 800 000 Ft között szól (bruttó), a kivitel, a borítás, a zár és a méret függvényében. Beépítés 80 000–250 000 Ft. Részletfizetés a [Cofidis áruhitelen keresztül](/reszletfizetes) is elérhető. Lásd a [pontos árszerkezetet](/arak) is.
-
-## A Huba ajtó és az ACTUAL Fenster csomagja
-
-Az új építésű családi házakhoz egyedülálló lehetőség a **bejárati ajtó + ACTUAL Fenster ablakok egy műhelyből** kombináció. Részletesen erről egy [külön cikkben](/blog/ajto-actual-ablak-egyutt) írunk — a lényeg: egy felmérés, egy garancia, egy projekt menedzser. Az új építésű családi ház tulajdonosainak ez a leggyakoribb visszajelzése: **a koordináció megtakarít hetekre való stresszt**.
+Egy prémium új építésű családi ház modern Huba ajtóval jellemzően 600 000 Ft-tól indul (bruttó), a kivitel, a borítás, a zár és a méret függvényében. Beépítés 80 000–250 000 Ft. Részletfizetés a [Cofidis áruhitelen keresztül](/reszletfizetes) is elérhető. Lásd a [pontos árszerkezetet](/arak) is.
 
 ## Kérjen tervezői konzultációt
 

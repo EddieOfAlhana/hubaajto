@@ -35,7 +35,7 @@ A helyi építészeti karakter inkább **csendes prémium**, mint látványos lu
 - **MABISZ 3. (RC3)** vagy **4. osztály**,
 - **1000–1200 mm szélesség** × **2100–2300 mm magasság**.
 
-Egy ilyen Huba ajtó 800 000 és 1 800 000 Ft között szól (bruttó), a kivitel és méret függvényében. A pontos kalkulációhoz lásd az [árak oldalt](/arak) vagy az erre vonatkozó [árcikkünket](/blog/mennyibe-kerul-biztonsagi-ajto-2026).
+Egy ilyen Huba ajtó 600 000 Ft-tól indul (bruttó), a kivitel és méret függvényében. A pontos kalkulációhoz lásd az [árak oldalt](/arak) vagy az erre vonatkozó [árcikkünket](/blog/mennyibe-kerul-biztonsagi-ajto-2026).
 
 ## Helyi referenciáink
 
@@ -52,7 +52,7 @@ A Kistarcsai műhely közelsége nem csak marketing-érv:
 
 ## Az ablak + ajtó csomag a keleti agglomerációban
 
-Az új építésű családi házak tulajdonosainak gyakran egyszerre kell ajtót és ablakot rendelniük. A Szer-X3 Kft. — a Huba ajtó anyacége — egyúttal az ACTUAL Fenster osztrák ablakgyártó hivatalos forgalmazója. Erről részletesen [külön cikkben](/blog/ajto-actual-ablak-egyutt) írunk. Egy felmérés, egy szerződés, egy átadás.
+Az új építésű családi házak tulajdonosainak gyakran egyszerre kell ajtót és ablakot rendelniük — a Huba ajtó ilyenkor is a méretre szabott, MABISZ-minősített bejárati ajtóra koncentrál.
 
 ## Mit ajánlunk először?
 

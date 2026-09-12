@@ -11,7 +11,7 @@ seo:
   keywords: ["SZÉP-kártya lakásfelújítás", "SZÉP-kártya 2026 változás", "áruhitel biztonsági ajtó", "ajtócsere finanszírozás"]
 ---
 
-A bejárati ajtó cseréje 440 000 és 1 800 000 Ft között zajlik, attól függően, hogy panel-lakásról vagy családi házról van szó. Sok ügyfél két finanszírozási lehetőséget mérlegel: SZÉP-kártya egyenleg felhasználása, vagy Cofidis áruhitel. A 2025-ös év e tekintetben jogszabályi átmeneti év volt — 2026. január 1-től a két lehetőség közötti döntés egyértelműen átrajzolódott. Ebben a cikkben átláthatóan megmutatjuk, mikor melyik éri meg.
+A bejárati ajtó cseréje 440 000 Ft-tól zajlik, attól függően, hogy panel-lakásról vagy családi házról van szó. Sok ügyfél két finanszírozási lehetőséget mérlegel: SZÉP-kártya egyenleg felhasználása, vagy Cofidis áruhitel. A 2025-ös év e tekintetben jogszabályi átmeneti év volt — 2026. január 1-től a két lehetőség közötti döntés egyértelműen átrajzolódott. Ebben a cikkben átláthatóan megmutatjuk, mikor melyik éri meg.
 
 ## Mi változott a SZÉP-kártyával 2025–2026-ban?
 

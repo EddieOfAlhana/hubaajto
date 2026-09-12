@@ -20,7 +20,7 @@ const products = [
     bullets: [
       "Belépőszint, panel- és társasházi lakásra",
       "Hőhídmentes acél zártszelvény tok",
-      "Üveggyapot bélelés, 3 perc ellenállás",
+      "Kőzetgyapot hő és hangszigetelés, 10 perc ellenállás",
     ],
     image: "/assets/photos/hero/modern-white.jpg",
     imageAlt: "Modern fehér Huba biztonsági ajtó panel-lakás bejáratán",
@@ -29,12 +29,12 @@ const products = [
   {
     family: "modern" as const,
     name: "Modern Premium / családi ház",
-    priceFrom: "800 000 – 1 800 000 Ft",
+    priceFrom: "600 000 Ft-tól",
     classBadge: "MABISZ 3. · RC3",
     bullets: [
       "Új építésű és felújított családi házakhoz",
-      "ACTUAL Fenster ablakcsomag mellé",
-      "5 perc ellenállás, prémium zár",
+      "9+ záródási pont, prémium cilinderrel",
+      "15 perc ellenállás",
     ],
     image: "/assets/photos/hero/modern-anthracite.jpg",
     imageAlt: "Antracit modern biztonsági ajtó agglomerációs családi házon",
@@ -48,7 +48,7 @@ const products = [
     bullets: [
       "Bontás nélküli csere a meglévő tokba",
       "Standard panel-nyílásméretekhez",
-      "Egy nap alatt beépítve, törmelékkel együtt",
+      "Egy nap alatt beépítve, törmelékelszállítással együtt",
     ],
     image: "/assets/photos/hero/modern-white.jpg",
     imageAlt: "Modern biztonsági ajtó panelházi bejárat tokjában",
@@ -56,7 +56,7 @@ const products = [
   },
   {
     family: "modern" as const,
-    name: "Társasházi bejárat",
+    name: "Régi bérházi és körfolyosós bejárat",
     priceFrom: "Egyedi árajánlat",
     classBadge: "MABISZ 2–3.",
     bullets: [
@@ -65,22 +65,20 @@ const products = [
       "Több lakásra kedvező csomagajánlat",
     ],
     image: "/assets/photos/hero/period-yellow.jpg",
-    imageAlt: "Társasházi bejárati biztonsági ajtó lépcsőházban",
+    imageAlt: "Régi bérházi, körfolyosós bejárati biztonsági ajtó lépcsőházban",
     href: "/biztonsagi-ajto/tarsashazi",
   },
 ];
 
 const faqItems = [
   { q: "Mi a különbség a Modern Standard és a Premium kivitel között?",
-    a: `<p>A Standard belépőszint MABISZ 2. (3 perc ellenállás), jellemzően panel- és társasházi lakásokra, <strong>440 000 Ft-tól</strong>. A Premium MABISZ 3. (5 perc), megerősített záródási pontokkal és prémium cilinderrel — családi házakra, új építésre ajánljuk, 800 000 – 1 800 000 Ft sávban. <a href="/biztonsagi-ajto/standard">Standard részletek</a> · <a href="/biztonsagi-ajto/premium">Premium részletek</a>.</p>` },
+    a: `<p>A Standard belépőszint MABISZ 2. (10 perc ellenállás), jellemzően panel- és társasházi lakásokra, <strong>440 000 Ft-tól</strong>. A Premium MABISZ 3. (15 perc), megerősített záródási pontokkal és prémium cilinderrel — családi házakra, új építésre ajánljuk, 600 000 Ft-tól. <a href="/biztonsagi-ajto/standard">Standard részletek</a> · <a href="/biztonsagi-ajto/premium">Premium részletek</a>.</p>` },
   { q: "Méretre tudják gyártani a panel-lakás meglévő nyílásához?",
     a: `<p>Igen — minden Huba ajtó méretre szabva készül a Kistarcsai műhelyben. A felmérőnk milliméterre pontosan felméri a meglévő tokot, és az új ajtó a meglévő nyílásba illeszkedik. <a href="/biztonsagi-ajto/panel-lakas">Panel-lakás csere részletek →</a></p>` },
   { q: "Mit jelent a MABISZ 2. vs. MABISZ 3. osztály?",
-    a: `<p>A MABISZ-osztály a szakszerű betörési kísérletnek való ellenállás idejét jelöli: MABISZ 2. = 3 perc, MABISZ 3. = 5 perc, MABISZ 4. = 10 perc. A magyar biztosítók többsége elfogadja a MABISZ-besorolást a lakásbiztosítási alapfeltételhez. <a href="/minosegunk">Minősítésekről részletesen →</a></p>` },
-  { q: "ACTUAL Fenster ablakcsomag mellé hogyan rendelhető az ajtó?",
-    a: `<p>A Szer-X3 Kft. 2005 óta forgalmazza az osztrák <strong>ACTUAL Fenster</strong> ablakokat. Egy helyszíni felmérés, egy szerződés, egy projektvezető — az ajtót és az ablakokat ugyanazon a héten építjük be. Tipikusan a Premium családi ház kivitellel kombináljuk.</p>` },
-  { q: "Társasházi közgyűlési határozat kell?",
-    a: `<p>Általában igen — a lépcsőházra néző bejárati ajtó cseréje a közös tulajdon megjelenését érinti. A felmérés után készítünk Önnek egy egyoldalas műszaki tájékoztatót, amit a közös képviselőnek lehet benyújtani. <a href="/biztonsagi-ajto/tarsashazi">Társasházi szabályok →</a></p>` },
+    a: `<p>A MABISZ-osztály a szakszerű betörési kísérletnek való ellenállás idejét jelöli. A magyar biztosítók többsége elfogadja a MABISZ-besorolást a lakásbiztosítási alapfeltételhez. <a href="/minosegunk">Minősítésekről részletesen →</a></p>` },
+  { q: "Régi bérházi, körfolyosós lépcsőházban közgyűlési határozat kell?",
+    a: `<p>Általában igen — a lépcsőházra néző bejárati ajtó cseréje a közös tulajdon megjelenését érinti. A felmérés után készítünk Önnek egy egyoldalas műszaki tájékoztatót, amit a közös képviselőnek lehet benyújtani. <a href="/biztonsagi-ajto/tarsashazi">Régi bérházi szabályok →</a></p>` },
   { q: "Mennyi időbe telik a felméréstől a beépítésig?",
     a: `<p>${SLA.surveyDays} alatt helyszíni felmérés, ${SLA.manufactureDays} alatt gyártás a Kistarcsai műhelyben, ${SLA.installDays} alatt beépítés. Az egész folyamat tipikusan két hét.</p>` },
 ];
@@ -95,7 +93,7 @@ const faqItems = [
     lead={`Négy modern kivitel, egyetlen MABISZ-minősített acél biztonsági magon. Belépőszintünk ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól indul, a prémium családi házas kivitel pedig az új építésű otthonok színvonalát hozza. Mindegyikre ${SITE.warrantyYears} év szerkezeti garanciát vállalunk.`}
     pillars={[
       "Hőhídmentes acél tok",
-      "Üveggyapot bélelés",
+      "Kőzetgyapot hő és hangszigetelés",
       `MABISZ ${SITE.mabiszSince} óta`,
       "Mottura · Abus · Mul-T-Lock · Iseo · Cisa",
       `${SITE.warrantyYears} év garancia`,
@@ -120,14 +118,14 @@ const faqItems = [
       {products.map(p => <ProductCard {...p} />)}
     </div>
     <p class="product-note">
-      A modern modellek mindegyikéhez 35+ fa minta, 15 mart minta, teljes RAL színskála és bármelyik zármárkánk választható — Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa.
+      Faburkolatú ajtók bükk és tölgy alapra Milesi színkód szerinti színezéssel kérhető.
     </p>
   </Section>
 
   <Section
     tone="cream"
     eyebrow="Mit kap az acél magban"
-    heading="A szerkezet, ami minden Huba ajtó alatt fut."
+    heading="Minden ajtónk azonos, biztonságos acél szerkezetre épül."
     lead="Az ajtó látszó borításától függetlenül ugyanaz a tok-, zár- és bélelési rendszer dolgozik. Ezt minősítette a MABISZ 2009-ben, és ezt vállaljuk 15 évre."
   >
     <div class="spec-list stagger">
@@ -138,12 +136,12 @@ const faqItems = [
       </div>
       <div class="spec-block">
         <p class="spec-eyebrow">Bélelés</p>
-        <h3 class="spec-title">Therwolin / üveggyapot mag</h3>
+        <h3 class="spec-title">Hő és hangszigetelő kőzetgyapot</h3>
         <p class="spec-body">Hang- és hőszigetelő bélelés a nyílórész belsejében — opcionálisan második acéllemezzel a maximális MABISZ-osztályhoz. A panel-lakás zajos lépcsőházából tényleges csendet csinál.</p>
       </div>
       <div class="spec-block">
         <p class="spec-eyebrow">Záródási pontok</p>
-        <h3 class="spec-title">Felül, alul és hátul is</h3>
+        <h3 class="spec-title">Négy oldalt körben</h3>
         <p class="spec-body">A nyílórész felül, alul és a zsanéros oldalon is rögzül a tokba — nem csak a zárak vonalában. Standard kivitelnél 5–7 záróponttal, Premiumnál 9+ ponton, a választott zárrendszertől függően.</p>
       </div>
       <div class="spec-block">

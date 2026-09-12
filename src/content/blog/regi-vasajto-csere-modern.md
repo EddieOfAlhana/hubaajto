@@ -38,7 +38,7 @@ A teljes felmérés 30–60 percig tart, és a Kistarcsai műhelyből Budapest �
 A felméréstől számítva a Huba ajtó saját műhelyünkben 10–12 munkanap alatt készül el. Ezalatt az időszak alatt az Ön régi ajtaja a helyén marad. A gyártás során:
 
 - **Méretre szabott acél zártszelvény tokot** hegesztünk a felmérési adatok alapján.
-- **A nyílórészt** Therwolin / üveggyapot béleléssel és megerősítő lemezekkel összerakjuk.
+- **A nyílórészt** Therwolin / kőzetgyapot béleléssel és megerősítő lemezekkel összerakjuk.
 - **A felületet** az Ön választott borításával (mart vagy fa) befejezzük.
 - **A zárszerkezetet** beépítjük és tesztet futtatunk.
 
