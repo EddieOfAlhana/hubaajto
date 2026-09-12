@@ -34,7 +34,7 @@ const milestones = [
   {
     year: "2018",
     title: "Építészi együttműködés",
-    body: "Kialakítjuk az együttműködést tervező építészekkel és a műemléki szakértői névjegyzékbe vett partnerekkel — a műemléki ajtócseréhez szükséges teljes műszaki dokumentációt (méretrajz, anyagminta) azóta is mi állítjuk össze az ügyfél építésze számára.",
+    body: "Kialakítjuk az együttműködést tervező építészekkel — a műemléki és korhű ajtócseréhez szükséges teljes műszaki dokumentációt (méretrajz, anyagminta) azóta is mi állítjuk össze az ügyfél építésze számára.",
   },
   {
     year: "2024",
@@ -70,8 +70,8 @@ const principles = [
     body: "15 év szerkezeti garancia — a piac leghosszabb vállalása. De a számokon túl: a műhely 22+ éve azon a címen működik, ahol a beépítés napján is volt. Egy számlát megtartani érdemes.",
   },
   {
-    name: "Együttműködünk az Ön építészével",
-    body: "Műemléki és helyi védettségi környezetben a szükséges műszaki dokumentációt (méretrajz, anyagminta, zárrendszer-terv) mi állítjuk össze — az örökségvédelmi engedélyezési eljárást az Ön építésze vagy örökségvédelmi szakértője intézi a hatóságnál.",
+    name: "Fix árajánlat, nem becslés",
+    body: "A helyszíni felmérés után 48 órán belül írásos, 30 napra rögzített árajánlatot adunk — nem szóbeli becslést. A megrendeléskor rögzített összeg a végleges.",
   },
 ];
 ---
@@ -98,6 +98,44 @@ const principles = [
   />
 
   <div id="below"></div>
+
+  <p class="slogan reveal">{SITE.tagline}</p>
+
+  <Section
+    tone="cream"
+    eyebrow="Elérhetőségeink"
+    heading="Vegye fel velünk a kapcsolatot."
+    align="center"
+  >
+    <div class="contact-quick stagger">
+      <a class="contact-card" href={`tel:${CONTACT.phonePrimaryTel}`}>
+        <p class="contact-card-label">Telefon</p>
+        <p class="contact-card-value">{CONTACT.phonePrimary}</p>
+      </a>
+      <a class="contact-card" href={`mailto:${CONTACT.email}`}>
+        <p class="contact-card-label">E-mail</p>
+        <p class="contact-card-value">{CONTACT.email}</p>
+      </a>
+      <a
+        class="contact-card"
+        href={`https://www.google.com/maps?q=${CONTACT.address.latitude},${CONTACT.address.longitude}`}
+        target="_blank"
+        rel="noopener"
+      >
+        <p class="contact-card-label">Cím</p>
+        <p class="contact-card-value">{CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}</p>
+      </a>
+      <div class="contact-card contact-card-static">
+        <p class="contact-card-label">Nyitva tartás</p>
+        <p class="contact-card-value">{CONTACT.hours.weekday}<br />{CONTACT.hours.saturday}</p>
+      </div>
+    </div>
+    <div class="contact-quick-cta">
+      <a href="/felmeres" class="btn btn-primary">Ingyenes felmérés kérése →</a>
+      <a href="/" class="btn btn-ghost">hubaajto.hu</a>
+    </div>
+  </Section>
+
   <TrustStrip />
 
   <Section
@@ -134,7 +172,7 @@ const principles = [
           A műhely megkülönböztető képessége — <strong>a korhű, stílusbiztonsági ajtó</strong> — 2014 körül kristályosodott ki, az első budapesti polgári lakásban végzett kazettás rekonstrukció után. Egyetlen más magyar manufaktúra sem dolgozik ebben a regiszterben; a versenytársak vagy modern modelleket gyártanak, vagy bútorasztalos munkát — biztonsági szint nélkül. Mi mindkettőt ugyanazon a szerkezeti magon.
         </p>
         <p>
-          2018-ra a műhely kialakította az <strong>együttműködést tervező építészekkel</strong> és a műemléki szakértői névjegyzékbe vett partnerekkel: a budapesti műemléki ajtócseréhez szükséges teljes műszaki dokumentációt mi állítjuk össze, míg a 4–6 hónapos, három hatóságot érintő engedélyezési eljárást az ügyfél saját építésze vagy örökségvédelmi szakértője intézi.
+          2018-ra a műhely kialakította az <strong>együttműködést tervező építészekkel</strong>: a budapesti műemléki és korhű ajtócseréhez szükséges teljes műszaki dokumentációt — méretrajz, anyagminta, zárrendszer-terv — azóta is mi állítjuk össze az ügyfél építésze számára.
         </p>
         <p>
           2024-ben a családi vállalkozás <strong>második generációja</strong> vette át a műhely napi vezetését. Az alapítók a műszaki minőségellenőrzésnél maradtak. Az új generáció hozta a digitális ajtótervezőt, az aktualizált weboldalt, és a modern modellek bővítését az agglomeráció keleti és budai íve felé.
@@ -207,6 +245,38 @@ const principles = [
 </BaseLayout>
 
 <style>
+  .slogan {
+    text-align: center; font-family: var(--font-serif); font-style: italic;
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem); color: var(--color-brass-deep);
+    padding: clamp(1.5rem, 3vw, 2.5rem) 1.5rem 0;
+  }
+
+  .contact-quick {
+    display: grid; grid-template-columns: 1fr; gap: 1px;
+    background: rgba(14,15,17,0.08);
+    border: 1px solid rgba(14,15,17,0.08);
+  }
+  @media (min-width: 700px) { .contact-quick { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .contact-quick { grid-template-columns: repeat(4, 1fr); } }
+  .contact-card {
+    background: var(--color-paper); padding: 1.5rem 1.5rem; text-align: center;
+    display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none;
+    transition: background-color 0.2s var(--ease-out-soft, ease);
+  }
+  a.contact-card:hover { background: var(--color-cream); }
+  .contact-card-static { cursor: default; }
+  .contact-card-label {
+    font-size: 0.72rem; letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .contact-card-value {
+    font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.35; color: var(--color-ink);
+  }
+  .contact-quick-cta {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
   .stats-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
   }

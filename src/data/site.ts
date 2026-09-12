@@ -100,6 +100,7 @@ export const NAV = [
   { label: "Referenciák", href: "/referenciak" },
   { label: "Árak", href: "/arak" },
   { label: "Blog", href: "/blog" },
+  { label: "Rólunk", href: "/rolunk" },
   { label: "Kapcsolat", href: "/kapcsolat" },
 ] as const;
 
