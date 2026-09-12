@@ -1,6 +1,6 @@
 ---
 title: "Mennyibe kerül egy biztonsági ajtó 2026-ban? — Tételes lebontás (Budapest, Pest megye)"
-description: "Modern panel-lakás 330 000 Ft-tól, prémium családi ház 800k-1.8M Ft, műemléki kivitel egyedi árajánlattal. Részletes árképzés bruttó értékben."
+description: "Modern panel-lakás 440 000 Ft-tól, prémium családi ház 800k-1.8M Ft, műemléki kivitel egyedi árajánlattal. Részletes árképzés bruttó értékben."
 publishDate: 2025-01-08
 pillar: arak
 tags: ["árak", "biztonsági ajtó ár", "részletfizetés", "Cofidis"]
@@ -10,7 +10,7 @@ cornerstone: true
 readingMinutes: 11
 seo:
   title: "Biztonsági ajtó ára 2026 — tételes bontás"
-  description: "Mit kap 330 000 Ft-ért? Hogyan árazódik egy biztonsági ajtó tételenként, és mi a különbség 150 000 és 800 000 Ft között? Cofidis 0% részletfizetés."
+  description: "Mit kap 440 000 Ft-ért? Hogyan árazódik egy biztonsági ajtó tételenként, és mi a különbség 150 000 és 800 000 Ft között? Cofidis 0% részletfizetés."
   keywords: ["biztonsági ajtó ár", "mennyibe kerül biztonsági ajtó", "biztonsági ajtó árak 2026", "részletfizetés Cofidis"]
 ---
 
@@ -22,7 +22,7 @@ A számok 2026 januári állapotot tükröznek, és a saját kistarcsai üzemün
 
 | Kategória | Tipikus ár (bruttó) | Mire való |
 |---|---|---|
-| **Modern Standard** | 330 000–450 000 Ft | Panel-lakás, lakótelepi társasház |
+| **Modern Standard** | 440 000–560 000 Ft | Panel-lakás, lakótelepi társasház |
 | **Modern Premium** | 450 000–800 000 Ft | Társasházi újépítés, családi ház |
 | **Prémium családi ház** | 800 000–1 800 000 Ft | Új építésű családi ház, kiemelt kockázat |
 | **Stílus / Műemléki** | 1 100 000–2 500 000 Ft | Polgári lakás, századfordulós ház, műemléki környezet |
@@ -31,19 +31,19 @@ Ezek a tartományok a teljes csomagot tartalmazzák: ajtó, beépítés, bontás
 
 ## Miből áll össze egy biztonsági ajtó ára?
 
-A 330 000 Ft-os **belépő szintű modern Huba ajtó** ára öt fő tételből áll, és ezek aránya megmutatja, hogy mire fizet ténylegesen:
+A 440 000 Ft-os **belépő szintű modern Huba ajtó** ára öt fő tételből áll, és ezek aránya megmutatja, hogy mire fizet ténylegesen:
 
-1. **Acél szerkezet (tok + szárny)** — 35–40% (kb. 130 000 Ft)
-2. **Zárszerkezet + cilinder + veretek** — 15–20% (kb. 60 000 Ft)
-3. **Borítás (fa vagy mart minta)** — 10–15% (kb. 45 000 Ft)
-4. **Beépítés (munkadíj, anyagok, törmelékelszállítás)** — 20–25% (kb. 75 000 Ft)
+1. **Acél szerkezet (tok + szárny)** — 35–40% (kb. 175 000 Ft)
+2. **Zárszerkezet + cilinder + veretek** — 15–20% (kb. 80 000 Ft)
+3. **Borítás (fa vagy mart minta)** — 10–15% (kb. 60 000 Ft)
+4. **Beépítés (munkadíj, anyagok, törmelékelszállítás)** — 20–25% (kb. 100 000 Ft)
 5. **Adminisztráció, MABISZ-tanúsítás, garancia, szállítás** — kb. 5–10%
 
-A felső kategóriákban az arány eltolódik. Egy 1,5 millió Ft-os **műemléki kivitel** esetén az acélszerkezet és a beépítés aránya hasonló marad abszolút értékben (kb. 250 000 + 150 000 Ft), de a **látható fa borítás, a kovácsoltvas veretek és az ólomüvegezés** önállóan 600 000–900 000 Ft-ot is kitehet — és ehhez jön az **engedélyezési csomag** (építész terv, építéstörténeti dokumentáció, ÉTDR-benyújtás), amely további 300 000–800 000 Ft.
+A felső kategóriákban az arány eltolódik. Egy 1,5 millió Ft-os **műemléki kivitel** esetén az acélszerkezet és a beépítés aránya hasonló marad abszolút értékben (kb. 250 000 + 150 000 Ft), de a **látható fa borítás, a kovácsoltvas veretek és az ólomüvegezés** önállóan 600 000–900 000 Ft-ot is kitehet — és ehhez jön a tulajdonos saját engedélyeztetési költsége is (építész terv, építéstörténeti dokumentáció, ÉTDR-benyújtás), ami jellemzően további 300 000–800 000 Ft-ot tesz ki.
 
-## Mit jelent valójában a „330 000 Ft-tól"?
+## Mit jelent valójában a „440 000 Ft-tól"?
 
-A piacon szokás belépőárakat hirdetni — és a vevő gyakran csalódik, mert a hirdetett összeg nem fedi le, amit ténylegesen kapni szeretne. A Huba ajtó esetében a **330 000 Ft-tól** ár az alábbiakat tartalmazza:
+A piacon szokás belépőárakat hirdetni — és a vevő gyakran csalódik, mert a hirdetett összeg nem fedi le, amit ténylegesen kapni szeretne. A Huba ajtó esetében a **440 000 Ft-tól** ár az alábbiakat tartalmazza:
 
 - **Hőhídmentes acél zártszelvény tok** — nem hajlított lemez, hanem zárt acélprofil.
 - **Acél biztonsági szárny** — Therwolin vagy üveggyapot béléssel, hő- és hangszigeteléssel.
@@ -54,22 +54,22 @@ A piacon szokás belépőárakat hirdetni — és a vevő gyakran csalódik, mer
 - **15 év szerkezeti garancia** — a piac leghosszabb vállalása.
 - **18 hónap zárszerkezet-garancia**.
 
-Mit **nem** tartalmaz a 330 000 Ft-os ár? A **prémium európai zárcilindereket** (Mottura, Abus, Mul-T-Lock, Iseo, Cisa) — ezek 30 000–90 000 Ft-tal feljebb tolják az árat —, az **emelt kategóriájú borításokat** (35-féle fa minta, 15-féle mart minta, festett vagy lazúrozott felület), és a **3-nál magasabb MABISZ osztályt** (4. osztály = 10 perc, 5. osztály = 15 perc).
+Mit **nem** tartalmaz a 440 000 Ft-os ár? A **prémium európai zárcilindereket** (Mottura, Abus, Mul-T-Lock, Iseo, Cisa) — ezek 30 000–90 000 Ft-tal feljebb tolják az árat —, az **emelt kategóriájú borításokat** (35-féle fa minta, 15-féle mart minta, festett vagy lazúrozott felület), és a **3-nál magasabb MABISZ osztályt** (4. osztály = 10 perc, 5. osztály = 15 perc).
 
 ## Miért kerül egy korhű ajtó 5x annyiba?
 
-A leggyakoribb kérdés, amit a műemléki kategóriában kapunk: *miért kerül egy korhű, polgári lakás bejárati ajtó 1,5 millió Ft, ha a modern Huba ajtó 330 000 Ft-tól indul?* A válasz nem az, hogy „mert így szokás" — a válasz tételenként megadható.
+A leggyakoribb kérdés, amit a műemléki kategóriában kapunk: *miért kerül egy korhű, polgári lakás bejárati ajtó 1,5 millió Ft, ha a modern Huba ajtó 440 000 Ft-tól indul?* A válasz nem az, hogy „mert így szokás" — a válasz tételenként megadható.
 
 | Tétel | Modern Standard | Műemléki kivitel |
 |---|---|---|
-| Acél biztonsági szerkezet | 130 000 Ft | 180 000 Ft (méretre szabott, gyakran nem szabványos méret) |
-| Zár + cilinder | 60 000 Ft | 90 000 Ft (Mottura vagy Mul-T-Lock prémium) |
-| Borítás | 45 000 Ft (mart minta vagy fafurnér) | 450 000–800 000 Ft (tölgyfa, kazettás vagy betétes, kézi munka) |
+| Acél biztonsági szerkezet | 175 000 Ft | 180 000 Ft (méretre szabott, gyakran nem szabványos méret) |
+| Zár + cilinder | 80 000 Ft | 90 000 Ft (Mottura vagy Mul-T-Lock prémium) |
+| Borítás | 60 000 Ft (mart minta vagy fafurnér) | 450 000–800 000 Ft (tölgyfa, kazettás vagy betétes, kézi munka) |
 | Veretek | (szabvány) | 80 000–200 000 Ft (kovácsoltvas vagy sárgaréz, gyakran egyedi gyártásból) |
 | Üvegezés | 0 Ft | 80 000–250 000 Ft (ólmozott, metszett vagy homokfúvott) |
-| Beépítés | 75 000 Ft | 150 000–250 000 Ft (egyedi káva, esetleges szárkő-igazítás) |
-| Engedélyezési csomag | 0 Ft | 300 000–800 000 Ft (építész + szakértő + ÉTDR) |
-| **Összesen** | **~330 000 Ft** | **~1 500 000 Ft** |
+| Beépítés | 100 000 Ft | 150 000–250 000 Ft (egyedi káva, esetleges szárkő-igazítás) |
+| Engedélyeztetés (építész, szakértő, ÉTDR — a tulajdonos saját ügyintézésében) | 0 Ft | 300 000–800 000 Ft |
+| **Összesen** | **~440 000 Ft** | **~1 500 000 Ft** |
 
 Az 5x szorzó tehát nem felár — három különálló tényező halmozódik egymásra: az **egyedi méret és kézi munka** (a borítás és a veretek), a **prémium anyagok** (tölgy, ólomüveg, kovácsoltvas), és az **engedélyezési munka** (építész tervezés, szakértői dokumentáció, hatósági ügyintézés). Az ajtó **acél biztonsági szerkezete** ezzel szemben csak mérsékelten drágul.
 
@@ -94,7 +94,7 @@ A 0% THM mellett **hosszabb futamidős, kamatos konstrukciók** is választható
 
 A magyar piacon szokás nettó árakat hirdetni — és ez különösen a fogyasztói piacon (B2C) félrevezető lehet. A Huba ajtó **minden ára bruttó** (27% ÁFA-val), mert a vevőink döntő többsége magánszemély. Az ÁFA-t nem tudja visszaigényelni, és így az ajtó tényleges költsége a hirdetett ár.
 
-A B2B-vásárlók (cég, egyesület, alapítvány) természetesen kérhetnek nettó árajánlatot. Egy 330 000 Ft-os bruttó ajtó nettó ára 260 000 Ft, és az áfa visszaigényelhető, ha a vevő áfa-alany.
+A B2B-vásárlók (cég, egyesület, alapítvány) természetesen kérhetnek nettó árajánlatot. Egy 440 000 Ft-os bruttó ajtó nettó ára 346 000 Ft, és az áfa visszaigényelhető, ha a vevő áfa-alany.
 
 ## Hol pozícionáljuk magunkat — mit jelent a „középmezőny"?
 
@@ -122,7 +122,7 @@ Ha egy biztonsági ajtó élettartama 25–30 év, a 15 év szerkezeti garancia 
 
 ## Mire költsön és mire ne?
 
-Egy **panel-lakás bejárati ajtó cseréje** esetén az ár-érték arány optimuma a **Modern Standard vagy Modern Premium kategóriában** van — 330 000–600 000 Ft. RC2 vagy RC3 osztály (MABISZ 2. vagy 3.), prémium cilinder felárral. Egy átlagos panel-lakás betörési kockázata ezt indokolja, és a magasabb osztály felár inkább a **családi házaknál** és a **földszinti lakásoknál** térül meg.
+Egy **panel-lakás bejárati ajtó cseréje** esetén az ár-érték arány optimuma a **Modern Standard vagy Modern Premium kategóriában** van — 440 000–600 000 Ft. RC2 vagy RC3 osztály (MABISZ 2. vagy 3.), prémium cilinder felárral. Egy átlagos panel-lakás betörési kockázata ezt indokolja, és a magasabb osztály felár inkább a **családi házaknál** és a **földszinti lakásoknál** térül meg.
 
 Egy **prémium családi háznál** (új építés, kertes ingatlan) érdemes a Modern Premium felső sávjában vagy a Huba Extra kategóriában gondolkodni — 800 000–1 500 000 Ft. RC3 vagy RC4 osztály, prémium zárcilinder, esetleg 35-féle fa minta közüli választás. Itt a betörési kockázat statisztikailag magasabb, és az ingatlanérték is indokolja.
 

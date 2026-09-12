@@ -68,6 +68,6 @@ Ha a dokumentációt nem névjegyzéki szakértő készíti, a hatóság hiányp
 
 ## Mit nyújt a Huba ajtó?
 
-A Huba ajtó / Szer-X3 kistarcsai műhelyében minden engedélyezési ügyhöz partner építész tervezőt és műemléki névjegyzéki szakértőt adunk — a [Huba engedélyezési csomag](/engedelyezesi-csomag) része. A tervlap és a dokumentáció a kormányhivatali gyakorlatban elfogadott szempontrendszer szerint készül, így a 7 tipikus elutasítási ok közül egy sem jelenik meg. A korhű fa felület és a rejtett acélbetétes szerkezet kombinációját a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja referenciafotókkal.
+A Huba ajtó / Szer-X3 kistarcsai műhelyében gyártott korhű, kazettás vagy betétes ajtók az eredeti osztásrendet, a hagyományos anyaghasználatot, a korhű vereteket és a helyi értékleltár szerinti színeket követik — vagyis az 1–6. pontban felsorolt tipikus elutasítási okok jellemzően nem érintik ezeket a termékeket. A 7. pontban leírt építéstörténeti dokumentációt az Ön által megbízott, névjegyzékben szereplő műemléki szakértőnek kell elkészítenie. A korhű fa felület és a rejtett acélbetétes szerkezet kombinációját a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja referenciafotókkal.
 
 Kérje az ingyenes védettségi átvilágítást a helyrajzi szám alapján — egy munkanapon belül választ adunk arra, hogy az Ön esetében melyik tipikus buktatóra kell odafigyelni.

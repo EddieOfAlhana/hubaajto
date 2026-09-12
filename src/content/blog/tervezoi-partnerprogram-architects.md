@@ -42,7 +42,7 @@ A két opció között projektenként választhat. A jutalék számlázása az �
 
 ## Kiknek szól ez a program?
 
-A célközönségünk **prémium családi házakat, villafelújításokat és magas igényű többgenerációs ingatlanokat tervező építészek** Budapest-agglomerációban. Tipikusan az [Octogon magazin](https://www.octogon.hu/) szintjén dolgozó stúdiók — keleti agglomeráció (Mogyoród, Csömör, Veresegyház, Gödöllő, Fót) és NW-Buda-agglomeráció (Telki, Páty, Budakeszi, Solymár) területén. Belsőépítészeknek, akik korhű, stílus- vagy műemléki ajtót terveznek polgári lakásokba, szintén kínálunk programot, kibővítve a 4–6 hónapos engedélyezési csomagunkkal — erről bővebben a [műemléki engedélyezési útmutatónkban](/blog/muemleki-engedelyezes-utmutato).
+A célközönségünk **prémium családi házakat, villafelújításokat és magas igényű többgenerációs ingatlanokat tervező építészek** Budapest-agglomerációban. Tipikusan az [Octogon magazin](https://www.octogon.hu/) szintjén dolgozó stúdiók — keleti agglomeráció (Mogyoród, Csömör, Veresegyház, Gödöllő, Fót) és NW-Buda-agglomeráció (Telki, Páty, Budakeszi, Solymár) területén. Belsőépítészeknek, akik korhű, stílus- vagy műemléki ajtót terveznek polgári lakásokba, szintén kínálunk programot, a műemléki és stílus ajtók egyedi gyártási igényeire szabva — a hatósági engedélyezési folyamatról (amelyet az ügyfél tervezője intéz) a [műemléki engedélyezési útmutatónkban](/blog/muemleki-engedelyezes-utmutato) olvashatnak bővebben.
 
 ## A tervezői csomag pontos tartalma
 

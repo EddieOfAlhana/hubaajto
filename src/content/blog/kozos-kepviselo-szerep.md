@@ -42,7 +42,7 @@ A gyakorlatban három forgatókönyv ismétlődik:
 
 A leggyakoribb eset: a tulajdonos megrendel egy katalógusajtót, a kivitelező bekopog, és a közös képviselő hivatalból leállíttatja a munkát. Ez a 2003. évi CXXXIII. tv. 24. § alapján jogos: a közös tulajdon felületét nem lehet egyoldalúan megváltoztatni.
 
-Megoldás: a felmérési fázisban a Huba ajtó projektmenedzsere a közös képviselővel együtt is felveszi a kapcsolatot, és előre megküldi a tervlapot és az építéstörténeti dokumentációt egyetértésre.
+Megoldás: érdemes már a felmérési fázisban egyeztetni a közös képviselővel, és előre megküldeni neki a tervlapot és az építéstörténeti dokumentációt egyetértésre.
 
 ### 2. A társasházi közgyűlés egységességet vár el
 
@@ -54,11 +54,11 @@ Megoldás: a Huba korhű ajtó pontosan ezt nyújtja — az eredeti megjelenést
 
 A standard menet egy átlagos belvárosi lakásajtó esetén:
 
-1. **Előzetes egyeztetés (1-2 hét)** — A Huba projektmenedzsere e-mailben elküldi a felmérési vázlatot, a tervlapot és az építéstörténeti dokumentációt a közös képviselőnek. A találkozó során bemutatjuk a korhű megjelenést és a rejtett biztonsági szerkezetet.
+1. **Előzetes egyeztetés (1-2 hét)** — A tulajdonos (vagy a megbízott építész) e-mailben elküldi a felmérési vázlatot, a tervlapot és az építéstörténeti dokumentációt a közös képviselőnek, bemutatva a korhű megjelenést és a rejtett biztonsági szerkezetet.
 
 2. **Közgyűlési határozat (2-6 hét)** — Az SZMSZ szerint a közös képviselő összehívja a közgyűlést, vagy írásban gyűjt szavazatokat (Ptk. 6:96. §). Egyszerű többség elegendő, ha az alapító okirat mást nem ír elő.
 
-3. **Írásbeli hozzájárulás (1 hét)** — A közgyűlési határozat alapján a közös képviselő írásbeli nyilatkozatot ad ki, amelyet a TKBE-eljáráshoz csatolunk.
+3. **Írásbeli hozzájárulás (1 hét)** — A közgyűlési határozat alapján a közös képviselő írásbeli nyilatkozatot ad ki, amelyet csatolni kell a TKBE-eljáráshoz.
 
 A folyamat összesen **4-9 hét**, és párhuzamosan futhat az építéstörténeti dokumentáció elkészítésével.
 
@@ -68,8 +68,8 @@ Ha a társasházi hozzájárulás megtagadásra kerül (pl. a többi lakó nem s
 
 A jobbik út: már a felmérési fázisban a közös képviselővel együttműködni, hogy a tervlap a többi lakásajtóhoz illeszkedjen. A Huba ajtó kistarcsai műhelye gyakran úgy tervez egy lakásajtót, hogy a társasházban a többi 4-5 lakó későbbi cseréje is azonos profilozással történhessen — ezzel a társasházi vétó esélye gyakorlatilag nullára csökken.
 
-## A Huba szolgáltatás
+## Amit érdemes tudni
 
-A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében a közös képviselővel folytatott egyeztetést és a közgyűlési határozat előkészítését is mi végezzük. A tervlap és a műszaki dokumentáció a társasházi és hatósági követelményeket egyszerre elégíti ki — a részleteket a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja referenciafotókkal.
+A közös képviselővel és a közgyűléssel folytatott egyeztetés, valamint a hozzájárulás beszerzése a tulajdonos feladata. Amit a Huba ajtó ehhez ad: olyan tervlapot és műszaki dokumentációt készítünk, amely egyszerre felel meg a társasházi és a hatósági követelményeknek — a részleteket a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja referenciafotókkal.
 
-Ha bizonytalan, hogyan közelítse meg a saját közös képviselőjét, küldje el a címet és a társasházi alapító okirat releváns részét — egy munkanapon belül összeállítjuk a kezelési forgatókönyvet.
+Ha bizonytalan, hogyan közelítse meg a saját közös képviselőjét, küldje el a címet és a társasházi alapító okirat releváns részét — egy munkanapon belül tanácsot adunk, mire érdemes figyelnie.

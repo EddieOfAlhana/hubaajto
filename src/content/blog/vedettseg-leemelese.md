@@ -80,10 +80,10 @@ Ha a tulajdonos formailag elindítja a védettség leemelési eljárását:
 | Eljárás időtartama | 6–18 hónap |
 | Sikerességi valószínűség | < 5% |
 
-Egy ilyen összeg és időkeret mellett **a korhű biztonsági ajtó és engedélyezési csomag választása mind költség, mind eredmény szempontjából lényegesen előnyösebb**.
+Egy ilyen összeg és időkeret mellett **a korhű biztonsági ajtó választása mind költség, mind eredmény szempontjából lényegesen előnyösebb**.
 
 ## Mit ajánlunk?
 
-A védettség leemelési eljárás a tulajdonosok 95+ százalékánál zsákutca. Az alternatíva: a **védettség elfogadása mellett a korhű biztonsági ajtó és az engedélyezési csomag**. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk pontosan ezt szolgálja, és az [engedélyezési csomag](/engedelyezesi-csomag) a hatósági folyamatot rendezi.
+A védettség leemelési eljárás a tulajdonosok 95+ százalékánál zsákutca. Az alternatíva: a **védettség elfogadása mellett a korhű biztonsági ajtó**. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk pontosan ezt szolgálja — a hatósági engedélyezési folyamatot az ingatlan tulajdonosa vagy megbízott tervezője intézi.
 
 Kérje [ingyenes helyszíni felmérésünket](/felmeres) — a felmérésen őszintén elmondjuk, hogy az Ön esetében a védettség leemelési kísérlet vagy a korhű biztonsági ajtó megrendelése az ésszerűbb döntés.

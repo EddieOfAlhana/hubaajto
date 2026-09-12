@@ -11,7 +11,7 @@ seo:
   keywords: ["olcsó biztonsági ajtó", "katalógusajtó", "import biztonsági ajtó", "biztonsági ajtó ár"]
 ---
 
-A piacon ma 145 000 és 170 000 Ft között megtalálható a „biztonsági ajtó" felirat. Ha Ön egy panellakásba vagy családi házba ajtót keres, érthető, hogy az alacsonyabb árú ajánlat csábító. Cikkünkben nem márkákat hasonlítunk össze — hanem azt mutatjuk meg, milyen konkrét műszaki különbségek vannak egy 150 000 Ft-os, sorozatgyártott katalógusajtó és egy 330 000 Ft-tól induló, saját gyártású Huba ajtó között. A számok és specifikációk magukért beszélnek.
+A piacon ma 145 000 és 170 000 Ft között megtalálható a „biztonsági ajtó" felirat. Ha Ön egy panellakásba vagy családi házba ajtót keres, érthető, hogy az alacsonyabb árú ajánlat csábító. Cikkünkben nem márkákat hasonlítunk össze — hanem azt mutatjuk meg, milyen konkrét műszaki különbségek vannak egy 150 000 Ft-os, sorozatgyártott katalógusajtó és egy 440 000 Ft-tól induló, saját gyártású Huba ajtó között. A számok és specifikációk magukért beszélnek.
 
 ## A hét szempont, ahol a különbség kézzelfogható
 
@@ -48,7 +48,7 @@ A 15 év szerkezeti garancia nem marketingfogás: a piaci normát megduplázza. 
 Vegyük a két forgatókönyvet 10 éves időtávra:
 
 - **Katalógusajtó (150 000 Ft):** 1–2 év után kifutó garancia, cilindercsere a 4. évben (35 000 Ft), zárszerkezet-csere a 7. évben (45 000 Ft), tömítéscsere (8 000 Ft). Tényleges 10 éves költség: kb. **238 000 Ft**, és egy elhasznált ajtót kap a végén.
-- **Huba ajtó (330 000 Ft-tól):** 15 év szerkezeti garancia végig fedezi, prémium zárszerkezet karbantartást igényel, de cserét nem. Tényleges 10 éves költség: kb. **335 000 Ft**, és egy még mindig minőségi ajtót kap.
+- **Huba ajtó (440 000 Ft-tól):** 15 év szerkezeti garancia végig fedezi, prémium zárszerkezet karbantartást igényel, de cserét nem. Tényleges 10 éves költség: kb. **445 000 Ft**, és egy még mindig minőségi ajtót kap.
 
 A különbség nem azonnal látszik a vásárláskor, hanem az évek során. Bővebben az [árak oldalon](/arak) és a [MABISZ + RC osztályok elemzésében](/blog/mabisz-rc-osztaly-elemzes) talál erről számokat.
 

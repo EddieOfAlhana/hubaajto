@@ -54,8 +54,8 @@ A négy forgatókönyv közül három esetében hatósági eljárás indul. Csak
 
 ## Ha védett az ingatlan: mi a következő öt lépés?
 
-A védettség ténye nem akadály, csak egy kerítés, amin át kell menni. A budapesti kormányhivatal engedélyezési gyakorlatában elfogadott megoldás a fa felületű, **rejtett acélbetétes biztonsági ajtó**, amely az eredeti osztásrendet, színt és veretkészletet híven követi. Ezt a Huba ajtó saját kistarcsai műhelyében gyártjuk, és az engedélyezést is mi intézzük végig — a védettségi lekérdezéstől a befejezési bejelentésig.
+A védettség ténye nem akadály, csak egy kerítés, amin át kell menni. A budapesti kormányhivatal engedélyezési gyakorlatában elfogadott megoldás a fa felületű, **rejtett acélbetétes biztonsági ajtó**, amely az eredeti osztásrendet, színt és veretkészletet híven követi. Ezt a Huba ajtó saját kistarcsai műhelyében gyártja, pontosan a hatóság engedélyezési gyakorlatában elfogadott paraméterek szerint.
 
 A részletes folyamatot a [Műemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) bejegyzés tárgyalja végig, a kerületenkénti szigorúság sorrendjében.
 
-**Kérje ingyenes védettségi átvilágításunkat:** elküldi a címet és a helyrajzi számot, mi pedig 1 munkanapon belül e-mailben válaszolunk, melyik eljárást kell lefolytatni és mennyi a várható időtáv. A felmérés következő lépés — a részletekért lásd a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalt, vagy az [engedélyezési csomag](/engedelyezesi-csomag) tartalmát.
+**Kérje ingyenes védettségi átvilágításunkat:** elküldi a címet és a helyrajzi számot, mi pedig 1 munkanapon belül e-mailben válaszolunk, melyik eljárást kell lefolytatni és mennyi a várható időtáv. A felmérés következő lépés — a részletekért lásd a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalt.

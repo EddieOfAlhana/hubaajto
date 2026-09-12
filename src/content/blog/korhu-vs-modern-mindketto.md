@@ -69,10 +69,10 @@ Ez 30–60%-kal magasabb, mint egy szimpla katalógus biztonsági ajtó, de 50�
 
 A három bevezető szituációra a Huba-megoldás:
 
-1. **Védett ingatlan, biztonsági igény** — kompozit ajtó + teljes engedélyezési csomag (építész, szakértő, ÉTDR, TKBE). 4-6 hónap, 1,1-3,8 millió Ft összköltség.
+1. **Védett ingatlan, biztonsági igény** — kompozit ajtó + a teljes engedélyezési folyamat (építész, szakértő, ÉTDR, TKBE). 4-6 hónap, 1,1-3,8 millió Ft becsült összköltség (ajtó, tervezői és szakértői díjak együtt).
 2. **Nem védett, stílusos kazettás igény** — kompozit ajtó, engedélyezés nélkül. 8-12 hét, 700-1500 ezer Ft.
 3. **Új építésű, korhű homlokzatú villa** — kompozit ajtó az építészcsomag részeként, modern hőszigeteléssel. 10-14 hét, 1,2-2,5 millió Ft.
 
-A részleteket — referenciafotók, specifikációk, árajánlat-konfigurátor — a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja. A teljes engedélyezési folyamatot a [Huba engedélyezési csomag](/engedelyezesi-csomag) oldal írja le, illetve a [müemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) bejegyzés tárgyalja.
+A részleteket — referenciafotók, specifikációk, árajánlat-konfigurátor — a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja. A teljes örökségvédelmi engedélyezési folyamatot a [müemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) bejegyzés tárgyalja.
 
 Ha bizonytalan, hogy az Ön helyzetére melyik konstrukció illik, kérje ingyenes helyszíni felmérésünket — egy munkanapon belül visszahívjuk.

@@ -67,7 +67,7 @@ A bejárati ajtó cseréje **mindig a tulajdonos saját költsége**. A közös 
 - Az új ajtó esztétikailag „javítja" a lépcsőházat,
 - Műemléki épületben a kötelező engedélyezés többletköltséget okoz.
 
-Az ajtó ára (330 000 Ft-tól) és a beépítés (80 000–150 000 Ft) tehát teljes egészében az Ön felelőssége. Részletfizetésre van lehetőség [Cofidis áruhitelen keresztül](/blog/reszletfizetes-cofidis-0-thm).
+Az ajtó ára (440 000 Ft-tól) és a beépítés (80 000–150 000 Ft) tehát teljes egészében az Ön felelőssége. Részletfizetésre van lehetőség [Cofidis áruhitelen keresztül](/blog/reszletfizetes-cofidis-0-thm).
 
 ## Tipikus időütemezés egy panel-társasházi cserénél
 

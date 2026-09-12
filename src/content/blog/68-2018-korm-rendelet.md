@@ -68,6 +68,6 @@ A [191/2001. (X. 18.) Korm. rendelet](https://net.jogtar.hu/jogszabaly?docid=a01
 
 ## Hol segít a Huba ajtó?
 
-A 68/2018. Korm. rendelet jogszabályi labirintusát nehéz egyedül navigálni — sem az építész, sem a szakértő, sem az ÉTDR-felület nem fogyasztóbarát. A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében az építész tervezőt, a műemléki szakértőt és a hatósági ügyintézést egy szerződésbe összevonjuk. A vevő egy számlát kap, egy projektmenedzsert, és a végén egy korhű, MABISZ-minősített, rejtett acélbetétes ajtót — a részleteket lásd a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalon.
+A 68/2018. Korm. rendelet jogszabályi labirintusát nehéz egyedül navigálni — sem az építész, sem a szakértő, sem az ÉTDR-felület nem fogyasztóbarát. Az engedélyezési eljárást az ingatlan tulajdonosának, illetve az általa megbízott építész tervezőnek és műemléki szakértőnek kell lefolytatnia. A Huba ajtó ehhez a folyamathoz a végeredményt adja: egy korhű, MABISZ-minősített, rejtett acélbetétes ajtót, amelyet a hatóság a gyakorlatban elfogad — a részleteket lásd a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalon.
 
 Ha bizonytalan, hogy az Ön ingatlanja az 53. § hatálya alá esik-e, küldje el helyrajzi számát, és 1 munkanapon belül választ adunk.

@@ -67,6 +67,6 @@ A különbség: az első konkrét, mérhető, és visszavezethető az eredetihez
 
 Az [ÉTDR-en beadott örökségvédelmi kérelmek](/blog/etdr-ajtocsere-utmutato) **mintegy 60%-a** legalább egy hiánypótlási kört megjár. A leggyakoribb ok éppen a tervlap pontatlansága — a [7 tipikus elutasítási ok](/blog/7-tipikus-elutasitas) közül négy közvetlenül a tervlapra vonatkozik. A megelőzés egyetlen útja: szakértői névjegyzékbe vett (439/2013. Korm. rendelet szerinti) építész tervezővel kell készíttetni a dokumentációt.
 
-## A Huba megoldás
+## Amit a felmérés során kapunk
 
-Az [engedélyezési csomagunk](/engedelyezesi-csomag) negyedik lépése a tervdokumentáció előkészítése: M=1:10 profilrajzok, anyagmintatáblák, RAL színminták. A partner építész tervezőnk és műemléki szakértőnk együttműködésével az ÉTDR-re beadott kérelem tervlapja már az első körben átmegy. A részleteket a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékoldalon olvashatja. Kérje [ingyenes helyszíni felmérésünket](/felmeres) — az eredeti ajtó dokumentálása az első napon megtörténik.
+A helyszíni felmérés során olyan műszaki dokumentációt állítunk össze az ajtóról — M=1:10 profilrajzok, anyagmintatáblák, RAL színminták —, amelyet Ön vagy a megbízott építész tervezője felhasználhat az engedélykérelem tervdokumentációjához. Az engedélykérelem összeállítása és benyújtása a tulajdonos vagy a tervező feladata. A részleteket a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékoldalon olvashatja. Kérje [ingyenes helyszíni felmérésünket](/felmeres) — az eredeti ajtó dokumentálása az első napon megtörténik.

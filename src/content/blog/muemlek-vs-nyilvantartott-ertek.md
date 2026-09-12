@@ -60,8 +60,8 @@ Egy közbenső eset érdemel figyelmet: **ugyanaz az ingatlan lehet egyszerre or
 
 ## Miért fontos ez a megkülönböztetés Önnek?
 
-Ha az Ön épülete „nyilvántartott műemléki érték", a teljes engedélyezési csomag tipikusan 100 000 – 400 000 Ft-tal olcsóbb, és 2 hónappal rövidebb, mintha „műemlék" lenne. Ha viszont valaki rosszul azonosítja a kategóriát, és a műemlékként kezelendő ingatlanra csak bejelentést tesz, a [191/2001. Korm. rendelet](https://net.jogtar.hu/jogszabaly?docid=a0100191.kor) szerinti bírság (beruházási érték 10–50%-a) és az eredeti állapot helyreállítása vár rá.
+Ha az Ön épülete „nyilvántartott műemléki érték", a teljes engedélyeztetés tipikusan 100 000 – 400 000 Ft-tal olcsóbb, és 2 hónappal rövidebb, mintha „műemlék" lenne. Ha viszont valaki rosszul azonosítja a kategóriát, és a műemlékként kezelendő ingatlanra csak bejelentést tesz, a [191/2001. Korm. rendelet](https://net.jogtar.hu/jogszabaly?docid=a0100191.kor) szerinti bírság (beruházási érték 10–50%-a) és az eredeti állapot helyreállítása vár rá.
 
-A Huba ajtó [engedélyezési csomagja](/engedelyezesi-csomag) keretében az első lépés mindig a védettség pontos azonosítása — az OÉNY-lekérdezés mellett a kerületi főépítészi konzultáció és a helyrajzi szám szerinti védettségi rendelet ellenőrzése. Ezt követően alakítjuk ki a folyamatot, amely vagy a 25 napos engedélyezési, vagy a 10 napos bejelentési eljárást követi. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja a végeredményt: korhű megjelenés, MABISZ-minősített biztonsági szerkezet.
+Az első lépés mindig a védettség pontos azonosítása — az OÉNY-lekérdezés mellett érdemes a kerületi főépítészi irodával is konzultálni, és ellenőrizni a helyrajzi szám szerinti védettségi rendeletet. Ez alapján dől el, hogy a 25 napos engedélyezési vagy a 10 napos bejelentési eljárást kell lefolytatni. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja a végeredményt: korhű megjelenés, MABISZ-minősített biztonsági szerkezet.
 
 Bizonytalan, melyik kategóriába esik az Ön ingatlanja? Küldje el a helyrajzi számot, és 1 munkanapon belül választ adunk.

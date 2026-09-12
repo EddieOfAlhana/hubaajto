@@ -67,6 +67,6 @@ A Ferencvárosi sajátosság: a 2000-es évek városrehabilitációja (Tűzoltó
 
 Az öt kerület közös vonása: a fa szárny és tok, a korhű veretkészlet, a RAL 6009 / 8014 színek, és a rejtett acélbetétes biztonsági szerkezet mindenhol elfogadott. A különbség inkább a dokumentációs követelményekben és az átfutási időben mutatkozik. A Huba ajtó / Szer-X3 mindegyik kerületben rendelkezik elfogadott referencia-engedélyezéssel.
 
-A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében a kerületi főépítészi konzultációt és a kerületi TKBE-eljárást is mi intézzük — Önnek csak az AVDH-aláírt meghatalmazás aláírása a feladata. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalon az öt kerület referenciaprojektjeinek fényképei láthatók.
+A kerületi főépítészi konzultációt és a kerületi TKBE-eljárást az Ön által megbízott építész tervező intézi, az AVDH-aláírt meghatalmazás előkészítésével együtt. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalon az öt kerület referenciaprojektjeinek fényképei láthatók.
 
 Küldje el a címet és a helyrajzi számot, és 1 munkanapon belül megküldjük az ingatlanra szabott engedélyezési útitervet, kerületspecifikus határidőkkel.

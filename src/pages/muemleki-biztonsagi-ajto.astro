@@ -3,13 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import TrustStrip from "../components/TrustStrip.astro";
-import EngedelyezesiCsomag from "../components/EngedelyezesiCsomag.astro";
 import SocialProof from "../components/SocialProof.astro";
 import LockBrandWall from "../components/LockBrandWall.astro";
 import FAQ from "../components/FAQ.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import Stat from "../components/Stat.astro";
-import { SITE, SLA, SERVICE_AREA } from "../data/site";
+import { SITE, SLA } from "../data/site";
 
 const protectionLevels = [
   {
@@ -62,17 +61,17 @@ const rejectionReasons = [
   {
     n: "05",
     title: "Hiányos építéstörténeti dokumentáció",
-    body: "Csak a 439/2013. Korm. rendelet szerinti szakértői névjegyzékben szereplő szakértő készíthet építéstörténeti dokumentációt. Mi a partnereinkből választunk.",
+    body: "Csak a 439/2013. Korm. rendelet szerinti szakértői névjegyzékben szereplő szakértő készíthet építéstörténeti dokumentációt — ezt Önnek vagy megbízott építészének kell beszereznie a kérelem beadása előtt.",
   },
   {
     n: "06",
     title: "Tervtanácsi vélemény hiánya",
-    body: "Belváros-Lipótváros (V. ker.) és más kerületek esetén kötelező. Az engedélyezési csomag része.",
+    body: "Belváros-Lipótváros (V. ker.) és más kerületek esetén kötelező. Ezt a tulajdonosnak vagy az általa megbízott építésznek kell beszereznie az engedélyezési eljárás részeként.",
   },
   {
     n: "07",
     title: "Formailag hibás ÉTDR-meghatalmazás",
-    body: "A leggyakoribb hiánypótlási ok. Az ÉTDR-be a kérelmet a mi partner építészünk nyújtja be — formailag hibátlanul.",
+    body: "A leggyakoribb hiánypótlási ok. Érdemes a kérelmet a hatóság névjegyzékében szereplő, ÉTDR-ben jártas építésszel benyújtatni — formai hiba esetén a hiánypótlás hónapokkal tolhatja a folyamatot.",
   },
 ];
 
@@ -122,21 +121,21 @@ const districts = [
 const testimonials = [
   {
     quote:
-      "Másfél éve próbáltunk egyedül engedélyt szerezni — a Kormányhivatal háromszor hiánypótlást kért. A Huba 4 hónap alatt elintézte, mi csak a végén írtuk alá a szemlét.",
+      "Az engedélyt magunk intéztük, közel négy hónapig tartott — de a Huba ajtaja pontosan a jóváhagyott terv szerint készült, a hatóság a záró szemlén elsőre elfogadta.",
     name: "Dr. Veres E.",
     district: "Budapest, I. kerület (Várnegyed)",
-    product: "Műemléki kivitel + engedélyezési csomag · 2024",
+    product: "Korhű műemléki kivitel · 2024",
   },
   {
     quote:
-      "TKR 1/2022 §53 alapján a lépcsőházi ajtót csak TKBE után cserélhettem. A Huba lebonyolította a kerületi főépítészi konzultációt, a bejelentést, a beépítést és a befejezési bejelentést — egyetlen kapcsolattartó.",
+      "TKR 1/2022 §53 alapján a lépcsőházi ajtót csak TKBE után cserélhettem. A saját építészünk vitte végig a bejelentést, a Huba pedig pontosan a jóváhagyott terv szerint gyártotta és építette be az ajtót.",
     name: "Bárdos M.",
     district: "Budapest, VIII. kerület",
     product: "Stílus Premium · 2023",
   },
   {
     quote:
-      "Az ABK-i Tervtanácsra is elment a Huba építész partnere — mi nem álltunk ki a tribünre. Az engedély 5 hét alatt megvolt.",
+      "Az építészünk vitte a Tervtanácsra a Huba műhelyfotóit és anyagmintáit — ez sokat segített, az engedély 5 hét alatt megvolt. A beépített ajtó pontosan az elfogadott terv szerint készült.",
     name: "Hercz F.",
     district: "Budapest, V. kerület",
     product: "Korhű rekonstrukció · 2025",
@@ -146,19 +145,19 @@ const testimonials = [
 const faqItems = [
   {
     q: "Honnan tudom, hogy az ingatlanom műemlék vagy védett?",
-    a: `<p>Helyrajzi szám alapján lekérdezhető az <a href="https://www.oeny.hu/oeny/veding/" target="_blank" rel="noopener">OÉNY védettségi nyilvántartásból</a>. A védettségi ellenőrzés a mi <a href="/engedelyezesi-csomag">engedélyezési csomagunk</a> első, ingyenes lépése. Egy munkanap alatt választ kap rá.</p>`,
+    a: `<p>Helyrajzi szám alapján lekérdezhető az <a href="https://www.oeny.hu/oeny/veding/" target="_blank" rel="noopener">OÉNY védettségi nyilvántartásból</a>. Az adatbázis ingyenesen elérhető, a válasz jellemzően egy napon belül megvan. Érdemes ezt a tervezés legelső lépéseként, még a felmérés előtt ellenőriznie — vagy megkérdeznie építészét.</p>`,
   },
   {
     q: "Mindenképpen el kell utasítani a modern biztonsági ajtót?",
     a: `<p>A 68/2018. (IV. 9.) Korm. rendelet 53. §-a alapján a védett vagy nevesített elem megjelenését megváltoztató ajtócsere <strong>engedélyköteles vagy bejelentésköteles</strong>. A katalógus-modern megjelenésű ajtó stílusilag és anyaghasználatban nem felel meg — ezért nem építhető be. A Huba korhű kivitel viszont igen: kívülről fa, kazettás vagy betétes, belül acélbetétes szerkezettel.</p>`,
   },
   {
-    q: "Mennyibe kerül a teljes folyamat?",
-    a: `<p>Egy átlagos belvárosi műemlék bejárati ajtó esetén ~1,1–3,8 millió Ft, ebből az állapotfelmérés és építész terv 150–550 e Ft, építéstörténeti dokumentáció 150–600 e Ft, korhű Huba ajtó 700 e–2,5 M Ft, beépítés 80–250 e Ft. A hatósági illeték 0 Ft (illetékmentes). <a href="/engedelyezesi-csomag">Tételes lebontás →</a></p>`,
+    q: "Mennyibe kerül a korhű ajtó?",
+    a: `<p>A korhű Huba ajtó ára jellemzően <strong>700 000 – 2 500 000 Ft</strong> között alakul — a kivitel bonyolultságától (kazettázás, kovácsoltvas díszítés, üvegezés) függően, egyedi árajánlat alapján. Ehhez jön a beépítés, jellemzően 80–250 e Ft. Az örökségvédelmi engedélyeztetés (állapotfelmérés, építész terv, építéstörténeti dokumentáció) ettől független, piaci áron elérhető szolgáltatás, amit saját építésze vagy a hatóság névjegyzékében szereplő szakértő végez — ezt a Huba nem nyújtja. A hatósági illeték maga 0 Ft (illetékmentes). <a href="/arak">Teljes árlista →</a></p>`,
   },
   {
     q: "Mennyi időbe telik?",
-    a: `<p>Tipikusan ${SLA.permitTotal}: védettségi ellenőrzés 1 nap, felmérés és műszaki dokumentáció 1–2 hét, építész + építéstörténeti dokumentáció 3–6 hét, ÉTDR-eljárás 25 nap, esetleg tervtanácsi vélemény + 2–4 hét, gyártás 6–10 hét, beépítés 1–2 nap, befejezési bejelentés 8 nap. Fellebbezéssel 9–12 hónap.</p>`,
+    a: `<p>Az örökségvédelmi engedélyezés hatósági átfutása eljárástípustól függ: az ÉTDR-eljárás önmagában 25 nap, de a felméréssel, tervezéssel, esetleges tervtanácsi véleményezéssel és hiánypótlással együtt a gyakorlatban jellemzően 4–6 hónapra nyúlik — ezt érdemes saját ügyintézőjénél vagy építészénél előre egyeztetnie. A Huba a jóváhagyott terv birtokában ${SLA.manufactureDays} alatt gyártja le az ajtót, a beépítés ${SLA.installDays}.</p>`,
   },
   {
     q: "Mit kockáztatok, ha engedély nélkül cseréltetem?",
@@ -166,39 +165,39 @@ const faqItems = [
   },
   {
     q: "Az acélbetét nem rontja a műemléki értéket?",
-    a: `<p>A hatóság elfogadja, ha a látható felület korhű (fa, eredeti osztás, eredeti vasalat) — a belső acélszerkezet rejtett. „Acélbetétes biztonsági szerkezet a fa-felületű korhű megjelenés alatt” — ez az engedélyezési ügyeinkben elfogadott megfogalmazás. A 4. §-ban a Kötv. nem tiltja a belső szerkezeti megerősítést, csak a műemléki érték érvényesülését óvja.</p>`,
+    a: `<p>A hatóság elfogadja, ha a látható felület korhű (fa, eredeti osztás, eredeti vasalat) — a belső acélszerkezet rejtett. „Acélbetétes biztonsági szerkezet a fa-felületű korhű megjelenés alatt” — ezt a megfogalmazást érdemes az engedélykérelemben is feltüntetni. A 4. §-ban a Kötv. nem tiltja a belső szerkezeti megerősítést, csak a műemléki érték érvényesülését óvja.</p>`,
   },
   {
     q: "Közös képviselő hozzájárulása szükséges?",
-    a: `<p>Igen, társasházi környezetben a Ptk. és a Társasházi törvény alapján a közös képviselő (vagy közgyűlés) hozzájárulása szükséges. Anyagmintákkal érkezünk a közgyűlésre vagy a kerületi főépítészhez — szakmai prezentációval. Ez az engedélyezési csomag része.</p>`,
+    a: `<p>Igen, társasházi környezetben a Ptk. és a Társasházi törvény alapján a közös képviselő (vagy közgyűlés) hozzájárulása szükséges. Kérésre anyagmintákkal és fotókkal segítjük az Ön vagy építésze prezentációját a közgyűlésen vagy a kerületi főépítésznél — magát az egyeztetést és a hozzájárulás megszerzését azonban Önnek vagy megbízott szakértőjének kell intéznie.</p>`,
   },
   {
     q: "Mi a különbség engedély és bejelentés között?",
-    a: `<p>Az <strong>engedély</strong> az örökségvédelmi hatóság aktív, érdemi döntése — 25 napos határidővel. A <strong>bejelentés</strong> 10 napos jogszerű hallgatással záruló eljárás: ha a hatóság hallgat, az tudomásulvételnek minősül. A két eljárás közötti különbség a védettségi szintből következik. A kettőt mi határozzuk meg az első, ingyenes védettségi ellenőrzésen.</p>`,
+    a: `<p>Az <strong>engedély</strong> az örökségvédelmi hatóság aktív, érdemi döntése — 25 napos határidővel. A <strong>bejelentés</strong> 10 napos jogszerű hallgatással záruló eljárás: ha a hatóság hallgat, az tudomásulvételnek minősül. A két eljárás közötti különbség a védettségi szintből következik, amelyet az OÉNY-nyilvántartásból vagy a kerületi főépítésznél tudhat meg.</p>`,
   },
 ];
 ---
 
 <BaseLayout
-  title="Műemléki biztonsági ajtó — engedélyezéssel együtt | Huba ajtó"
-  description="Műemlék vagy védett épületben él? Általános biztonsági ajtó nem építhető be — de mi készítjük a hatósági engedélyhez illeszkedő korhű kivitelt. Teljes engedélyezési csomag, Budapest belváros + budai műemléki környezet."
+  title="Műemléki biztonsági ajtó — korhű kivitelben | Huba ajtó"
+  description="Műemlék vagy védett épületben él? Általános biztonsági ajtó nem építhető be — a Huba korhű, az örökségvédelmi elvárásoknak megfelelő kivitelt gyárt, acél belső szerkezettel. Egyedi árajánlat, Budapest belváros + budai műemléki környezet."
 >
   <Hero
-    eyebrow="Műemléki termékcsalád · engedélyezéssel"
+    eyebrow="Műemléki termékcsalád · korhű kivitelben"
     heading="Műemlék vagy védett épületben él?<br/><em>Mi készítjük az illeszkedő ajtót.</em>"
-    lead="Általános biztonsági ajtó nem építhető be — a hatóság elutasítja. De a Huba korhű kivitelét acél belső szerkezettel a budapesti Kormányhivatal Építésügyi és Örökségvédelmi Főosztály engedélyezési gyakorlatában elfogadták. Az engedélyezést mi intézzük."
+    lead="Általános biztonsági ajtó nem építhető be — a hatóság elutasítja. A Huba korhű kivitelét acél belső szerkezettel a budapesti Kormányhivatal Építésügyi és Örökségvédelmi Főosztály engedélyezési gyakorlatában elfogadták. A szükséges örökségvédelmi engedélyt Önnek vagy megbízott építészének kell beszereznie — mi a hatóság elvárásainak megfelelő ajtót gyártjuk és építjük be."
     pillars={[
-      "Védettségi ellenőrzés ingyenes",
-      "Teljes engedélyezési csomag",
-      "4–6 hónap a beépített ajtóig",
+      "Korhű, engedélyezhető kivitel",
+      "700 000 Ft-tól — egyedi árajánlat",
+      `${SLA.manufactureDays} gyártás`,
       `MABISZ ${SITE.mabiszSince} óta`,
       `${SITE.warrantyYears} év szerkezeti garancia`,
     ]}
     image="/assets/photos/hero/period-restoration.jpg"
     imageAlt="Műemléki környezetbe készülő korhű biztonsági ajtó restaurálás alatt a Huba műhelyében"
     imageCaption="Műhelyfotó · műemléki rekonstrukció"
-    primaryCta={{ label: "Védettségi ellenőrzés indítása", href: "/felmeres" }}
-    secondaryCta={{ label: "Engedélyezési csomag részletei", href: "/engedelyezesi-csomag" }}
+    primaryCta={{ label: "Ingyenes helyszíni felmérés kérése", href: "/felmeres" }}
+    secondaryCta={{ label: "Árak és kivitelek", href: "/arak" }}
   />
 
   <div id="below"></div>
@@ -212,8 +211,8 @@ const faqItems = [
   >
     <div class="trapped-market reveal">
       <p class="trapped-quote">
-        „Másfél éve próbáltunk egyedül engedélyt szerezni — a Kormányhivatal háromszor
-        hiánypótlást kért. A Huba 4 hónap alatt elintézte."
+        „Az engedélyt magunk intéztük, közel négy hónapig tartott — de a Huba ajtaja
+        pontosan a jóváhagyott terv szerint készült, a hatóság elsőre elfogadta.”
       </p>
       <p class="trapped-cite">— Dr. Veres E., Budapest I. kerület, Várnegyed (2024)</p>
     </div>
@@ -223,7 +222,7 @@ const faqItems = [
     tone="cream"
     eyebrow="A védettségi szintek"
     heading="A „védett” épület nem egy fogalom — hat szint létezik."
-    lead="A vevőnek először ezt kell tisztáznia, mert ez dönti el, mely hatóságot keressük fel és milyen eljárással. A védettségi ellenőrzés egy munkanap alatt elvégezhető OÉNY-lekérdezéssel — ez az engedélyezési csomagunk első, ingyenes lépése."
+    lead="Ezt érdemes elsőként tisztázni, mert ez dönti el, mely hatóságot kell felkeresni és milyen eljárással. A védettségi szint egy munkanap alatt ellenőrizhető OÉNY-lekérdezéssel — ezzel érdemes a tervezést kezdeni, még a felmérés előtt."
   >
     <div class="protection-grid stagger">
       {
@@ -272,15 +271,25 @@ const faqItems = [
 
   <Section
     tone="cream"
-    eyebrow="Az engedélyezési csomag"
-    heading="11 lépés. Egy számla. Egy projektmenedzser."
-    lead="A védettségi ellenőrzéstől a befejezési bejelentésig. Az építész tervezőt, az építéstörténeti dokumentáció szakértőjét és a hatósági kommunikációt mi biztosítjuk."
+    eyebrow="Az engedélyezési folyamat"
+    heading="Amit érdemes tudnia az engedélyeztetésről."
+    lead="A védett vagy műemléki épület ajtócseréje jellemzően engedélyköteles vagy bejelentésköteles eljárás. Ezt Önnek vagy megbízott építészének kell lefolytatnia a Kormányhivatal Építésügyi és Örökségvédelmi Főosztályán, illetve a kerületi főépítésznél — a Huba ezt a szolgáltatást nem nyújtja. A gyártott ajtó ugyanakkor a jóváhagyott tervnek és a hatósági elvárásoknak megfelelően készül."
   >
-    <EngedelyezesiCsomag />
-    <div class="ec-cta reveal">
-      <a href="/engedelyezesi-csomag" class="btn btn-primary btn-large">
-        Engedélyezési csomag — teljes részletek →
-      </a>
+    <div class="permit-info reveal">
+      <ol class="permit-steps">
+        <li>Védettségi szint ellenőrzése (OÉNY-nyilvántartás)</li>
+        <li>Állapotfelmérés és építész terv készítése</li>
+        <li>Építéstörténeti dokumentáció, ha a védettségi szint megkívánja</li>
+        <li>Kérelem benyújtása (ÉTDR) vagy bejelentés a hatóságnál</li>
+        <li>Tervtanácsi vélemény, egyes kerületekben kötelező</li>
+        <li>Az engedély vagy hozzájárulás birtokában: a Huba ajtó gyártása és beépítése</li>
+        <li>Befejezési bejelentés a hatóság felé</li>
+      </ol>
+      <p class="permit-note">
+        Ezekben a lépésekben saját építésze vagy a hatóság szakértői névjegyzékében
+        szereplő szakember tud eljárni. A Huba szerepe a folyamat végén kezdődik: a
+        jóváhagyott terv alapján gyártjuk le és építjük be a korhű ajtót.
+      </p>
     </div>
   </Section>
 
@@ -313,9 +322,9 @@ const faqItems = [
         label="korhű kivitelű ajtó referencia"
         sub="Budapest belvárosi kerületekben"
       />
-      <Stat value="11" label="lépés az engedélyezési csomagban" sub="védettségi ellenőrzéstől szemléig" />
-      <Stat value="4–6 hó" label="átlagos teljes átfutás" sub="kérelemtől a beépített ajtóig" />
+      <Stat value={SLA.manufactureDays} label="gyártási idő" sub="a jóváhagyott terv alapján" />
       <Stat value="0 Ft" label="hatósági illeték" sub="örökségvédelmi engedélyezés illetékmentes" />
+      <Stat value={`${SITE.warrantyYears} év`} label="szerkezeti garancia" sub="minden korhű kivitelre" />
     </div>
   </Section>
 
@@ -323,7 +332,7 @@ const faqItems = [
     tone="paper"
     eyebrow="Budapesti kerületek"
     heading="Ahol védett vagy műemléki környezetben dolgozunk."
-    lead="A budapesti kerületek mindegyike saját településképvédelmi rendelettel (TKR) és saját kerületi építési szabályzattal (KÉSZ) szabályozza a nyílászáró-cserét. Az engedélyezési csomag mindegyikben alkalmazható — alább a leggyakoribb kerületspecifikus tudnivalók."
+    lead="A budapesti kerületek mindegyike saját településképvédelmi rendelettel (TKR) és saját kerületi építési szabályzattal (KÉSZ) szabályozza a nyílászáró-cserét. Alább a leggyakoribb kerületspecifikus tudnivalók, amelyeket érdemes ismernie, mielőtt nekivág az engedélyeztetésnek."
   >
     <div class="districts stagger">
       {
@@ -367,8 +376,8 @@ const faqItems = [
   </Section>
 
   <ContactCTA
-    heading="Védettségi ellenőrzéstől a beépített ajtóig — egy kapcsolattartó."
-    lead="Foglaljon ingyenes helyszíni felmérést. Az első lépés az OÉNY-alapú védettségi ellenőrzés, egy munkanapon belül választ kap."
+    heading="Kérjen egyedi árajánlatot korhű, engedélyezhető biztonsági ajtajára."
+    lead="Foglaljon ingyenes helyszíni felmérést. A védettségi szintet saját maga is ellenőrizheti az OÉNY-nyilvántartásból, egy munkanapon belül választ kap rá."
   />
 </BaseLayout>
 
@@ -470,10 +479,30 @@ const faqItems = [
     color: var(--color-brass);
   }
 
-  .ec-cta {
-    margin-top: 2.5rem;
+  .permit-info {
+    max-width: 42rem;
+  }
+  .permit-steps {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: 1.5rem;
+    counter-reset: permit-step;
+  }
+  .permit-steps li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-charcoal);
+  }
+  .permit-steps li::marker {
+    color: var(--color-brass);
+    font-family: var(--font-serif);
+  }
+  .permit-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-stone);
   }
 
   .rejections {

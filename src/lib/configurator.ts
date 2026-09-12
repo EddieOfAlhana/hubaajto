@@ -31,7 +31,7 @@ const STEP_ORDER: StepId[] = [
   "int-type", "int-pattern", "int-colour", "lock", "summary",
 ];
 
-const BASE_PRICE = 330_000;
+const BASE_PRICE = 440_000;
 const formatHUF = (n: number) => `${n.toLocaleString("hu-HU").replace(/,/g, " ")} Ft`;
 
 export function initConfigurator(root: HTMLElement): void {

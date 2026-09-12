@@ -76,4 +76,4 @@ A Huba ajtó kistarcsai műhelyében gyakorlatilag minden hónapban érkezik oly
 
 Az előzetes engedélyezési folyamat egy átlagos belvárosi lakásajtó esetén 250 000 – 1 200 000 Ft (építész + szakértő + dokumentáció), és 4–6 hónap. Az utólagos eljárás — bírság + helyreállítás vagy korhűsítés — tipikusan **2–4 millió Ft többletköltség** és 8–12 hónap. A megelőzés mindig olcsóbb.
 
-A Huba [engedélyezési csomagja](/engedelyezesi-csomag) a teljes előzetes folyamatot lefedi; a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja a korhű végeredményt. Ha már megkapta az első hatósági levelet, küldje el a címet és a határozatot — egy munkanapon belül adunk konkrét cselekvési tervet a kárenyhítésre.
+A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal mutatja a korhű végeredményt, amelyet a hatóság a fennmaradási vagy előzetes engedélyezésben elfogad; magát az engedélyezési eljárást az Ön által megbízott építész tervező és műemléki szakértő folytatja le. Ha már megkapta az első hatósági levelet, küldje el a címet és a határozatot — egy munkanapon belül tájékoztatjuk, hogy a korhűsítés szempontjából milyen ajtómegoldás jöhet szóba.

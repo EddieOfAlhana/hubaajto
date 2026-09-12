@@ -11,7 +11,7 @@ seo:
   keywords: ["biztonsági ajtó részletfizetés", "Cofidis áruhitel", "0% THM ajtó", "ajtó részletre"]
 ---
 
-A biztonsági ajtó vásárlása egyszerre 330 000 Ft-os kezdő befektetés — sokak számára érthető módon erőltetett, hogy ezt egy összegben fizessék. A Huba ajtó vásárlása mellé a Cofidis Bank áruhitelével részletfizetést is választhat, **bizonyos kondíciók mellett akár 0% THM-mel**. Ebben a cikkben átláthatóan elmagyarázzuk a feltételeket, és bemutatunk egy konkrét reprezentatív példát.
+A biztonsági ajtó vásárlása egyszerre 440 000 Ft-os kezdő befektetés — sokak számára érthető módon erőltetett, hogy ezt egy összegben fizessék. A Huba ajtó vásárlása mellé a Cofidis Bank áruhitelével részletfizetést is választhat, **bizonyos kondíciók mellett akár 0% THM-mel**. Ebben a cikkben átláthatóan elmagyarázzuk a feltételeket, és bemutatunk egy konkrét reprezentatív példát.
 
 ## Mit jelent a Cofidis áruhitel a Huba ajtónál?
 
@@ -31,15 +31,15 @@ A 0% THM-mes ajánlat **nem folyamatosan elérhető** — gyártói és banki pr
 A fogyasztói hitelről szóló **2009. évi CLXII. törvény** kötelezi a hitellel kapcsolatos minden kommunikációt arra, hogy reprezentatív példát mutasson be teljes THM-mel és visszafizetendő összeggel. Az alábbi példa 0% THM promóciós kondíciók szerint:
 
 > **Reprezentatív példa (0% THM Cofidis áruhitel):**
-> Hitelösszeg: **330 000 Ft**
+> Hitelösszeg: **440 000 Ft**
 > Futamidő: **10 hónap**
-> Havi törlesztés: **33 000 Ft**
+> Havi törlesztés: **44 000 Ft**
 > Teljes hiteldíj-mutató (THM): **0%**
-> Teljes visszafizetendő összeg: **330 000 Ft**
+> Teljes visszafizetendő összeg: **440 000 Ft**
 > Hitelbírálati díj: 0 Ft
 > A hitel típusa: forint alapú, fix kondíciójú áruhitel, hitelnyújtó: Cofidis Magyarországi Fióktelepe.
 
-Ez azt jelenti: a 330 000 Ft-os Huba ajtó vásárlásánál havi 33 000 Ft-ot fizet 10 hónapon át, és az összeg pontosan a vételár. Nincs kamat, kezelési költség, vagy egyéb teher.
+Ez azt jelenti: a 440 000 Ft-os Huba ajtó vásárlásánál havi 44 000 Ft-ot fizet 10 hónapon át, és az összeg pontosan a vételár. Nincs kamat, kezelési költség, vagy egyéb teher.
 
 ## Standard kondíciók (nem 0% THM időszakban)
 

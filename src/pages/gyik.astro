@@ -11,8 +11,8 @@ const faqGroups = [
     label: "Ár, ajánlat, számlázás",
     items: [
       { q: "Mennyibe kerül egy biztonsági ajtó?",
-        a: `<p>A Modern Standard belépőszint <strong>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</strong> indul bruttó. A Premium családi házas kivitel 800 000 – 1 800 000 Ft sávban van. Korhű, stílus és műemléki kivitelek <strong>egyedi árajánlat</strong> alapján készülnek — jellemzően 800 000 Ft-tól 2,5 millió Ft-ig, az engedélyezési költségektől függően. <a href="/arak">Részletes árlista →</a></p>` },
-      { q: "Mit tartalmaz a 330 000 Ft-os belépő ár?",
+        a: `<p>A Modern Standard belépőszint <strong>${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-tól</strong> indul bruttó. A Premium családi házas kivitel 800 000 – 1 800 000 Ft sávban van. Korhű, stílus és műemléki kivitelek <strong>egyedi árajánlat</strong> alapján készülnek — jellemzően 700 000 Ft-tól, a kivitel bonyolultságától függően. <a href="/arak">Részletes árlista →</a></p>` },
+      { q: `Mit tartalmaz a ${SITE.priceFromHUF.toLocaleString("hu-HU")} Ft-os belépő ár?`,
         a: `<p>Standard panel-nyílásméretben: hőhídmentes acél tokot, üveggyapot bélelést, MABISZ 2. minősítést, alap Abus cilindert, 35+ fa vagy 15 mart minta közüli borítást, RAL színskálát, befűzött körbefutó tömítést és a beépítést (régi ajtó bontása, törmelékelszállítás benne). A 15 év szerkezeti garancia automatikusan jár.</p>` },
       { q: "Az árak ÁFA-sak vagy nettók?",
         a: `<p>Minden ár <strong>bruttó</strong>, azaz a 27%-os ÁFA-t tartalmazza. Magánszemélyként ez a fizetendő végösszeg. Cégnek számlázunk nettó + 27% ÁFA bontásban — kérje a felmérőt, ha cégre kéri a számlát.</p>` },
@@ -26,7 +26,7 @@ const faqGroups = [
     label: "Időzítés, beépítés",
     items: [
       { q: "Mennyi időbe telik a felméréstől a beépítésig?",
-        a: `<p>Modern Standard: <strong>2–3 nap felmérés → 10–12 nap gyártás → 1 nap beépítés</strong>. Az egész folyamat kb. két hét. Premium kivitel és különleges méret esetén 14–18 nap gyártás. Műemléki engedélyezéssel együtt 4–6 hónap, mert ott az engedélyezési folyamat dominál.</p>` },
+        a: `<p>Modern Standard: <strong>2–3 nap felmérés → 10–12 nap gyártás → 1 nap beépítés</strong>. Az egész folyamat kb. két hét. Premium kivitel és különleges méret esetén 14–18 nap gyártás. Műemléki és korhű kiviteleknél a gyártási idő 14–18 nap; ha az ingatlan örökségvédelmi engedélyhez kötött, a beépítés időpontja az engedélyezési eljárás lezárultához igazodik.</p>` },
       { q: "Mikor jönnek felmérni?",
         a: `<p>A munkanapon belüli megkereséstől számítva ${SLA.surveyDays} alatt. Hétköznap 8–17 óra között, szombaton 8–12 óra között dolgozunk. Egyeztetett időpontban, fél órás időablakkal.</p>` },
       { q: "Egy nap alatt befejezik a beépítést?",
@@ -67,15 +67,15 @@ const faqGroups = [
     label: "Műemléki, polgári lakás, stílus",
     items: [
       { q: "Műemléki / örökségvédelmi környezetben mit lehet?",
-        a: `<p>Igen, készítünk az eredeti ajtó alapján rekonstruált, korhű, kazettás, festett kivitelben — <strong>az engedélyezéshez szükséges teljes műszaki dokumentációval</strong>. Sőt, mi intézzük az engedélyezést is, építész tervezővel és műemléki szakértői névjegyzékbe vett partnerrel együttműködve. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a> · <a href="/engedelyezesi-csomag">Engedélyezési csomag →</a></p>` },
+        a: `<p>Igen, készítünk az eredeti ajtó alapján rekonstruált, korhű, kazettás, festett kivitelben. Az örökségvédelmi engedélyezést nem mi intézzük — ezt a tulajdonosnak vagy a megbízott építésznek kell lefolytatnia a hatóságnál; az engedélyben rögzített kikötések alapján gyártjuk le és építjük be az ajtót. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
       { q: "Hogyan néz ki egy stílus biztonsági ajtó belülről?",
         a: `<p>Belül acél biztonsági szerkezet — ugyanaz a tok és nyílórész, mint a modern modelleknél. Kívül korhű, faragott vagy kazettás faburkolat, festett vagy lazúrozott felülettel. Az „eredeti ajtó” látványa, mögötte MABISZ-minősített biztonsági szerkezet.</p>` },
       { q: "Megőrizhetjük az eredeti ajtó megjelenését?",
         a: `<p>Igen — fotók, helyszíni szemle és lehetőség szerint a meglévő ajtó alapján rekonstruáljuk. A profilozást, a kazettás osztásokat és a kovácsoltvas elemeket az eredeti rajzok vagy fotók alapján készítjük újra. A felmérőnk építész partnerrel érkezik a műemléki feladatokra.</p>` },
       { q: "Polgári lakásban (V., VI., VII., VIII., IX. kerület) is jönnek?",
-        a: `<p>Igen — a budapesti műemléki belváros (V., VI., VII., VIII., IX. és I., II., XII.) a Huba másik kulcsterülete. Az engedélyezési folyamatot is ott a leggyakrabban intézzük; közös képviselős egyeztetést is vállalunk.</p>` },
+        a: `<p>Igen — a budapesti műemléki belváros (V., VI., VII., VIII., IX. és I., II., XII.) a Huba másik kulcsterülete. Közös képviselős egyeztetést is vállalunk; az örökségvédelmi engedélyezést a tulajdonos vagy a megbízott építésze intézi.</p>` },
       { q: "Mennyi időbe telik a műemléki engedélyezés?",
-        a: `<p>Tipikusan <strong>4–6 hónap</strong>: védettségi ellenőrzés → építész tervezés → építéstörténeti dokumentáció → ÉTDR-kérelem → hatósági kommunikáció → engedély → gyártás → beépítés → befejezési bejelentés. A teljes folyamatot mi koordináljuk. <a href="/engedelyezesi-csomag">Engedélyezési csomag →</a></p>` },
+        a: `<p>Tipikusan <strong>4–6 hónap</strong>: védettségi ellenőrzés → építész tervezés → építéstörténeti dokumentáció → ÉTDR-kérelem → hatósági kommunikáció → engedély. Ezt a folyamatot a tulajdonos vagy a megbízott építésze/szakértője viszi végig; a Huba az engedélyben rögzített kikötések szerint gyártja le és építi be az ajtót.</p>` },
     ],
   },
   {
@@ -95,7 +95,7 @@ const faqGroups = [
     label: "Részletfizetés, hitel",
     items: [
       { q: "Lehet részletfizetés?",
-        a: `<p>Igen — <strong>Cofidis áruhitelen keresztül</strong>, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 330 000 Ft / 10 hó = 33 000 Ft / hó, THM 0%, teljes visszafizetendő 330 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
+        a: `<p>Igen — <strong>Cofidis áruhitelen keresztül</strong>, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 440 000 Ft / 10 hó = 44 000 Ft / hó, THM 0%, teljes visszafizetendő 440 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
       { q: "Hogyan igényelhető a Cofidis áruhitel?",
         a: `<p>A helyszíni felmérés végén a felmérőnk online kitölti a Cofidis igénylőlapját. Iratok: személyi, lakcímkártya, jövedelemigazolás. A hitelbírálat <strong>10 perc</strong>. Pozitív válasz esetén szerződéskötés azonnal, a gyártás aznap indul.</p>` },
       { q: "Mi van, ha a hitelbírálat elutasít?",
@@ -121,7 +121,7 @@ const allItems = faqGroups.flatMap(g => g.items);
 ---
 <BaseLayout
   title="GYIK — Gyakran ismételt kérdések"
-  description="Áraktól a műemléki engedélyezésig — a leggyakoribb kérdések és válaszok a Huba ajtó biztonsági ajtóiról. 30+ kérdés ár, időzítés, MABISZ-minősítés, garancia, panel-lakás, polgári lakás, részletfizetés és zárrendszerek témakörben."
+  description="Áraktól a műemléki kivitelig — a leggyakoribb kérdések és válaszok a Huba ajtó biztonsági ajtóiról. 30+ kérdés ár, időzítés, MABISZ-minősítés, garancia, panel-lakás, polgári lakás, részletfizetés és zárrendszerek témakörben."
 >
   <section class="hero hero-centered">
     <div class="container hero-inner">
@@ -129,7 +129,7 @@ const allItems = faqGroups.flatMap(g => g.items);
         <p class="eyebrow"><span class="tricolor-strip" aria-hidden="true"><span/><span/><span/></span> Gyakran ismételt kérdések</p>
         <h1 class="hero-heading">A leggyakoribb 30+ kérdés.<br/><em>A felmérés előtt jellemzően ezek merülnek fel.</em></h1>
         <p class="hero-lead">
-          Áraktól a műemléki engedélyezésig, panel-lakás cserétől a Cofidis áruhitel-feltételekig. Ha nem találja a választ, hívjon minket — munkanapon belül visszahívjuk.
+          Áraktól a műemléki kivitelig, panel-lakás cserétől a Cofidis áruhitel-feltételekig. Ha nem találja a választ, hívjon minket — munkanapon belül visszahívjuk.
         </p>
       </div>
     </div>

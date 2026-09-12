@@ -54,4 +54,4 @@ A folyamat 6–10 hét gyártással és 1 nap beépítéssel zárul; az engedél
 
 ## Mit ajánlunk?
 
-A pasaréti polgári lakásajtó cseréje egyszerre építéstörténeti és biztonsági feladat. Az [engedélyezési csomag](/engedelyezesi-csomag) keretében a védettségi átvilágítástól a beépített ajtóig egyetlen projektmenedzser kíséri Önt, a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékkategóriánk pedig pontosan a pasaréti polgári ajtótípusokhoz igazítható. Kérje [ingyenes helyszíni felmérésünket](/felmeres) — a Kistarcsai műhelyből 35 perc alatt érünk Önhöz.
+A pasaréti polgári lakásajtó cseréje egyszerre építéstörténeti és biztonsági feladat. A helyi védettség miatti engedélyezési eljárást az ingatlan tulajdonosa vagy megbízott tervezője intézi a kerületi főépítészi irodával — a folyamatról a [műemléki engedélyezési útmutatónkban](/blog/muemleki-engedelyezes-utmutato) olvashat részletesen. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékkategóriánk pedig pontosan a pasaréti polgári ajtótípusokhoz igazítható. Kérje [ingyenes helyszíni felmérésünket](/felmeres) — a Kistarcsai műhelyből 35 perc alatt érünk Önhöz.

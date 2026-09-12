@@ -68,10 +68,10 @@ A kérelmek elutasítása vagy hiánypótlása kapcsán a leggyakoribb szakért�
 - **A nevesített elemek hiányos felsorolása** — ha az értékleltár az utcafronti homlokzati nyílászárót nevesíti, de a dokumentáció csak a kapuzatot tárgyalja, a hatóság hiánypótlást kér.
 - **Lejárt regisztrációval írt dokumentum** — automatikus elutasítás.
 
-## Hogyan illeszkedik a Huba szolgáltatáshoz?
+## Hol jön képbe a Huba ajtó?
 
-A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében a műemléki névjegyzéki szakértőt mi közvetítjük — partnerszerződéses együttműködésben dolgozunk Budapest és Pest megye több mint 20 aktív műemléki szakértőjével. A kerületi sajátosság alapján választjuk ki a megfelelőt; a vevő egy szerződést és egy számlát kap, amelyben a szakértői díj is benne van.
+A műemléki szakértő felkérése és a dokumentáció megrendelése az ingatlan tulajdonosának (vagy a megbízott építészének) a feladata — ezt a névjegyzékben szereplő szakértővel közvetlenül kötött külön megbízás rendezi, a fenti szempontok szerint kiválasztva. Amit mi, mint ajtógyártó biztosítani tudunk: a szakértő és az építész számára szükséges pontos felmérési adatokat (méret, profilozás, veretkészlet, szín) az ajtóról, amelyeket a dokumentációhoz és a tervlaphoz fel lehet használni.
 
 A szakértői dokumentáció elkészítésének tipikus átfutása 3–6 hét, az ingatlan bonyolultságától függően. A teljes engedélyezési folyamat 4–6 hónap, amelynek részleteit a [műemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) cikk tárgyalja, illetve a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldal a végeredményt.
 
-Ha bizonytalan, hogy az Ön ingatlanjához milyen szakterületű szakértő szükséges, küldje el a helyrajzi számot, és 1 munkanapon belül javaslatot teszünk — három névjegyzéki szakértő, három árajánlattal.
+Ha bizonytalan, hogy az Ön ingatlanjához milyen szakterületű szakértő szükséges, küldje el a helyrajzi számot, és 1 munkanapon belül tájékoztatást adunk, milyen kategóriájú szakértőt érdemes keresnie a névjegyzékben.

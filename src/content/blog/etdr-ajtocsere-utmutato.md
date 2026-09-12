@@ -45,7 +45,7 @@ Kiválasztja az ingatlan vármegyéjét (Budapesten: „Budapest Főváros"), ma
 A fejléchez tartoznak:
 
 - A kérelmező neve, lakcíme, e-mail címe
-- A meghatalmazott (építész tervező vagy a Huba ajtó) adatai
+- A meghatalmazott (jellemzően a megbízott építész tervező) adatai
 - Az ingatlan címe és **helyrajzi száma**
 - A tervezett tevékenység rövid leírása (1-2 mondat)
 - A védettség típusa az OÉNY szerint
@@ -83,7 +83,7 @@ Minden dokumentumot külön-külön kell AVDH-val ellátni — a meghatalmazást
 
 ## 7. A meghatalmazás formai követelményei
 
-Ha nem a tulajdonos nyújtja be, hanem az építész tervező vagy a Huba ajtó (mint az engedélyezési csomag keretében), a meghatalmazásnak tartalmaznia kell a tulajdonos és a meghatalmazott adatait, az ingatlan helyrajzi számát, a meghatalmazás terjedelmét („örökségvédelmi engedélyezési eljárás teljes körű képviselete, hiánypótlás, fellebbezés"), és a tulajdonos AVDH-aláírását. A két leggyakoribb hiba: hiányzik a hiánypótlási és fellebbezési felhatalmazás, vagy a meghatalmazás nem AVDH-aláírt.
+Ha nem a tulajdonos nyújtja be, hanem a megbízott építész tervező, a meghatalmazásnak tartalmaznia kell a tulajdonos és a meghatalmazott adatait, az ingatlan helyrajzi számát, a meghatalmazás terjedelmét („örökségvédelmi engedélyezési eljárás teljes körű képviselete, hiánypótlás, fellebbezés"), és a tulajdonos AVDH-aláírását. A két leggyakoribb hiba: hiányzik a hiánypótlási és fellebbezési felhatalmazás, vagy a meghatalmazás nem AVDH-aláírt.
 
 ## 8. Benyújtás, hatósági visszaigazolás, hiánypótlás
 
@@ -95,8 +95,8 @@ A „Benyújtás" gomb megnyomása után a rendszer egy iktatószámot generál,
 
 A hiánypótlás kezelése ugyanazon az ÉTDR-felületen történik — a hiánypótolt dokumentum AVDH-aláírva kerül feltöltésre. A leggyakoribb 7 elutasítási okot [külön cikkben tárgyaltuk](/blog/7-tipikus-elutasitas).
 
-## A Huba megoldása
+## Hol segíthet a Huba ajtó?
 
-A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében az ÉTDR-ügyintézést a kistarcsai irodánk végzi. Az ügyfél egy AVDH-aláírt meghatalmazást ad, a többi (dokumentumok összeállítása, ÉTDR-feltöltés, hiánypótlás-kezelés) a mi feladatunk. Egy szerződés, egy számla, egy projektmenedzser — a végén egy korhű, MABISZ-minősített ajtó a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) referenciák szerinti minőségben.
+Az ÉTDR-ügyintézést — a kérelem összeállítását, a feltöltést, a hiánypótlás kezelését — a tulajdonos vagy a megbízott építész tervező végzi. Ebben a folyamatban a Huba ajtó nem vállal képviseletet, viszont az engedélyben rögzített terv alapján elkészíti a korhű, MABISZ-minősített ajtót — a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) referenciák szerinti minőségben.
 
-Ha az ÉTDR-felület első benyomásra túl bonyolultnak tűnik, ez teljesen természetes — a felület 2013-ban készült, és a 2024-es [281/2024. Korm. rendelet](https://net.jogtar.hu/jogszabaly?docid=a2400281.kor) hatályba lépése óta is gyakran változik. Engedje át nekünk a papírmunkát, és koncentráljon az ajtóra.
+Ha az ÉTDR-felület első benyomásra túl bonyolultnak tűnik, ez teljesen természetes — a felület 2013-ban készült, és a 2024-es [281/2024. Korm. rendelet](https://net.jogtar.hu/jogszabaly?docid=a2400281.kor) hatályba lépése óta is gyakran változik. Az engedélyezési dokumentáció összeállításában a legtöbb esetben a kérelmet benyújtó építész tervező tud segíteni.

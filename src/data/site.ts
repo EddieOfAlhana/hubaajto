@@ -15,7 +15,7 @@ export const SITE = {
   founded: 2003,
   mabiszSince: 2009,
   warrantyYears: 15,
-  priceFromHUF: 330_000,
+  priceFromHUF: 440_000,
 } as const;
 
 export const CONTACT = {
@@ -63,7 +63,7 @@ export const CERTIFICATIONS = [
 export const SERVICE_AREA = {
   heritage: {
     label: "Műemléki / belvárosi környezet",
-    description: "Korhű, kazettás, betétes és festett biztonsági ajtók műemléki engedélyezéssel.",
+    description: "Korhű, kazettás, betétes és festett biztonsági ajtók műemléki és helyi védett ingatlanokhoz.",
     districts: [
       { code: "I", name: "Budavári Várnegyed", note: "UNESCO világörökség" },
       { code: "II", name: "Rózsadomb · Pasarét", note: "Helyi védettség" },
@@ -96,7 +96,6 @@ export const SERVICE_AREA = {
 export const NAV = [
   { label: "Termékek", href: "/biztonsagi-ajto" },
   { label: "Stílus / Műemléki", href: "/stilus-biztonsagi-ajto" },
-  { label: "Engedélyezés", href: "/engedelyezesi-csomag" },
   { label: "Ajtótervező", href: "/ajtotervezo" },
   { label: "Referenciák", href: "/referenciak" },
   { label: "Árak", href: "/arak" },
@@ -111,7 +110,6 @@ export const FOOTER_NAV = [
       { label: "Modern biztonsági ajtó", href: "/biztonsagi-ajto" },
       { label: "Stílus / klasszikus", href: "/stilus-biztonsagi-ajto" },
       { label: "Műemléki ajtók", href: "/muemleki-biztonsagi-ajto" },
-      { label: "Engedélyezési csomag", href: "/engedelyezesi-csomag" },
       { label: "Ajtótervező", href: "/ajtotervezo" },
     ],
   },

@@ -68,6 +68,6 @@ A részleges rekonstrukció a budapesti gyakorlatban a leggyakrabban javasolt me
 
 ## Mit ajánlunk?
 
-A döntés — restaurálás, rekonstrukció vagy hibrid — minden esetben az eredeti ajtó állapotán múlik. A Kistarcsai műhelyünkben mindhárom eljárást végezzük: a műemléki szakértői partnerünkkel előzetesen állapotfelmérést készítünk, és az állapotjelentés alapján döntünk. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk és az [engedélyezési csomag](/engedelyezesi-csomag) szolgáltatásunk együtt fedi le a folyamatot.
+A döntés — restaurálás, rekonstrukció vagy hibrid — minden esetben az eredeti ajtó állapotán múlik. A Kistarcsai műhelyünkben mindhárom eljárást végezzük: a műemléki szakértői partnerünkkel előzetesen állapotfelmérést készítünk, és az állapotjelentés alapján döntünk. Az örökségvédelmi vagy településképi engedélyezést az ingatlan tulajdonosa vagy megbízott tervezője intézi a hatósággal; a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk a gyártási és beépítési oldalt fedi le.
 
 Kérje [ingyenes helyszíni felmérésünket](/felmeres) — az első találkozáson már megmondjuk, hogy az Ön eredeti ajtaja restaurálható-e, vagy a rekonstrukció lesz a szakszerű választás.

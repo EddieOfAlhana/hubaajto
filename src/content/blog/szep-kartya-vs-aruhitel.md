@@ -11,7 +11,7 @@ seo:
   keywords: ["SZÉP-kártya lakásfelújítás", "SZÉP-kártya 2026 változás", "áruhitel biztonsági ajtó", "ajtócsere finanszírozás"]
 ---
 
-A bejárati ajtó cseréje 330 000 és 1 800 000 Ft között zajlik, attól függően, hogy panel-lakásról vagy családi házról van szó. Sok ügyfél két finanszírozási lehetőséget mérlegel: SZÉP-kártya egyenleg felhasználása, vagy Cofidis áruhitel. A 2025-ös év e tekintetben jogszabályi átmeneti év volt — 2026. január 1-től a két lehetőség közötti döntés egyértelműen átrajzolódott. Ebben a cikkben átláthatóan megmutatjuk, mikor melyik éri meg.
+A bejárati ajtó cseréje 440 000 és 1 800 000 Ft között zajlik, attól függően, hogy panel-lakásról vagy családi házról van szó. Sok ügyfél két finanszírozási lehetőséget mérlegel: SZÉP-kártya egyenleg felhasználása, vagy Cofidis áruhitel. A 2025-ös év e tekintetben jogszabályi átmeneti év volt — 2026. január 1-től a két lehetőség közötti döntés egyértelműen átrajzolódott. Ebben a cikkben átláthatóan megmutatjuk, mikor melyik éri meg.
 
 ## Mi változott a SZÉP-kártyával 2025–2026-ban?
 
@@ -45,12 +45,12 @@ A 0% THM **nem folyamatosan elérhető** — a felmérés időpontjában felmér
 A 2009. évi CLXII. törvény (a fogyasztói hitelről szóló törvény) szerint a hitelreklámnak kötelezően reprezentatív példát kell tartalmaznia.
 
 > **Reprezentatív példa 1 — 0% THM promóció, panel-lakás méret:**
-> Hitelösszeg: **330 000 Ft** · Futamidő: **10 hónap** · Havi törlesztés: **33 000 Ft** · THM: **0%** · Teljes visszafizetendő: **330 000 Ft** · Hitelbírálati díj: 0 Ft. Hitelnyújtó: Cofidis Magyarországi Fióktelepe.
+> Hitelösszeg: **440 000 Ft** · Futamidő: **10 hónap** · Havi törlesztés: **44 000 Ft** · THM: **0%** · Teljes visszafizetendő: **440 000 Ft** · Hitelbírálati díj: 0 Ft. Hitelnyújtó: Cofidis Magyarországi Fióktelepe.
 
 > **Reprezentatív példa 2 — standard kondíciók, családi ház méret:**
 > Hitelösszeg: **800 000 Ft** · Futamidő: **24 hónap** · Havi törlesztés: kb. **42 100 Ft** · THM: kb. **37,6%** · Teljes visszafizetendő összeg: kb. **1 010 400 Ft**. Hitelnyújtó: Cofidis Magyarországi Fióktelepe.
 
-A két példa jól mutatja a különbséget: a 0% THM-mes 10 hónapos kondíció ideális egy 330 000 Ft-os panel-lakás cseréhez, mert a teljes árat a vételár teljes összegével fizeti vissza. A 800 000 Ft fölötti családi ház ajtóknál a hosszabb futamidő reálisabb, de a 37,6%-os éves teljes hiteldíj-mutató miatt a teljes költség kb. 26%-kal több a vételárnál.
+A két példa jól mutatja a különbséget: a 0% THM-mes 10 hónapos kondíció ideális egy 440 000 Ft-os panel-lakás cseréhez, mert a teljes árat a vételár teljes összegével fizeti vissza. A 800 000 Ft fölötti családi ház ajtóknál a hosszabb futamidő reálisabb, de a 37,6%-os éves teljes hiteldíj-mutató miatt a teljes költség kb. 26%-kal több a vételárnál.
 
 ## Kombinálhatóság: a SZÉP-kártya és az áruhitel egyszerre
 
@@ -60,7 +60,7 @@ Mivel a SZÉP-kártya 2026-tól nem fizet biztonsági ajtót, a kombináció **k
 
 | Helyzet | Ajánlott finanszírozás |
 |---|---|
-| 330 000 – 500 000 Ft panel-lakás csere | Cofidis 0% THM 10 hó, ha elérhető |
+| 440 000 – 560 000 Ft panel-lakás csere | Cofidis 0% THM 10 hó, ha elérhető |
 | 500 000 – 1 000 000 Ft családi ház | Cofidis 12–24 hó standard kondíció |
 | 1 000 000 Ft fölötti egyedi családi ház | 30% banki átutalás + Cofidis 24–36 hó |
 | Készpénzes egyösszegű | Banki átutalás 30/70 ütemezésben (előleg + végszámla) |

@@ -71,4 +71,4 @@ Az ár a méret, a profilrajz bonyolultsága, az üvegezés és a veretkészlet 
 
 ## Mi a következő lépés?
 
-Az ingyenes helyszíni felmérés keretében a kistarcsai műhelyünk építésze felméri az eredeti ajtót, fotózza a profilozást, lemásolja a vereteket, megméri a kötéseket. Innentől az építéstörténeti dokumentáció, a tervlap és az ÉTDR-kérelem összeállítása a Huba [engedélyezési csomag](/engedelyezesi-csomag) része — egy szerződés, egy számla, egy projektmenedzser. Hívjon vissza minket, vagy kérje az online felmérési időpontot.
+Az ingyenes helyszíni felmérés keretében a kistarcsai műhelyünk építésze felméri az eredeti ajtót, fotózza a profilozást, lemásolja a vereteket, megméri a kötéseket. Innentől az építéstörténeti dokumentáció, a tervlap és az ÉTDR-kérelem összeállítása az Ön által megbízott építész tervező és műemléki szakértő feladata. Hívjon vissza minket, vagy kérje az online felmérési időpontot.

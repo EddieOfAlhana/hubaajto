@@ -34,7 +34,7 @@ A II. kerület belső, Buda-hegyvidéki része **kettős védettségi térben** 
 - **Helyi védettség alatt áll** a II. kerület településképi rendelete szerint. Ekkor a Polgármesteri Hivatal **településképi bejelentési eljárást** ír elő.
 - **Védettség nélküli, de homlokzati karakterű épület**. Ekkor a tulajdonosi és közös képviselői hozzájárulás elegendő, hatósági eljárás nem.
 
-A védettségi státusz **első lépés** a felmérés előtt — a helyrajzi szám alapján a [muemlek.hu](https://www.muemlek.hu) és a kerületi főépítészi iroda együtt eligazít. A felmérőnk ebben támogatja Önt, és ha az engedélyezés szükséges, a kulcsrakész engedélyezési csomagunkat is megrendelheti.
+A védettségi státusz **első lépés** a felmérés előtt — a helyrajzi szám alapján a [muemlek.hu](https://www.muemlek.hu) és a kerületi főépítészi iroda együtt eligazít. A felmérőnk ebben támogatja Önt, de az engedélyezési eljárás lefolytatása a tulajdonos vagy a megbízott építész tervező feladata.
 
 További olvasnivaló: a [műemléki engedélyezési útmutató](/blog/muemleki-engedelyezes-utmutato), és a [műemlék vs. nyilvántartott műemléki érték](/blog/muemlek-vs-nyilvantartott-ertek) közötti különbség.
 
@@ -69,7 +69,7 @@ A folyamat:
 4. **Korhű kétszárnyú ajtó gyártása** — 6 hetes gyártási idő (kovácsoltvas díszítéssel együtt)
 5. **Beépítés és átadás** — 1 nap, kíméletes bontással
 
-A teljes beruházás bruttó kb. **1 480 000 Ft** volt, ebből az engedélyeztetési csomag és szakértői költség kb. 240 000 Ft.
+A teljes beruházás bruttó kb. **1 480 000 Ft** volt, ebből az engedélyeztetési és szakértői költség kb. 240 000 Ft.
 
 ## Mit ajánlunk?
 
@@ -79,4 +79,4 @@ További olvasnivaló: az [acélbetétes biztonsági ajtó tölgyfa kazettás ho
 
 ## Foglaljon ingyenes helyszíni felmérést
 
-A felmérőnk a II. kerület Lipótmező és Hűvösvölgy területére **45–60 percen belül kiérkezik** Kistarcsáról. [Foglaljon ingyenes felmérést](/felmeres), nézze meg a [műemléki engedélyezési csomagunkat](/engedelyezesi-csomag), vagy ismerje meg a [stílus biztonsági ajtó kínálatunkat](/stilus-biztonsagi-ajto).
+A felmérőnk a II. kerület Lipótmező és Hűvösvölgy területére **45–60 percen belül kiérkezik** Kistarcsáról. [Foglaljon ingyenes felmérést](/felmeres), vagy ismerje meg a [stílus biztonsági ajtó kínálatunkat](/stilus-biztonsagi-ajto).

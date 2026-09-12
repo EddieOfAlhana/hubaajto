@@ -24,7 +24,7 @@ export type ConfigOption = {
   swatch: SwatchPaint;
   /** Future field — points at the photographed JPG once migrated. */
   imageUrl?: string;
-  /** Surcharge over the 330 000 Ft entry price. */
+  /** Surcharge over the 440 000 Ft entry price. */
   priceModifier?: number;
 };
 

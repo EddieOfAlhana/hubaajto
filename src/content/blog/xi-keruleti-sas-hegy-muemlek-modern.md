@@ -70,6 +70,6 @@ A Kistarcsai műhelyünk a Sas-hegyi gyakorlatra **két termékvonallal** felel:
 - A polgári villákhoz a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) kétszárnyú, kazettás vagy betétes vonalunk (700 000 – 2 500 000 Ft, méret és összetettség szerint),
 - Az új modern villákhoz a [premium családi ház](/biztonsagi-ajto) vonalunk RAL 7016 antracit színben (380 000 – 850 000 Ft).
 
-Mindkettő MABISZ-minősített biztonsági szerkezettel, 15 év szerkezeti garanciával, és Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárral. Az [engedélyezési csomag](/engedelyezesi-csomag) keretében a XI. kerületi TKBE-t mi intézzük.
+Mindkettő MABISZ-minősített biztonsági szerkezettel, 15 év szerkezeti garanciával, és Mottura, Abus, Mul-T-Lock, Iseo vagy Cisa zárral. A XI. kerületi TKBE engedélyezési eljárást az ingatlan tulajdonosa vagy megbízott tervezője intézi a kerületi főépítészi irodával.
 
 Kérje [ingyenes helyszíni felmérésünket](/felmeres) — a Kistarcsai műhelyből 35-40 perc alatt a Sas-hegyre érünk, és az első találkozón a védettségi szintet, az engedélyezési útvonalat és a megfelelő termékvonalat együtt tisztázzuk.

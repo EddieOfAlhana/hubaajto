@@ -8,7 +8,6 @@ import ProductCard from "../components/ProductCard.astro";
 import BeforeAfterSlider from "../components/BeforeAfterSlider.astro";
 import SocialProof from "../components/SocialProof.astro";
 import SpecCompareTable from "../components/SpecCompareTable.astro";
-import EngedelyezesiCsomag from "../components/EngedelyezesiCsomag.astro";
 import LockBrandWall from "../components/LockBrandWall.astro";
 import ServiceArea from "../components/ServiceArea.astro";
 import FAQ from "../components/FAQ.astro";
@@ -26,7 +25,7 @@ const products = [
     bullets: [
       "Kazettás, betétes vagy festett kivitelben",
       "Az eredeti ajtó alapján rekonstruálva",
-      "A műemléki engedélyt is mi intézzük",
+      "Egyedi tervezés az elfogadott engedélyezési terv alapján",
     ],
     image: "/assets/photos/hero/period-yellow.jpg",
     imageAlt: "Korhű biztonsági ajtó polgári lakásban",
@@ -35,7 +34,7 @@ const products = [
   {
     family: "modern" as const,
     name: "Modern Standard",
-    priceFrom: "330 000 Ft-tól",
+    priceFrom: "440 000 Ft-tól",
     classBadge: "MABISZ 2.",
     bullets: [
       "Hőhídmentes acél zártszelvényből készült tok",
@@ -64,7 +63,7 @@ const products = [
 
 const testimonials = [
   {
-    quote: "A felmérőtök fél óra alatt értett mindent, ami az ablakcserénk műemléki engedélyét megakasztotta. Ajtót és engedélyezést egyben kaptuk.",
+    quote: "A felmérőtök fél óra alatt értette, mire van szükség a lépcsőházunk stílusához illeszkedő ajtóhoz. Precíz, gyors munka volt elejétől a végéig.",
     name: "Dr. Kovács Á.",
     district: "Budapest, V. kerület",
     product: "Korhű biztonsági ajtó · 2024",
@@ -85,11 +84,11 @@ const testimonials = [
 
 const faqItems = [
   { q: "Mennyibe kerül egy biztonsági ajtó?",
-    a: `<p>A modern modelleink belépőszintje <strong>330 000 Ft</strong>, a prémium kivitel jellemzően 800 000 és 1 800 000 Ft között mozog. A korhű és műemléki ajtókat egyedi árazással készítjük. A végleges árat a helyszíni felmérés után tudjuk megadni. <a href="/arak">Részletes árlista →</a></p>` },
+    a: `<p>A modern modelleink belépőszintje <strong>440 000 Ft</strong>, a prémium kivitel jellemzően 800 000 és 1 800 000 Ft között mozog. A korhű és műemléki ajtókat egyedi árazással készítjük. A végleges árat a helyszíni felmérés után tudjuk megadni. <a href="/arak">Részletes árlista →</a></p>` },
   { q: "Mennyi idő, mire elkészül és beépítjük?",
-    a: `<p>Modern ajtónál ${SLA.surveyDays} a helyszíni felmérés, ${SLA.manufactureDays} a gyártás, és ${SLA.installDays} a beépítés. A műemléki engedélyezéssel együtt ${SLA.permitTotal}.</p>` },
+    a: `<p>Modern ajtónál ${SLA.surveyDays} a helyszíni felmérés, ${SLA.manufactureDays} a gyártás, és ${SLA.installDays} a beépítés. Műemléki környezetben az örökségvédelmi engedélyezési eljárással együtt a teljes folyamat jellemzően ${SLA.permitTotal} — az engedélyezést az Ön építésze vagy örökségvédelmi szakértője intézi.</p>` },
   { q: "Műemléki vagy védett épületbe is építenek ajtót?",
-    a: `<p>Igen. Az eredeti ajtó alapján rekonstruált, korhű, kazettás vagy festett kivitelt készítünk — az engedélyezéshez szükséges teljes műszaki dokumentációval együtt. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
+    a: `<p>Igen. Az eredeti ajtó alapján rekonstruált, korhű, kazettás vagy festett kivitelt készítünk — az engedélyezéshez szükséges műszaki dokumentációt (méretrajz, anyagminta) is biztosítjuk az Ön építésze vagy örökségvédelmi szakértője számára. <a href="/muemleki-biztonsagi-ajto">Műemléki biztonsági ajtó →</a></p>` },
   { q: "Mi a különbség a betörésvédelmi osztályok (RC2–RC6) között?",
     a: `<p>Az osztály azt mutatja, hogy az ajtónak mennyi ideig kell ellenállnia egy szakszerű betörési kísérletnek: RC2 — 3 perc, RC3 — 5 perc, RC4 — 10 perc, RC5 — 15 perc, RC6 — 20 perc. Lakásba általában RC2–RC3-at, magas kockázatú helyre RC4–RC5-öt ajánlunk.</p>` },
   { q: "Mit fedez a 15 éves szerkezeti garancia?",
@@ -99,7 +98,7 @@ const faqItems = [
   { q: "Miben jobb egy Huba ajtó, mint egy 150 000 Ft-os katalógusajtó?",
     a: `<p>Vékony hajlított lemez helyett zártszelvényből készült acél tok, megerősített zárlemez, MABISZ 2.–5. osztály közül szabadon választható kivitel, márkás európai zárszerkezet, 15 év szerkezeti garancia, és tíz év múlva is rendelhető pótalkatrész. <a href="#miben-tobb">Részletes összehasonlítás →</a></p>` },
   { q: "Lehet részletfizetés?",
-    a: `<p>Igen — Cofidis áruhitellel, az aktuális kampányoktól függően akár 0%-os THM mellett. Reprezentatív példa: 330 000 Ft / 10 hó ≈ 33 000 Ft / hó. <a href="/reszletfizetes">Részletfizetés →</a></p>` },
+    a: `<p>Igen — Cofidis áruhitellel, az aktuális kampányoktól függően akár 0%-os THM mellett. Reprezentatív példa: 440 000 Ft / 10 hó ≈ 44 000 Ft / hó. <a href="/reszletfizetes">Részletfizetés →</a></p>` },
 ];
 ---
 <BaseLayout
@@ -141,7 +140,7 @@ const faqItems = [
     tone="cream"
     eyebrow="Termékcsaládok"
     heading="A teljes kínálat — egyetlen acél szerkezetre építve."
-    lead="A klasszikus stílusú és a modern ajtók ugyanarra a MABISZ-minősített acél szerkezetre épülnek. A különbség a látható borításban és a hozzá tartozó engedélyezésben van."
+    lead="A klasszikus stílusú és a modern ajtók ugyanarra a MABISZ-minősített acél szerkezetre épülnek. A különbség a látható borításban van, és abban, hogy szükséges-e hozzá örökségvédelmi engedélyezési eljárás."
   >
     <div class="product-grid stagger">
       {products.map(p => <ProductCard {...p} />)}
@@ -173,24 +172,24 @@ const faqItems = [
     <ProcessSteps />
   </Section>
 
-  <section id="engedelyezesi-csomag" class="ec-section">
+  <section id="muemleki-ajtok" class="ec-section">
     <div class="container">
       <header class="ec-section-header reveal">
         <p class="eyebrow">
           <span class="tricolor-strip" aria-hidden="true"><span></span><span></span><span></span></span>
-          Műemléki engedélyezési csomag
+          Műemléki és stílus ajtók
         </p>
-        <h2 class="ec-section-heading">Az engedélyt is mi intézzük.<br/>Ön egy ajtót kap — mi egy döntést.</h2>
+        <h2 class="ec-section-heading">Korhű biztonsági ajtó — az eredeti alapján rekonstruálva.</h2>
         <p class="ec-section-lead">
-          A budapesti műemléki ajtócsere 4–6 hónapos, három hatóságot érintő ügyintézés. A védettségi
-          ellenőrzéstől a befejezés bejelentéséig mindent intézünk — építész tervezővel és a
-          műemléki szakértői névjegyzékben szereplő szakemberrel közösen.
+          Műemléki vagy helyi védettségű házaknál a nyílászárócserét külön örökségvédelmi engedélyezési
+          eljárás előzi meg, amelyet az Ön építésze vagy örökségvédelmi szakértője intéz a hatóságnál.
+          Mi a jóváhagyott terv alapján gyártjuk le a korhű, kazettás vagy festett biztonsági ajtót —
+          a szükséges méretrajzot és anyagmintát is biztosítjuk.
         </p>
       </header>
-      <EngedelyezesiCsomag />
       <div class="ec-section-cta reveal">
-        <a href="/engedelyezesi-csomag" class="btn btn-primary btn-large">Engedélyezési csomag részletei →</a>
-        <a href="/orokségvedelmi-engedely" class="btn btn-ghost btn-large">Olvassa el az engedélyezési útmutatót</a>
+        <a href="/muemleki-biztonsagi-ajto" class="btn btn-primary btn-large">Műemléki biztonsági ajtó →</a>
+        <a href="/felmeres" class="btn btn-ghost btn-large">Kérjen ingyenes felmérést</a>
       </div>
     </div>
   </section>

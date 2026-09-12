@@ -64,8 +64,8 @@ Egy budavári lakásajtó cseréje tipikusan:
 - 100 000 – 250 000 Ft beépítés (gyakran szárkő-felújítással)
 - **Összesen: 1,5 – 4,3 millió Ft**, 4–6 hónap alatt
 
-## A teljes folyamat egy kézből
+## Mit ad a Huba ajtó ehhez a folyamathoz?
 
-A Huba ajtó [engedélyezési csomagja](/engedelyezesi-csomag) a budavári címekre is érvényes: a védettségi átvilágítástól a befejezési bejelentésig 11 lépésben végigvezetjük. Az építész tervezőt, a műemléki szakértőt és az ÉTDR-ügyintézést mi koordináljuk; Ön egy szerződést, egy számlát, és egy projektmenedzsert kap. A részletes folyamatleírást a [müemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) cikk tartalmazza.
+A védettségi átvilágítástól a befejezési bejelentésig tartó engedélyezési folyamatot az ingatlan tulajdonosának — vagy az általa megbízott építész tervezőnek és műemléki szakértőnek — kell végigvinnie, budavári cím esetén sem kivétel ez alól. A Huba ajtó ebben a folyamatban a terméket adja: a fa kazettás homlokzat mögé rejtett, hőhídmentes acél zártszelvény tokos, MABISZ-minősített ajtószerkezetet, amelyet a hatóság a gyakorlatban elfogad. A részletes folyamatleírást a [müemléki engedélyezés útmutató](/blog/muemleki-engedelyezes-utmutato) cikk tartalmazza.
 
 Ha a Várban tervez ajtócserét, küldje el a címet — egy munkanapon belül megküldjük az ingatlanra szabott folyamatleírást és időtervet. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) oldalon a kazettás és betétes referenciáink fényképei találhatók.

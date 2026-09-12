@@ -93,7 +93,7 @@ A 2003 óta tartó gyártói tapasztalatunk alapján a következő szintek tér�
 
 ### Panel-lakás vagy lakótelepi társasház — RC2 vagy RC3
 
-A panel-lakások bejárati ajtaja a lépcsőházra nyílik, ahonnan a betörő látható helyen mozog, és a szomszédok hangra reagálnak. Az **RC2 (MABISZ 2., 3 perc)** általában elegendő, és a Huba Modern Standard kategóriánk ezt teljesíti **330 000 Ft-tól**. Ha az ingatlan értéke vagy a tárolt vagyon indokolja, az RC3 felárat (kb. +50 000 Ft) érdemes választani — a Huba Modern Premium ezt nyújtja.
+A panel-lakások bejárati ajtaja a lépcsőházra nyílik, ahonnan a betörő látható helyen mozog, és a szomszédok hangra reagálnak. Az **RC2 (MABISZ 2., 3 perc)** általában elegendő, és a Huba Modern Standard kategóriánk ezt teljesíti **440 000 Ft-tól**. Ha az ingatlan értéke vagy a tárolt vagyon indokolja, az RC3 felárat (kb. +50 000 Ft) érdemes választani — a Huba Modern Premium ezt nyújtja.
 
 ### Társasházi újépítés vagy átlagos családi ház — RC3
 

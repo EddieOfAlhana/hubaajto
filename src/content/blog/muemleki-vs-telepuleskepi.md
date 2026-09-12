@@ -94,8 +94,8 @@ Két helyzetben az egyik eljárás nem kell:
 
 Ezt minden esetben a kerületi főépítészi iroda konzultációja erősíti meg.
 
-## A Huba megoldás
+## Mit tud nyújtani az ajtógyártó?
 
-A [Huba engedélyezési csomag](/engedelyezesi-csomag) keretében a két eljárás párhuzamos lefolytatását mi végezzük: az ÉTDR-ügyintézést és a kerületi TKBE-t egyaránt. Az ügyfél egy szerződést és egy számlát kap; a tervlap mindkét hatóság követelményeinek megfelel. A végeredmény: 4-6 hónap alatt mindkét engedély a kezében, és egy korhű, MABISZ-minősített biztonsági ajtó a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) referenciák minőségében.
+A két eljárás párhuzamos lefolytatása — az ÉTDR-ügyintézés és a kerületi TKBE egyaránt — az ingatlan tulajdonosának vagy a megbízott építészének a feladata, hiszen a kérelmeket és a tervdokumentációt csak ők (vagy meghatalmazott képviselőjük) nyújthatják be jogszerűen. Amiben mi, mint ajtógyártó segíteni tudunk: egy olyan korhű, MABISZ-minősített biztonsági ajtó legyártása, amely már tervezéskor megfelel mindkét hatóság követelményeinek (eredeti osztás, szín, veretek) — lásd a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) referenciáit.
 
 Küldje el a címet és a helyrajzi számot, és 1 munkanapon belül megadjuk, melyik (egyik vagy mindkét) eljárás kötelező az Ön esetében.

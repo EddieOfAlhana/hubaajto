@@ -85,8 +85,8 @@ A kerületi főépítészi iroda **szóbeli konzultációja** Magyarországon in
 
 Az [OÉNY Védettségek nyilvántartása](https://www.oeny.hu/oeny/veding/) az országos műemléki adatokat tartalmazza — a helyi védettséget viszont kerületi forrásból kell ellenőrizni. A [műemléki ingatlan 1 perces ellenőrzése](/blog/muemlek-otthon-1-perces-ellenorzes) című cikkünk ezt a lépést bemutatja.
 
-## A Huba megoldás
+## Amit érdemes tudni
 
-Mind a 23 budapesti kerület TKR-szövegét és gyakorlatát ismerjük; az [engedélyezési csomagunk](/engedelyezesi-csomag) a párhuzamos országos + kerületi eljárást egyaránt ellátja. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk a kerületi TKR színkövetelményeihez (RAL 6009, 8014, 5008) igazítható.
+Mind a 23 budapesti kerület TKR-szövegét és gyakorlatát ismerjük, és a felmérés során tanácsot tudunk adni arról, hogy az adott ingatlanra milyen védettség és eljárás vonatkozhat. A párhuzamos országos és kerületi engedélyezési eljárás lefolytatása a tulajdonos vagy a megbízott építész tervező feladata. A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk a kerületi TKR színkövetelményeihez (RAL 6009, 8014, 5008) igazítható.
 
 Kérje [ingyenes helyszíni felmérésünket](/felmeres) — az első 24 órán belül megadjuk, az Ön kerületében milyen védettség és milyen eljárás vár.

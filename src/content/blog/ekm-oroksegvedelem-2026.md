@@ -66,6 +66,6 @@ A gyakorlati ajánlás: a saját erőből történő engedélyezés ma még ink�
 
 ## A Huba megoldás
 
-Az [engedélyezési csomagunkat](/engedelyezesi-csomag) folyamatosan frissítjük az ÉKM gyakorlatához, és a [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk a 2024–2026 közötti minisztériumi tájékoztatók szerinti rejtett acélbetétes szerkezettel készül.
+A [műemléki biztonsági ajtó](/muemleki-biztonsagi-ajto) termékvonalunk a 2024–2026 közötti minisztériumi tájékoztatók szerinti rejtett acélbetétes szerkezettel készül, így az aktuális engedélyezési gyakorlatban elfogadott. Magát az engedélyezési eljárást az Ön által megbízott építész tervező és műemléki szakértő folytatja le, az ÉKM iránymutatásainak megfelelően.
 
 Kérje [ingyenes helyszíni felmérésünket](/felmeres) — a felmérésen a kollégánk a legaktuálisabb jogszabályi környezet alapján mondja meg, hogy az Ön ingatlanára pontosan milyen engedélyezési útvonal kötelező.
