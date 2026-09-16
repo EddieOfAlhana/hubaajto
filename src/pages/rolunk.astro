@@ -108,10 +108,14 @@ const principles = [
     align="center"
   >
     <div class="contact-quick stagger">
-      <a class="contact-card" href={`tel:${CONTACT.phonePrimaryTel}`}>
+      <div class="contact-card">
         <p class="contact-card-label">Telefon</p>
-        <p class="contact-card-value">{CONTACT.phonePrimary}</p>
-      </a>
+        <p class="contact-card-value">
+          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a>
+          {" / "}
+          <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>
+        </p>
+      </div>
       <a class="contact-card" href={`mailto:${CONTACT.email}`}>
         <p class="contact-card-label">E-mail</p>
         <p class="contact-card-value">{CONTACT.email}</p>

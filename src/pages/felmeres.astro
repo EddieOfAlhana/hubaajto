@@ -99,11 +99,11 @@ const faqItems = [
   },
   {
     q: "Mennyi idő múlva tudnak jönni?",
-    a: `<p>Tipikusan ${SLA.surveyDays}. A foglalt időpontokat a +36 30 740 4458 számon vagy az alábbi űrlapon tudjuk pontosítani. Sürgős eset (pl. betörés utáni helyzet) — jelezze, és aznap-másnap megpróbálunk kimenni.</p>`,
+    a: `<p>Tipikusan ${SLA.surveyDays}. A foglalt időpontokat a +36 30 740 4458 vagy a +36 30 740 4459 számon vagy az alábbi űrlapon tudjuk pontosítani. Sürgős eset (pl. betörés utáni helyzet) — jelezze, és aznap-másnap megpróbálunk kimenni.</p>`,
   },
   {
     q: "Van naptáras foglalási rendszer is?",
-    a: `<p>Igen — a naptáras, önkiszolgáló foglalási rendszer hamarosan elérhető. Addig a leggyorsabb a telefon (+36 30 740 4458) vagy az alábbi űrlap. Munkanapon belül visszahívjuk.</p>`,
+    a: `<p>Igen — a naptáras, önkiszolgáló foglalási rendszer hamarosan elérhető. Addig a leggyorsabb a telefon (+36 30 740 4458 vagy +36 30 740 4459) vagy az alábbi űrlap. Munkanapon belül visszahívjuk.</p>`,
   },
   {
     q: "Mi van, ha eltér a felmérés és a vásárlás napja?",
@@ -144,7 +144,7 @@ const faqItems = [
         <div class="felmeres-hero-ctas">
           <a href="#form" class="btn btn-primary btn-large">Időpontot kérek →</a>
           <a href={`tel:${phoneTel}`} class="btn btn-ghost btn-large">
-            Vagy hívjon: {CONTACT.phonePrimary}
+            Vagy hívjon: {CONTACT.phonePrimary} / {CONTACT.phoneSecondary}
           </a>
         </div>
       </div>
@@ -259,9 +259,11 @@ const faqItems = [
       <div class="form-grid">
         <div class="form-side reveal">
           <p class="form-side-eyebrow">Telefon — leggyorsabb</p>
-          <a href={`tel:${phoneTel}`} class="form-side-phone">
-            {CONTACT.phonePrimary}
-          </a>
+          <p class="form-side-phone">
+            <a href={`tel:${phoneTel}`}>{CONTACT.phonePrimary}</a>
+            {" / "}
+            <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>
+          </p>
           <p class="form-side-hours">{CONTACT.hours.weekday}<br />{CONTACT.hours.saturday}</p>
 
           <hr />

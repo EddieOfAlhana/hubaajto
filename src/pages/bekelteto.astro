@@ -119,7 +119,10 @@ import { SITE, CONTACT } from "../data/site";
         </div>
         <div>
           <dt>Telefon</dt>
-          <dd><a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a></dd>
+          <dd>
+            <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> /{" "}
+            <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>
+          </dd>
         </div>
       </dl>
       <p>

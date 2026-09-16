@@ -13,7 +13,9 @@ const year = new Date().getFullYear();
         <address class="site-footer-address">
           <strong>{SITE.legalName}</strong><br/>
           {CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}<br/>
-          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a><br/>
+          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a>
+          {" / "}
+          <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a><br/>
           <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </address>
 

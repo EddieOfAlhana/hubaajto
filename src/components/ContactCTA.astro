@@ -20,10 +20,14 @@ const {
 
     <div class="cta-actions reveal">
       <a href="/felmeres" class="btn btn-primary btn-large cta-primary">Felmérés foglalása →</a>
-      <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="cta-phone">
+      <span class="cta-phone">
         <span class="cta-phone-label">vagy hívjon</span>
-        <span class="cta-phone-num">{CONTACT.phonePrimary}</span>
-      </a>
+        <span class="cta-phone-num">
+          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a>
+          {" / "}
+          <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>
+        </span>
+      </span>
     </div>
   </div>
 </section>

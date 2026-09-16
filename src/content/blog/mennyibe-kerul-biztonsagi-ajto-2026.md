@@ -134,4 +134,4 @@ A pontos ár mindig **helyszíni felmérés után** alakul ki. A felmérés ingy
 
 Ha szeretné előre kalkulálni a végösszeget, a [teljes árlistát](/arak) az árak oldalon nézheti meg, a részletfizetési lehetőségekről pedig a [részletfizetés oldal](/reszletfizetes) ad pontos információt.
 
-Az [ingyenes helyszíni felmérést](/felmeres) bármikor lefoglalhatja az online űrlapon, vagy hívjon minket a +36 30 740 4458 számon. Munkanapon belül visszahívjuk, és 2–3 napon belül felméréssel megyünk.
+Az [ingyenes helyszíni felmérést](/felmeres) bármikor lefoglalhatja az online űrlapon, vagy hívjon minket a +36 30 740 4458 vagy a +36 30 740 4459 számon. Munkanapon belül visszahívjuk, és 2–3 napon belül felméréssel megyünk.

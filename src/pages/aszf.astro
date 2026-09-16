@@ -22,7 +22,8 @@ import { SITE, CONTACT } from "../data/site";
       <p>
         <strong>Vállalkozás:</strong> {SITE.legalName}, székhely:
         {CONTACT.address.postal} {CONTACT.address.city}, {CONTACT.address.street}; telefon:
-        <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a>;
+        <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> /{" "}
+        <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>;
         e-mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. A részletes adatok az
         <a href="/impresszum">Impresszumban</a> érhetők el.
       </p>
@@ -146,7 +147,8 @@ import { SITE, CONTACT } from "../data/site";
       <p class="legal-footnote">
         Hatályos: 2026. május. Ha a fentiekkel kapcsolatban kérdése van, kérjük írjon az
         <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> címre vagy hívja a
-        {' '}<a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> számot.
+        {' '}<a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> /{" "}
+        <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a> számot.
         <a href="/kapcsolat">Kapcsolatfelvétel →</a>
       </p>
     </div>

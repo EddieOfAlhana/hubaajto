@@ -165,4 +165,4 @@ Egy új panel-lakás bejárati ajtó beszerzésének első lépése a [helyszín
 
 Az árképzés részleteiről a [biztonsági ajtó ára 2026 cikkünk](/blog/mennyibe-kerul-biztonsagi-ajto-2026) ad pontos információt, a modern termékkategória teljes választékát pedig a [biztonsági ajtó](/biztonsagi-ajto) termékoldalon nézheti meg.
 
-Az [ingyenes helyszíni felmérést](/felmeres) bármikor lefoglalhatja az online űrlapon, vagy hívjon minket a +36 30 740 4458 számon. Munkanapon belül visszahívjuk, és 2–3 napon belül felméréssel megyünk Önhöz Budapesten vagy Pest megyében.
+Az [ingyenes helyszíni felmérést](/felmeres) bármikor lefoglalhatja az online űrlapon, vagy hívjon minket a +36 30 740 4458 vagy a +36 30 740 4459 számon. Munkanapon belül visszahívjuk, és 2–3 napon belül felméréssel megyünk Önhöz Budapesten vagy Pest megyében.

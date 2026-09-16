@@ -19,10 +19,12 @@ const pathname = Astro.url.pathname;
     </nav>
 
     <div class="site-header-actions">
-      <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="site-phone" aria-label={`Hívás: ${CONTACT.phonePrimary}`}>
+      <span class="site-phone" aria-label={`Hívás: ${CONTACT.phonePrimary} vagy ${CONTACT.phoneSecondary}`}>
         <span class="site-phone-icon" aria-hidden="true">☏</span>
-        <span class="site-phone-num">{CONTACT.phonePrimary}</span>
-      </a>
+        <span class="site-phone-num">
+          +36 30 740 <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>4458</a> / <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>4459</a>
+        </span>
+      </span>
       <a href="/felmeres" class="btn btn-primary site-header-cta">Ingyenes felmérés</a>
       <button class="site-menu-btn" data-menu-btn aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -34,9 +36,9 @@ const pathname = Astro.url.pathname;
     {NAV.map(item => (
       <a href={item.href} class="site-mobile-link">{item.label}</a>
     ))}
-    <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`} class="site-mobile-link site-mobile-phone">
-      ☏ {CONTACT.phonePrimary}
-    </a>
+    <p class="site-mobile-link site-mobile-phone">
+      ☏ +36 30 740 <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>4458</a> / <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>4459</a>
+    </p>
     <a href="/felmeres" class="btn btn-primary site-mobile-cta">Ingyenes felmérés</a>
   </nav>
 </header>
@@ -110,16 +112,31 @@ const pathname = Astro.url.pathname;
 </style>
 
 <script>
-  // Sticky header scrolled state
-  const header = document.querySelector("[data-header]") as HTMLElement | null;
-  const onScroll = () => header?.setAttribute("data-scrolled", String(window.scrollY > 16));
-  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  // Re-run on every navigation, including Astro client-side view transitions —
+  // the header (and its listeners) gets swapped out on each page change, so
+  // element references and event bindings must be re-acquired each time.
+  function initHeader() {
+    const header = document.querySelector("[data-header]") as HTMLElement | null;
+    const btn = document.querySelector("[data-menu-btn]") as HTMLButtonElement | null;
+    const menu = document.querySelector("[data-mobile-nav]") as HTMLElement | null;
 
-  // Mobile menu
-  const btn = document.querySelector("[data-menu-btn]") as HTMLButtonElement | null;
-  const menu = document.querySelector("[data-mobile-nav]") as HTMLElement | null;
-  btn?.addEventListener("click", () => {
-    const open = menu?.classList.toggle("is-open");
-    btn.setAttribute("aria-expanded", String(open));
-  });
+    // Sticky header scrolled state. Assigning (not addEventListener) avoids
+    // stacking duplicate listeners on `window`, which persists across
+    // client-side navigations even though `header` itself does not.
+    window.onscroll = () => header?.setAttribute("data-scrolled", String(window.scrollY > 16));
+    header?.setAttribute("data-scrolled", String(window.scrollY > 16));
+
+    // Mobile menu toggle
+    if (btn && menu) {
+      menu.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.onclick = () => {
+        const open = menu.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", String(open));
+      };
+    }
+  }
+
+  initHeader();
+  document.addEventListener("astro:page-load", initHeader);
 </script>

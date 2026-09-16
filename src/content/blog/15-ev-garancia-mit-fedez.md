@@ -51,7 +51,7 @@ Hogy elkerüljük a félreértéseket, érdemes pontosan tudni a kivételeket:
 
 Ha valamilyen szerkezeti problémát észlel:
 
-1. **Hívja az ügyfélszolgálatunkat** a +36 30 740 4458 számon, vagy küldjön e-mailt fotókkal mellékelve.
+1. **Hívja az ügyfélszolgálatunkat** a +36 30 740 4458 vagy a +36 30 740 4459 számon, vagy küldjön e-mailt fotókkal mellékelve.
 2. **Munkanapon belül visszahívjuk** és diagnosztikai időpontot egyeztetünk.
 3. **Felmérőnk kijön a helyszínre** (Budapest és Pest megye területén ingyenesen), és megvizsgálja a problémát.
 4. **Garanciális eset esetén** mi szállítjuk ki és építjük be a cserélt elemet — Önnek nincs többletköltsége. Nem garanciális esetben fix árajánlatot adunk a javításra.
