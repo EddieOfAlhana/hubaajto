@@ -90,6 +90,25 @@ const references = [
 ];
 
 const families = Array.from(new Set(references.map(r => r.family)));
+
+// Real installation photos — click-to-enlarge gallery.
+const photoGallery = [
+  { image: "/assets/photos/referenciak/install-walnut-iron-scroll.jpg", alt: "Dió színű, kovácsoltvas díszrácsos üvegezésű biztonsági ajtó" },
+  { image: "/assets/photos/hero/period-red-arched.jpg", alt: "Íves, boltíves kőkeretbe épített bordó biztonsági ajtó kovácsoltvas díszrácsos oldalfényekkel" },
+  { image: "/assets/photos/referenciak/install-navy-iron-scroll.jpg", alt: "Sötétkék biztonsági ajtó kovácsoltvas díszrácsos üvegezéssel" },
+  { image: "/assets/photos/hero/modern-mahogany.jpg", alt: "Mahagóni színű modern biztonsági ajtó panelházi bejáratban" },
+  { image: "/assets/photos/referenciak/install-beige-double-iron.jpg", alt: "Bézs színű kétszárnyú biztonsági ajtó kovácsoltvas díszráccsal" },
+  { image: "/assets/photos/referenciak/install-red-glass-strip.jpg", alt: "Cseresznye színű biztonsági ajtó függőleges savazott üvegcsíkkal" },
+  { image: "/assets/photos/referenciak/install-dark-glass-panel.jpg", alt: "Sötétbarna biztonsági ajtó két függőleges savazott üvegcsíkkal, kovácsoltvas erkélykorláttal" },
+  { image: "/assets/photos/referenciak/install-dark-chevron.jpg", alt: "Sötétbarna biztonsági ajtó sakktábla-mintás felülettel és savazott üvegcsíkkal" },
+  { image: "/assets/photos/referenciak/install-white-panel.jpg", alt: "Fehér, kazettás biztonsági ajtó" },
+  { image: "/assets/photos/referenciak/install-dark-ribbed.jpg", alt: "Sötétbarna, hornyolt felületű biztonsági ajtó" },
+  { image: "/assets/photos/referenciak/install-salmon-plank.jpg", alt: "Lazac színű, léces mintázatú biztonsági ajtó" },
+  { image: "/assets/photos/referenciak/install-dark-minimal.jpg", alt: "Sötétbarna, letisztult vonalvezetésű biztonsági ajtó" },
+  { image: "/assets/photos/referenciak/install-double-glazed.jpg", alt: "Kétszárnyú, üvegezett biztonsági ajtó tégla nyílászáró-keretben" },
+  { image: "/assets/photos/referenciak/install-white-construction.jpg", alt: "Fehér biztonsági ajtó, beépítés utáni állapotban" },
+  { image: "/assets/photos/referenciak/install-dark-mirror-glass.jpg", alt: "Sötét biztonsági ajtó két vízszintes üvegcsíkkal, belülről fotózva" },
+];
 ---
 
 <BaseLayout
@@ -149,6 +168,67 @@ const families = Array.from(new Set(references.map(r => r.family)));
         </article>
       ))}
     </div>
+  </Section>
+
+  <Section
+    tone="cream"
+    eyebrow="Fotógaléria"
+    heading="Tekintsen meg néhányat számos referenciánk közül."
+    lead="A képeket rendszeresen frissítjük."
+  >
+    <div class="photo-grid stagger">
+      {photoGallery.map((p, i) => (
+        <button type="button" class="photo-thumb" data-lightbox-open data-index={i} aria-label={`Kép megnyitása: ${p.alt}`}>
+          <img src={p.image} alt={p.alt} loading="lazy" />
+        </button>
+      ))}
+    </div>
+
+    <dialog class="lightbox" id="lightbox">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Bezárás">&times;</button>
+      <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Előző kép">&larr;</button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+      <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Következő kép">&rarr;</button>
+    </dialog>
+
+    <script define:vars={{ photos: photoGallery }}>
+      function initLightbox() {
+        const dialog = document.getElementById("lightbox");
+        if (!dialog || dialog.dataset.lightboxInit) return;
+        dialog.dataset.lightboxInit = "true";
+
+        const img = document.getElementById("lightbox-image");
+        let current = 0;
+
+        const show = (i) => {
+          current = (i + photos.length) % photos.length;
+          img.src = photos[current].image;
+          img.alt = photos[current].alt;
+        };
+
+        document.querySelectorAll("[data-lightbox-open]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            show(Number(btn.dataset.index));
+            dialog.showModal();
+          });
+        });
+
+        dialog.querySelector("[data-lightbox-close]").addEventListener("click", () => dialog.close());
+        dialog.querySelector("[data-lightbox-prev]").addEventListener("click", () => show(current - 1));
+        dialog.querySelector("[data-lightbox-next]").addEventListener("click", () => show(current + 1));
+
+        dialog.addEventListener("click", (e) => {
+          if (e.target === dialog) dialog.close();
+        });
+        dialog.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") show(current - 1);
+          if (e.key === "ArrowRight") show(current + 1);
+        });
+      }
+
+      initLightbox();
+      document.addEventListener("astro:page-load", initLightbox);
+    </script>
   </Section>
 
   <Section
@@ -233,5 +313,54 @@ const families = Array.from(new Set(references.map(r => r.family)));
   .consent-text {
     font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.65;
     color: var(--color-charcoal); max-width: 64ch;
+  }
+
+  .photo-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+  }
+  @media (min-width: 640px)  { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 900px)  { .photo-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 1200px) { .photo-grid { grid-template-columns: repeat(5, 1fr); } }
+
+  .photo-thumb {
+    position: relative; margin: 0; aspect-ratio: 4/5; overflow: hidden;
+    background: var(--color-paper); border: none; padding: 0; cursor: zoom-in;
+    display: block; width: 100%;
+  }
+  .photo-thumb img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform var(--dur-slow) var(--ease-out-soft);
+  }
+  .photo-thumb:hover img { transform: scale(1.05); }
+  .photo-thumb:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 2px; }
+
+  .lightbox {
+    border: none; padding: 0; background: transparent; max-width: 92vw; max-height: 92vh;
+    width: min(92vw, 1100px);
+  }
+  .lightbox::backdrop { background: rgba(14,15,17,0.9); }
+  .lightbox-image {
+    display: block; width: 100%; height: 100%; max-height: 92vh; object-fit: contain;
+  }
+  .lightbox-close, .lightbox-nav {
+    position: fixed; background: rgba(14,15,17,0.65); color: var(--color-paper);
+    border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background-color var(--dur) var(--ease-out-soft);
+  }
+  .lightbox-close:hover, .lightbox-nav:hover { background: var(--color-ink); }
+  .lightbox-close {
+    top: 1.25rem; right: 1.25rem; width: 2.75rem; height: 2.75rem;
+    font-size: 1.6rem; line-height: 1;
+  }
+  .lightbox-nav {
+    top: 50%; transform: translateY(-50%); width: 3rem; height: 3rem; font-size: 1.4rem;
+  }
+  .lightbox-prev { left: 1.25rem; }
+  .lightbox-next { right: 1.25rem; }
+  @media (max-width: 640px) {
+    .lightbox-nav { width: 2.5rem; height: 2.5rem; }
+    .lightbox-prev { left: 0.5rem; }
+    .lightbox-next { right: 0.5rem; }
+    .lightbox-close { top: 0.5rem; right: 0.5rem; }
   }
 </style>
