@@ -71,7 +71,7 @@ Egy új építésű családi háznál, ahol a bejárati ajtót és a homlokzati 
 
 A modern új építésű családi házak prémium kivitelében — különösen ha az ACTUAL ablakot is rendeli — **a Roto NT vasalat ajánlott felszereltség**. A SECUSTIC kilincset **mindenkinek ajánljuk**, aki MABISZ 3. osztálynál magasabb biztonsági szintet szeretne — a felár arányosan kicsi a hozzáadott védelmi értékhez képest. A klasszikus reteszelésű ajtók is a [Mottura, Abus, Mul-T-Lock, Iseo, Cisa zárakkal](/blog/mottura-abus-mul-t-lock-iseo-cisa) MABISZ 2.–5. osztály teljes spektrumában szállíthatók.
 
-Olvassa el a [minőségünk oldalt](/minosegunk) a teljes vasalat-paletta áttekintéséhez, vagy próbálja ki a [bejárati ajtó tervezőnket](/ajtotervezo) — a vasalat-opciókat is kiválaszthatja a konfigurátorban.
+Olvassa el a [minőségünk oldalt](/minosegunk) a teljes vasalat-paletta áttekintéséhez, vagy [foglaljon ingyenes helyszíni felmérést](/felmeres) — a vasalat-opciókat a felmérőnkkel egyeztetheti.
 
 ## Foglaljon ingyenes felmérést
 

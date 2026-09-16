@@ -63,4 +63,4 @@ Az új építésű családi ház bejárati ajtaja 600 000 Ft-tól indul (bruttó
 
 ## Tervezte már a homlokzatot? Foglaljon felmérést
 
-Ha most tervez új építésű családi házat Mogyoród, Csömör, Veresegyház, Telki, Budakeszi vagy Páty környékén, érdemes az ajtó stílusát a vakolatszín és a tető szín kiválasztásakor véglegesíteni — utána már nehezen módosítható. [Foglaljon ingyenes helyszíni felmérést](/felmeres), és felmérőnk a tervrajzok és homlokzati elképzelés alapján a hét stílusból személyre szabott ajánlást ad. Próbálja ki a [bejárati ajtó tervezőnket](/ajtotervezo) is — 60 másodperc alatt összerakhatja a saját ajtaját.
+Ha most tervez új építésű családi házat Mogyoród, Csömör, Veresegyház, Telki, Budakeszi vagy Páty környékén, érdemes az ajtó stílusát a vakolatszín és a tető szín kiválasztásakor véglegesíteni — utána már nehezen módosítható. [Foglaljon ingyenes helyszíni felmérést](/felmeres), és felmérőnk a tervrajzok és homlokzati elképzelés alapján a hét stílusból személyre szabott ajánlást ad.

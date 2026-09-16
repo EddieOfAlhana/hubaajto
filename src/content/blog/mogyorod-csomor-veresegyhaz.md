@@ -60,4 +60,4 @@ A felméréskor megkérdezzük: mikorra van szükség az ajtóra? Az új épít�
 
 ## Foglaljon ingyenes helyszíni felmérést
 
-[Foglaljon ingyenes helyszíni felmérést](/felmeres) Mogyoródon, Csömörön, Veresegyházon vagy a környező településeken. Felmérőnk 1 munkanapon belül visszahívja, és 2–3 nap alatt időpontot egyeztetünk. Vagy [induljon az ajtótervezővel](/ajtotervezo) most.
+[Foglaljon ingyenes helyszíni felmérést](/felmeres) Mogyoródon, Csömörön, Veresegyházon vagy a környező településeken. Felmérőnk 1 munkanapon belül visszahívja, és 2–3 nap alatt időpontot egyeztetünk.

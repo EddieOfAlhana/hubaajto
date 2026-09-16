@@ -69,4 +69,4 @@ További olvasnivaló: a [felmérésre érdemes előkészületekről](/blog/mit-
 
 ## Foglaljon ingyenes helyszíni felmérést
 
-A nyitásirány eldöntésében felmérőnk a helyszínen pontos rajzot készít, és Ön az aláírás előtt látja. [Foglaljon ingyenes felmérést](/felmeres), nézze meg a [Pest megyei szolgáltatási területünket](/biztonsagi-ajto-pest-megye), vagy [induljon az ajtótervezővel](/ajtotervezo).
+A nyitásirány eldöntésében felmérőnk a helyszínen pontos rajzot készít, és Ön az aláírás előtt látja. [Foglaljon ingyenes felmérést](/felmeres), vagy nézze meg a [Pest megyei szolgáltatási területünket](/biztonsagi-ajto-pest-megye).

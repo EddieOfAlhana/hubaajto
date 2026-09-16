@@ -71,4 +71,4 @@ Telki, Budakeszi és Páty területén az építkezések ütemezése miatt érde
 
 ## Foglaljon ingyenes helyszíni felmérést
 
-[Foglaljon ingyenes helyszíni felmérést](/felmeres) budai agglomeráció területén, vagy [induljon az ajtótervezővel](/ajtotervezo) most. A felmérőnk minden anyagmintát Önhöz hoz, és a tervrajzokat áttekintve előzetes ütemtervet ad még a gyártás megkezdése előtt.
+[Foglaljon ingyenes helyszíni felmérést](/felmeres) budai agglomeráció területén. A felmérőnk minden anyagmintát Önhöz hoz, és a tervrajzokat áttekintve előzetes ütemtervet ad még a gyártás megkezdése előtt.

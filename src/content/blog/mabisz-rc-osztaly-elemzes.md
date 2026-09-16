@@ -139,4 +139,4 @@ A garancia részleteit a [garancia oldal](/garancia) tartalmazza, és minden Hub
 
 Az osztály választása nem önállóan eldöntendő kérdés — függ az ingatlan típusától, az ott tárolt vagyon értékétől, a biztosító elvárásától, és attól, hogy a környékre jellemző betörési kockázat milyen. A pontos ajánlatot **a helyszíni felmérés** után tudunk adni: a felmérő végignézi az ingatlant, megnézi a lépcsőházi vagy utcafronti környezetet, és Önnek a megfelelő MABISZ / RC osztályt javasolja — felárakkal együtt.
 
-A felmérés ingyenes, kötelezettség nélküli. Kistarcsai műhelyünkből 30 perc alatt érünk Önhöz Budapesten és Pest megyében. Foglalja le az [ingyenes helyszíni felmérést](/felmeres), vagy próbálja ki az [ajtótervezőt](/ajtotervezo), amely az osztály-választáshoz is mutat tippet. A teljes minőségi háttérről a [minőségünk oldal](/minosegunk) ad bővebb információt.
+A felmérés ingyenes, kötelezettség nélküli. Kistarcsai műhelyünkből 30 perc alatt érünk Önhöz Budapesten és Pest megyében. Foglalja le az [ingyenes helyszíni felmérést](/felmeres). A teljes minőségi háttérről a [minőségünk oldal](/minosegunk) ad bővebb információt.

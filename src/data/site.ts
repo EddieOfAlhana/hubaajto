@@ -96,7 +96,6 @@ export const SERVICE_AREA = {
 export const NAV = [
   { label: "Termékek", href: "/biztonsagi-ajto" },
   { label: "Stílus / Műemléki", href: "/stilus-biztonsagi-ajto" },
-  { label: "Ajtótervező", href: "/ajtotervezo" },
   { label: "Referenciák", href: "/referenciak" },
   { label: "Árak", href: "/arak" },
   { label: "Blog", href: "/blog" },
@@ -111,7 +110,6 @@ export const FOOTER_NAV = [
       { label: "Modern biztonsági ajtó", href: "/biztonsagi-ajto" },
       { label: "Stílus / klasszikus", href: "/stilus-biztonsagi-ajto" },
       { label: "Műemléki ajtók", href: "/muemleki-biztonsagi-ajto" },
-      { label: "Ajtótervező", href: "/ajtotervezo" },
     ],
   },
   {

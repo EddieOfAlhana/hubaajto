@@ -24,7 +24,11 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes("/_") && !page.includes("/admin") && !page.includes("/api"),
+      filter: (page) =>
+        !page.includes("/_") &&
+        !page.includes("/admin") &&
+        !page.includes("/api") &&
+        !page.includes("/ajtotervezo"),
     }),
   ],
   vite: { plugins: [tailwindcss()] },

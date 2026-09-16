@@ -79,4 +79,4 @@ A felmérés végén Ön egy **előzetes árajánlatot kap helyben**. A pontos, 
 
 ## Foglaljon felmérést
 
-[Foglaljon ingyenes helyszíni felmérést](/felmeres) Budapesten vagy Pest megyében. A felmérő 1 munkanapon belül visszahívja, és 2–3 nap alatt időpontot egyeztetünk. Vagy [induljon az ajtótervezővel](/ajtotervezo) online — a felmérés ekkor a kész tervezet alapján gyorsabb is lehet.
+[Foglaljon ingyenes helyszíni felmérést](/felmeres) Budapesten vagy Pest megyében. A felmérő 1 munkanapon belül visszahívja, és 2–3 nap alatt időpontot egyeztetünk.
