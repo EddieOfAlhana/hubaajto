@@ -62,11 +62,25 @@ const id = `ba-${Math.random().toString(36).slice(2, 8)}`;
 </style>
 
 <script>
-  document.querySelectorAll<HTMLElement>("[data-ba-frame]").forEach((frame) => {
-    const range = frame.querySelector<HTMLInputElement>(".ba-range");
-    if (!range) return;
-    const update = () => frame.style.setProperty("--ba-pos", `${range.value}%`);
-    range.addEventListener("input", update);
-    update();
-  });
+  // Re-run on every navigation, including Astro client-side view transitions —
+  // otherwise the slider's frames (and their listeners) get swapped out on
+  // each page change and the handle stops responding.
+  function initBeforeAfterSliders() {
+    document.querySelectorAll<HTMLElement>("[data-ba-frame]").forEach((frame) => {
+      if (frame.dataset.baInit) return;
+      frame.dataset.baInit = "true";
+
+      const range = frame.querySelector<HTMLInputElement>(".ba-range");
+      if (!range) return;
+      const update = () => {
+        frame.style.setProperty("--ba-pos", `${range.value}%`);
+        frame.style.setProperty("--ba-pos-num", range.value);
+      };
+      range.addEventListener("input", update);
+      update();
+    });
+  }
+
+  initBeforeAfterSliders();
+  document.addEventListener("astro:page-load", initBeforeAfterSliders);
 </script>
