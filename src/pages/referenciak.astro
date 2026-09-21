@@ -31,6 +31,14 @@ const beforeAfterPairs = [
     caption: "Eredeti kovácsoltvas rácsminta megőrzése, új korhű üvegezéssel és megerősített szerkezettel.",
     label: "Kovácsoltvas mintás",
   },
+  {
+    before: "/assets/photos/hero/walnut-double-before.jpg",
+    after: "/assets/photos/hero/walnut-double-after.jpg",
+    beforeAlt: "Dió színű kétszárnyú bérházi kapu felújítás előtt, megkopott lakkozással",
+    afterAlt: "Dió színű kétszárnyú bérházi kapu felújítás után, új szerkezettel és üvegezéssel",
+    caption: "Bérházi kétszárnyú kapu cseréje — azonos osztásrend, dió színű borítással és megerősített szerkezettel.",
+    label: "Dió kétszárnyú",
+  },
 ];
 
 // Curated gallery using hero photos with PHOTO_AUDIT-derived captions.
@@ -136,6 +144,14 @@ const photoGallery = [
   { image: "/assets/photos/referenciak/install-double-glazed.jpg", alt: "Kétszárnyú, üvegezett biztonsági ajtó tégla nyílászáró-keretben" },
   { image: "/assets/photos/referenciak/install-white-construction.jpg", alt: "Fehér biztonsági ajtó, beépítés utáni állapotban" },
   { image: "/assets/photos/referenciak/install-dark-mirror-glass.jpg", alt: "Sötét biztonsági ajtó két vízszintes üvegcsíkkal, belülről fotózva" },
+  {
+    image: "/assets/photos/referenciak/install-navy-arch-exterior.jpg",
+    alt: "Sötétkék biztonsági ajtó boltíves kovácsoltvas díszrácsos üvegezéssel, kőfalazatos bejáratban",
+    hoverImage: "/assets/photos/referenciak/install-navy-arch-interior.jpg",
+    hoverAlt: "Ugyanaz az ajtó belülről, fehér oldallal és boltíves üvegezéssel",
+  },
+  { image: "/assets/photos/referenciak/install-white-geometric-iron.jpg", alt: "Fehér kétszárnyú biztonsági ajtó geometrikus kovácsoltvas mintás üvegezéssel" },
+  { image: "/assets/photos/referenciak/install-gray-panel-yellow.jpg", alt: "Antracit modern biztonsági ajtó sárga homlokzati elem alatt, oldalsó üvegezéssel" },
 ];
 ---
 
@@ -216,7 +232,8 @@ const photoGallery = [
     <div class="photo-grid stagger">
       {photoGallery.map((p, i) => (
         <button type="button" class="photo-thumb" data-lightbox-open data-index={i} aria-label={`Kép megnyitása: ${p.alt}`}>
-          <img src={p.image} alt={p.alt} loading="lazy" />
+          <img class="photo-thumb-img-base" src={p.image} alt={p.alt} loading="lazy" />
+          {p.hoverImage && <img class="photo-thumb-img-hover" src={p.hoverImage} alt={p.hoverAlt ?? ""} loading="lazy" />}
         </button>
       ))}
     </div>
@@ -366,10 +383,13 @@ const photoGallery = [
   }
   .photo-thumb img {
     width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform var(--dur-slow) var(--ease-out-soft);
+    transition: transform var(--dur-slow) var(--ease-out-soft), opacity var(--dur) var(--ease-out-soft);
   }
   .photo-thumb:hover img { transform: scale(1.05); }
   .photo-thumb:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 2px; }
+  .photo-thumb-img-hover { position: absolute; inset: 0; opacity: 0; }
+  .photo-thumb:hover .photo-thumb-img-hover,
+  .photo-thumb:focus-visible .photo-thumb-img-hover { opacity: 1; }
 
   .lightbox {
     border: none; padding: 0; background: transparent; max-width: 92vw; max-height: 92vh;
