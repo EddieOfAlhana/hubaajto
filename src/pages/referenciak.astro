@@ -4,6 +4,34 @@ import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import TrustStrip from "../components/TrustStrip.astro";
 import ContactCTA from "../components/ContactCTA.astro";
+import BeforeAfterGallery from "../components/BeforeAfterGallery.astro";
+
+const beforeAfterPairs = [
+  {
+    before: "/assets/photos/hero/white-double-after.jpg",
+    after: "/assets/photos/hero/white-double-before.jpg",
+    beforeAlt: "Fehér kétszárnyú polgári kapu felújítás előtt",
+    afterAlt: "Fehér kétszárnyú polgári kapu felújítás után",
+    caption: "Kétszárnyú polgári kapu felújítása — eredeti kovácsoltvas rácsozás megőrizve, korhű kivitelben.",
+    label: "Fehér kétszárnyú",
+  },
+  {
+    before: "/assets/photos/hero/gray-double-before.jpg",
+    after: "/assets/photos/hero/gray-double-after.jpg",
+    beforeAlt: "Antracit bejárati kapu cseréje előtt, megkopott felülettel",
+    afterAlt: "Antracit bejárati kapu cseréje után, megerősített biztonsági szerkezettel",
+    caption: "Bérházi bejárati kapu cseréje — azonos osztásrend és szín, megerősített biztonsági szerkezetben.",
+    label: "Antracit bejárati",
+  },
+  {
+    before: "/assets/photos/hero/ornate-double-before.jpg",
+    after: "/assets/photos/hero/ornate-double-after.jpg",
+    beforeAlt: "Kovácsoltvas mintás kétszárnyú kapu felújítás előtt, elavult üvegezéssel",
+    afterAlt: "Kovácsoltvas mintás kétszárnyú kapu felújítás után, korhű üvegezéssel",
+    caption: "Eredeti kovácsoltvas rácsminta megőrzése, új korhű üvegezéssel és megerősített szerkezettel.",
+    label: "Kovácsoltvas mintás",
+  },
+];
 
 // Curated gallery using hero photos with PHOTO_AUDIT-derived captions.
 const references = [
@@ -168,6 +196,15 @@ const photoGallery = [
         </article>
       ))}
     </div>
+  </Section>
+
+  <Section
+    tone="paper"
+    eyebrow="Előtte / utána"
+    heading="Ugyanaz a nyílás, más évszázad."
+    lead="Csúsztassa a képet, vagy válasszon a bélyegképek közül — minden pár ugyanazt a beépítést mutatja felújítás előtt és után."
+  >
+    <BeforeAfterGallery pairs={beforeAfterPairs} />
   </Section>
 
   <Section
