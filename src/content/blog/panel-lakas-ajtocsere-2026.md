@@ -4,8 +4,8 @@ description: "Hogyan zajlik egy panel-lakás biztonsági ajtó cseréje 2026-ban
 publishDate: 2025-07-14
 pillar: beepites
 tags: ["panel-lakás", "ajtócsere", "beépítés", "társasház"]
-heroImage: "/assets/photos/hero/modern-white.jpg"
-heroImageAlt: "Fehér modern biztonsági ajtó panel-lakás bejáratánál"
+heroImage: "/assets/photos/hero/modern-espresso-panel.jpg"
+heroImageAlt: "Sötétbarna modern biztonsági ajtó panel-lakás beltéri bejáratánál"
 cornerstone: true
 readingMinutes: 11
 seo:

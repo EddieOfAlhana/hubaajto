@@ -4,8 +4,8 @@ description: "Az örökségvédelmi engedélyezés (kormányhivatal) és a telep
 publishDate: 2026-09-04
 pillar: muemleki
 tags: ["engedélyezés", "TKBE", "kerület", "kormányhivatal"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Restaurálás alatt álló polgári ajtó a Huba ajtó kistarcsai műhelyében"
+heroImage: "/assets/photos/hero/period-white-grille-double.jpg"
+heroImageAlt: "Fehér kétszárnyú korhű bejárati ajtó geometrikus mintás díszrácsos üvegezéssel"
 readingMinutes: 6
 seo:
   keywords: ["TKBE örökségvédelem", "településképi bejelentés ajtócsere", "kormányhivatal vs polgármester"]
