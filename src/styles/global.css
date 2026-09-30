@@ -60,7 +60,7 @@
 
 /* === Base === */
 @layer base {
-  html { color: var(--color-ink); background: var(--color-paper); font-family: var(--font-sans); font-feature-settings: "ss01", "ss02", "kern"; }
+  html { --mobile-cta-h: 3.75rem; color: var(--color-ink); background: var(--color-paper); font-family: var(--font-sans); font-feature-settings: "ss01", "ss02", "kern"; }
   body { font-size: var(--text-body); line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   ::selection { background: var(--color-ink); color: var(--color-paper); }
   h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 1.1; letter-spacing: var(--tracking-tight); color: var(--color-ink); }
