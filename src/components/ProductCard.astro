@@ -3,7 +3,6 @@ interface Props {
   family?: "modern" | "stilus" | "muemleki";
   name: string;
   priceFrom?: string;
-  classBadge?: string;
   bullets: string[];
   image: string;
   imageAlt?: string;
@@ -12,14 +11,13 @@ interface Props {
   href: string;
   cta?: string;
 }
-const { family = "modern", name, priceFrom, classBadge, bullets, image, imageAlt = "", hoverImage, hoverImageAlt = "", href, cta = "Részletek" } = Astro.props;
+const { family = "modern", name, priceFrom, bullets, image, imageAlt = "", hoverImage, hoverImageAlt = "", href, cta = "Részletek" } = Astro.props;
 ---
 <article class="product-card reveal" data-family={family}>
   <a href={href} class="product-card-link">
     <figure class="product-card-figure">
       <img class="product-card-img-base" src={image} alt={imageAlt} loading="lazy" />
       {hoverImage && <img class="product-card-img-hover" src={hoverImage} alt={hoverImageAlt} loading="lazy" />}
-      {classBadge && <span class="product-card-class">{classBadge}</span>}
     </figure>
 
     <div class="product-card-body">
@@ -62,12 +60,6 @@ const { family = "modern", name, priceFrom, classBadge, bullets, image, imageAlt
   .product-card-link:focus-visible .product-card-img-hover {
     opacity: 1;
   }
-  .product-card-class {
-    position: absolute; top: 1rem; left: 1rem; background: var(--color-paper);
-    padding: 0.35rem 0.6rem; font-size: 0.72rem; letter-spacing: var(--tracking-wide);
-    text-transform: uppercase; color: var(--color-ink);
-  }
-
   .product-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
   .product-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
   .product-card-name { font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.15; }
