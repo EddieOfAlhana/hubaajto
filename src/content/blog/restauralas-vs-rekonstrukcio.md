@@ -4,8 +4,8 @@ description: "A restaurálás az eredeti ajtó helyreállítása, a rekonstrukci
 publishDate: 2026-12-18
 pillar: muemleki
 tags: ["műemléki", "restaurálás", "rekonstrukció", "fogalomtár"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Restaurálás alatt álló eredeti polgári ajtó a kistarcsai műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú bejárati ajtó díszes kovácsoltvas mintázatú üvegezéssel"
 cornerstone: false
 readingMinutes: 5
 seo:

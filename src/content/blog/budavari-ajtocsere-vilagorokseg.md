@@ -4,8 +4,8 @@ description: "A Budavári I. kerület UNESCO világörökség. Mit ír elő a 30
 publishDate: 2025-01-29
 pillar: muemleki
 tags: ["budavár", "világörökség", "I. kerület", "TKR"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Felújítás alatt álló, lecsupaszított fa polgári ajtó a budai műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú bejárati ajtó díszes kovácsoltvas mintázattal, budavári épület homlokzatán"
 readingMinutes: 6
 seo:
   keywords: ["budavári ajtócsere", "I. kerület műemléki ajtó", "30/2022 budavár"]

@@ -4,8 +4,8 @@ description: "A 15 éves szerkezeti garancia hatóköre, a zárszerkezet és a t
 publishDate: 2025-06-04
 pillar: tudnivalok
 tags: ["garancia", "minőség", "MABISZ"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Felújítás alatt álló stílus biztonsági ajtó a Huba műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú Huba biztonsági ajtó díszes vasalatú üvegezéssel"
 readingMinutes: 5
 seo:
   keywords: ["biztonsági ajtó garancia", "15 év garancia", "szerkezeti garancia ajtó"]

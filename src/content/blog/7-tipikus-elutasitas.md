@@ -4,8 +4,8 @@ description: "Hét tipikus tervhiba, ami miatt a budapesti kormányhivatal Épí
 publishDate: 2025-08-14
 pillar: muemleki
 tags: ["elutasítás", "tipikus hibák", "engedélyezés", "tervezés"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Lecsupaszított fa polgári ajtó felújítás közben a kistarcsai műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú bejárati ajtó díszes kovácsoltvas mintázatú üvegezéssel"
 readingMinutes: 6
 seo:
   keywords: ["örökségvédelmi engedély elutasítás", "tipikus tervhibák", "ÉTDR elutasítás"]

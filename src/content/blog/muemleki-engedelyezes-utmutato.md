@@ -4,8 +4,8 @@ description: "Mikor kell örökségvédelmi engedély az ajtócseréhez? Hogyan 
 publishDate: 2024-09-15
 pillar: muemleki
 tags: ["műemléki", "engedélyezés", "Budapest", "Kötv.", "ÉTDR"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Bontásból kikerült, eredeti polgári lakásajtó restaurálás közben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú műemléki bejárati ajtó díszes kovácsoltvas mintázatú üvegezéssel"
 cornerstone: true
 readingMinutes: 12
 seo:

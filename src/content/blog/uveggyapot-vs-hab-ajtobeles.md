@@ -4,8 +4,8 @@ description: "Hőszigetelés és hangszigetelés számokkal: decibel-csillapít�
 publishDate: 2027-03-19
 pillar: tudnivalok
 tags: ["bélelés", "szigetelés", "kőzetgyapot", "Therwolin", "PUR hab", "hangszigetelés"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Stílus biztonsági ajtó béleléssel — a műhelyben látszik a Therwolin réteg"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú Huba biztonsági ajtó díszes vasalatú üvegezéssel"
 readingMinutes: 7
 seo:
   keywords: ["ajtó bélelés", "Therwolin", "kőzetgyapot szigetelés", "PUR hab ajtó", "ajtó hangszigetelés", "ajtó hőszigetelés"]

@@ -4,8 +4,8 @@ description: "A '70-es, '80-as évek vasajtóit hogyan cseréljük modern Huba b
 publishDate: 2024-09-30
 pillar: beepites
 tags: ["régi ajtó csere", "vasajtó", "beépítés", "folyamat"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Stílus biztonsági ajtó felújítás alatt a Huba műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú stílus biztonsági ajtó díszes vasalatú üvegezéssel"
 readingMinutes: 5
 seo:
   keywords: ["régi ajtó cseréje biztonságira", "vasajtó csere", "bontás nélküli ajtócsere"]

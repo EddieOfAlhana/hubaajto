@@ -4,8 +4,8 @@ description: "A régi tok bontása ritkán szabványos. Vakolat-repedés, eltér
 publishDate: 2027-03-05
 pillar: beepites
 tags: ["bontás", "régi ajtó", "felújítás", "ajtócsere", "falazat"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Lecsiszolt fa ajtó és látható falazati részlet bontás közben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú bejárati ajtó díszes kovácsoltvas mintázatú üvegezéssel"
 readingMinutes: 5
 seo:
   keywords: ["régi ajtó bontása", "ajtócsere bontás", "vakolat sérülés bontásnál", "falazat ajtócsere"]

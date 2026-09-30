@@ -4,8 +4,8 @@ description: "A védettség leemelési eljárása a Kötv. szerint elvileg lehet
 publishDate: 2027-05-21
 pillar: muemleki
 tags: ["műemléki", "védettség leemelése", "Kötv.", "ÉKM"]
-heroImage: "/assets/photos/hero/period-restoration.jpg"
-heroImageAlt: "Restaurálás alatt álló műemléki ajtó a kistarcsai műhelyben"
+heroImage: "/assets/photos/hero/period-green-double-scroll.jpg"
+heroImageAlt: "Zöld korhű kétszárnyú műemléki bejárati ajtó díszes kovácsoltvas üvegezéssel"
 cornerstone: false
 readingMinutes: 5
 seo:
