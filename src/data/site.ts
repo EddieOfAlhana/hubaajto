@@ -23,7 +23,6 @@ export const CONTACT = {
   phonePrimaryTel: "+3630 740 4458",
   phoneSecondary: "+36 30 740 4459",
   phoneTertiary: "+36 30 740 4460",
-  landline: "+36 1 410 4358",
   email: "info@szerx.hu",
   address: {
     postal: "2143",
@@ -35,7 +34,7 @@ export const CONTACT = {
   },
   hours: {
     weekday: "H–P: 8:00–17:00",
-    saturday: "Szo: 8:00–12:00",
+    saturday: "Szo: Megbeszélés szerint",
   },
   social: {
     facebook: "https://www.facebook.com/", // placeholder — confirm with client
