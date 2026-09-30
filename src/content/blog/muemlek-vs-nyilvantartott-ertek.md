@@ -4,8 +4,8 @@ description: "Műemlék és nyilvántartott műemléki érték: a két jogi kate
 publishDate: 2025-03-11
 pillar: muemleki
 tags: ["műemlék", "nyilvántartott érték", "védettség", "fogalmak"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Sötétbarna polgári ajtó kovácsoltvas filigránnal, budapesti épület homlokzatán"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Fehér korhű polgári ajtó íves díszrácsos üvegezéssel, budapesti épület udvari homlokzatán"
 readingMinutes: 5
 seo:
   keywords: ["nyilvántartott műemléki érték", "műemlék fogalom", "védettség típusok"]

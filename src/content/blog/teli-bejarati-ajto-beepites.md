@@ -4,8 +4,8 @@ description: "Mínusz 5 °C alatt érdemes-e bejárati ajtót cserélni? A téli
 publishDate: 2027-01-22
 pillar: beepites
 tags: ["téli beépítés", "ajtócsere télen", "PUR hab", "vakolás hőmérséklet"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Barna kovácsoltvasas Huba ajtó téli környezetben"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Fehér, íves díszrácsos Huba bejárati ajtó udvari homlokzaton"
 readingMinutes: 5
 seo:
   keywords: ["bejárati ajtó télen", "ajtócsere mínusz hőmérséklet", "téli PUR hab", "ajtó beépítés január"]

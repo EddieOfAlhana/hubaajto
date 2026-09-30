@@ -4,8 +4,8 @@ description: "Sasad, Mártonhegy, Svábhegy — három korszak, három védetts�
 publishDate: 2026-08-13
 pillar: muemleki
 tags: ["műemléki", "XII. kerület", "Hegyvidék", "Sasad", "helyi védettség"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Barna kovácsoltvas filigránú polgári ajtó Buda hegyvidéki környezetben"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Fehér, íves díszrácsos polgári ajtó Buda hegyvidéki környezetben"
 cornerstone: false
 readingMinutes: 6
 seo:

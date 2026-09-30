@@ -4,8 +4,8 @@ description: "Az öt belvárosi kerület — Lipótváros, Terézváros, Erzséb
 publishDate: 2025-10-30
 pillar: muemleki
 tags: ["belváros", "kerületek", "TKR", "engedélyezés"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Sötétbarna polgári ajtó kovácsoltvas díszítéssel, pesti belvárosi épület homlokzatán"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Fehér korhű bejárati ajtó íves díszrácsos üvegezéssel, pesti belvárosi épület udvari homlokzatán"
 readingMinutes: 7
 seo:
   keywords: ["belvárosi műemléki ajtó", "V. kerület ajtócsere", "VIII. kerület TKR"]

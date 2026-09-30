@@ -4,8 +4,8 @@ description: "A józsefvárosi TKR §53 alapján lépcsőházi nyílászáró cs
 publishDate: 2024-11-20
 pillar: muemleki
 tags: ["Józsefváros", "TKR", "lépcsőházi ajtó", "településképi bejelentés", "VIII. kerület"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Korhű, vasrácsos polgári lakásajtó józsefvárosi lépcsőházban"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Fehér korhű, íves díszrácsos polgári lakásajtó józsefvárosi lépcsőházban"
 cornerstone: true
 readingMinutes: 10
 seo:

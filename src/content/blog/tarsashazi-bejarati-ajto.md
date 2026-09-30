@@ -4,8 +4,8 @@ description: "Társasházi lakásban biztonsági ajtót cserélne? A közös ké
 publishDate: 2025-05-21
 pillar: beepites
 tags: ["társasház", "közös képviselő", "közgyűlés", "beépítés"]
-heroImage: "/assets/photos/hero/period-brown.jpg"
-heroImageAlt: "Klasszikus barna stílus biztonsági ajtó társasházi lépcsőházban"
+heroImage: "/assets/photos/hero/period-white-arched-grille.jpg"
+heroImageAlt: "Klasszikus fehér stílus biztonsági ajtó társasházi lépcsőházban"
 readingMinutes: 5
 seo:
   keywords: ["társasházi biztonsági ajtó", "közös képviselő ajtócsere", "társasházi ajtó szabályok"]
