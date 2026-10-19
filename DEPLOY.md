@@ -52,20 +52,21 @@ Go to <https://railway.com/new> and:
 
 | Name | Value | Required? |
 |---|---|---|
-| `PUBLIC_SITE_URL` | `https://hubaajto.hu` (or your Railway domain at first) | No (cosmetic) |
+| `PUBLIC_SITE_URL` | `https://www.hubaajto.hu` (or your Railway domain at first) | No (cosmetic) |
 | `LEAD_DESTINATION_EMAIL` | `info@szerx.hu` (or wherever you want leads to land) | Recommended |
 | `RESEND_API_KEY` | (optional) Resend.com key for transactional email | No |
 
 ### 4. Point your domain (when ready)
 
-In Railway → Settings → Networking → **Custom Domain**, add `hubaajto.hu` and `www.hubaajto.hu`. Railway gives you a `CNAME` target. Update your DNS:
+The canonical address is `https://www.hubaajto.hu`. The bare domain is forwarded to www by the registrar's redirect service (the DNS zone at Forpsi has no ALIAS record, and Railway has no static IP). `www.hubaajto.hu` is registered as a custom domain on the Railway service; DNS at Forpsi:
 
 ```
-hubaajto.hu        ALIAS / ANAME    <railway-cname-target>
-www.hubaajto.hu    CNAME            <railway-cname-target>
+www.hubaajto.hu                CNAME   ww8ohf6z.up.railway.app
+_railway-verify.www            TXT     railway-verify=<value from `railway domain status`>
+hubaajto.hu                    A       <Forpsi Redirect IP>   → 301 to https://www.hubaajto.hu
 ```
 
-Railway provisions a free Let's Encrypt cert automatically.
+Mail for the domain stays on the old host (213.16.88.101): MX, `mail`, DKIM, DMARC and the mail subdomains must not be touched. Railway provisions a free Let's Encrypt cert automatically.
 
 ---
 

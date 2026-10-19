@@ -10,7 +10,7 @@ import node from "@astrojs/node";
 // rendering via `export const prerender = false`. Requires the Node
 // adapter to serve the dynamic endpoint in production.
 export default defineConfig({
-  site: "https://hubaajto.hu",
+  site: "https://www.hubaajto.hu",
   trailingSlash: "never",
   output: "static",
   adapter: node({ mode: "standalone" }),

@@ -50,7 +50,7 @@ needed.
 
 | Var | Required | Default | Purpose |
 |---|---|---|---|
-| `PUBLIC_SITE_URL` | no | `https://hubaajto.hu` | Used in canonical links and OG meta. |
+| `PUBLIC_SITE_URL` | no | `https://www.hubaajto.hu` | Used in canonical links and OG meta. |
 | `LEAD_DESTINATION_EMAIL` | no | `info@szerx.hu` | Recipient address for the lead pipeline. |
 | `RESEND_API_KEY` | no | — | When set, the lead endpoint will (TODO) deliver via Resend. Otherwise it logs to stdout. |
 | `PORT` | no (Railway sets it) | `8080` | Server listen port. |

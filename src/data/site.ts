@@ -9,7 +9,7 @@ export const SITE = {
   shortLegal: "Szer-X3 Kft.",
   tagline: "Minőség a biztonságért",
   taglineLong: "Korhű biztonsági ajtótól a modern panelig — Kistarcsán gyártva.",
-  url: "https://hubaajto.hu",
+  url: "https://www.hubaajto.hu",
   locale: "hu-HU",
   language: "hu",
   founded: 2003,
