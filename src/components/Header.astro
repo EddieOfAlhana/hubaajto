@@ -22,7 +22,7 @@ const pathname = Astro.url.pathname;
       <span class="site-phone" aria-label={`Hívás: ${CONTACT.phonePrimary} vagy ${CONTACT.phoneSecondary}`}>
         <span class="site-phone-icon" aria-hidden="true">☏</span>
         <span class="site-phone-num">
-          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a> / <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a>
+          <a href={`tel:${CONTACT.phonePrimaryTel.replace(/\s/g, "")}`}>{CONTACT.phonePrimary}</a><span class="site-phone-sep"> / </span><span class="site-phone-secondary"><a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`}>{CONTACT.phoneSecondary}</a></span>
         </span>
       </span>
       <a href="/felmeres" class="btn btn-primary site-header-cta">Ingyenes felmérés</a>
@@ -60,9 +60,15 @@ const pathname = Astro.url.pathname;
     display: flex; align-items: center; justify-content: space-between;
     gap: 1.5rem; padding-block: 1.1rem;
   }
+  .site-header-inner > :global(.site-header-logo) { flex-shrink: 0; }
+  /* The header lives in a 1280px container. With the full menu, phone block and CTA, the
+     200px wordmark never fits, so it is 130px while the menu first appears and 180px above. */
+  @media (min-width: 1080px) and (max-width: 1279px) { .site-header-inner { --logo-w: 130px; } }
+  @media (min-width: 1280px) { .site-header-inner { --logo-w: 180px; } }
   .site-nav { display: none; align-items: center; gap: 1.75rem; }
   @media (min-width: 1080px) { .site-nav { display: flex; } }
   .site-nav-link {
+    white-space: nowrap;
     font-size: 0.92rem; font-weight: 450; letter-spacing: 0.01em;
     color: var(--color-charcoal); position: relative; padding-block: 0.4rem;
     transition: color var(--dur-fast) var(--ease-out-soft);
@@ -76,13 +82,19 @@ const pathname = Astro.url.pathname;
   .site-nav-link:hover::after, .site-nav-link.is-active::after { transform: scaleX(1); }
   .site-nav-link.is-active { color: var(--color-ink); }
 
-  .site-header-actions { display: flex; align-items: center; gap: 1rem; }
+  .site-header-actions { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
   .site-phone {
     display: none; align-items: center; gap: 0.5rem;
     font-size: 0.9rem; font-weight: 500; color: var(--color-ink);
     padding: 0.5rem 0.75rem;
   }
   @media (min-width: 720px) { .site-phone { display: inline-flex; } }
+  /* Two numbers stacked, never broken mid-number. */
+  .site-phone-num { display: flex; flex-direction: column; line-height: 1.25; font-size: 0.85rem; }
+  .site-phone-num a { white-space: nowrap; }
+  .site-phone-sep { display: none; }
+  /* Between the desktop-menu breakpoint and 1280px there is no room for the phone block at all. */
+  @media (min-width: 1080px) and (max-width: 1279px) { .site-phone { display: none; } .site-nav { gap: 1.25rem; } }
   .site-phone-icon { color: var(--color-brass); font-size: 1rem; }
   .site-header-cta { display: none; }
   @media (min-width: 720px) { .site-header-cta { display: inline-flex; } }

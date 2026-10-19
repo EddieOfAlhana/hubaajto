@@ -21,14 +21,24 @@ const widths = {
 const wordmarkRatio = 2.27;
 const ratio = variant === "monogram" ? 1 : 1 / wordmarkRatio;
 ---
-<a href="/" class={`inline-flex items-center ${className}`} aria-label="Huba ajtó — kezdőlap">
+<a href="/" class={`logo-link inline-flex items-center ${className}`} data-variant={variant} data-size={size} aria-label="Huba ajtó — kezdőlap">
   <img
     src={src}
     alt="Huba ajtó"
     width={widths[size]}
     height={Math.round(widths[size] * ratio)}
-    style={`width: ${widths[size]}px; height: auto;`}
+    style="width: var(--logo-w, var(--logo-default)); height: auto;"
     decoding="async"
     fetchpriority={variant === "monogram" ? "low" : "high"}
   />
 </a>
+
+<style>
+  /* Default widths per variant/size. An ancestor may set --logo-w to override (e.g. the header at tight widths). */
+  .logo-link[data-variant="wordmark"][data-size="sm"] { --logo-default: 200px; }
+  .logo-link[data-variant="wordmark"][data-size="md"] { --logo-default: 260px; }
+  .logo-link[data-variant="wordmark"][data-size="lg"] { --logo-default: 360px; }
+  .logo-link[data-variant="monogram"][data-size="sm"] { --logo-default: 40px; }
+  .logo-link[data-variant="monogram"][data-size="md"] { --logo-default: 56px; }
+  .logo-link[data-variant="monogram"][data-size="lg"] { --logo-default: 80px; }
+</style>
