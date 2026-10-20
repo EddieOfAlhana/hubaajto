@@ -33,6 +33,11 @@ COPY --from=build --chown=app:app /app/dist        ./dist
 COPY --from=build --chown=app:app /app/node_modules ./node_modules
 COPY --from=build --chown=app:app /app/package.json ./package.json
 
+# Huba's conversations (src/lib/huba/store.ts). Mount a Railway volume here,
+# otherwise a redeploy loses whatever Alfred has not collected yet.
+RUN mkdir -p /app/data/huba && chown -R app:app /app/data
+ENV HUBA_DATA_DIR=/app/data/huba
+
 USER app
 EXPOSE 8080
 

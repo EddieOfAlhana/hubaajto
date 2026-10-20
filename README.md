@@ -56,6 +56,13 @@ needed.
 | `PORT` | no (Railway sets it) | `8080` | Server listen port. |
 | `HOST` | no | `0.0.0.0` | Server bind host. |
 
+## Huba (site assistant)
+
+A floating chat assistant on every page answers visitors from the site's own content, takes
+survey/quote requests and e-mails them to the workshop, and — after the owner password — records
+the owners' change requests for Alfred to file. See [`HUBA.md`](./HUBA.md) for the design, the
+environment variables (`ANTHROPIC_API_KEY`, `HUBA_*`, `SMTP_*`) and the Railway volume it needs.
+
 ## Folder layout
 
 ```
