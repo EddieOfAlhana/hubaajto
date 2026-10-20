@@ -57,15 +57,6 @@ A családi ház homlokzati bejárata a két helyzet közül a műszakilag igény
 
 **6. Bontás és kulturált beépítés.** Új építésnél a nyílás a falazó által megadott méretben készül, de **felújítás esetén bontani kell** a régi tokot — főleg ha az fél évszázados, kovácsoltvasas kivitel. A bontás, törmelékelszállítás és új tok behelyezése egy családi háznál 80 000–150 000 Ft többlet a panel-lakáshoz képest.
 
-## Reprezentatív részletfizetési példa
-
-A nagyobb családi házas tételeket sokan részletre fizetik. A fogyasztói hitelről szóló **2009. évi CLXII. törvény** szerinti reprezentatív példa:
-
-> **Reprezentatív példa — Cofidis áruhitel, standard kondíciók:**
-> Hitelösszeg: **800 000 Ft** · Futamidő: **24 hónap** · Havi törlesztés: kb. **42 100 Ft** · THM: kb. **37,6%** · Teljes visszafizetendő összeg: kb. **1 010 400 Ft**. A hitel típusa: forint alapú áruhitel, hitelnyújtó: Cofidis Magyarországi Fióktelepe.
-
-A részletekről bővebben a [részletfizetés oldalon](/reszletfizetes) és a [Cofidis-cikkünkben](/blog/reszletfizetes-cofidis-0-thm) olvashat.
-
 ## Foglaljon ingyenes helyszíni felmérést
 
 A felmérőnk a helyszínen pontosan kiméri a nyílást, megnézi a falazatot és a homlokzati környezetet, és helyben átadja a fix árajánlatot. [Foglaljon ingyenes felmérést](/felmeres), nézze meg az [árak oldalt](/arak), vagy lásd cornerstone cikkünket arról, [mennyibe kerül egy biztonsági ajtó 2026-ban](/blog/mennyibe-kerul-biztonsagi-ajto-2026).

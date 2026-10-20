@@ -118,7 +118,6 @@ export const FOOTER_NAV = [
       { label: "15 év garancia", href: "/garancia" },
       { label: "Minőségünk", href: "/minosegunk" },
       { label: "Ingyenes felmérés", href: "/felmeres" },
-      { label: "Részletfizetés", href: "/reszletfizetes" },
       { label: "GYIK", href: "/gyik" },
     ],
   },

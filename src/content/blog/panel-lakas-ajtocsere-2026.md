@@ -114,7 +114,7 @@ Az ajtó átadása. A felmérő (vagy a szerelő csapat vezetője) bemutatja:
 - A pántok finomhangolásának lehetőségét, ha később mégis szorul.
 - A **MABISZ tanúsítvány** átadását, a biztosítónak való bemutatás módját.
 - A **15 év szerkezeti garancia** dokumentumot, és azt, hogy mire terjed ki.
-- A számlát, és a Cofidis részletfizetés esetén a hiteldokumentációt.
+- A számlát.
 
 A teljes folyamat **8:00-tól 15:00-ig** tart — egy nap, és Ön egy új, MABISZ-minősített biztonsági ajtóval él tovább.
 
@@ -161,7 +161,7 @@ Egy új panel-lakás bejárati ajtó beszerzésének első lépése a [helyszín
 - A pontos méretet és a bontás nélküli csere lehetőségét.
 - A javasolt MABISZ / RC osztályt és felárakat.
 - A választható cilindereket (Mottura, Abus, Mul-T-Lock, Iseo, Cisa).
-- A becsült végösszeget — Cofidis részletfizetéssel együtt.
+- A becsült végösszeget.
 
 Az árképzés részleteiről a [biztonsági ajtó ára 2026 cikkünk](/blog/mennyibe-kerul-biztonsagi-ajto-2026) ad pontos információt, a modern termékkategória teljes választékát pedig a [biztonsági ajtó](/biztonsagi-ajto) termékoldalon nézheti meg.
 

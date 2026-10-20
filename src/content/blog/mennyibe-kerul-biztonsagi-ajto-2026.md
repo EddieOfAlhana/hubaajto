@@ -3,15 +3,15 @@ title: "Mennyibe kerül egy biztonsági ajtó 2026-ban? — Tételes lebontás (
 description: "Modern panel-lakás 440 000 Ft-tól, prémium családi ház 800k-1.8M Ft, műemléki kivitel egyedi árajánlattal. Részletes árképzés bruttó értékben."
 publishDate: 2025-01-08
 pillar: arak
-tags: ["árak", "biztonsági ajtó ár", "részletfizetés", "Cofidis"]
+tags: ["árak", "biztonsági ajtó ár"]
 heroImage: "/assets/photos/hero/modern-anthracite.jpg"
 heroImageAlt: "Antracit modern biztonsági ajtó agglomerációs családi házban"
 cornerstone: true
 readingMinutes: 11
 seo:
   title: "Biztonsági ajtó ára 2026 — tételes bontás"
-  description: "Mit kap 440 000 Ft-ért? Hogyan árazódik egy biztonsági ajtó tételenként, és mi a különbség 150 000 és 800 000 Ft között? Cofidis 0% részletfizetés."
-  keywords: ["biztonsági ajtó ár", "mennyibe kerül biztonsági ajtó", "biztonsági ajtó árak 2026", "részletfizetés Cofidis"]
+  description: "Mit kap 440 000 Ft-ért? Hogyan árazódik egy biztonsági ajtó tételenként, és mi a különbség 150 000 és 800 000 Ft között?"
+  keywords: ["biztonsági ajtó ár", "mennyibe kerül biztonsági ajtó", "biztonsági ajtó árak 2026"]
 ---
 
 Az árak kérdése a biztonsági ajtó piacán szokatlanul homályos. Az olcsóbb katalógus-szegmens 139 000 Ft-tól hirdet, a prémium importerek 1,5–2 millió Ft-os ajtókat is árulnak, és a kettő között gyakorlatilag minden ár létezik — anélkül, hogy a vevő meg tudná mondani, mit *kap* az adott összegért. Ez a cikk a teljes árképzést tételenként végigveszi, bruttó értékben, és segít Önnek eldönteni, hogy melyik kategóriába esik az Ön igénye.
@@ -73,23 +73,6 @@ A leggyakoribb kérdés, amit a műemléki kategóriában kapunk: *miért kerül
 
 Az 5x szorzó tehát nem felár — három különálló tényező halmozódik egymásra: az **egyedi méret és kézi munka** (a borítás és a veretek), a **prémium anyagok** (tölgy, ólomüveg, kovácsoltvas), és az **engedélyezési munka** (építész tervezés, szakértői dokumentáció, hatósági ügyintézés). Az ajtó **acél biztonsági szerkezete** ezzel szemben csak mérsékelten drágul.
 
-## Részletfizetési lehetőség — Cofidis 0% THM
-
-A vásárlóink jelentős része nem egy összegben fizet. A Huba ajtó **Cofidis áruhitel** partnerséggel kínál részletfizetést, és a leggyakrabban választott konstrukció a **0% THM** kategória: a vevő ugyanannyit fizet a futamidő végére, mint egy összegben — de havi részletekben.
-
-Egy reprezentatív példa egy **400 000 Ft-os ajtó** esetén:
-
-- Vételár: 400 000 Ft
-- Önrész (15%): 60 000 Ft
-- Hitelösszeg: 340 000 Ft
-- Futamidő: 10 hónap
-- THM: 0%
-- Havi részlet: **34 000 Ft**
-
-A 2009. évi CLXII. törvény szerinti hivatalos THM-feltüntetés és a teljes hiteltermék-tájékoztató a [részletfizetés oldalunkon](/reszletfizetes) érhető el. A hiteligénylés a felmérés napján is elindítható — papíralapú szerződéssel, online azonosítással.
-
-A 0% THM mellett **hosszabb futamidős, kamatos konstrukciók** is választhatók (24 vagy 36 hónap), ha a havi részletet alacsonyabban szeretné tartani.
-
 ## ÁFA-helyzet — minden ár bruttó
 
 A magyar piacon szokás nettó árakat hirdetni — és ez különösen a fogyasztói piacon (B2C) félrevezető lehet. A Huba ajtó **minden ára bruttó** (27% ÁFA-val), mert a vevőink döntő többsége magánszemély. Az ÁFA-t nem tudja visszaigényelni, és így az ajtó tényleges költsége a hirdetett ár.
@@ -132,6 +115,6 @@ Egy **polgári lakás** vagy **műemléki környezetben lévő ingatlan** eseté
 
 A pontos ár mindig **helyszíni felmérés után** alakul ki. A felmérés ingyenes, kötelezettség nélküli, és Kistarcsai műhelyünkből 30 perc alatt érünk Önhöz Budapesten és Pest megyében. A felmérő anyagmintákat hoz, a méreteket pontosan rögzíti, és **48 órán belül fix árajánlatot kap**.
 
-Ha szeretné előre kalkulálni a végösszeget, a [teljes árlistát](/arak) az árak oldalon nézheti meg, a részletfizetési lehetőségekről pedig a [részletfizetés oldal](/reszletfizetes) ad pontos információt.
+Ha szeretné előre kalkulálni a végösszeget, a [teljes árlistát](/arak) az árak oldalon nézheti meg.
 
 Az [ingyenes helyszíni felmérést](/felmeres) bármikor lefoglalhatja az online űrlapon, vagy hívjon minket a +36 30 740 4458 vagy a +36 30 740 4459 számon. Munkanapon belül visszahívjuk, és 2–3 napon belül felméréssel megyünk.

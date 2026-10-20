@@ -45,7 +45,7 @@ Ezt időzítse az építkezés ütemezésével úgy, hogy az ajtó a vakolat-fes
 
 ## 7. A teljes ár nem csak az ajtó
 
-Egy prémium új építésű családi ház modern Huba ajtóval jellemzően 600 000 Ft-tól indul (bruttó), a kivitel, a borítás, a zár és a méret függvényében. Beépítés 80 000–250 000 Ft. Részletfizetés a [Cofidis áruhitelen keresztül](/reszletfizetes) is elérhető. Lásd a [pontos árszerkezetet](/arak) is.
+Egy prémium új építésű családi ház modern Huba ajtóval jellemzően 600 000 Ft-tól indul (bruttó), a kivitel, a borítás, a zár és a méret függvényében. Beépítés 80 000–250 000 Ft. Lásd a [pontos árszerkezetet](/arak) is.
 
 ## Kérjen tervezői konzultációt
 

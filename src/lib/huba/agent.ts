@@ -53,7 +53,7 @@ const SEARCH: BetaTool = {
     "Ékezet nélkül is működik. A legjobb szakaszokat adja vissza a lap útvonalával.",
   input_schema: {
     type: "object",
-    properties: { query: { type: "string", description: "Kulcsszavak, pl. 'műemléki engedély határidő' vagy 'részletfizetés'" } },
+    properties: { query: { type: "string", description: "Kulcsszavak, pl. 'műemléki engedély határidő' vagy 'garancia'" } },
     required: ["query"],
   },
 };

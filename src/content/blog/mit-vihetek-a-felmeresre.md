@@ -75,7 +75,7 @@ A felmérő ezeket az eszközöket viszi:
 
 ## A felmérés után
 
-A felmérés végén Ön egy **előzetes árajánlatot kap helyben**. A pontos, fix árajánlat 48 órán belül érkezik e-mailben. Az árajánlat 14 napig érvényes; ez idő alatt nyugodtan döntse át. Ha kérdés merül fel — a felmérő telefonon vagy e-mailben elérhető. Ha [részletfizetést](/blog/reszletfizetes-cofidis-0-thm) szeretne, ezt is itt jelezheti.
+A felmérés végén Ön egy **előzetes árajánlatot kap helyben**. A pontos, fix árajánlat 48 órán belül érkezik e-mailben. Az árajánlat 14 napig érvényes; ez idő alatt nyugodtan döntse át. Ha kérdés merül fel — a felmérő telefonon vagy e-mailben elérhető.
 
 ## Foglaljon felmérést
 

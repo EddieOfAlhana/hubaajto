@@ -19,7 +19,7 @@ const faqGroups = [
       { q: "Mennyi időre rögzítik az árajánlatot?",
         a: `<p>A fix árajánlatot a felmérés után 48 órán belül megküldjük, és <strong>30 napra</strong> rögzítjük az árat. 30 napon belüli megrendelés esetén az árajánlatban szereplő összeg a végleges, semmilyen pótlólagos felárat nem számítunk fel.</p>` },
       { q: "Készpénzes vásárlásnál van kedvezmény?",
-        a: `<p>Külön készpénzes kedvezményt nem adunk — a 0% THM Cofidis áruhitel a Huba számára nem költséges. Viszont a <strong>kombinált csomagokra</strong> (ajtó + ablak, vagy több ajtó egyszerre) 5–12% kedvezményt adunk, fizetési módtól függetlenül.</p>` },
+        a: `<p>Külön készpénzes kedvezményt nem adunk. Viszont a <strong>kombinált csomagokra</strong> (ajtó + ablak, vagy több ajtó egyszerre) 5–12% kedvezményt adunk, fizetési módtól függetlenül.</p>` },
     ],
   },
   {
@@ -34,7 +34,7 @@ const faqGroups = [
       { q: "Bontás nélkül cserélhető panel-lakásban?",
         a: `<p>A panel-lakás standard tokmérete (kb. 90×210 cm) gyakran átvehető — csak a régi nyílórészt és a sérült tokot bontjuk. Az új tok pontosan a meglévő nyílásba illeszkedik. A felmérőnk a helyszínen méri be — gyakori, de nem garantált.</p>` },
       { q: "Mikor kell kifizetni?",
-        a: `<p>50% a szerződéskötéskor (gyártási előleg), 50% a beépítés napján, a munka befejezésekor. Cofidis áruhitel esetén a teljes összeget a Cofidis fizeti ki közvetlenül nekünk, Ön pedig havonta a Cofidisnek törleszt.</p>` },
+        a: `<p>50% a szerződéskötéskor (gyártási előleg), 50% a beépítés napján, a munka befejezésekor.</p>` },
     ],
   },
   {
@@ -92,17 +92,6 @@ const faqGroups = [
     ],
   },
   {
-    label: "Részletfizetés, hitel",
-    items: [
-      { q: "Lehet részletfizetés?",
-        a: `<p>Igen — <strong>Cofidis áruhitelen keresztül</strong>, akár 0% THM-mel a kampánykeretek függvényében. Reprezentatív példa: 440 000 Ft / 10 hó = 44 000 Ft / hó, THM 0%, teljes visszafizetendő 440 000 Ft. <a href="/reszletfizetes">Részletfizetés részletek →</a></p>` },
-      { q: "Hogyan igényelhető a Cofidis áruhitel?",
-        a: `<p>A helyszíni felmérés végén a felmérőnk online kitölti a Cofidis igénylőlapját. Iratok: személyi, lakcímkártya, jövedelemigazolás. A hitelbírálat <strong>10 perc</strong>. Pozitív válasz esetén szerződéskötés azonnal, a gyártás aznap indul.</p>` },
-      { q: "Mi van, ha a hitelbírálat elutasít?",
-        a: `<p>Nem keletkezik szerződéses kötelezettsége sem a Huba, sem a Cofidis felé. A felmérés és a hitelbírálat is ingyenes. Alternatívaként a részletfizetést ajánljuk (50% beépítéskor, 50% 60 napon belül).</p>` },
-    ],
-  },
-  {
     label: "Zárak, kulcsok, szerviz",
     items: [
       { q: "Milyen zárakat építünk be?",
@@ -121,7 +110,7 @@ const allItems = faqGroups.flatMap(g => g.items);
 ---
 <BaseLayout
   title="GYIK — Gyakran ismételt kérdések"
-  description="Áraktól a műemléki kivitelig — a leggyakoribb kérdések és válaszok a Huba ajtó biztonsági ajtóiról. 30+ kérdés ár, időzítés, MABISZ-minősítés, garancia, panel-lakás, polgári lakás, részletfizetés és zárrendszerek témakörben."
+  description="Áraktól a műemléki kivitelig — a leggyakoribb kérdések és válaszok a Huba ajtó biztonsági ajtóiról. 30+ kérdés ár, időzítés, MABISZ-minősítés, garancia, panel-lakás, polgári lakás és zárrendszerek témakörben."
 >
   <section class="hero hero-centered">
     <div class="container hero-inner">
@@ -129,7 +118,7 @@ const allItems = faqGroups.flatMap(g => g.items);
         <p class="eyebrow"><span class="tricolor-strip" aria-hidden="true"><span/><span/><span/></span> Gyakran ismételt kérdések</p>
         <h1 class="hero-heading">A leggyakoribb 30+ kérdés.<br/><em>A felmérés előtt jellemzően ezek merülnek fel.</em></h1>
         <p class="hero-lead">
-          Áraktól a műemléki kivitelig, panel-lakás cserétől a Cofidis áruhitel-feltételekig. Ha nem találja a választ, hívjon minket — munkanapon belül visszahívjuk.
+          Áraktól a műemléki kivitelig, panel-lakás cserétől a garanciafeltételekig. Ha nem találja a választ, hívjon minket — munkanapon belül visszahívjuk.
         </p>
       </div>
     </div>

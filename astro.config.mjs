@@ -32,6 +32,12 @@ export default defineConfig({
     }),
   ],
   vite: { plugins: [tailwindcss()] },
+  // Financing content is withdrawn for now; keep old links landing somewhere useful.
+  redirects: {
+    "/reszletfizetes": "/arak",
+    "/blog/reszletfizetes-cofidis-0-thm": "/blog",
+    "/blog/szep-kartya-vs-aruhitel": "/blog",
+  },
   build: { format: "directory" },
   prefetch: { defaultStrategy: "viewport" },
 });
