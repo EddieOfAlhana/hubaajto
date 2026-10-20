@@ -1,0 +1,29 @@
+HUBA AJTÓ – FACEBOOK-HIRDETÉS KREATÍV, 4. VÁLTOZAT („Az autó nekimegy, az ajtó marad”)
+Képgeneráló prompt (ChatGPT / GPT képgenerálás). Két referencia csatolandó:
+  1. rampa-referencia.jpg (a rámpa)
+  2. /assets/photos/hero/modern-espresso.jpg (az ajtó)
+
+----------------------------------------------------------------------
+Vertical 4:5 advertising image (1080x1350), in the style of a minimalist IKEA print ad. Two reference images are attached.
+
+REFERENCE 1 – the ramp photo: reproduce this stunt ramp (curved concrete ramp on a dark steel truss, grey asphalt, dashed centre line, red LED strips along both edges), same orientation as the photo, scaffold on the right. Do not include the car from the reference.
+
+REFERENCE 2 – the door photo: use only the door leaf (ignore the walls, frame, floor): a dark espresso brown wood-grain steel security entrance door with a short brushed-steel lever handle, two lock cylinders and a peephole. Keep its exact colour, proportions and details.
+
+SCENE: pure black background. The ramp sweeps down from the upper right toward the lower centre. At the bottom end of the ramp, standing upright and closed, is the door, about one third of the image height, like a wall, completely intact, lit with soft frontal studio light.
+
+A generic, unbranded dark grey sports car, heavily motion-blurred, has just slammed into the door nose-first: the car's front is crumpled against the door, small debris and a thin puff of white smoke rise from the bonnet, but the door shows no dent, no scratch, not even a tilt. The car has no logo, no badge, no readable licence plate, no recognisable brand design.
+
+TYPOGRAPHY, white clean sans-serif (Noto Sans / Verdana-like), left-aligned:
+– Top left, large bold headline on two lines: "A jövő jöhet." / "Az ajtó marad."
+– Bottom left, small product block: bold "Huba biztonsági ajtó", under it regular "15 év szerkezeti garancia", under it large bold "440 000 Ft-tól".
+– Bottom right: a plain white rectangle placeholder for a logo.
+Render the Hungarian text exactly as written, including the accents.
+
+STYLE: photorealistic, calm product-photo lighting, humour comes only from the contrast between the wrecked car and the untouched door, no people, no blood, no fire, no other objects, no extra text, no watermark.
+----------------------------------------------------------------------
+
+Szöveg nélküli változat: a TYPOGRAPHY bekezdés helyett:
+"No text anywhere in the image. Leave the upper left third and the lower left corner empty black."
+
+Ha a kocsi lángol vagy Tesla-formájú: "Same image, but the car must be a generic unbranded shape and there is no fire."

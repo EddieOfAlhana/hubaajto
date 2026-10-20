@@ -14,6 +14,7 @@ import type {
   BetaToolResultBlockParam,
   BetaToolUseBlock,
 } from "@anthropic-ai/sdk/resources/beta/messages/messages";
+import { GROUP_HU, MATERIALS, NOT_AUTOMATED, STATUS_HU, marketingPlan, type Group } from "../../data/marketing-plan";
 import * as knowledge from "./knowledge";
 import * as mail from "./mail";
 import { customerSystem, ownerSystem, SUMMARY } from "./prompt";
@@ -98,7 +99,7 @@ const REQUEST: BetaTool = {
   input_schema: {
     type: "object",
     properties: {
-      kind: { type: "string", enum: ["KEP", "SZOVEG", "UJ_TARTALOM", "HIBA", "FUNKCIO", "EGYEB"], description: "KEP = képcsere/új kép, SZOVEG = szövegmódosítás, UJ_TARTALOM = új lap/blogposzt, HIBA, FUNKCIO = új funkció, EGYEB" },
+      kind: { type: "string", enum: ["KEP", "SZOVEG", "UJ_TARTALOM", "HIBA", "FUNKCIO", "MARKETING", "EGYEB"], description: "KEP = képcsere/új kép, SZOVEG = szövegmódosítás, UJ_TARTALOM = új lap/blogposzt, HIBA, FUNKCIO = új funkció, MARKETING = marketing-döntés vagy Gabi által elvégzett marketing-lépés (a terv frissítéséhez), EGYEB" },
       title: { type: "string", description: "Rövid cím, max. 80 karakter" },
       description: { type: "string" },
       page_path: { type: "string", description: "Az érintett lap útvonala" },
@@ -107,6 +108,65 @@ const REQUEST: BetaTool = {
     required: ["kind", "title", "description"],
   },
 };
+
+const MARKETING: BetaTool = {
+  name: "marketing_plan",
+  description:
+    "A Huba ajtó marketing-terve a tulajdonosnak: mi hozna megrendelést, mi készült el, mi van Zoltánnál, mi vár Gabira, mi vár döntésre, és a már elkészült anyagok (kreatívok, promptok). " +
+    "Paraméter nélkül az áttekintést adja; az `item` egy tétel azonosítójával a részleteket (Gabi lépései, költség, anyagok); `item: \"anyagok\"` az anyagok listáját.",
+  input_schema: {
+    type: "object",
+    properties: { item: { type: "string", description: "Tétel azonosítója az áttekintésből (pl. 'gbp'), vagy 'anyagok'" } },
+  },
+};
+
+function materialsText(ids?: string[]): string {
+  const list = ids ? MATERIALS.filter((m) => ids.includes(m.id)) : MATERIALS;
+  if (!list.length) return "(nincs anyag)";
+  return list
+    .map((m) => `- ${m.title} — ${m.kind === "kep" ? `kép, megmutatható: ![${m.title}](${m.src})` : `szöveg, link: [${m.title}](${m.src})`}\n  ${m.note}`)
+    .join("\n");
+}
+
+function marketingText(item: string): string {
+  const plan = marketingPlan();
+  if (item === "anyagok") return `# Elkészült anyagok\n${materialsText()}`;
+  if (item) {
+    const it = plan.find((x) => x.id === item);
+    if (!it) return `HIBA: nincs ilyen tétel: ${item}. Azonosítók: ${plan.map((x) => x.id).join(", ")}, vagy 'anyagok'.`;
+    return [
+      `# ${it.title}`,
+      `Azonosító: ${it.id} · Állapot: ${STATUS_HU[it.status]} · Költség: ${it.cost} · Emberi munka, ha már megy: ${it.effort}`,
+      "",
+      it.summary,
+      "",
+      `Miért fontos: ${it.why}`,
+      "",
+      "Zoltán (és az automaták) dolga:",
+      ...it.zoltan.map((s) => `- ${s}`),
+      "",
+      it.gabi.length ? "Gabi lépései, sorban:" : "Gabinak nincs vele teendője.",
+      ...it.gabi.map((s, i) => `${i + 1}. ${s}`),
+      it.notes ? `\nMegjegyzés: ${it.notes}` : "",
+      it.materials?.length ? `\nAnyagok:\n${materialsText(it.materials)}` : "",
+    ].join("\n");
+  }
+  const groups = ["alap", "ingyenes", "fizetos", "b2b"] as Group[];
+  const lines = [
+    "# Marketing-terv — áttekintés (naprakész állapotokkal)",
+    "A cél: megrendelés, minél kevesebb emberi munkával, ingyen vagy olcsón. A háttér: három úton jön vevő — aki keres (Google), aki görget (Facebook/Instagram/videó), és akit közvetítő hoz (közös képviselő, alkusz, felújító).",
+    "",
+  ];
+  for (const g of groups) {
+    lines.push(`## ${GROUP_HU[g]}`);
+    for (const it of plan.filter((x) => x.group === g)) {
+      lines.push(`- [${it.id}] ${it.title} — ${STATUS_HU[it.status]}${it.gabi.length ? ` — Gabi teendője van (${it.gabi.length} lépés)` : ""} · ${it.cost}\n  ${it.summary}`);
+    }
+    lines.push("");
+  }
+  lines.push("## Amit nem automatizálunk", ...NOT_AUTOMATED.map((s) => `- ${s}`), "", `## Elkészült anyagok (${MATERIALS.length})`, materialsText());
+  return lines.join("\n");
+}
 
 async function readPage(p: string): Promise<string> {
   const page = await knowledge.page(p);
@@ -219,6 +279,9 @@ async function execute(name: string, input: Record<string, unknown>, conversatio
     case "record_request":
       if (conversation.mode !== "owner") return "HIBA: ez az eszköz csak megrendelői módban érhető el.";
       return recordRequest(input, conversation, page);
+    case "marketing_plan":
+      if (conversation.mode !== "owner") return "HIBA: ez az eszköz csak megrendelői módban érhető el.";
+      return marketingText(String(input.item ?? "").trim());
     default:
       return `HIBA: ismeretlen eszköz: ${name}`;
   }
@@ -261,7 +324,7 @@ export async function answer(conversation: Conversation, files: Upload[], page: 
   content.push({ type: "text", text: intro + current.content });
 
   const messages: BetaMessageParam[] = [...history(conversation), { role: "user", content }];
-  const tools = conversation.mode === "owner" ? [SEARCH, READ, REQUEST] : [SEARCH, READ, ORDER];
+  const tools = conversation.mode === "owner" ? [SEARCH, READ, REQUEST, MARKETING] : [SEARCH, READ, ORDER];
   const sys = await system(conversation.mode);
 
   for (let round = 0; round < MAX_ROUNDS; round++) {

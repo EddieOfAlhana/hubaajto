@@ -15,6 +15,15 @@
   kerül (`[jelszó]`). Ilyenkor Huba a módosítási kéréseket veszi fel (`record_request`): a
   `read_page` a lap képeit sorszámmal adja vissza, így a „harmadik kép” azonosítható. Huba maga
   semmit nem módosít.
+- **Marketing (megrendelői mód):** a váltás után chipek jelennek meg („Hogyan lehet több
+  megrendelés?”, „Mi készült el eddig a marketingből?”, „Mit kell nekem megcsinálnom?”). Huba a
+  `marketing_plan` eszközből beszél: `src/data/marketing-plan.ts` a terv tételenként (csoport,
+  állapot, miért, Zoltán dolga, Gabi lépései, költség, anyagok), néhány állapot futásidőben
+  derül ki (SMTP, Facebook-link). Gabi döntéseit és elvégzett lépéseit `record_request`-tel,
+  `MARKETING` fajtával rögzíti, így Alfréd iktatja, és Zoltán a tervben átállítja az állapotot.
+  Az elkészült anyagok (kreatívok, promptok) `public/assets/marketing/` alatt vannak; a képeket
+  a widget `![cím](/assets/…)` formából inline mutatja. **Ha valami elkészül, ugyanabban a
+  commitban állítsd át a tétel `status`-át.**
 - **Lezárás:** „Kész” gomb vagy 30 perc csend. Összefoglaló készül (magyar JSON: cím, összefoglaló,
   kategória), és a beszélgetés Alfréd postafiókjába kerül.
 

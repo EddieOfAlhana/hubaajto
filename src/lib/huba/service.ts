@@ -62,6 +62,7 @@ function passwordPattern(): RegExp | null {
 const OWNER_GREETING =
   "Üdvözlöm! Átváltottam **megrendelői módba** — innentől a weboldal módosítási kéréseit veszem fel, és továbbítom Zoltánnak.\n\n" +
   "Írja meg, mit szeretne (pl. *„ezen az oldalon a harmadik képet cseréld erre”*), és csatolja a képet a 📎 gombbal. " +
+  "Szívesen végigbeszélem azt is, **hogyan lehet több megrendelés** — mi készült el, mi vár Önre, és miben segítek lépésről lépésre. " +
   "Ha végzett, a **Kész** gombbal zárhatja a beszélgetést.";
 
 // ─── Flow ─────────────────────────────────────────────────────────

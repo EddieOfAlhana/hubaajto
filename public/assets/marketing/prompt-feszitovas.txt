@@ -1,0 +1,30 @@
+HUBA AJTÓ – FACEBOOK-HIRDETÉS KREATÍV, 1. VÁLTOZAT („A feszítővas repül”)
+Képgeneráló prompt (ChatGPT / GPT képgenerálás). Két referencia csatolandó:
+  1. rampa-referencia.jpg (a rámpa)
+  2. /assets/photos/hero/modern-anthracite.jpg (az ajtó)
+Cím a végleges változatban: „Ki tudja, mit hoz a jövő.” / „De ezen biztosan nem jön be.”
+
+----------------------------------------------------------------------
+Create a vertical 4:5 advertising image (1080 x 1350 px) in the style of a minimalist IKEA print ad. Two reference images are attached.
+
+REFERENCE 1 – the ramp photo. Reproduce this exact stunt ramp: the tall, backwards-curving concrete ramp standing on a dark steel truss scaffold, grey asphalt surface with a faint dashed centre line, both long edges outlined with thin glowing red LED strips. Keep the same orientation as in the photo (scaffold on the right, the curve sweeping up and leaning slightly left at the top). Do NOT include the car that sits at the top of the ramp in the reference; the top of the ramp is reserved for the door. The ramp occupies roughly the right 55% of the frame, rising from the bottom edge to about the upper third, leaving the left side and the top band of the image as empty pure black.
+
+REFERENCE 2 – the door photo. Use only the door leaf from this photo (ignore the house, wall, frame, plants and paving): a modern anthracite grey steel security entrance door with three vertical milled grooves and a short brushed-steel lever handle with a lock cylinder below it. Keep its exact colour, proportions and details.
+
+SCENE: pure black background, night. The door is larger, about one third of the image height, and stands firmly on the top end of the ramp surface, its bottom edge touching the asphalt, perfectly upright and closed, as if the ramp simply ends in a wall. It is lit with soft, even studio light from the front so it reads as solid and heavy; a faint red reflection from the LED strips touches its bottom edge. It is not moving, not tilted, not damaged.
+
+In the upper-left area, in mid-air, a steel crowbar is tumbling away from the door as if it has just bounced off it, pointing down-left. The crowbar is at the very end of a long, soft white vapour trail that starts at the door handle and curves down towards the lower centre of the image, like the steam trail of a rocket. Slight motion blur on the crowbar only; everything else is tack sharp. The door surface shows no scratch or dent.
+
+TYPOGRAPHY, white, clean humanist sans-serif (Noto Sans / Verdana-like), left-aligned:
+– Top left, large bold headline on two lines: "Ki tudja, mit hoz a jövő." / "De ezen biztosan nem jön be."
+– Bottom left, small product block: bold "Huba biztonsági ajtó", under it regular "Mottura zár, RC3", under it large bold "440 000 Ft-tól".
+– Bottom right, above the base of the ramp: a plain white rectangle as a logo placeholder.
+Render the Hungarian text exactly as written, including the accents.
+
+STYLE: photorealistic product-photo rendering, calm and dry, lots of empty black space, no people, no car, no other objects, no extra text, no watermark, no glow effects besides the red LED edges and the white trail.
+----------------------------------------------------------------------
+
+Szöveg nélküli változat: a TYPOGRAPHY bekezdés helyett:
+"No text or logo anywhere. Leave the upper left third and the lower left corner pure black for typography to be added later."
+
+Ha a modell odarajzolja az autót: "Same image, remove the car completely, the door is the only thing on top of the ramp."

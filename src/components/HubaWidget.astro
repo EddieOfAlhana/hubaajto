@@ -100,6 +100,8 @@ import { CONTACT } from "../data/site";
 
   function inline(s: string): string {
     return esc(s)
+      .replace(/!\[([^\]]*)\]\(((?:https:\/\/www\.hubaajto\.hu)?\/assets\/[^)\s]+\.(?:png|jpe?g|webp|gif))\)/gi, (_, alt, src) =>
+        `<a class="huba-img" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${alt}" loading="lazy"></a>`)
       .replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/|tel:|mailto:)[^)\s]*)\)/g, (_, t, href) => {
         const external = /^https?:/.test(href) && !href.includes("hubaajto.hu");
         return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ""}>${t}</a>`;
@@ -155,20 +157,32 @@ import { CONTACT } from "../data/site";
         "Kérdezzen bátran az ajtóinkról, az árakról vagy a műemléki engedélyezésről — vagy kérjen **ingyenes felmérést**, és továbbítom a műhelynek. " +
         "Fotót is küldhet a mostani ajtajáról a 📎 gombbal.",
     });
-    const chips = document.createElement("div");
-    chips.className = "huba-chips";
-    for (const q of ["Mennyibe kerül egy biztonsági ajtó?", "Ingyenes felmérést kérek", "Műemléki házban lakom"]) {
+    chips(["Mennyibe kerül egy biztonsági ajtó?", "Ingyenes felmérést kérek", "Műemléki házban lakom"]);
+  }
+
+  function chips(questions: string[]) {
+    root.querySelector(".huba-chips")?.remove();
+    const box = document.createElement("div");
+    box.className = "huba-chips";
+    for (const q of questions) {
       const b = document.createElement("button");
       b.type = "button";
       b.textContent = q;
-      b.addEventListener("click", () => { chips.remove(); send(q); });
-      chips.appendChild(b);
+      b.addEventListener("click", () => { box.remove(); send(q); });
+      box.appendChild(b);
     }
-    log.appendChild(chips);
+    log.appendChild(box);
+    log.scrollTop = log.scrollHeight;
   }
 
-  function setMode(mode: string) {
-    badge.hidden = mode !== "owner";
+  // Owner mode: what Gabi can ask for — the site, and the marketing plan Huba talks through.
+  const OWNER_CHIPS = ["Hogyan lehet több megrendelés?", "Mi készült el eddig a marketingből?", "Mit kell nekem megcsinálnom?", "Módosítást kérek az oldalon"];
+  let mode = "customer";
+
+  function setMode(next: string) {
+    badge.hidden = next !== "owner";
+    if (next === "owner" && mode !== "owner") chips(OWNER_CHIPS);
+    mode = next;
   }
 
   function showError(text: string | null) {
@@ -447,6 +461,8 @@ import { CONTACT } from "../data/site";
   .huba-log :global(.huba-assistant) { align-self: flex-start; background: var(--color-canvas); border: 1px solid var(--color-cream); }
   .huba-log :global(.huba-user) { align-self: flex-end; background: var(--color-ink); color: var(--color-paper); }
   .huba-log :global(.huba-att) { font-size: var(--text-xs); opacity: 0.8; margin-top: 0.35rem; }
+  .huba-log :global(.huba-img) { display: block; margin: 0.5rem 0; }
+  .huba-log :global(.huba-img img) { display: block; max-width: 100%; max-height: 18rem; border: 1px solid var(--color-cream); }
   .huba-log :global(.huba-chips) { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .huba-log :global(.huba-chips button) {
     font-size: var(--text-sm); padding: 0.4rem 0.7rem; border: 1px solid var(--color-brass); color: var(--color-brass-deep);
