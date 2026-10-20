@@ -9,7 +9,7 @@
  */
 
 import * as agent from "./agent";
-import { all, putAttachment, withConversation, type AttachmentMeta, type Conversation, type StoredMessage } from "./store";
+import { all, putAttachment, remove, withConversation, type AttachmentMeta, type Conversation, type StoredMessage } from "./store";
 
 export const MAX_FILES = 5;
 export const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -178,10 +178,18 @@ export async function close(id: string, reason: string) {
   });
 }
 
+/** Conversations are kept this long after their last message; the privacy notice (/adatvedelem) promises it. */
+const RETENTION_DAYS = 90;
+
 /** Thirty minutes of silence closes a conversation, as the visitor's "Kész" button would. */
 export async function closeIdle() {
   const cutoff = Date.now() - IDLE_MINUTES * 60_000;
+  const expiry = Date.now() - RETENTION_DAYS * 86_400_000;
   for (const c of await all()) {
+    if (Date.parse(c.lastActivityAt) < expiry) {
+      await remove(c.id).catch((e) => console.warn("[huba] purge failed", c.id, e));
+      continue;
+    }
     if (c.status === "open" && Date.parse(c.lastActivityAt) < cutoff) {
       try {
         await close(c.id, "IDLE");

@@ -7,6 +7,12 @@ export const SITE = {
   brand: "Huba ajtó",
   legalName: "Szer-X3 Kereskedelmi és Szolgáltató Kft.",
   shortLegal: "Szer-X3 Kft.",
+  /** From the company register (e-cegjegyzek.hu), as of 2026-10. */
+  registeredName: "SZER-X3 Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+  companyRegNo: "13-09-118448",
+  taxNo: "13381619-2-13",
+  managingDirector: "Kiss Gábor Miklós",
+  registryCourt: "Budapest Környéki Törvényszék Cégbírósága",
   tagline: "Minőség a biztonságért",
   taglineLong: "Korhű biztonsági ajtótól a modern panelig — Kistarcsán gyártva.",
   url: "https://www.hubaajto.hu",

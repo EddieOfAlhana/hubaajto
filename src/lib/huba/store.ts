@@ -13,7 +13,7 @@
  */
 
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 export type Mode = "customer" | "owner";
@@ -166,6 +166,13 @@ export async function all(): Promise<Conversation[]> {
     if (c) out.push(c);
   }
   return out.sort((a, b) => a.startedAt.localeCompare(b.startedAt));
+}
+
+/** Deletes a conversation and its attachments for good (retention purge). */
+export async function remove(id: string) {
+  if (!ID.test(id)) return;
+  await rm(path.join(ATT_DIR, id), { recursive: true, force: true });
+  await rm(file(id), { force: true });
 }
 
 export async function putAttachment(conversationId: string, fileName: string, contentType: string, data: Buffer): Promise<AttachmentMeta> {

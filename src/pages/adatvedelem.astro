@@ -6,7 +6,7 @@ import { SITE, CONTACT } from "../data/site";
 
 <BaseLayout
   title="Adatvédelmi tájékoztató"
-  description="A Huba ajtó (Szer-X3 Kft.) adatkezelési tájékoztatója — GDPR Art. 13-14 és a 2011. évi CXII. törvény (Infotv.) szerint. Adatkezelő, adatok köre, célja, jogalapja, időtartama, érintett jogai, NAIH-hoz fordulás."
+  description="A Huba ajtó (Szer-X3 Kft.) adatkezelési tájékoztatója — GDPR Art. 13-14 és a 2011. évi CXII. törvény (Infotv.) szerint. Adatkezelő, adatok köre, célja, jogalapja, időtartama, a Huba AI-asszisztens és az Anthropic mint adatfeldolgozó, érintett jogai, NAIH-hoz fordulás."
 >
   <Section tone="paper" eyebrow="Jogi" heading="Adatvédelmi tájékoztató">
     <div class="legal-prose">
@@ -22,7 +22,7 @@ import { SITE, CONTACT } from "../data/site";
       <dl class="legal-list">
         <div>
           <dt>Adatkezelő neve</dt>
-          <dd>{SITE.legalName}</dd>
+          <dd>{SITE.registeredName} ({SITE.shortLegal})</dd>
         </div>
         <div>
           <dt>Székhely</dt>
@@ -30,11 +30,15 @@ import { SITE, CONTACT } from "../data/site";
         </div>
         <div>
           <dt>Cégjegyzékszám</dt>
-          <dd>13-09-XXXXXXX <em>(az ügyfél megerősítését követően)</em></dd>
+          <dd>{SITE.companyRegNo} ({SITE.registryCourt})</dd>
         </div>
         <div>
           <dt>Adószám</dt>
-          <dd>XXXXXXXX-2-13 <em>(az ügyfél megerősítését követően)</em></dd>
+          <dd>{SITE.taxNo}</dd>
+        </div>
+        <div>
+          <dt>Képviselő</dt>
+          <dd>{SITE.managingDirector} ügyvezető</dd>
         </div>
         <div>
           <dt>Telefon</dt>
@@ -92,7 +96,37 @@ import { SITE, CONTACT } from "../data/site";
       </article>
 
       <article class="legal-block">
-        <h4>2.3 Honlap látogatás — technikai naplózás</h4>
+        <h4>2.3 Huba, a honlap AI-asszisztense (chat)</h4>
+        <p>
+          A honlap jobb alsó sarkában elérhető „Huba” egy mesterséges intelligencián alapuló
+          csevegőasszisztens: nem ember válaszol. Huba a honlap tartalma alapján felel a kérdésekre,
+          és ha Ön kéri, összegyűjti és e-mailben továbbítja nekünk a felmérés- vagy
+          ajánlatkérését. Huba nem hoz Önre nézve joghatással járó, kizárólag automatizált döntést
+          (GDPR 22. cikk) — a megkereséseket munkatársaink bírálják el.
+        </p>
+        <ul>
+          <li><strong>Cél:</strong> a honlap látogatóinak tájékoztatása, a felmérés- és
+            ajánlatkérések fogadása és továbbítása, a válaszok minőségének ellenőrzése és javítása.</li>
+          <li><strong>Jogalap:</strong> kérdések megválaszolása esetén a GDPR 6. cikk (1) bekezdés
+            f) pontja — az adatkezelő jogos érdeke az érdeklődők tájékoztatásában; ajánlatkérés
+            továbbítása esetén a 6. cikk (1) bekezdés a) pontja — az Ön kifejezett hozzájárulása,
+            amelyet Huba a továbbítás előtt külön kér, valamint a b) pontja — szerződéskötést
+            megelőző intézkedés.</li>
+          <li><strong>Kezelt adatok köre:</strong> a beszélgetés szövege, az Ön által feltöltött
+            képek és dokumentumok (pl. a jelenlegi ajtóról készült fotó), az oldal, ahonnan írt,
+            a beszélgetés időpontjai; ajánlatkérés esetén az Ön által megadott név, telefonszám,
+            e-mail cím, település / cím és az igény leírása. Az IP-címet kizárólag a visszaélések
+            elleni korlátozáshoz, legfeljebb 24 órán át, a szerver memóriájában tartjuk nyilván.</li>
+          <li><strong>Időtartam:</strong> a beszélgetést és a csatolt fájlokat az utolsó üzenettől
+            számított <strong>90 nap</strong> után automatikusan töröljük. A továbbított
+            ajánlatkérés e-mailjét a 2.1 pont szerinti ideig őrizzük.</li>
+          <li><strong>Kérjük,</strong> a chatbe ne írjon különleges személyes adatot (pl.
+            egészségügyi adatot), és csak olyan képet csatoljon, amely a megrendeléshez szükséges.</li>
+        </ul>
+      </article>
+
+      <article class="legal-block">
+        <h4>2.4 Honlap látogatás — technikai naplózás</h4>
         <ul>
           <li><strong>Cél:</strong> a honlap biztonságos üzemeltetése, statisztikai elemzés.</li>
           <li><strong>Jogalap:</strong> GDPR 6. cikk (1) bekezdés f) pontja — az adatkezelő jogos
@@ -104,7 +138,7 @@ import { SITE, CONTACT } from "../data/site";
       </article>
 
       <article class="legal-block">
-        <h4>2.4 Süti (cookie) használat</h4>
+        <h4>2.5 Süti (cookie) használat</h4>
         <p>
           A sütik használatára vonatkozó részletes tájékoztatás a külön elérhető
           <a href="/suti">Süti tájékoztatóban</a> található. A nem szükséges sütiket csak az
@@ -119,8 +153,22 @@ import { SITE, CONTACT } from "../data/site";
         kezelik az adatkezelő utasítása szerint:
       </p>
       <ul>
-        <li><strong>Tárhelyszolgáltató:</strong> a honlap kiszolgálási szolgáltatását biztosító cég
-          (a részletes adatok az <a href="/impresszum">Impresszumban</a>).</li>
+        <li><strong>Tárhelyszolgáltató — Railway Corporation</strong> (San Francisco, USA): a honlap
+          kiszolgálása, valamint a Huba-beszélgetések és a csatolt fájlok tárolása (a részletes
+          adatok az <a href="/impresszum">Impresszumban</a>).</li>
+        <li><strong>Mesterségesintelligencia-szolgáltató — Anthropic Ireland, Limited</strong>
+          (Dublin, Írország; <a href="https://www.anthropic.com/legal/privacy" rel="external">adatvédelmi
+          tájékoztatója</a>): a Huba-asszisztens nyelvi modelljét (Claude) üzemelteti. A beszélgetés
+          szövegét és a csatolt fájlokat a válasz elkészítéséhez megkapja. Az Anthropic üzleti
+          feltételei és adatfeldolgozási kiegészítése (DPA) szerint ezeket az adatokat modelljei
+          tanítására nem használja, és csak a szolgáltatás nyújtásához, illetve a visszaélések
+          megelőzéséhez szükséges ideig őrzi meg.</li>
+        <li><strong>A honlap fejlesztését és üzemeltetését végző szolgáltató:</strong> a
+          Huba-beszélgetések összefoglalóit (kapcsolattartási adatok nélkül) a válaszok minőségének
+          javítása érdekében megkapja; ajánlatkérést csak akkor lát, ha az e-mailes továbbítás
+          technikai hiba miatt meghiúsult, és azt nekünk kézzel kell továbbítani.</li>
+        <li><strong>E-mail szolgáltató:</strong> a Huba által továbbított ajánlatkérések
+          kézbesítése a {CONTACT.email} postafiókba.</li>
         <li><strong>Könyvelő iroda:</strong> számviteli bizonylatok kezelése — szerződéskötés esetén.</li>
         <li><strong>Statisztikai szolgáltatás (Plausible Analytics, EU székhely):</strong> a honlap
           látogatottsági adatai. Sütimentes, anonim statisztikákat szolgáltat.</li>
@@ -137,6 +185,14 @@ import { SITE, CONTACT } from "../data/site";
         Bizottság megfelelőségi határozata (EU-US Data Privacy Framework) vagy az általános
         adatvédelmi szerződéses feltételek (SCC) alapján történik. A részletekért a süti
         tájékoztatóban felsorolt egyes szolgáltatások adatkezelési tájékoztatóit kérjük megtekinteni.
+      </p>
+      <p>
+        A Huba-asszisztens működése során az adatok az Egyesült Államokba is kerülnek: a
+        tárhelyszolgáltató (Railway Corporation) és az Anthropic Ireland, Limited
+        al-adatfeldolgozója, az Anthropic, PBC amerikai cég. Ezek a továbbítások az EU–USA
+        adatvédelmi keretrendszer (Data Privacy Framework) szerinti megfelelőségi határozaton,
+        illetve az Európai Bizottság által elfogadott általános szerződési feltételeken (SCC)
+        alapulnak.
       </p>
 
       <h3>5. Az érintett jogai</h3>
@@ -214,7 +270,7 @@ import { SITE, CONTACT } from "../data/site";
       </p>
 
       <p class="legal-footnote">
-        Hatályos: 2026. május. Az aktuális kérdéseivel kapcsolatban kérjük forduljon hozzánk a
+        Hatályos: 2026. október 20. Az aktuális kérdéseivel kapcsolatban kérjük forduljon hozzánk a
         fenti elérhetőségeken vagy a <a href="/kapcsolat">Kapcsolat oldalon</a>.
       </p>
     </div>

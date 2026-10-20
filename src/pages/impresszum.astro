@@ -19,7 +19,7 @@ import { SITE, CONTACT } from "../data/site";
       <dl class="legal-list">
         <div>
           <dt>Cégnév</dt>
-          <dd>{SITE.legalName}</dd>
+          <dd>{SITE.registeredName}</dd>
         </div>
         <div>
           <dt>Rövidített cégnév</dt>
@@ -35,23 +35,19 @@ import { SITE, CONTACT } from "../data/site";
         </div>
         <div>
           <dt>Cégjegyzékszám</dt>
-          <dd>13-09-XXXXXXX <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
+          <dd>{SITE.companyRegNo}</dd>
         </div>
         <div>
           <dt>Adószám</dt>
-          <dd>XXXXXXXX-2-13 <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
-        </div>
-        <div>
-          <dt>Statisztikai számjel</dt>
-          <dd>XXXXXXXX-XXXX-113-13 <em>(az ügyfél megerősítését követően kerül kitöltésre)</em></dd>
+          <dd>{SITE.taxNo}</dd>
         </div>
         <div>
           <dt>Képviselő (ügyvezető) neve</dt>
-          <dd><em>az ügyfél megerősítését követően kerül kitöltésre</em></dd>
+          <dd>{SITE.managingDirector}</dd>
         </div>
         <div>
           <dt>Nyilvántartó hatóság</dt>
-          <dd>Budapest Környéki Törvényszék Cégbírósága</dd>
+          <dd>{SITE.registryCourt}</dd>
         </div>
       </dl>
 
@@ -89,18 +85,12 @@ import { SITE, CONTACT } from "../data/site";
           <dt>Kamara</dt>
           <dd>Pest Vármegyei és Érdi Kereskedelmi és Iparkamara</dd>
         </div>
-        <div>
-          <dt>Nyilvántartási szám</dt>
-          <dd><em>az ügyfél megerősítését követően kerül kitöltésre</em></dd>
-        </div>
       </dl>
 
       <h3>4. Tárhelyszolgáltató</h3>
       <p>
-        A honlap kiszolgálási szolgáltatását a <strong>Railway Corp.</strong> (USA, San Francisco) biztosítja.
-        A pontos szolgáltatói adatok, székhely és kapcsolattartás
-        <em> az ügyfél által megerősítésre váró technikai adatok kitöltését követően aktuálissá tett </em>
-        verzióban szerepelnek.
+        A honlap kiszolgálási szolgáltatását a <strong>Railway Corporation</strong> (San Francisco,
+        Kalifornia, USA; <a href="https://railway.com" rel="external">railway.com</a>) biztosítja.
       </p>
 
       <h3>5. Szakhatósági nyilvántartások és tanúsítványok</h3>
