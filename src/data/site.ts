@@ -28,7 +28,6 @@ export const CONTACT = {
   phonePrimary: "+36 30 740 4458",
   phonePrimaryTel: "+3630 740 4458",
   phoneSecondary: "+36 30 740 4459",
-  phoneTertiary: "+36 30 740 4460",
   email: "info@szerx.hu",
   address: {
     postal: "2143",
