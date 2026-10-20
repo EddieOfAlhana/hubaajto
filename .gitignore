@@ -9,4 +9,4 @@ dist
 *.log
 
 # Huba conversations (local runs)
-data
+/data
