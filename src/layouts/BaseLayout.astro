@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import MobileStickyCTA from "../components/MobileStickyCTA.astro";
 import HubaWidget from "../components/HubaWidget.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 import { SITE, CONTACT } from "../data/site";
 import { ClientRouter } from "astro:transitions";
 
@@ -92,6 +93,7 @@ const allSchema = schema ? [defaultSchema].concat(Array.isArray(schema) ? schema
     <Footer />
     <MobileStickyCTA />
     <HubaWidget />
+    <CookieBanner />
 
     <script>
       // GSAP reveal-on-scroll

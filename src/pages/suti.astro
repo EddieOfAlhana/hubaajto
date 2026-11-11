@@ -10,7 +10,8 @@ const requiredCookies = [
 ];
 
 const statisticalCookies = [
-  { name: "(Plausible — sütimentes)", vendor: "Plausible Analytics (EU)", purpose: "Anonim látogatottsági statisztika — Plausible nem helyez sütit, kizárólag aggregált adatokat dolgoz fel. A hatályos jogszabályok szerint hozzájárulás nem szükséges, de a teljes átláthatóság érdekében itt is feltüntetjük.", retention: "—" },
+  { name: "_ga", vendor: "Google Ireland Ltd. (Google Analytics 4)", purpose: "A látogató megkülönböztetése véletlenszerű azonosítóval, a látogatottsági statisztikához.", retention: "2 év" },
+  { name: `_ga_${SITE.gaMeasurementId.replace(/^G-/, "")}`, vendor: "Google Ireland Ltd. (Google Analytics 4)", purpose: "A munkamenet állapotának megőrzése a látogatottsági statisztikához.", retention: "2 év" },
 ];
 
 const marketingCookies = [
@@ -74,10 +75,11 @@ const marketingCookies = [
       </div>
 
       <h4 class="cat-heading">3.2 Statisztikai sütik <span class="cat-tag">hozzájárulás-köteles</span></h4>
-      <p>A honlap látogatottságának anonim mérésére szolgálnak. Jelenleg sütimentes Plausible
-        Analytics szolgáltatást használunk, így a kategória aktívan nem helyez el sütit. Ha
-        a jövőben Google Analytics 4 vagy más süti-alapú statisztikai szolgáltatást vezetünk be,
-        jelen tájékoztatót frissítjük.</p>
+      <p>A honlap látogatottságának mérésére szolgálnak (hány látogató érkezik, honnan, mely
+        oldalakat nézi meg). Ehhez a Google Analytics 4 szolgáltatást használjuk, amely kizárólag
+        az Ön hozzájárulása után töltődik be. Elutasítás vagy a hozzájárulás visszavonása esetén
+        a mérés nem fut, a korábban elhelyezett <code>_ga</code> sütiket pedig töröljük. A Google
+        Analytics nálunk hirdetési célú adatgyűjtést nem végez, és az IP-címeket nem tárolja.</p>
       <div class="cookie-table-wrap">
         <table class="cookie-table">
           <thead><tr><th>Süti neve</th><th>Szolgáltató</th><th>Cél</th><th>Élettartam</th></tr></thead>
@@ -197,15 +199,3 @@ const marketingCookies = [
     font-size: 0.92rem; color: var(--color-stone);
   }
 </style>
-
-<script>
-  // Reopen the cookie banner if its global API is exposed by CookieBanner component.
-  document.addEventListener("click", (e) => {
-    const t = e.target as HTMLElement | null;
-    if (t && t.matches("[data-cookie-reopen]")) {
-      e.preventDefault();
-      const banner = document.querySelector<HTMLElement>("[data-cookie-banner]");
-      if (banner) banner.removeAttribute("hidden");
-    }
-  });
-</script>

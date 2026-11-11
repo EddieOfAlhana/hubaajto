@@ -22,6 +22,8 @@ export const SITE = {
   mabiszSince: 2009,
   warrantyYears: 15,
   priceFromHUF: 440_000,
+  /** GA4 property "hubaajto.hu" under hardrockcoders@gmail.com; loads only after cookie consent. */
+  gaMeasurementId: "G-2T8HR80D81",
 } as const;
 
 export const CONTACT = {

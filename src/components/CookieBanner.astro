@@ -1,6 +1,12 @@
 ---
+/**
+ * Consent banner on every page (BaseLayout), persisted across client-side navigation.
+ * Google Analytics 4 loads only once the visitor has accepted; rejecting later turns it off
+ * and clears its cookies.
+ */
+import { SITE } from "../data/site";
 ---
-<div class="cookie" data-cookie role="dialog" aria-modal="false" aria-label="Süti beállítások">
+<div class="cookie" data-cookie data-ga-id={SITE.gaMeasurementId} transition:persist="cookie-banner" role="dialog" aria-modal="false" aria-label="Süti beállítások">
   <div class="cookie-card">
     <h2 class="cookie-title">Süti beállítások</h2>
     <p class="cookie-body">
@@ -39,18 +45,62 @@
 <script>
   const KEY = "huba-cookie-consent";
   const el = document.querySelector<HTMLElement>("[data-cookie]");
-  if (el && !localStorage.getItem(KEY)) el.classList.add("is-shown");
+  const gaId = el?.dataset.gaId;
+
+  type Gtag = (...args: unknown[]) => void;
+  const w = window as unknown as { dataLayer: unknown[]; gtag?: Gtag };
+
+  const storedChoice = () => {
+    try { return JSON.parse(localStorage.getItem(KEY) ?? "null")?.choice as string | undefined; }
+    catch { return undefined; }
+  };
+
+  const loadAnalytics = () => {
+    if (!gaId) return;
+    if (w.gtag) { w.gtag("consent", "update", { analytics_storage: "granted" }); return; }
+    w.dataLayer = w.dataLayer || [];
+    w.gtag = function () { w.dataLayer.push(arguments); };
+    w.gtag("consent", "default", {
+      analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+    });
+    w.gtag("js", new Date());
+    w.gtag("config", gaId);
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(s);
+  };
+
+  const stopAnalytics = () => {
+    w.gtag?.("consent", "update", { analytics_storage: "denied" });
+    const host = location.hostname.replace(/^www\./, "");
+    document.cookie.split(";").map(c => c.split("=")[0].trim()).filter(n => n.startsWith("_ga")).forEach(n => {
+      for (const domain of ["", `; domain=${host}`, `; domain=.${host}`]) {
+        document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domain}`;
+      }
+    });
+  };
+
+  const choice = storedChoice();
+  if (!choice) el?.classList.add("is-shown");
+  if (choice === "accept") loadAnalytics();
 
   el?.querySelectorAll<HTMLButtonElement>("[data-cookie-action]").forEach(btn => {
     btn.addEventListener("click", () => {
       const choice = btn.dataset.cookieAction;
       localStorage.setItem(KEY, JSON.stringify({ choice, at: new Date().toISOString() }));
       el.classList.remove("is-shown");
-      if (choice === "accept") document.dispatchEvent(new CustomEvent("huba:consent-granted"));
+      if (choice === "accept") {
+        loadAnalytics();
+        document.dispatchEvent(new CustomEvent("huba:consent-granted"));
+      } else {
+        stopAnalytics();
+      }
     });
   });
 
-  document.querySelectorAll<HTMLButtonElement>("[data-cookie-reopen]").forEach(btn => {
-    btn.addEventListener("click", () => el?.classList.add("is-shown"));
+  // Delegated, so footer buttons swapped in by client-side navigation keep working.
+  document.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement | null)?.closest("[data-cookie-reopen]")) el?.classList.add("is-shown");
   });
 </script>
