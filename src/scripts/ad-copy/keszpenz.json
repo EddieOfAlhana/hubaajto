@@ -1,0 +1,12 @@
+{
+  "src": "public/assets/marketing/meme-keszpenz-v1-szoveg-nelkul.jpg",
+  "out": "public/assets/marketing/meme-keszpenz-v1.png",
+  "shade": [[0, 0, 600, 480, 0.7], [0, 1060, 620, 1350, 0.65]],
+  "headline": {"size": 50, "leading": 60, "x": 72, "y": 92,
+    "lines": ["Ha nagy mennyiségű", "készpénze van,", "ajánljuk inkább", "a Huba biztonsági", "ajtót."]},
+  "product": {"x": 72, "y": 1118, "lines": [
+    ["Huba biztonsági ajtó", 38, 700, 50],
+    ["MABISZ-minősített, 15 év szerkezeti garancia", 27, 450, 46],
+    ["440 000 Ft-tól", 52, 700, 0]]},
+  "logo": [900, 1222, 1008, 1278]
+}

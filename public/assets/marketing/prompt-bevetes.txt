@@ -1,0 +1,33 @@
+HUBA AJTÓ – FACEBOOK-HIRDETÉS KREATÍV, 6. VÁLTOZAT („A bevetési egység feladja”)
+Képgeneráló prompt (ChatGPT / GPT képgenerálás), 2026-11-14. Egy referencia csatolandó:
+  1. /assets/photos/hero/modern-anthracite.jpg (a beépített ajtó)
+Az ötlet: egy kommandós egység (NAV Merkúr / TEK-hangulat) elkeseredetten áll a beépített Huba ajtó előtt,
+mert nem jut be rajta. Szándékosan nincs rajta felirat, jelvény, címer vagy valós szervezet jelzése:
+a felszerelés sima fekete, az arcok takarva. Így nem használunk hivatalos jelképet, és a poén
+mindenkinek leesik.
+
+Cím (utólag, Inter betűvel rátéve, src/scripts/overlay_ad_copy.py):
+  „Kopogni szabad.” / „Bejönni nem.”
+Alternatív címek: „Hajnali hatkor is csak a kopogás marad.” · „Jöhetnek. Mi kávét ajánlunk nekik.”
+Termékblokk: „Huba biztonsági ajtó” / „MABISZ-minősített, Mottura zár, 15 év garancia” / „440 000 Ft-tól”.
+A szöveg nélküli változat: meme-bevetes-v1-szoveg-nelkul.jpg.
+
+----------------------------------------------------------------------
+Create a vertical 4:5 advertising image (1080 x 1350 px) in the style of a minimalist, dry-humoured IKEA print ad. One reference image is attached.
+
+REFERENCE – the door photo: a modern anthracite grey steel security entrance door with three vertical milled grooves and a short brushed-steel lever handle with a lock cylinder below it, installed in a light rendered wall of a contemporary family house, with a dark clinker brick pier beside it. Reproduce this door and its immediate surroundings (wall, frame, doorstep) faithfully, same colour, proportions and details.
+
+SCENE: early morning, cold blue-grey dawn light, soft and flat, slightly desaturated colour grade. The door, closed and completely untouched, fills the right half of the frame, seen straight on from the front garden path, about 55 percent of the image height. The wall to the left of the door is plain, light and empty.
+
+In front of the door, a tactical entry team of six operators in generic black tactical gear (helmets, balaclavas or lowered visors, body armour, gloves, knee pads) has clearly given up. They are not attacking anymore; they stand and sit around in defeated, tired poses: one sits on the doorstep with his elbows on his knees, head down; one leans on a heavy steel battering ram whose front is dented; one holds a bent crowbar and looks at it; one scratches the back of his helmet; one talks into a radio with a helpless shrug; one is pouring coffee from a thermos. Beside them on the paving lie a dropped hydraulic spreader and a broken drill bit. No faces are visible: every face is covered by a balaclava, a visor, or turned away. All gear is plain black with no patches, no badges, no letters, no flags, no emblems and no insignia of any real organisation anywhere. No weapons pointed at anything, no violence, nobody hurt.
+
+The door shows no scratch, no dent, no mark; the handle and the cylinder are intact. The contrast between the exhausted team and the calm, pristine door is the only joke.
+
+The upper left third of the image is the plain, empty rendered wall, reserved for typography that will be added later; the lower left corner is empty paving.
+
+No text or letters anywhere in the image, no logos, no signage, no watermark, no vehicles. Photorealistic documentary rendering, calm, no dramatic lighting, no smoke, no lens flare.
+----------------------------------------------------------------------
+
+Tapasztalat az első generálásból: elsőre jó lett; a modell a három marást csak halványan rajzolta meg az
+ajtóra, és kétszárnyúnak tűnő osztást tett rá. Ha újrageneráljuk: "The door is a single leaf with three
+vertical milled grooves, exactly as in the reference."

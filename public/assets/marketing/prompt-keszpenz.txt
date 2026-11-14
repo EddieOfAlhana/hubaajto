@@ -1,0 +1,31 @@
+HUBA AJTÓ – FACEBOOK-HIRDETÉS KREATÍV, 5. VÁLTOZAT („Az elásott készpénz”)
+Képgeneráló prompt (ChatGPT / GPT képgenerálás), 2026-11-14. Egy referencia csatolandó:
+  1. /assets/photos/hero/modern-anthracite.jpg (az ajtó)
+Apropó: a 2026. november 12–13-i hírek, hogy a Seszták-ügy nyomozói erdőben elásott, kartondobozokba
+csomagolt készpénzmilliárdokat találtak. A kép nem használ sajtófotót, nevet, egyenruhát vagy felismerhető
+bankjegyet — a poén csak a gödör és az ajtó ellentéte.
+
+Cím (utólag, Inter betűvel rátéve, src/scripts/overlay_ad_copy.py):
+  „Ha nagy mennyiségű készpénze van, ajánljuk inkább a Huba biztonsági ajtót.”
+Termékblokk: „Huba biztonsági ajtó” / „MABISZ-minősített, 15 év szerkezeti garancia” / „440 000 Ft-tól”.
+A szöveg nélküli változat: meme-keszpenz-v1-szoveg-nelkul.jpg.
+
+----------------------------------------------------------------------
+Create a vertical 4:5 advertising image (1080 x 1350 px) in the style of a minimalist, dry-humoured IKEA print ad. One reference image is attached.
+
+REFERENCE – the door photo. Use only the door leaf from this photo (ignore the house, wall, frame, plants and paving): a modern anthracite grey steel security entrance door with three vertical milled grooves and a short brushed-steel lever handle with a lock cylinder below it. Keep its exact colour, proportions and details.
+
+SCENE: a quiet Hungarian deciduous forest floor in late autumn, seen from a slightly elevated three-quarter angle. Overcast, soft, flat daylight, slightly desaturated colour grade. The ground is covered in brown fallen oak leaves and dark damp soil; slim grey tree trunks fade into mist in the background.
+
+In the lower right third of the frame there is a freshly dug rectangular pit, about one metre long, with a heap of dark excavated soil beside it and a worn spade stuck upright in the heap. Inside the pit, half uncovered and dirty, lie several plain brown cardboard boxes; two of them are torn open and stuffed with thick, tightly banded bundles of banknotes. The banknotes are generic: muted colours, no readable denomination, no portrait, no recognisable currency design. A few bundles have spilled onto the soil at the edge of the pit.
+
+In the centre-right of the frame, a step behind the pit, the anthracite security door stands upright and closed on the forest floor, with no frame and no wall around it, perfectly level, as solid as a monolith, about 45 percent of the image height. It is lit with soft, even light so it reads as heavy and immovable, and it has no scratch, no dirt, no leaf on it. The contrast between the dirty hole and the pristine door is the only joke.
+
+The upper left third and the lower left corner of the image are calm, darker, out-of-focus forest floor with no objects, reserved for typography that will be added later.
+
+No people, no hands, no tools other than the spade, no vehicles, no uniforms, no logos, no signage, no text or letters anywhere in the image, no watermark. Photorealistic documentary rendering, calm, no dramatic lighting, no lens flare.
+----------------------------------------------------------------------
+
+Tapasztalat az első generálásból: a modell az ajtót középre tette, nem jobbra, ezért a cím öt rövid sorba
+tördelve, 50 px-es betűvel fér el az ajtó mellett. Ha újrageneráljuk: "Move the door to the right third of
+the frame; the whole left half must be empty forest floor."

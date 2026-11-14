@@ -111,6 +111,41 @@ export const MATERIALS: Material[] = [
     kind: "kep",
     note: "Az oldal saját fotója, jól látszik a zárszerkezet.",
   },
+  {
+    id: "meme-keszpenz-v1",
+    title: "Facebook-kreatív, 5. változat: az elásott készpénz (2026-11-14)",
+    src: "/assets/marketing/meme-keszpenz-v1.png",
+    kind: "kep",
+    note:
+      "Ködös erdő, frissen ásott gödör kartondobozokkal és pénzkötegekkel, mellette sértetlenül áll az antracit ajtó. " +
+      "Cím: „Ha nagy mennyiségű készpénze van, ajánljuk inkább a Huba biztonsági ajtót.” " +
+      "Az apropó a novemberi hír az erdőben elásott milliárdokról; sajtófotó, név, bankjegy nincs a képen. " +
+      "Szöveg nélküli változat: /assets/marketing/meme-keszpenz-v1-szoveg-nelkul.jpg.",
+  },
+  {
+    id: "prompt-keszpenz",
+    title: "Képgeneráló prompt az 5. kreatívhoz",
+    src: "/assets/marketing/prompt-keszpenz.txt",
+    kind: "szoveg",
+    note: "A szöveg, amivel a kép generálható (ChatGPT), az antracit ajtó fotójával; a felirat utólag kerül rá.",
+  },
+  {
+    id: "meme-bevetes-v1",
+    title: "Facebook-kreatív, 6. változat: a bevetési egység feladja (2026-11-14)",
+    src: "/assets/marketing/meme-bevetes-v1.png",
+    kind: "kep",
+    note:
+      "Hat kimerült kommandós ül és áll a beépített, sértetlen ajtó előtt: behorpadt faltörő kos, elgörbült feszítővas, termosz. " +
+      "Cím: „Kopogni szabad. Bejönni nem.” A felszerelésen szándékosan nincs jelvény vagy felirat, az arcok takarva. " +
+      "Szöveg nélküli változat: /assets/marketing/meme-bevetes-v1-szoveg-nelkul.jpg.",
+  },
+  {
+    id: "prompt-bevetes",
+    title: "Képgeneráló prompt a 6. kreatívhoz",
+    src: "/assets/marketing/prompt-bevetes.txt",
+    kind: "szoveg",
+    note: "A szöveg, amivel a kép generálható (ChatGPT), alternatív címekkel.",
+  },
 ];
 
 const FACEBOOK_SET = !/facebook\.com\/?$/.test(CONTACT.social.facebook);
@@ -282,7 +317,7 @@ export function marketingPlan(): Item[] {
       ],
       cost: "45 000–90 000 Ft/hó a saját döntés szerint",
       effort: "heti egy pillantás a számokra",
-      materials: ["meme-feszitovas-v1", "prompt-feszitovas", "prompt-auto"],
+      materials: ["meme-feszitovas-v1", "prompt-feszitovas", "prompt-auto", "meme-keszpenz-v1", "prompt-keszpenz", "meme-bevetes-v1", "prompt-bevetes"],
       notes: "Előfeltétel: Facebook-oldal (facebook-instagram) és a webes érdeklődők kézbesítése (lead-kezbesites).",
     },
     {

@@ -1,0 +1,12 @@
+{
+  "src": "public/assets/marketing/meme-bevetes-v1-szoveg-nelkul.jpg",
+  "out": "public/assets/marketing/meme-bevetes-v1.png",
+  "shade": [[0, 0, 640, 420, 0.45], [0, 1080, 620, 1350, 0.55]],
+  "headline": {"size": 72, "leading": 86, "x": 72, "y": 96,
+    "lines": ["Kopogni szabad.", "Bejönni nem."]},
+  "product": {"x": 72, "y": 1118, "lines": [
+    ["Huba biztonsági ajtó", 38, 700, 50],
+    ["MABISZ-minősített, Mottura zár, 15 év garancia", 27, 450, 46],
+    ["440 000 Ft-tól", 52, 700, 0]]},
+  "logo": [900, 1222, 1008, 1278]
+}
